@@ -1,0 +1,39 @@
+\documentclass[a4paper]{article}
+\usepackage[hungarian,english]{babel}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+\input{./title.tex}
+\clearpage
+\setcounter{page}{1}
+\paragraph{Cross-platform testing and validation framework}
+SMPI aims at predicting the performance of (potentially
+computation-heavy) MPI applications. It is important to note that MPI
+has multiple notable implementations, which can have differences in
+performance. Validation of predictions for the different
+implementations is a tedious task, as a lot of the code has to be
+changed to do it. One of the research directions is to create a
+testing and validation framework which we could use to create tests
+with the ability of seamlessly - with as little intervention from the
+user as possible - switching between the MPI implementations. The
+first aim is to do so with the MPI implementations OpenMPI and MPICH.
+\paragraph{STAR-MPI approach}
+Self-Tuned Adaptive Routines for MPI Collective Operations (STAR-MPI)
+is a sadly discontinued project, but one which's ideas could be
+utilized in SMPI. It is a set of MPI collective communication routines
+that are capable of dynamically adapting to system architecture and
+application workload. The main idea lays in a technique called "delayed
+finalization of MPI collective communication routines" (DF). For each
+operation, STAR-MPI maintains a set of communication algorithms. The
+aim is to postpone the decision of which algorithm to use until after
+the platform and/or the application is known. This technique bears
+the potential of platform-specific or application-specific
+optimalization of an MPI application.\\
+A development idea for SMPI is to apply the same technique there: a
+set of potentially choosable algorithms could be implemented alongside
+a set of selector mechanisms. By using the STAR-MPI approach,
+extensive testing could be conducted on SMPI with different tuning
+parameters. The results of these tests could be used to suggest
+better parameters for the actual MPI implementations, in order to help
+improve their performance.
+\end{document}
