@@ -1,0 +1,11 @@
+- introduction: what is the problem, what are we trying to accomplish
+- literature review -> test frameworks: what about them? what are the aspects i could write about?
+                         - smpi:
+                    -> reproducible research: ???
+                         - how exactly reproduce the results; why it is important
+- OpenMPI/MPICH -> started looking at the code; it's hard to read; what to look for? (currently looking for: algorithms + the part where they decide which one to use)
+- SMPI -> where is the part where it chooses between the implementations of the different MPI functions?
+       -> structural questions
+- problem description: what should I talk about in it?
+- Lyon -> when can I know whether or not I can go?
+- run tests: astral and smpi

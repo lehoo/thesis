@@ -1,0 +1,15 @@
+Setting up test environment on astral:
+  - scp -r the NAS directory from simgrid
+  - wget and compile openmpi:
+    - newest version (1.7.1) doesn't compile, apparently because of XRC (eXtended Reliable Connection), which is an infiniband-specific transport
+      (https://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=4663773)
+      a forum post regarding this issue: http://www.open-mpi.org/~jsquyres/www.open-mpi.org/community/lists/users/2013/04/21752.php
+    - solution to this: version 1.7 successfully compiled, using that version
+    - can't make the openmpi the default mpi implementation, as i don't have permissions to do the necessary operations for that -> will try to use full pathnames to the binaries instead
+  - wget and compile pdt without problems
+    - added .../pdtoolkit-3.19/x86_64/bin to PATH
+  - wget and compile papi without problems
+    - 1 or 2 tests failed when running 'make fulltest' and there were some warnings, but most of them were successful
+  - wget and compile tau without problems
+    - ./configure parameters: -prefix=/panfs/storage/home/s191080/thesis/tau-install -pdt=/panfs/storage/home/s191080/thesis/pdtoolkit-3.19/x86_64/bin -papi=/panfs/storage/home/s191080/thesis/papi-install/bin -mpiinc=/panfs/storage/home/s191080/thesis/openmpi-install/include -mpilib=/panfs/storage/home/s191080/thesis/openmpi-install/lib
+    - added .../tau-install/x86_64/bin to PATH
