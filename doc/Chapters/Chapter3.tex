@@ -3,3 +3,106 @@
 \chapter{Problem Description}
 \label{Chapter3}
 \lhead{Chapter 3. \emph{Problem Description}}
+
+\section{Reproducible research}
+New scientific ideas, developments and results are only useful when
+they are documented and published. It is vital that results are
+announced, so others can be aware of the latest developments on their
+field of research. This helps in creating a linked data cloud, used by
+scientists to incorporate various output of other research into their
+own, using previous results as "stepping stones" to achieve something
+new.\cite{babbccrddg10} But simply publishing results is not enough in
+order for others to make use of them. Besides announcing the
+achievements, the other goal of scientific publications is to convince
+the readers that the results it presents are correct. Besides
+theoretical reasoning, papers in experimental science should provide a
+documented methodology describing how the author has gotten to those
+results.\cite{m10} The methodology has to be detailed and precise
+enough so other researchers can repeat the same steps, thus
+reproducing the same results. This is vital in order to provide the
+possibility to verify those results and to fully understand
+them. Reproducing the results also makes for a starting point for
+further development, as the described methods used for reproduction
+can be extended to achieve something more or something different in
+the same area of research, or repurposed to gain useful results in a
+completely different area. This subject is relevant to SMPI and one of
+the main goals of the testing and validation framework is to make
+developments in the area.
+\section{Testing framework}
+SMPI is an actively developed project and as such, a lot of tests are
+run and a lot of measurements are taken. Previous papers
+(\cite{csgscq11} \cite{bdglmqssv13}) have shown, amongst other
+results, how accurate the performance predictions SMPI makes are and
+how the time of the simulation can be lowered, while getting very
+little differences in simulated time (which means the predicted
+performance). These results are obtained through extensive testing and
+as development continues, more and more test data is needed for
+verification purposes. In order to get conclusive results, both
+real-life (RL) tests and simulation tests using SimGrid (SG) are
+needed to be obtained and then the results need to be visualized,
+analyzed and compared. All this needs to be done in as many different
+kinds of environments as possible. Currently, this is a tedious task
+that needs a lot of "tinkering", meaning that there is no unified
+methodology for setting up experiments and obtaining results on
+different kinds of distributed environments and for different kinds of
+MPI implementations - one has to find his/her own way to make it
+work. Documentation only exists for specific systems, but obviously
+that doesn't always help with problems arising in an other
+environment. This statement is reimbursed by \cite{bdglmqssv13}, where
+we can read that previous experimental data have been collected "by
+hand", suggesting that it's a tedious process.
+\section{The testing process}
+\subsection{SG traces}
+In order to conduct tests on the simulator, the first step is to
+create the simulated environment. This is done by creating a platform
+file that can be fine-tuned to model the desired system. \#maybe
+detail how a platform file looks like?\#
+\subsection{RL traces}
+As talked about in detail in \cite{ms11}, conducting RL tests involves
+multiple steps. RL test data collection is done by collecting traces
+of MPI benchmarks. Currently, the favored tool in trace collection in
+the project is Tuning and Analisys Utilities (TAU)\cite{sm06}, which
+is a well-established tracing and profiling tool. Thus, on the system
+where we are running the benchmarks, TAU has to be deployed and
+configured, alongside other software that TAU depends on. One is PAPI,
+an interface which provides us with the possibility to
+get access to low-level hardware counters (to trace the number of
+instructions at processor level). We also need the Program Database
+Toolkit (PDT), which provides the ability of automatic performance
+instrumentation. In order for TAU to collect the traces we need, these
+toolkits have to be deployed and correctly linked with TAU. TAU has
+its own compiler scripts for MPI programs for both Fortran, C and
+C++. After compiling a benchmark using one of these scripts, they will
+generate TAU trace files upon their execution. One trace file (.trc)
+and one event file (.edf) is generated for each MPI process.\\
+We want to visualize the traces so we can compare the RL and SG
+traces more easily. Paje is a visualization tool that can be used for
+this purpose. It has its own trace format that it can comprehend, thus
+the TAU traces have to be converted to that. Also, we need to merge
+the traces into one file that we can give to Paje after the
+conversion. There is a
+TAU script that is able to do this, creating one trace and one event
+file. We now only have the task of converting the TAU trace to a Paje
+trace file. Another MPI tracing library, Akypuera provides this
+possibility, having its own tau-to-paje conversion script. Once done,
+we finally have a trace file that Paje can read and display to us.\\
+\#Not sure about the next part...\#
+In the future, it is very likely that more and more tests will have to
+be run in order to verify old and newly implemented features, as well
+as various experiments will be conducted using SMPI to test it against
+various MPI platforms. The main reason of importance of developing a
+systematic testing and validation framework is that it could make the
+previously discussed tedious testing process a lot smoother and
+faster. One of the main features of this framework needs to be the
+automatic trace collection, so the user wouldn't have to collect and
+analyze the data manually. This way, proportionally more tests
+could be run, providing more reliable results with less effort than
+before. Apart from making extensive testing and experimentation more
+straightforward for the developers, a functioning test and validation
+framework would make it easier to reproduce SMPI results, the
+importance of which is discussed above.\\
+Apart from wanting to simplify this fairly convoluted process of
+getting test results, there are other problems that need to be
+addressed.
+\section{Instrumentation overhead}
+\section{Clock synchronization}

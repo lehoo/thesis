@@ -1,6 +1,6 @@
 %% ----------------------------------------------------------------
 %% Thesis.tex -- MAIN FILE (the one that you compile with LaTeX)
-%% ---------------------------------------------------------------- 
+%% ----------------------------------------------------------------
 
 % Set up the document
 \documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
@@ -8,19 +8,21 @@
 
 % Include any extra LaTeX packages required
 \usepackage[square, numbers, comma, sort&compress]{natbib}  % Use the "Natbib" style for the references in the Bibliography
+\usepackage[english, hungarian]{babel}
+\usepackage[utf8]{inputenc}
 \usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
 \usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
 \hypersetup{urlcolor=blue, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
 
 %% ----------------------------------------------------------------
 \begin{document}
-\frontmatter	  % Begin Roman style (i, ii, iii, iv...) page numbering
+\frontmatter      % Begin Roman style (i, ii, iii, iv...) page numbering
 
 % Set up the Title Page
 \title  {Thesis Title}
 \authors  {\texorpdfstring
-            {\href{your web site or email address}{Author Name}}
-            {Author Name}
+            {\href{your web site or email address}{Attila Döme Lehóczky}}
+            {Attila Döme Lehóczky}
             }
 \addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
 \date       {\today}
@@ -47,25 +49,25 @@
 
 I, AUTHOR NAME, declare that this thesis titled, `THESIS TITLE' and the work presented in it are my own. I confirm that:
 
-\begin{itemize} 
+\begin{itemize}
 \item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a research degree at this University.
- 
+
 \item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
- 
+
 \item[\tiny{$\blacksquare$}] Where I have consulted the published work of others, this is always clearly attributed.
- 
+
 \item[\tiny{$\blacksquare$}] Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
- 
+
 \item[\tiny{$\blacksquare$}] I have acknowledged all main sources of help.
- 
+
 \item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.
 \\
 \end{itemize}
- 
- 
+
+
 Signed:\\
 \rule[1em]{25em}{0.5pt}  % This prints a line for the signature
- 
+
 Date:\\
 \rule[1em]{25em}{0.5pt}  % This prints a line to write the date
 }
@@ -171,7 +173,7 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 
 
 %% ----------------------------------------------------------------
-\mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
+\mainmatter   % Begin normal, numeric (1,2,3...) page numbering
 \pagestyle{fancy}  % Return the page headers back to the "fancy" style
 
 % Include the chapters of the thesis, as separate files
@@ -179,17 +181,17 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 
 \input{./Chapters/Chapter1} % Introduction
 
-%\input{./Chapters/Chapter2} % Background Theory 
+\input{./Chapters/Chapter2} % Literature Review
 
-%\input{./Chapters/Chapter3} % Experimental Setup
+\input{./Chapters/Chapter3} % Problem Description
 
-%\input{./Chapters/Chapter4} % Experiment 1
+\input{./Chapters/Chapter4} % Implementation
 
-%\input{./Chapters/Chapter5} % Experiment 2
+\input{./Chapters/Chapter5} % Evaluation Plan
 
-%\input{./Chapters/Chapter6} % Results and Discussion
+\input{./Chapters/Chapter6} % Results
 
-%\input{./Chapters/Chapter7} % Conclusion
+\input{./Chapters/Chapter7} % Conclusion
 
 %% ----------------------------------------------------------------
 % Now begin the Appendices, including them as separate files
@@ -198,7 +200,7 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 
 \appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
 
-\input{./Appendices/AppendixA}	% Appendix Title
+\input{./Appendices/AppendixA}  % Appendix Title
 
 %\input{./Appendices/AppendixB} % Appendix Title
 

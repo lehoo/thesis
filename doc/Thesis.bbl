@@ -1,30 +1,116 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{15}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Arnold et~al.(1998)Arnold, Wilson, and Boshier]{Reference3}
-A.~S. Arnold, J.~S. Wilson, and M.~G. Boshier.
-\newblock A simple extended-cavity diode laser.
-\newblock \emph{Review of Scientific Instruments}, 69\penalty0 (3):\penalty0
-  1236--1239, March 1998.
-\newblock URL \url{http://link.aip.org/link/?RSI/69/1236/1}.
+\bibitem[Forum(2012)]{mpif12}
+Message Passing~Interface, Forum.
+\newblock \emph{MPI: A Message-Passing Interface Standard Version 3.0},
+  September 2012.
 
-\bibitem[Wieman and Hollberg(1991)]{Reference2}
-Carl~E. Wieman and Leo Hollberg.
-\newblock Using diode lasers for atomic physics.
-\newblock \emph{Review of Scientific Instruments}, 62\penalty0 (1):\penalty0
-  1--20, January 1991.
-\newblock URL \url{http://link.aip.org/link/?RSI/62/1/1}.
+\bibitem[E. et~al.(2004)E., E., G., T., J., M., V., P., B., A., H., J., L., and
+  S.]{ompi04}
+Gabriel, E., Fagg~G., E., Bosilca, G., Angskun, T., Dongarra~J., J.,
+  Squyres~J., M., Sahay, V., Kambadur, P., Barrett, B., Lumsdaine, A.,
+  Castain~R., H., Daniel~D., J., Graham~R., L., and Woodall~T., S.
+\newblock Open mpi: Goals and concept, and design of a next generation mpi
+  implementation.
+\newblock In \emph{Proceedings, 11th European PVM/MPI Users' Group Meeting},
+  pages 97--104, Budapest, Hungary, September 2004.
 
-\bibitem[Hawthorn et~al.(2001)Hawthorn, Weber, and Scholten]{Reference1}
-C.~J. Hawthorn, K.~P. Weber, and R.~E. Scholten.
-\newblock Littrow configuration tunable external cavity diode laser with fixed
-  direction output beam.
-\newblock \emph{Review of Scientific Instruments}, 72\penalty0 (12):\penalty0
-  4477--4479, December 2001.
-\newblock URL \url{http://link.aip.org/link/?RSI/72/4477/1}.
+\bibitem[MPICH(2012)]{mpich12}
+, MPICH.
+\newblock Mpich overview, 2012.
+\newblock URL \url{http://www.mpich.org/about/overview/}.
+
+\bibitem[R. et~al.(2005)R., R., and W.]{trg05}
+Thakur, R., Rabenseifner, R., and Gropp, W.
+\newblock Optimization of collective communication operations in mpich.
+\newblock \emph{Int’l Journal of High Performance Computing Applications},
+  pages 49--66, 2005.
+
+\bibitem[D. and W.(2007)]{bmg07}
+Buntinas D.~Mercier, D. and Gropp, W.
+\newblock Implementation and evaluation of shared-memory communication and
+  synchronization operations in mpich2 using the nemesis communication
+  subsystem.
+\newblock \emph{Parallel Computing}, 33:\penalty0 634--644, September 2007.
+\newblock URL
+  \url{http://linkinghub.elsevier.com/retrieve/pii/S0167819107000786}.
+
+\bibitem[Hillston(2012{\natexlab{a}})]{h12_1}
+Jane, Hillston.
+\newblock Performance modelling and lecture 1 ("modelling and simulation"),
+  2012{\natexlab{a}}.
+\newblock URL
+  \url{http://www.inf.ed.ac.uk/teaching/courses/pm/PM-lecture1.pdf}.
+
+\bibitem[H. et~al.(2008)H., A., and M.]{clq08}
+Casanova, H., Legrand, A., and Quinson, M.
+\newblock Simgrid: a generic framework for large-scale distributed experiments.
+\newblock In \emph{Proceedings of the Tenth International Event on Computer
+  Modeling and Simulation}, pages 126--131, 2008.
+
+\bibitem[P.-N. et~al.(2011)P.-N., M., S., F., H., and M.]{csgscq11}
+Clauss, P.-N., Stillwell, M., Genaud, S., Suter, F., Casanova, H., and Quinson,
+  M.
+\newblock Single node on-line simulation of mpi applications with smpi.
+\newblock In \emph{International Parallel \& Distributed Processing Symposium},
+  pages 664--675, May 2011.
+
+\bibitem[Hillston(2012{\natexlab{b}})]{h12_13}
+Jane, Hillston.
+\newblock Performance modelling and lecture 13 ("simulation models:
+  Introduction and motivation"), 2012{\natexlab{b}}.
+\newblock URL
+  \url{http://www.inf.ed.ac.uk/teaching/courses/pm/PM-lecture1.pdf}.
+
+\bibitem[A. et~al.(2006)A., X., and K.]{fyl06}
+Faraj, A., Yuan, X., and Lowenthal~D., K.
+\newblock Star-mpi: Self tuned adaptive routines for mpi collective operations.
+\newblock In \emph{The 20th ACM International Conference on Supercomputing},
+  pages 199--208, June 2006.
+
+\bibitem[S. et~al.(2010)S., J., J., I., P., D., D., M., I., and
+  M.]{babbccrddg10}
+Bechhofer, S., Ainsworth, J., Bhagat, J., Buchan, I., Couch, P., Cruickshank,
+  D., Roure~D., D., Delderfield, M., Dunlop, I., and Gamble, M.
+\newblock Why linked data is not enough for scientists.
+\newblock In \emph{e-Science and 2010 IEEE Sixth International Conference},
+  pages 300--307, 2010.
+\newblock URL
+  \url{http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5693931}.
+
+\bibitem[P.(2010)]{m10}
+Mesirov~J., P.
+\newblock Accessible reproducible research.
+\newblock \emph{Science Magazine}, 327:\penalty0 415--416, 2010.
+\newblock URL
+  \url{http://statlab.bio5.org/foswiki/pub/Main/PapersForClassCPH685/science-r%
+eproducible-research.pdf}.
+
+\bibitem[P. et~al.(2013)P., A., S., A., S., M., M., F., and B.]{bdglmqssv13}
+Bédaride, P., Degomme, A., Genaud, S., Legrand, A., Markomanolis~G., S.,
+  Quinson, M., Stillwell, M., Suter, F., and Videau, B.
+\newblock Improving simulations of mpi applications using a hybrid network
+  model with topology and contention support.
+\newblock 2013.
+
+\bibitem[Markomanolis and Suter(2011)]{ms11}
+G.~S., Markomanolis and F., Suter.
+\newblock \emph{Time-Independent Trace Acquisition Framework – A Grid'5000
+  How-to}, 2011.
+\newblock URL \url{http://hal.inria.fr/inria-00593842}.
+
+\bibitem[Shende and Malony(2006)]{sm06}
+S.~S., Shende and A.~D., Malony.
+\newblock The tau parallel performance system.
+\newblock \emph{International Journal of High Performance Computing
+  Applications}, 20:\penalty0 287--311, 2006.
+\newblock URL
+  \url{http://statlab.bio5.org/foswiki/pub/Main/PapersForClassCPH685/science-r%
+eproducible-research.pdf}.
 
 \end{thebibliography}

@@ -4,6 +4,12 @@
 \label{Chapter2}
 \lhead{Chapter 2. \emph{Literature Review}}
 
+simulation: system clocks dont differ
+tau and measurement: delays operations, communications
+smpi: no high-performance networking hardware -> just gigabit ethernet
+make sure to give openmpi/mpich parameters to run gigabit ethernet,
+not infiniband
+
 \section{Introduction}
 In the literature review, we discuss the area of research covered by
 the thesis, citing relevant papers and articles that serve as a base
@@ -30,7 +36,8 @@ interface specification. It is not a language, but a standard - there
 exist multiple MPI implementations. Since its take-off, it has become
 a de facto standard for inter-process communication. The standard
 provides vendors a clear set of routines, that they can implement
-efficiently, or in a way that it suits the hardware they provide.[3]
+efficiently, or in a way that it suits the hardware they
+provide.\cite{mpif12}
 \subsection{OpenMPI}
 OpenMPI is an MPI implementation with the goal of being able to
 achieve good performance on a wide range of different aspects of
@@ -42,7 +49,8 @@ integrity are provided in order to account for network transmission
 errors. With the utilization of message fragmentation and striping
 over multiple (potentially heterogeneous) network devices, OpenMPI
 provides an increased bandwidth to applications, as well as the
-ability to handle the failure of network devices during runtime.[4]
+ability to handle the failure of network devices during
+runtime.\cite{ompi04}
 \subsection{MPICH}
 MPICH was originally developed during the MPI standards process
 starting in 1992 to provide feedback to the MPI Forum on
@@ -50,21 +58,23 @@ implementation and usability issues. This original implementation was
 based on the Chameleon portability system to provide a light-weight
 implementation layer (hence the name MPICH from MPI over
 CHameleon). Around August 2001, development begun on a new
-implementation called MPICH2.[5] This implementation introduced
-improvements on collective communication operations by using multiple
-algorithms, choosing between them depending on certain variables - for
-example the message size.[6] Another important result during the
-development of MPICH2 was the design of the Nemesis communication
-subsystem and the porting of MPICH2 on that system. The efficient
-implementation of shared-memory communication helped Nemesis MPICH2
-achieve low latency and high bandwidth.[7]\\
+implementation called MPICH2.\cite{mpich12} This implementation
+introduced improvements on collective communication operations by
+using multiple algorithms, choosing between them depending on certain
+variables - for example the message size.\cite{trg05} Another
+important result during the development of MPICH2 was the design of
+the Nemesis communication subsystem and the porting of MPICH2 on that
+system. The efficient implementation of shared-memory communication
+helped Nemesis MPICH2 achieve low latency and high
+bandwidth.\cite{bmg07}\\
 Starting with November 2012, the project is renamed to MPICH, with
-version number 3.0.[5]
+version number 3.0.\cite{mpich12}
 \section{Modelling and Simulation}
 In distributed computing, modelling means creating an abstraction of a
 real system by taking only the aspects of it that are relevant to the
 system's behavior into account. Once constructed, such a model becomes
-a tool with which we can investigate the behavior of the system.[8]
+a tool with which we can investigate the behavior of the
+system.\cite{h12_1}
 \subsection{Advantages of Modeling}
 Modelling and simulation techniques have been used extensively in
 parallel computing and is an ongoing research topic, with new
@@ -83,15 +93,15 @@ example. Another problem with direct experimentation is that the
 information we are looking for may not be available, or may be
 complicated to get. For example, in most operating systems, it is
 difficult to obtain the exact timing of instruction-level
-events.[8] Also, when conducting experiments on a real-world system,
-results are often non-reproducible, due to resource dynamics.[1]
-Another argument on the side of modelling is that it provides the
-ability of experimenting on different
+events.\cite{h12_1} Also, when conducting experiments on a real-world
+system, results are often non-reproducible, due to resource
+dynamics.\cite{clq08} Another argument on the side of modelling is
+that it provides the ability of experimenting on different
 configurations. Investing in a large-scale computer cluster, or the
 setup of a distributed grid environment is an expensive and tedious
 process. Investors want to make sure that they get what they
-want: they impose performance constraints on the system. This means that
-they want to know how the system will behave
+want: they impose performance constraints on the system. This means
+that they want to know how the system will behave
 before buying it and setting it up. To predict the behavior,
 experiments are needed to be conducted. We need to do these
 experiments on different setups, before finding out which one is the
@@ -100,10 +110,10 @@ configuration parameters on a real-world system is very inconvenient -
 in most cases, it's not doable, because of time and money
 constraints. Thus, the solution is to simulate the desired
 system, and run the experiments there. This way, changing the
-configuration is simple and costless.[8] Another great benefit of
-simulation is that in a classroom setting, students can learn the
-principles of high-performance and distributed computing without
-actual access to a parallel platform.[2]
+configuration is simple and costless.\cite{h12_1} Another great
+benefit of simulation is that in a classroom setting, students can
+learn the principles of high-performance and distributed computing
+without actual access to a parallel platform.\cite{csgscq11}
 \subsection{Analytical and Simulation Models}
 The accuracy of a model can vary: we can make an analytical, or
 qualitative model, in which all definite values are abstracted away -
@@ -116,21 +126,22 @@ real-world system that can be executed to reproduce the system's
 behavior. This model is also called a quantitative model, as we can
 get estimates of the modeled system's quantitative attributes, such as
 response time or throughput. In other words, we can use a simulation
-model to conduct performance analysis on a system.[8][9]\\
+model to conduct performance analysis on a
+system.\cite{h12_1}\cite{h12_13}\\
 When wanting to get a prediction about how a specific system would
 perform, a theoretical model, in most cases, produces unreliable and
 unrealistic results - it's not feasible for such accurate
 predictions. Most research results are obtained via empirical
-evaluation of experiments.[1] For these reasons, we use the simulation
-model in this thesis. As we stated before, such a model can be
-executed, which is called simulation. During simulation, the model
+evaluation of experiments.\cite{clq08} For these reasons, we use the
+simulation model in this thesis. As we stated before, such a model can
+be executed, which is called simulation. During simulation, the model
 behaves like the real system would. Such a model contains more aspects
 of the real system, compared to the theoretical model, in order to
 accurately represent the system, while still avoiding unnecessary
-detail.[8] Creating and executing a simulation model is complicated,
-computationally expensive and poses a large number of challenges,
-thus, a good simulation framework can prove of much help when
-conducting experiments.
+detail.\cite{h12_1} Creating and executing a simulation model is
+complicated, computationally expensive and poses a large number of
+challenges, thus, a good simulation framework can prove of much help
+when conducting experiments.
 \section{SimGrid}
 For the aforementioned reasons, simulation techniques have been
 historically widely utilised in several areas of computer science,
@@ -144,8 +155,8 @@ there has only been a number of in-house developed, highly specialized
 tools to satisfy the need of the community. SimGrid is a more generic
 simulation framework that is being developed to be one of the
 acknowledged and widespread tools for simulation in large-scale
-distributed computing.[1]\\
-SimGrid's key features include:[1]
+distributed computing.\cite{clq08}\\
+SimGrid's key features include:\cite{clq08}
 \begin{itemize}
 \item A scalable and extensible simulation engine that implements
   several validated simulation models, and that makes it possible to
@@ -167,10 +178,10 @@ was conducted using SimGrid as a scientific instrument. In terms of
 development, the developer team envisions a number of directions for
 future work: addition of a model for disk resources; extention of
 scalability to improve usability in the P2P domain; ability to
-dispatch simulated nodes over several physical machines.[1] Another
-important field of research for the SimGrid team is the implementation
-of the API that has already been mentioned: the Message-Passing
-Interface (MPI).
+dispatch simulated nodes over several physical machines.\cite{clq08}
+Another important field of research for the SimGrid team is the
+implementation of the API that has already been mentioned: the
+Message-Passing Interface (MPI).
 \section{SMPI}
 As stated before, MPI is one of the most widely used APIs for
 communication between nodes in distributed computing. SMPI is a
@@ -183,7 +194,7 @@ such as a validated piece-wise linear model for data transfer times
 between cluster nodes. SMPI simulations also account for network
 contention - this is done relying on analytical models, rather than
 packet-level simulation, thus helping the simulation to be fast and
-scalable.[2]\\
+scalable.\cite{csgscq11}\\
 Three of the main challenges for simulating an MPI application are:
 \begin{itemize}
 \item Accuracy: The prediction of the real-world execution time (the
@@ -196,30 +207,33 @@ Three of the main challenges for simulating an MPI application are:
   compared to the simulated time (the predicted execution time of the
   real-world application).
 \end{itemize}
-Extensive testing was conducted in [2] to verify these qualities of
-the framework. In these tests, the OpenMPI and MPICH implementations
-were used to serve as verification benchmarks. The results showed that
-SMPI predicted the execution time of OpenMPI and MPICH applications
-for point-to-point, one-to-many and many-to-many applications with an
-average error value of under 10\% in each cases. Using techniques to
-reduce the memory footprint, SMPI tests were successfully conducted on
-a scale of up to 448 processors. As a result of the RAM-folding, which
-was used to reduce the memory footprint of the application, the
-predicted execution times were underestimates with an average error
-value of 18.5\%, which is higher than in the previous experiments. We
-have to note here, though, that certain tests weren't successful
-without the RAM-folding techniques, due to an out-of-memory
-error. This shows, that although it poses difficulties, reducing the
-memory usage is vital in SMPI. Also, relying on the CPU sampling
-approach to reduce the number of computations in an application, SMPI
-also manages to reduce simulation time by a great margin.\\
+Extensive testing was conducted in \cite{csgscq11} to verify these
+qualities of the framework. In these tests, the OpenMPI and MPICH
+implementations were used to serve as verification benchmarks. The
+results showed that SMPI predicted the execution time of OpenMPI and
+MPICH applications for point-to-point, one-to-many and many-to-many
+applications with an average error value of under 10\% in each
+cases. Using techniques to reduce the memory footprint, SMPI tests
+were successfully conducted on a scale of up to 448 processors. As a
+result of the RAM-folding, which was used to reduce the memory
+footprint of the application, the predicted execution times were
+underestimates with an average error value of 18.5\%, which is higher
+than in the previous experiments. We have to note here, though, that
+certain tests weren't successful without the RAM-folding techniques,
+due to an out-of-memory error. This shows, that although it poses
+difficulties, reducing the memory usage is vital in SMPI. Also,
+relying on the CPU sampling approach to reduce the number of
+computations in an application, SMPI also manages to reduce simulation
+time by a great margin.\\
 As SMPI is an actively developed project alongside SimGrid, there are
 a number of research directions. One major development to the
-project would be a testing framework that would provide the ability to
-set up experiments across different environments with as little
-necessary adjustments as possible. Another direction is related to the
-optimization of the framework's performance, with the utilisation of
-ideas from the STAR-MPI project.
+project would be a testing framework that would aim to lessen the
+burdens of testing as much as possible. The goal is to provide a
+unified method to set up experiments across different environments and
+to do it with as little necessary adjustments on user part as
+possible. Another direction is related to the optimization of the
+framework's performance, with the utilisation of ideas from the
+STAR-MPI project.
 \section{STAR-MPI}
 Self-Tuned Adaptive Routines for MPI Collective Operations (STAR-MPI)
 is a set of MPI collective communication routines that are capable of
@@ -230,7 +244,7 @@ operation, STAR-MPI maintains a set of communication algorithms. The
 aim is to postpone the decision of which algorithm to use until after
 the platform and/or the application are known. This technique bears
 the potential of platform-specific or application-specific
-optimalization of an MPI application.[10]\\
+optimalization of an MPI application.\cite{fyl06}\\
 A development idea for SMPI is to apply the same technique there,
 thus, in a sense, to "implement" STAR-MPI in SMPI. A set of
 potentially choosable algorithms could be implemented alongside a set
