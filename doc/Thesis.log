@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.6.2)  3 JUN 2013 20:24
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.6.2)  13 JUN 2013 14:50
 entering extended mode
  %&-line parsing enabled.
 **Thesis.tex
@@ -781,18 +781,18 @@ LaTeX Info: Redefining \pageref on input line 18.
 ------------------------------------------------------------------------------
 
 Package hyperref Warning: No destination for bookmark of \addcontentsline,
-(hyperref)                destination is added on input line 73.
+(hyperref)                destination is added on input line 74.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 73.
+LaTeX Font Info:    Try loading font information for U+msa on input line 74.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 73.
+LaTeX Font Info:    Try loading font information for U+msb on input line 74.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 73--73
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
 
  []
 
@@ -906,15 +906,20 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 78.
 
 [4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 161.
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 161.
+
+[5] [6]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 248.
 
  (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 161.
- [5] [6]) [7]
-(./Chapters/Chapter3.tex [8]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 248.
+ [7] [8] [9])
+(./Chapters/Chapter3.tex [10]
 3. fejezet.
 ------------------------------------------------------------------------------
  3 Problem Description
@@ -923,47 +928,47 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 7.
 
-[9
+[11
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 55.
 
-[10]) (./Chapters/Chapter4.tex [11]
+[12]) (./Chapters/Chapter4.tex [13]
 4. fejezet.
 ------------------------------------------------------------------------------
  4 Implementation
 ------------------------------------------------------------------------------
-) (./Chapters/Chapter5.tex [12
+) (./Chapters/Chapter5.tex [14
 
 ]
 5. fejezet.
 ------------------------------------------------------------------------------
  5 Evaluation Plan
 ------------------------------------------------------------------------------
-) (./Chapters/Chapter6.tex [13
+) (./Chapters/Chapter6.tex [15
 
 ]
 6. fejezet.
 ------------------------------------------------------------------------------
  6 Results
 ------------------------------------------------------------------------------
-) (./Chapters/Chapter7.tex [14
+) (./Chapters/Chapter7.tex [16
 
 ]
 7. fejezet.
 ------------------------------------------------------------------------------
  7 Conclusion
 ------------------------------------------------------------------------------
-) (./Appendices/AppendixA.tex [15
+) (./Appendices/AppendixA.tex [17
 
 ]
 A. F\"uggel\'ek.
 ------------------------------------------------------------------------------
  A Appendix Title Here
 ------------------------------------------------------------------------------
-) [16
+) [18
 
 ]
 ------------------------------------------------------------------------------
@@ -975,7 +980,7 @@ Underfull \hbox (badness 1062) in paragraph at lines 44--49
 d . ac . uk / teaching / courses / pm / PM-[]lecture1 .
  []
 
-[17
+[19
 
 
 ]
@@ -1002,12 +1007,12 @@ Underfull \hbox (badness 6641) in paragraph at lines 108--115
 h Per-for-mance Com-pu-t-ing App-li-ca-
  []
 
-) [18] (./Thesis.aux) ) 
+) [20] (./Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 9990 strings out of 495046
- 133075 string characters out of 1181965
- 216683 words of memory out of 3000000
- 12883 multiletter control sequences out of 15000+50000
+ 9994 strings out of 495046
+ 133113 string characters out of 1181965
+ 218685 words of memory out of 3000000
+ 12884 multiletter control sequences out of 15000+50000
  13175 words of font info for 49 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  48i,11n,45p,395b,502s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1024,9 +1029,9 @@ xmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive
 /fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type
 1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/public/am
 sfonts/symbols/msam7.pfb>
-Output written on Thesis.pdf (31 pages, 265486 bytes).
+Output written on Thesis.pdf (33 pages, 277839 bytes).
 PDF statistics:
- 419 PDF objects out of 1000 (max. 8388607)
- 60 named destinations out of 1000 (max. 500000)
- 273 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 450 PDF objects out of 1000 (max. 8388607)
+ 63 named destinations out of 1000 (max. 500000)
+ 297 words of extra memory for PDF output out of 10000 (max. 10000000)
 

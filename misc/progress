@@ -1,11 +1,13 @@
 Setting up test environment on astral:
-  - scp -r the NAS directory from simgrid
+  - get NAS benchmarks from its website
   - wget and compile openmpi:
     - newest version (1.7.1) doesn't compile, apparently because of XRC (eXtended Reliable Connection), which is an infiniband-specific transport
       (https://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=4663773)
       a forum post regarding this issue: http://www.open-mpi.org/~jsquyres/www.open-mpi.org/community/lists/users/2013/04/21752.php
     - solution to this: version 1.7 successfully compiled, using that version
     - can't make the openmpi the default mpi implementation, as i don't have permissions to do the necessary operations for that -> will try to use full pathnames to the binaries instead
+    - added path to OpenMPI lib to LD_LIBRARY_PATH (to use the .so shared libraries)
+    - LATER: maybe use current stable version instead of the newest, which is currently 1.6.4
   - wget and compile pdt without problems
     - added .../pdtoolkit-3.19/x86_64/bin to PATH
   - wget and compile papi without problems
@@ -13,3 +15,85 @@ Setting up test environment on astral:
   - wget and compile tau without problems
     - ./configure parameters: -prefix=/panfs/storage/home/s191080/thesis/tau-install -pdt=/panfs/storage/home/s191080/thesis/pdtoolkit-3.19/x86_64/bin -papi=/panfs/storage/home/s191080/thesis/papi-install/bin -mpiinc=/panfs/storage/home/s191080/thesis/openmpi-install/include -mpilib=/panfs/storage/home/s191080/thesis/openmpi-install/lib
     - added .../tau-install/x86_64/bin to PATH
+
+  - compiling the NAS benchmarks
+    - set a bunch of TAU environment variables, according to RR-0407.pdf
+    - configured make.def file in NPB3.3-MPI/config according to RR-0407.pdf
+    - edited .bashrc to configure PATH and LD_LIBRARY_PATH in a way that it excludes the native MPI version and includes the compiled MPI (not sure if necessary and is a bit ugly, but then the default mpi binaries will indeed become the ones I need)
+    - extra tricks: had to edit Makefile.tau-papi-mpi-pdt: had to reconfigure 'gfortran' to 'mpif90' in row 295; also, did a few other edits previously (interchanged gcc and g++ with mpicc and mpicxx in a few places, for example), not sure if they will be problematic or not. Just in case, I saved a backup from the Makefile in my home dir.
+
+  - using the scheduler
+    - .sub file required - samples: /usr/local/commercial/pbs/
+    - had problems running fortran code - had to include a few lines in .bashrc, accordingly to the astral guide
+    - to compile: run the astral guide's lines -> set PATH and LD_LIBRARY_PATH (WITHOUT running the previous again, as they edit them) -> compile
+    - working configuration: impi and ifort loaded, mpif77 compiler
+    - to run: use the full path to mpirun (it doesn't matter what the 'which' command says), set PATH and LD_LIBRARY_PATH in the .sub
+    - machinefile for openMPI:
+      <node name> slots=<no. of slots>
+
+  - changed whole configuration from /panfs/storage/home/s191080/thesis to /panfs/storage/s191080
+
+  - trace_extract: converts tau format to simgrid format - not needed now
+  - trace_gather: gathers traces from different nodes to node with rank 0 - not needed now
+
+  - Paje: to install it, GNUStep is necessary -> for that, a bunch of other libraries (it describes the dependencies when instal fails, if using the so-called startup script)
+    - little nuisance: root LD_LIBRARY_PATH != other user's LD_LIBRARY_PATH -> this caused Debian not to find some libraries (for example libxml2)
+  - Paje is a trace visualization tool
+    - tau traces need to be converted into Paje .trace format -> akypuera's tau2paje tool
+  - akypuera: git clone git://github.com/schnorr/akypuera.git
+    - important cmake parameters: -DCMAKE_INSTALL_PREFIX=...; -DTAU=ON; -DTAU_PATH=...; -DSMPI=OFF
+    - install went without problems
+    - problem: differences between different nodes' system clocks -> receive before corresponding send -> tau2paje gives an error
+
+
+Grid5000:
+ - apply for account
+ - xpflow
+ - set up images (install software on images - on the login node, only mostly results, traces)
+ - script should do everything rh4451#LP
+   - OARSUB script_file
+   - config file format: YAML
+   - metadata about the traces (information about the experiment: when it ran, what nodes were used, ...) should be recorded: in JSON_OUT format
+
+ - What you need for testing (on Grid5000) (see above for some instructions):
+   - MPI (what I used: openMPI 1.6.4)
+   - PAPI
+   - PDT
+   - TAU
+   - akypuera (for tau2paje - George's tau2paje_handlers.c is good to have)
+   - some kind of benchmark: I used NPB
+ - How testing is done:
+   - reserve nodes & deploy the used image on them
+   - compile benchmark
+   - create a file that contains the nodes (only once each)
+         cat $OAR_FILE_NODES > ~/nodefile (contains one node as many times as many cores it has)
+         uniq ~/nodefile > nodefile_uniq
+   ___On the frontend:
+   - broadcast the runnable (for example, to /tmp)
+         taktuk -l root -f ~/nodefile_uniq broadcast put { $NPB_DIR/bin/<executable> } { /tmp }
+   - disable all the cores but one, on each node (other solutions? this is so each machine runs only one MPI process)
+         taktuk -l root -f /home/dlehoczky/nodefile_uniq broadcast exec [ 'for i in /sys/devices/system/cpu/cpu[1-9]*/online; do echo 0 > "${i}" ; done' ]
+     - to check if every node's appropriate nodes have been disabled:
+           taktuk -f ~/nodefile_uniq broadcast exec [ 'cat /proc/cpuinfo' ] | grep process | awk '{if($9>0) print $1}' | uniq | awk -F".fr-" '{print $1".fr"}'
+     #TODO: I already have a script that does all this, but it should be modified to loop until it's sure that every node has only 1 core enabled
+       - other method for checking: command 'htop' on the node we want to check
+   ___From one of the nodes (ssh `head -n 1 $OAR_FILE_NODES`):
+   - run the tests (for example in /tmp if we put the executable there)
+     - it is important to make sure that we use the mpi executable we want by specifying the full path
+           $MPI_ROOT/bin/mpirun
+     - it is important to disable infiniband and use tcp
+           mpirun -mca btl ^openib --mca pml ob1
+   full command:
+         $MPI_ROOT/bin/mpirun -mca btl ^openib --mca pml ob1 -machinefile ~/nodefile_uniq -np <n> /tmp/<executable>
+ - Post-processing:
+   - trace_gather: gathers the trace files from the nodes to one place
+     - some parameters:
+       -f 1: gathers tau traces, not traces that trace_extrace produces (that would be simgrid format)
+       -z 1: compresses traces to tgz file. I don't use it, because it compresses each trace separately, which is inconvenient (maybe I'm doing something wrong? not sure)
+       -a <num>: arity of the tree - not sure about this one
+         $MPI_ROOT/bin/mpirun -machinefile ~/nodefile_uniq -np 8 <path_to_trace_gather> -f 1 -a 4 -m ~/nodefile_uniq
+   - tau_treemerge.pl in the directory where all the traces are
+   - convert to paje format:
+     - optional: can dump STDERR, as it usually produces _a lot_ of "no key available"-type of errors for some reason
+         <path-to-akypuera>/bin/tau2paje tau.trc tau.edf 2>/dev/null >lu.A.8.paje
+   - now we can visualize the result

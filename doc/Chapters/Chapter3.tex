@@ -73,10 +73,10 @@ instrumentation. In order for TAU to collect the traces we need, these
 toolkits have to be deployed and correctly linked with TAU. TAU has
 its own compiler scripts for MPI programs for both Fortran, C and
 C++. After compiling a benchmark using one of these scripts, they will
-generate TAU trace files upon their execution. One trace file (.trc)
+generate TAU trace files upon execution. One trace file (.trc)
 and one event file (.edf) is generated for each MPI process.\\
-We want to visualize the traces so we can compare the RL and SG
-traces more easily. Paje is a visualization tool that can be used for
+It is possible to visualize the traces, in order to compare the RL and SG
+results more easily. Paje is a visualization tool that can be used for
 this purpose. It has its own trace format that it can comprehend, thus
 the TAU traces have to be converted to that. Also, we need to merge
 the traces into one file that we can give to Paje after the
@@ -86,21 +86,21 @@ file. We now only have the task of converting the TAU trace to a Paje
 trace file. Another MPI tracing library, Akypuera provides this
 possibility, having its own tau-to-paje conversion script. Once done,
 we finally have a trace file that Paje can read and display to us.\\
-\#Not sure about the next part...\#
 In the future, it is very likely that more and more tests will have to
 be run in order to verify old and newly implemented features, as well
 as various experiments will be conducted using SMPI to test it against
 various MPI platforms. The main reason of importance of developing a
-systematic testing and validation framework is that it could make the
-previously discussed tedious testing process a lot smoother and
-faster. One of the main features of this framework needs to be the
-automatic trace collection, so the user wouldn't have to collect and
-analyze the data manually. This way, proportionally more tests
-could be run, providing more reliable results with less effort than
-before. Apart from making extensive testing and experimentation more
-straightforward for the developers, a functioning test and validation
-framework would make it easier to reproduce SMPI results, the
-importance of which is discussed above.\\
+more automated way for testing and validation is that it could make the
+previously discussed tedious trace-gathering process a lot smoother
+and faster, with less user interaction. If the process could be
+incorporated into a single workflow, that would make it much easier
+for the user to procure test results. This way, proportionally more
+tests could be run, providing more reliable results with less effort
+than before. Apart from making extensive testing and experimentation
+more straightforward for the developers, a functioning test and
+validation framework would provide a well-documented method, which
+could be used by other researchers to reproduce the achieved results,
+the importance of which is discussed above.\\
 Apart from wanting to simplify this fairly convoluted process of
 getting test results, there are other problems that need to be
 addressed.

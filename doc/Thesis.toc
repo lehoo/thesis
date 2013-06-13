@@ -20,22 +20,25 @@
 \contentsline {section}{\numberline {2.3.}Modelling and Simulation}{4}{section*.9}
 \contentsline {subsection}{\numberline {2.3.1.}Advantages of Modeling}{4}{section*.10}
 \contentsline {subsection}{\numberline {2.3.2.}Analytical and Simulation Models}{5}{section*.10}
-\contentsline {section}{\numberline {2.4.}SimGrid}{5}{section*.10}
-\contentsline {section}{\numberline {2.5.}SMPI}{6}{section*.10}
-\contentsline {section}{\numberline {2.6.}STAR-MPI}{7}{section*.10}
-\contentsline {chapter}{\numberline {3.}Problem Description}{9}{section*.10}
-\contentsline {section}{\numberline {3.1.}Reproducible research}{9}{section*.11}
-\contentsline {section}{\numberline {3.2.}Testing framework}{9}{section*.11}
-\contentsline {section}{\numberline {3.3.}The testing process}{10}{section*.11}
-\contentsline {subsection}{\numberline {3.3.1.}SG traces}{10}{section*.12}
-\contentsline {subsection}{\numberline {3.3.2.}RL traces}{10}{section*.12}
-\contentsline {section}{\numberline {3.4.}Instrumentation overhead}{11}{section*.12}
-\contentsline {section}{\numberline {3.5.}Clock synchronization}{11}{section*.12}
-\contentsline {chapter}{\numberline {4.}Implementation}{12}{section*.12}
-\contentsline {chapter}{\numberline {5.}Evaluation Plan}{13}{section*.12}
-\contentsline {chapter}{\numberline {6.}Results}{14}{section*.12}
-\contentsline {chapter}{\numberline {7.}Conclusion}{15}{section*.12}
+\contentsline {section}{\numberline {2.4.}Off-line and partial on-line simulation}{5}{section*.10}
+\contentsline {subsection}{\numberline {2.4.1.}Off-line simulation}{6}{section*.11}
+\contentsline {subsection}{\numberline {2.4.2.}Partial on-line simulation}{6}{section*.11}
+\contentsline {section}{\numberline {2.5.}SimGrid}{7}{section*.11}
+\contentsline {section}{\numberline {2.6.}SMPI}{8}{section*.11}
+\contentsline {section}{\numberline {2.7.}STAR-MPI}{10}{section*.11}
+\contentsline {chapter}{\numberline {3.}Problem Description}{11}{section*.11}
+\contentsline {section}{\numberline {3.1.}Reproducible research}{11}{section*.12}
+\contentsline {section}{\numberline {3.2.}Testing framework}{11}{section*.12}
+\contentsline {section}{\numberline {3.3.}The testing process}{12}{section*.12}
+\contentsline {subsection}{\numberline {3.3.1.}SG traces}{12}{section*.13}
+\contentsline {subsection}{\numberline {3.3.2.}RL traces}{12}{section*.13}
+\contentsline {section}{\numberline {3.4.}Instrumentation overhead}{13}{section*.13}
+\contentsline {section}{\numberline {3.5.}Clock synchronization}{13}{section*.13}
+\contentsline {chapter}{\numberline {4.}Implementation}{14}{section*.13}
+\contentsline {chapter}{\numberline {5.}Evaluation Plan}{15}{section*.13}
+\contentsline {chapter}{\numberline {6.}Results}{16}{section*.13}
+\contentsline {chapter}{\numberline {7.}Conclusion}{17}{section*.13}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A.}Appendix Title Here}{16}{section*.12}
+\contentsline {chapter}{\numberline {A.}Appendix Title Here}{18}{section*.13}
 \vspace {2em}
-\contentsline {chapter}{Irodalomjegyz\'ek}{17}{section*.12}
+\contentsline {chapter}{Irodalomjegyz\'ek}{19}{section*.13}

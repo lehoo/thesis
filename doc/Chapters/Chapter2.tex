@@ -126,25 +126,112 @@ real-world system that can be executed to reproduce the system's
 behavior. This model is also called a quantitative model, as we can
 get estimates of the modeled system's quantitative attributes, such as
 response time or throughput. In other words, we can use a simulation
-model to conduct performance analysis on a
-system.\cite{h12_1}\cite{h12_13}\\
+model to conduct performance analysis on a system, without actually
+having the actual system at our disposal.\cite{h12_1}\cite{h12_13}\\
 When wanting to get a prediction about how a specific system would
 perform, a theoretical model, in most cases, produces unreliable and
 unrealistic results - it's not feasible for such accurate
-predictions. Most research results are obtained via empirical
-evaluation of experiments.\cite{clq08} For these reasons, we use the
-simulation model in this thesis. As we stated before, such a model can
-be executed, which is called simulation. During simulation, the model
-behaves like the real system would. Such a model contains more aspects
-of the real system, compared to the theoretical model, in order to
-accurately represent the system, while still avoiding unnecessary
-detail.\cite{h12_1} Creating and executing a simulation model is
-complicated, computationally expensive and poses a large number of
+predictions. The vast majority of research results are obtained via
+empirical evaluation of experiments.\cite{clq08} For these reasons, we
+use the simulation model in this thesis. As we stated before, such a
+model can be executed, which is called simulation. During simulation,
+the model is supposed to behave like the real system would. It is hard
+to produce a 100\% accurate simulation, but more and more reliable
+solutions are being developed. The simulation model contains
+more aspects of the real system compared to the theoretical model, in
+order to accurately represent the system, while still avoiding
+unnecessary detail.\cite{h12_1} Creating and executing a simulation
+model is complicated, computationally expensive and poses a number of
 challenges, thus, a good simulation framework can prove of much help
 when conducting experiments.
+\section{Off-line and partial on-line simulation}
+Full simulation - including CPU and network emulation - of a parallel
+application can be, in many cases, even more resource-intensive than
+running real-world experiments. This contradicts the fact that one of
+the most prominent goals of simulation is to observe the behavior of
+such large-scale platforms that aren't available. Thus, there is much
+interest in more efficient simulation approaches. \cite{bdglmqssv13}
+The most widely used of such approaches fall into two categories:
+off-line simulation, which is also called trace-based or post-mortem
+simulation and on-line simulation, which is simulation via direct
+execution.\cite{csgscq11} As in the subject of this thesis, we are
+interested in the simulation of MPI applications, I will talk about
+the two different simulation approaches concentrating specifically on
+that subject.
+\subsection{Off-line simulation}
+For conducting off-line simulation, logs or traces are needed to be
+collected of an execution of the MPI application to be simulated,
+taking place on a
+real-world platform. This is necessary because the obtained traces are
+used as an input for the simulator, which then replays the execution
+traces as if the application was running on the target platform. This
+platform's characteristics may differ from the one's that we obtained
+the traces from, since we may want to use the simulator to predict the
+application's performance on a different system. Thus, there is a need
+to calculate how the target platform would execute the application,
+based on the traces we got on the other platform. The typical approach
+to this problem is to first compute the time intervals between the MPI
+communication operations. During these intervals, local computations
+were conducted, that's why we call these "CPU bursts". During
+simulation, we have to account for the differences between the
+performance of the platforms by modifying the time these CPU bursts
+take. This can be done by simply scaling the time intervals, or by
+using more sophisticated methods, by calculating exactly how the
+application's computational signature and the platform's hardware
+signature relate.\cite{csgscq11} Communication operations, of course,
+also need to be simulated. This is done based on the events recorded
+on the trace, and on the network model of the simulated
+platform.\cite{csgscq11}\\
+As mentioned in \cite{csgscq11}, there are multiple downsides and
+challenges to the off-line approach. On such downside is that when
+wanting to simulate a relatively larger-scale application, the size of
+the obtained traces can be so large, that running the simulation on a
+single node might become a problem. Methods in order to overcome this
+obstacle include a compact representation of the traces in order to
+reduce its size. Another solution is to only consider a carefully
+selected subset of the obtained traces. A big disadvantage when using
+off-line simulation is that because we use the traces as an input to
+the simulator in order to replay the execution of the application, the
+simulation is dependant on the platform we collect the traces
+on. This means that, for example, there can be features in the
+obtained traces that might not be available on the target platform. In
+most cases, it is also necessary that the two platforms have the same
+number of nodes to run the experiment on. Although there has been a
+good amount of research done in the area, MPI itself and also the
+application might alter its behavior depending on problem and message
+size. Because of this, simulating the scaling of an application is a
+very hard, if not impossible task.\cite{bdglmqssv13}
+\subsection{Partial on-line simulation}
+Partial on-line simulation is a different approach. Here, we execute
+the program with no or very little modification on a host platform,
+that tries to mimic the behavior of the target
+platform.\cite{csgscq11} Computational tasks are executed on the
+hardware, but the timing and the delivery of the messages is
+calculated by the simulation environment. Thus, the simulator is
+responsible for mainaining the correct order of the events, both
+computational and communicational.\cite{bdglmqssv13}\\
+A downside of the on-line approach is that since we actually execute
+the code, the resource needs for running the simulation is about as
+high or even higher (in case of needing an extra node to run the
+simulation component, for example) than it is for the actual
+experiment. Techniques have been implemented in order to help
+alleviate this problem. The basic idea is that
+the actual results of the experiments (for example, the result of
+multiplying two matrices) might not be important in our case: we are
+only interested in the \emph{time} it takes to get those results on
+the target platform. This is why methods can be employed which trade
+off accuracy for performance. This idea might not be feasible for
+experiments where data-dependent application behavior is
+vital, but a large portion of benchmarks can be indeed simulated
+this way, providing a reasonably accurate execution profile.\\
+Although slower, on-line simulation is more general than the off-line
+approach, as it does not, in any way depend on some other platform -
+whereas in the case of off-line simulation, as we mentioned before,
+the trace is acquired on a different platform, with maybe specific
+application configurations, thus inevitably bringing dependencies.
 \section{SimGrid}
-For the aforementioned reasons, simulation techniques have been
-historically widely utilised in several areas of computer science,
+For reasons mentioned before, simulation techniques have historically
+been widely utilised in several areas of computer science,
 e.g. microprocessor design, network protocol design. Due to this, a
 lot of effort went into developing the technology and as a result,
 widely used and reliable simulation frameworks have been developed in
@@ -192,9 +279,8 @@ kernel, benefiting from its fast, scalable and validated network
 models. SMPI also extends the existing model with other techniques,
 such as a validated piece-wise linear model for data transfer times
 between cluster nodes. SMPI simulations also account for network
-contention - this is done relying on analytical models, rather than
-packet-level simulation, thus helping the simulation to be fast and
-scalable.\cite{csgscq11}\\
+contention - timing and delivery of the messages are determined using
+the network model of SimGrid.\cite{csgscq11}\\
 Three of the main challenges for simulating an MPI application are:
 \begin{itemize}
 \item Accuracy: The prediction of the real-world execution time (the
@@ -207,24 +293,54 @@ Three of the main challenges for simulating an MPI application are:
   compared to the simulated time (the predicted execution time of the
   real-world application).
 \end{itemize}
-Extensive testing was conducted in \cite{csgscq11} to verify these
-qualities of the framework. In these tests, the OpenMPI and MPICH
-implementations were used to serve as verification benchmarks. The
-results showed that SMPI predicted the execution time of OpenMPI and
+As for simulation methods, SMPI can be used for both off-line and
+on-line simulation, although the emphasis is more on the on-line
+approach, since it's actually a partial implementation of the MPI
+standard in itself, thus making it feasible for executing MPI
+experiments. More specifically, in SMPI, the goal is to be able to
+make such simulations on a single node. The most prominent challenges
+when doing this are the large CPU and memory requirements. SMPI
+provides some special techniques that help overcoming these
+challenges. The basic idea about trading off accuracy for performance
+has already been described in the previous section about on-line
+simulation. SMPI implements multiple such techniques, allowing to run
+experiments with such high resource requirements that would otherwise
+be impossible to fulfill. Such a method in order to reduce CPU usage
+is to run the
+benchmark only on a subset of all the nodes, while in place of running
+the code on the others as well, we just insert the computation time
+that we got previously. Apart from CPU usage, we need to also account
+for the need for memory. A technique for that is "RAM folding": here,
+multiple simulated processes, that in SMPI are, in fact, simple
+threads, use the same reserved memory location, thus overwriting each
+other's data structures. Also, another implemented solution is to
+remove large data array references from the code, with the help of the
+compiler which can result in the complete removal of potentially
+large, now unreferenced arrays. Again, this obviously corrupts the
+results that the experiment program gives, but in the same time helps
+to simulate applications that would use such an amount of memory that
+just wouldn't be physically possible to provide in our testing
+environment, while still providing a reliable estimate of the
+performance.\cite{bdglmqssv13} These features are disabled by default,
+they have to be explicitly enabled by the user.\\
+Extensive testing was conducted in \cite{csgscq11} to verify the
+previously mentioned qualities of the framework. In these tests, the
+OpenMPI and MPICH implementations were used to serve as verification
+benchmarks: the same experiments were run using both MPI
+implementations, as well as simulated with SMPI. The
+results show that SMPI predicted the execution time of OpenMPI and
 MPICH applications for point-to-point, one-to-many and many-to-many
 applications with an average error value of under 10\% in each
-cases. Using techniques to reduce the memory footprint, SMPI tests
-were successfully conducted on a scale of up to 448 processors. As a
-result of the RAM-folding, which was used to reduce the memory
-footprint of the application, the predicted execution times were
+cases. Using the aforementioned techniques to reduce the memory
+footprint, SMPI tests
+were successfully conducted on a scale of up to 448 processors. The
+results showed that the predicted execution times were
 underestimates with an average error value of 18.5\%, which is higher
-than in the previous experiments. We have to note here, though, that
+than in previous experiments without these techniques. We have to note
+here, though, that
 certain tests weren't successful without the RAM-folding techniques,
 due to an out-of-memory error. This shows, that although it poses
-difficulties, reducing the memory usage is vital in SMPI. Also,
-relying on the CPU sampling approach to reduce the number of
-computations in an application, SMPI also manages to reduce simulation
-time by a great margin.\\
+difficulties, reducing the memory usage is vital in SMPI.\\
 As SMPI is an actively developed project alongside SimGrid, there are
 a number of research directions. One major development to the
 project would be a testing framework that would aim to lessen the
