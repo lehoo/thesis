@@ -33,7 +33,7 @@ Setting up test environment on astral:
 
   - changed whole configuration from /panfs/storage/home/s191080/thesis to /panfs/storage/s191080
 
-  - trace_extract: converts tau format to simgrid format - not needed now
+  - trace_extract: extracts time-independent information from the trace + converts tau format to simgrid format - not needed now
   - trace_gather: gathers traces from different nodes to node with rank 0 - not needed now
 
   - Paje: to install it, GNUStep is necessary -> for that, a bunch of other libraries (it describes the dependencies when instal fails, if using the so-called startup script)

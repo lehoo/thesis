@@ -201,6 +201,37 @@ good amount of research done in the area, MPI itself and also the
 application might alter its behavior depending on problem and message
 size. Because of this, simulating the scaling of an application is a
 very hard, if not impossible task.\cite{bdglmqssv13}
+\subsubsection{Time-independent traces}
+Another link that ties the produced trace to the host platform occurs
+when we use timed traces, meaning that each traced event is associated
+to a time-stamp. Since the time delays between the events are specific
+to the platform specification, the simulator has to apply a correction
+factor to these delays when running the simulation on the target
+platform. Thus, the simulator has to know precisely the specification
+of both the host and the target platform, in order to be able to
+calculate this correction factor. Another difficulty regarding that
+comes up regarding this problem is that actually calculating the
+correction factor is a tedious process. It can take a considerable
+amount of time, depending on how similar the host and the target
+platforms are.\cite{dmsq11}\\
+In \cite{dmsq11}, a solution to this problem is proposed:
+time-independent traces. Acquiring time-independent traces means that
+the traces won't contain any timestamps, breaking this link between
+the acquisition and the replay of the traces. In these type of traces,
+for each computation or communication operation, we log the volume of
+the operation (in number of floating point operations or bytes)
+instead of the time the execution took. This type of information, in
+most cases, does not vary depending on the platform the experiment is
+run on. The exceptions are the adaptive MPI applications that modify
+their execution path according to the execution platform.\\
+\cite{ms11} contains a guide describing how to acquire such traces on
+the Grid5000 platform. The guide was used to serve as a base for the
+process on how to acquire traces. Since the work in this thesis is
+mostly related to producing traces for validating on-line simulation,
+in which case time-stamps don't have an influence on the process
+(neither in a positive, nor a negative way), the extraction of
+time-independent information from the traces can be omitted in our
+case.
 \subsection{Partial on-line simulation}
 Partial on-line simulation is a different approach. Here, we execute
 the program with no or very little modification on a host platform,

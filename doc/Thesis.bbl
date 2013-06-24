@@ -1,4 +1,4 @@
-\begin{thebibliography}{15}
+\begin{thebibliography}{27}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -40,8 +40,8 @@ Buntinas D.~Mercier, D. and Gropp, W.
 \newblock URL
   \url{http://linkinghub.elsevier.com/retrieve/pii/S0167819107000786}.
 
-\bibitem[Hillston(2012{\natexlab{a}})]{h12_1}
-Jane, Hillston.
+\bibitem[J.(2012{\natexlab{a}})]{h12_1}
+Hillston, J.
 \newblock Performance modelling and lecture 1 ("modelling and simulation"),
   2012{\natexlab{a}}.
 \newblock URL
@@ -60,12 +60,35 @@ Clauss, P.-N., Stillwell, M., Genaud, S., Suter, F., Casanova, H., and Quinson,
 \newblock In \emph{International Parallel \& Distributed Processing Symposium},
   pages 664--675, May 2011.
 
-\bibitem[Hillston(2012{\natexlab{b}})]{h12_13}
-Jane, Hillston.
+\bibitem[J.(2012{\natexlab{b}})]{h12_13}
+Hillston, J.
 \newblock Performance modelling and lecture 13 ("simulation models:
   Introduction and motivation"), 2012{\natexlab{b}}.
 \newblock URL
   \url{http://www.inf.ed.ac.uk/teaching/courses/pm/PM-lecture1.pdf}.
+
+\bibitem[P. et~al.(2013)P., Degomme, S., A., S., M., M., F., and
+  B.]{bdglmqssv13}
+Bédaride, P., A., Degomme, Genaud, S., Legrand, A., Markomanolis~G., S.,
+  Quinson, M., Stillwell, M., Suter, F., and Videau, B.
+\newblock Improving simulations of mpi applications using a hybrid network
+  model with topology and contention support.
+\newblock 2013.
+
+\bibitem[F. et~al.(2011)F., S., F., and M.]{dmsq11}
+Desprez, F., Markomanolis~G., S., Suter, F., and Quinson, M.
+\newblock Assessing the performance of mpi applications through
+  time-independent trace replay.
+\newblock In \emph{Proceedings of the 2nd International Workshop of Parallel
+  Software Tools and Tool Infrastructures (PSTI)}, pages 467--476, Taipei,
+  Taiwan, September 2011.
+
+\bibitem[Markomanolis and Suter(2011)]{ms11}
+G.~S., Markomanolis and F., Suter.
+\newblock Time-independent trace acquisition framework – a grid'5000 how-to.
+\newblock Technical report, Institut National de Recherche en Informatique et
+  en Automatique, 2011.
+\newblock URL \url{http://hal.inria.fr/inria-00593842}.
 
 \bibitem[A. et~al.(2006)A., X., and K.]{fyl06}
 Faraj, A., Yuan, X., and Lowenthal~D., K.
@@ -91,19 +114,6 @@ Mesirov~J., P.
   \url{http://statlab.bio5.org/foswiki/pub/Main/PapersForClassCPH685/science-r%
 eproducible-research.pdf}.
 
-\bibitem[P. et~al.(2013)P., A., S., A., S., M., M., F., and B.]{bdglmqssv13}
-Bédaride, P., Degomme, A., Genaud, S., Legrand, A., Markomanolis~G., S.,
-  Quinson, M., Stillwell, M., Suter, F., and Videau, B.
-\newblock Improving simulations of mpi applications using a hybrid network
-  model with topology and contention support.
-\newblock 2013.
-
-\bibitem[Markomanolis and Suter(2011)]{ms11}
-G.~S., Markomanolis and F., Suter.
-\newblock \emph{Time-Independent Trace Acquisition Framework – A Grid'5000
-  How-to}, 2011.
-\newblock URL \url{http://hal.inria.fr/inria-00593842}.
-
 \bibitem[Shende and Malony(2006)]{sm06}
 S.~S., Shende and A.~D., Malony.
 \newblock The tau parallel performance system.
@@ -112,5 +122,80 @@ S.~S., Shende and A.~D., Malony.
 \newblock URL
   \url{http://statlab.bio5.org/foswiki/pub/Main/PapersForClassCPH685/science-r%
 eproducible-research.pdf}.
+
+\bibitem[J. et~al.(1999)J., S., C., and G.]{mbdh99}
+Mucci~P., J., Browne, S., Deane, C., and Ho, G.
+\newblock Papi: A portable interface to hardware performance counters.
+\newblock In \emph{Proceedings of Department of Defense HPCMP Users Group
+  Conference}, California, USA, June 1999.
+
+\bibitem[K. et~al.(2001)K., S., J., K., and R.]{lmmsl01}
+London, K., Moore, S., Mucci~P., J., Seymour, K., and Luczak, R.
+\newblock The papi cross-plaftorm interface to hardware performance counters.
+\newblock In \emph{Department of Defense Users' Group Conference Proceedings},
+  Biloxi, Mississippi, USA, June 2001.
+
+\bibitem[A. et~al.(2000)A., J., D., S., B., R., and C.]{lcmsmrr00}
+Lindlan~K., A., Cuny, J., Malony~A., D., Shende, S., Mohr, B., Rivenburgh, R.,
+  and Rasmussen, C.
+\newblock A tool framework for static and dynamic analysis of object-oriented
+  software with templates.
+\newblock In \emph{Supercomputing, ACM/IEEE 2000 Conference}, Dallas, Texas,
+  USA, 2000.
+
+\bibitem[F. et~al.(2012)F., S., and F.]{dms12}
+Desprez, F., Markomanolis~G., S., and Suter, F.
+\newblock Improving the accuracy and efficiency of time-independent trace
+  replay.
+\newblock Technical report, Institut National de Recherche en Informatique et
+  en Automatique, October 2012.
+
+\bibitem[E. et~al.(2000)E., A., M., D., F., A., E., and W.]{wbswpclg00}
+Wu.~C., E., Bolmarcich, A., Snir, M., Wootton, D., Parpia, F., Chan, A., Lusk,
+  E., and Gropp, W.
+\newblock From trace generation to visualization: A performance framework for
+  distributed parallel systems.
+\newblock In \emph{Supercomputing, ACM/IEEE 2000 Conference}, pages 50--67,
+  Dallas, Texas, USA, 2000.
+
+\bibitem[D. et~al.(2009)D., R., F., and C.]{brwl09}
+Becker, D., Rabenseifner, R., Wolf, F., and Linford~J., C.
+\newblock Scalable timestamp synchronization for event traces of
+  message-passing applications.
+\newblock \emph{Parallel Computing}, 35:\penalty0 595--607, 2009.
+
+\bibitem[L.(1992)]{m92}
+Mills~D., L.
+\newblock Network time protocol (version 3).
+\newblock Technical report, The Internet Engineering Task Force - Network
+  Working Group, March 1992.
+
+\bibitem[R. et~al.(2006)R., F., E., M., F., E., Y., S., J., N., G., R., P., B.,
+  O., E., and I.]{bccddjjllmmnpqrtt06}
+Bolze, R., Cappello, F., Caron, E., Daydé, M., Desprez, F., Jeannot, E.,
+  Jégou, Y., Lanteri, S., Leduc, J., Melab, N., Mornet, G., Namyst, R.,
+  Primet, P., Quetier, B., Richard, O., Talbi, E., and Touche, I.
+\newblock Grid'5000: A large scale and highly reconfigurable experimental grid
+  testbed.
+\newblock \emph{International Journal of High Performance Computing
+  Applications}, 20:\penalty0 481--494, November 2006.
+
+\bibitem[N. et~al.(2005)N., G., Y., G., C., G., P., and O.]{xdghmmnr05}
+Capit, N., Da~Costa, G., Georgiou, Y., Huard, G., Martin, C., Mounié, G.,
+  Neyron, P., and Richard, O.
+\newblock A batch scheduler with high level components.
+\newblock In \emph{IEEE International Symposium on Cluster Computing and the
+  Grid}, volume~2, Cardiff, Wales, UK, May 2005.
+
+\bibitem[B. et~al.(2009)B., G., and O.]{chr09}
+Claudel, B., Huard, G., and Richard, O.
+\newblock Taktuk, adaptive deployment of remote executions.
+\newblock In \emph{Proceedings of the International Symposium of High
+  Performance Distributed Computing (HPDC)}, Munich, Germany, June 2009.
+
+\bibitem[E. et~al.(2013)E., L., and L.]{jsn13}
+Jeanvoine, E., Sarzyniec, L., and Nussbaum, L.
+\newblock Kadeploy3: Efficient and scalable operating system provisioning.
+\newblock \emph{Usenix}, 38:\penalty0 38--44, February 2013.
 
 \end{thebibliography}
