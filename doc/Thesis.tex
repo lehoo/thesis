@@ -14,6 +14,35 @@
 \usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
 \hypersetup{urlcolor=blue, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
 
+%%Renewing some commands so they don't appear in Hungarian
+%%names gotten from: %%/usr/share/texmf-texlive/tex/generic/babel/magyar.ldf
+%%modified line 111 there to change how the figure name is displayed
+
+\addto\captionshungarian{%
+  \renewcommand{\listfigurename}%
+    {List of Figures}%
+}
+
+\addto\captionshungarian{%
+  \renewcommand{\listtablename}%
+    {List of Tables}%
+}
+
+\addto\captionshungarian{%
+  \renewcommand{\bibname}%
+    {Bibliography}%
+}
+
+\addto\captionshungarian{%
+  \renewcommand{\contentsname}%
+    {Contents}%
+}
+
+\addto\captionshungarian{%
+  \renewcommand{\figurename}%
+    {Figure}%
+}
+
 %% ----------------------------------------------------------------
 \begin{document}
 \frontmatter      % Begin Roman style (i, ii, iii, iv...) page numbering

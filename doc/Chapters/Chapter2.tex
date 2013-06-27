@@ -4,12 +4,6 @@
 \label{Chapter2}
 \lhead{Chapter 2. \emph{Literature Review}}
 
-simulation: system clocks dont differ
-tau and measurement: delays operations, communications
-smpi: no high-performance networking hardware -> just gigabit ethernet
-make sure to give openmpi/mpich parameters to run gigabit ethernet,
-not infiniband
-
 \section{Introduction}
 In the literature review, we discuss the area of research covered by
 the thesis, citing relevant papers and articles that serve as a base
@@ -20,9 +14,11 @@ about the different implementations of this API, notably OpenMPI and
 MPICH. We discuss the methods of modeling and simulation in general.
 Then, we talk about SimGrid, which is a simulation-based
 framework, and SMPI, the implementation of MPI that runs on top of
-SimGrid. After that, we also describe StarMPI, a set of MPI
-communication routines, presenting a technique that can improve the
-performance of MPI applications.
+SimGrid. While discussing SMPI, we present the idea of a framework
+that would make it possible to automate running tests, trace
+collection and post-processing. After that, we also describe StarMPI,
+a set of MPI communication routines, presenting a technique that can
+improve the performance of MPI applications.
 \section{MPI}
 Distributed computing is a very active and important subject of research
 in computer science, including fields such as cluster computing, grid
@@ -50,7 +46,9 @@ errors. With the utilization of message fragmentation and striping
 over multiple (potentially heterogeneous) network devices, OpenMPI
 provides an increased bandwidth to applications, as well as the
 ability to handle the failure of network devices during
-runtime.\cite{ompi04}
+runtime.\cite{ompi04} On the Grid'5000 cluster, which is used to most
+of the research conducted for this thesis, OpenMPI is the default MPI
+implementation used by the default images.
 \subsection{MPICH}
 MPICH was originally developed during the MPI standards process
 starting in 1992 to provide feedback to the MPI Forum on
@@ -142,8 +140,8 @@ more aspects of the real system compared to the theoretical model, in
 order to accurately represent the system, while still avoiding
 unnecessary detail.\cite{h12_1} Creating and executing a simulation
 model is complicated, computationally expensive and poses a number of
-challenges, thus, a good simulation framework can prove of much help
-when conducting experiments.
+challenges, thus, a good simulation framework (such as SMPI) can prove
+to be of much help when conducting experiments.
 \section{Off-line and partial on-line simulation}
 Full simulation - including CPU and network emulation - of a parallel
 application can be, in many cases, even more resource-intensive than
@@ -155,7 +153,7 @@ The most widely used of such approaches fall into two categories:
 off-line simulation, which is also called trace-based or post-mortem
 simulation and on-line simulation, which is simulation via direct
 execution.\cite{csgscq11} As in the subject of this thesis, we are
-interested in the simulation of MPI applications, I will talk about
+interested only in the simulation of MPI applications, we describe
 the two different simulation approaches concentrating specifically on
 that subject.
 \subsection{Off-line simulation}
@@ -311,7 +309,11 @@ models. SMPI also extends the existing model with other techniques,
 such as a validated piece-wise linear model for data transfer times
 between cluster nodes. SMPI simulations also account for network
 contention - timing and delivery of the messages are determined using
-the network model of SimGrid.\cite{csgscq11}\\
+the network model of SimGrid.\cite{csgscq11} A current limitation in
+SMPI is that it is unable to simulate high-performance networking
+hardware such as Infiniband. Thus, when wanting to compare simulation
+to real-life results, we have to make sure those results were gatheres
+using Gigabit ethernet.\\
 Three of the main challenges for simulating an MPI application are:
 \begin{itemize}
 \item Accuracy: The prediction of the real-world execution time (the

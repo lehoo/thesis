@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.6.2)  23 JUN 2013 16:39
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.6.2)  27 JUN 2013 11:32
 entering extended mode
  %&-line parsing enabled.
 **Thesis.tex
@@ -681,22 +681,22 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 15.
  (./Thesis.aux)
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
 
 (/usr/share/texmf-texlive/tex/latex/ms/ragged2e.sty
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
@@ -720,12 +720,12 @@ LaTeX Info: Redefining \selectfont on input line 125.
 \RaggedRightParindent=\skip79
 \JustifyingParindent=\skip80
 )
-Package caption Info: listings package v1.2 (or newer) detected on input line 1
-8.
+Package caption Info: listings package v1.2 (or newer) detected on input line 4
+7.
 Package caption Info: longtable package v3.15 (or newer) detected on input line
- 18.
-Package caption Info: rotating package v2.0 (or newer) detected on input line 1
-8.
+ 47.
+Package caption Info: rotating package v2.0 (or newer) detected on input line 4
+7.
 
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -749,7 +749,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-Package hyperref Info: Link coloring ON on input line 18.
+Package hyperref Info: Link coloring ON on input line 47.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -759,8 +759,8 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count145
 )
-LaTeX Info: Redefining \ref on input line 18.
-LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \ref on input line 47.
+LaTeX Info: Redefining \pageref on input line 47.
  (./Thesis.out)
 (./Thesis.out)
 \@outlinefile=\write3
@@ -781,18 +781,18 @@ LaTeX Info: Redefining \pageref on input line 18.
 ------------------------------------------------------------------------------
 
 Package hyperref Warning: No destination for bookmark of \addcontentsline,
-(hyperref)                destination is added on input line 74.
+(hyperref)                destination is added on input line 103.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 74.
+LaTeX Font Info:    Try loading font information for U+msa on input line 103.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 74.
+LaTeX Font Info:    Try loading font information for U+msb on input line 103.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 74--74
+Underfull \hbox (badness 10000) in paragraph at lines 103--103
 
  []
 
@@ -880,46 +880,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--74
 ------------------------------------------------------------------------------
  1 Introduction
 ------------------------------------------------------------------------------
-) (./Chapters/Chapter2.tex [1
+) [1
 
 
 
-]
+] (./Chapters/Chapter2.tex [2]
 2. fejezet.
 ------------------------------------------------------------------------------
  2 Literature Review
 ------------------------------------------------------------------------------
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 13.
+(hyperref)                be the same. Added a new anchor on input line 7.
 
-[2
+[3
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 41.
-
-[3]
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 78.
+(hyperref)                be the same. Added a new anchor on input line 37.
 
 [4]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 161.
+(hyperref)                be the same. Added a new anchor on input line 76.
 
-[5] [6] [7]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 279.
+[5]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 159.
+
+[6] [7] [8]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 277.
 
  (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 279.
- [8] [9])
-[10] (./Chapters/Chapter3.tex [11]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 277.
+ [9] [10])
+[11] (./Chapters/Chapter3.tex [12]
 3. fejezet.
 ------------------------------------------------------------------------------
  3 Problem Description
@@ -928,19 +928,19 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 7.
 
-[12
+[13
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 58.
 
-[13]
+[14]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 118.
 
-[14]
+[15]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 167.
@@ -949,60 +949,63 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 167.
 
-[15] [16]
+[16] [17]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 246.
 
-[17]
+[18]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 281.
 
-[18]
-Overfull \hbox (1.05954pt too wide) in paragraph at lines 319--344
+<./Figures/Renater5-g5k.jpg, id=451, 153.9351pt x 115.8729pt>
+File: ./Figures/Renater5-g5k.jpg Graphic file (type jpg)
+
+<use ./Figures/Renater5-g5k.jpg> [19]
+Overfull \hbox (1.05954pt too wide) in paragraph at lines 327--352
 \OT1/cmr/m/n/10.95 A simple grid bro-ker is hand-ling re-source ma-nag-ement at
  grid le-vel, al-lo-wing co-allocation
  []
 
-) [19] (./Chapters/Chapter4.tex [20]
+[20 <./Figures/Renater5-g5k.jpg>]) (./Chapters/Chapter4.tex [21]
 4. fejezet.
 ------------------------------------------------------------------------------
  4 Implementation
 ------------------------------------------------------------------------------
-) (./Chapters/Chapter5.tex [21
+) (./Chapters/Chapter5.tex [22
 
 ]
 5. fejezet.
 ------------------------------------------------------------------------------
  5 Evaluation Plan
 ------------------------------------------------------------------------------
-) (./Chapters/Chapter6.tex [22
+) (./Chapters/Chapter6.tex [23
 
 ]
 6. fejezet.
 ------------------------------------------------------------------------------
  6 Results
 ------------------------------------------------------------------------------
-) (./Chapters/Chapter7.tex [23
+) (./Chapters/Chapter7.tex [24
 
 ]
 7. fejezet.
 ------------------------------------------------------------------------------
  7 Conclusion
 ------------------------------------------------------------------------------
-) (./Appendices/AppendixA.tex [24
+) (./Appendices/AppendixA.tex [25
 
 ]
 A. F\"uggel\'ek.
 ------------------------------------------------------------------------------
  A Appendix Title Here
 ------------------------------------------------------------------------------
-) [25
+) [26
 
 ]
 ------------------------------------------------------------------------------
- Irodalomjegyz\'ek
+ Bibliography
 ------------------------------------------------------------------------------
 (./Thesis.bbl
 Underfull \hbox (badness 1062) in paragraph at lines 44--49
@@ -1010,7 +1013,7 @@ Underfull \hbox (badness 1062) in paragraph at lines 44--49
 d . ac . uk / teaching / courses / pm / PM-[]lecture1 .
  []
 
-[26
+[27
 
 
 ]
@@ -1037,31 +1040,35 @@ Underfull \hbox (badness 6641) in paragraph at lines 118--125
 h Per-for-mance Com-pu-t-ing App-li-ca-
  []
 
-[27]) [28] (./Thesis.aux) ) 
+[28]) [29] (./Thesis.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 10034 strings out of 495046
- 133531 string characters out of 1181965
- 219305 words of memory out of 3000000
- 12900 multiletter control sequences out of 15000+50000
+ 10042 strings out of 495046
+ 133707 string characters out of 1181965
+ 218440 words of memory out of 3000000
+ 12904 multiletter control sequences out of 15000+50000
  13175 words of font info for 49 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 48i,11n,45p,395b,502s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12
-.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/font
-s/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmsl12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/symbols/msam7.pfb>
-Output written on Thesis.pdf (41 pages, 315452 bytes).
+ 48i,11n,45p,395b,508s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/
+texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
+cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam7.
+pfb>
+Output written on Thesis.pdf (42 pages, 395744 bytes).
 PDF statistics:
- 576 PDF objects out of 1000 (max. 8388607)
- 87 named destinations out of 1000 (max. 500000)
- 393 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 586 PDF objects out of 1000 (max. 8388607)
+ 88 named destinations out of 1000 (max. 500000)
+ 398 words of extra memory for PDF output out of 10000 (max. 10000000)
 

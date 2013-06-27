@@ -3,3 +3,47 @@
 \chapter{Introduction}
 \label{Chapter1}
 \lhead{Chapter 1. \emph{Introduction}}
+Distributed computing has become a very important subject in computer
+science. There are multiple types of large-scale distributed
+environments that can be used for either production purposes or for
+research. Parallelism is also used in a lower level, for example in
+graphics processing, where we can have multiple graphics chips in one
+computer to do the task.\\
+When doing distributed computing, communication between the processes
+becomes a very important concern, since it can pose a relatively large
+overhead compared to sequential problem-solving - to make parallelism
+worthwhile, we have to make sure that the speedup provided by the
+distribution of tasks makes up for the communication overhead. To
+achieve this, task distribution needs to be carefully planned and the
+communication protocols are needed to be optimized. A widely utilized
+communication protocol that has been under development for many years
+is provided by the MPI\cite{mpif12} inter-process, language-independent
+communication API. MPI itself is just a specification, it has to be
+implemented. Many such implementations exist, the most widely used
+ones include OpenMPI\cite{ompi04} and MPICH\cite{mpich12}.\\
+Setting up a distributed environment is a complicated endeavour: it
+needs both human and monetary resources. When doing research on
+distributed computing, our needs possibly exceed the use of just one
+single platform: we would like to test how our experiments fare on
+multiple different environments. Such environments are not always at
+our disposal. This is why simulation has become a very important field
+of research. SimGrid\cite{clq08} is a project providing a wide range
+of features in this regard: it is a scientific instrument that can be
+used to simulate large-scale distributed systems in order to study
+their behavior by evaluating and analyzing the results of parallel
+experiments on them. As mentioned before, inter-process communication
+is a very important concern for these experiments. SMPI is a framework
+that is part of the SimGrid project. This framework makes it possible
+to simulate the execution of parallel applications that use the MPI
+standard. This simulation can be done on a single node.\\
+SMPI is a well-documented and working framework, but also an active
+project and as such, under constant development. Extensive testing is
+always needed, as it is very important that the behavior of the
+application is correctly represented by the simulator. This testing
+process is currently very time-consuming. This doesn't only limit the
+number of tests, but also limits the reproducibility of the results
+that are achieved with SMPI. By constructing a framework that
+simplifies the testing process, more reliable and verifiable results
+could be produced, as well as it would make the SMPI project members'
+lives easier. This thesis discusses how such a framework could be
+built and provides an implementation, utilizing \#TODO.
