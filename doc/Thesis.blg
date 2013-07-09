@@ -3,45 +3,45 @@ The top-level auxiliary file: Thesis.aux
 The style file: unsrtnat.bst
 Database file #1: Bibliography.bib
 Warning--empty note in bdglmqssv13
-You've used 27 entries,
+You've used 28 entries,
             2481 wiz_defined-function locations,
-            695 strings with 9848 characters,
-and the built_in function-call counts, 11847 in all, are:
-= -- 886
-> -- 825
-< -- 18
-+ -- 307
-- -- 252
-* -- 969
-:= -- 1945
-add.period$ -- 85
-call.type$ -- 27
-change.case$ -- 56
-chr.to.int$ -- 26
-cite$ -- 28
-duplicate$ -- 575
-empty$ -- 980
-format.name$ -- 285
-if$ -- 2518
+            700 strings with 10029 characters,
+and the built_in function-call counts, 12181 in all, are:
+= -- 914
+> -- 840
+< -- 19
++ -- 313
+- -- 256
+* -- 990
+:= -- 1996
+add.period$ -- 88
+call.type$ -- 28
+change.case$ -- 58
+chr.to.int$ -- 27
+cite$ -- 29
+duplicate$ -- 597
+empty$ -- 1016
+format.name$ -- 292
+if$ -- 2593
 int.to.chr$ -- 2
-int.to.str$ -- 28
-missing$ -- 19
-newline$ -- 147
-num.names$ -- 81
-pop$ -- 261
+int.to.str$ -- 29
+missing$ -- 20
+newline$ -- 152
+num.names$ -- 84
+pop$ -- 274
 preamble$ -- 1
-purify$ -- 27
+purify$ -- 28
 quote$ -- 0
-skip$ -- 340
+skip$ -- 349
 stack$ -- 0
-substring$ -- 381
-swap$ -- 138
+substring$ -- 383
+swap$ -- 141
 text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 189
+type$ -- 196
 warning$ -- 1
-while$ -- 77
+while$ -- 79
 width$ -- 0
-write$ -- 364
+write$ -- 377
 (There was 1 warning)

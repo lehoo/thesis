@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -25,6 +25,12 @@ Gabriel, E., Fagg~G., E., Bosilca, G., Angskun, T., Dongarra~J., J.,
 \newblock Mpich overview, 2012.
 \newblock URL \url{http://www.mpich.org/about/overview/}.
 
+\bibitem[H. et~al.(2008)H., A., and M.]{clq08}
+Casanova, H., Legrand, A., and Quinson, M.
+\newblock Simgrid: a generic framework for large-scale distributed experiments.
+\newblock In \emph{Proceedings of the Tenth International Event on Computer
+  Modeling and Simulation}, pages 126--131, 2008.
+
 \bibitem[R. et~al.(2005)R., R., and W.]{trg05}
 Thakur, R., Rabenseifner, R., and Gropp, W.
 \newblock Optimization of collective communication operations in mpich.
@@ -46,12 +52,6 @@ Hillston, J.
   2012{\natexlab{a}}.
 \newblock URL
   \url{http://www.inf.ed.ac.uk/teaching/courses/pm/PM-lecture1.pdf}.
-
-\bibitem[H. et~al.(2008)H., A., and M.]{clq08}
-Casanova, H., Legrand, A., and Quinson, M.
-\newblock Simgrid: a generic framework for large-scale distributed experiments.
-\newblock In \emph{Proceedings of the Tenth International Event on Computer
-  Modeling and Simulation}, pages 126--131, 2008.
 
 \bibitem[P.-N. et~al.(2011)P.-N., M., S., F., H., and M.]{csgscq11}
 Clauss, P.-N., Stillwell, M., Genaud, S., Suter, F., Casanova, H., and Quinson,
@@ -113,6 +113,12 @@ Mesirov~J., P.
 \newblock URL
   \url{http://statlab.bio5.org/foswiki/pub/Main/PapersForClassCPH685/science-r%
 eproducible-research.pdf}.
+
+\bibitem[T. and L.(2012)]{bn12}
+Buchert, T. and Nussbaum, L.
+\newblock Leveraging business workflows in distributed systems research for the
+  orchestration of reproducible and scalable experiments.
+\newblock In \emph{MajecSTIC 2012}, Lille, France, October 2012.
 
 \bibitem[Shende and Malony(2006)]{sm06}
 S.~S., Shende and A.~D., Malony.

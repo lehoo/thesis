@@ -73,7 +73,7 @@ Grid5000:
          taktuk -l root -f ~/nodefile_uniq broadcast put { $NPB_DIR/bin/<executable> } { /tmp }
    - disable all the cores but one, on each node (other solutions? this is so each machine runs only one MPI process)
          taktuk -l root -f /home/dlehoczky/nodefile_uniq broadcast exec [ 'for i in /sys/devices/system/cpu/cpu[1-9]*/online; do echo 0 > "${i}" ; done' ]
-     - to check if every node's appropriate nodes have been disabled:
+     - to check if every node's appropriate cores have been disabled:
            taktuk -f ~/nodefile_uniq broadcast exec [ 'cat /proc/cpuinfo' ] | grep process | awk '{if($9>0) print $1}' | uniq | awk -F".fr-" '{print $1".fr"}'
      #TODO: I already have a script that does all this, but it should be modified to loop until it's sure that every node has only 1 core enabled
        - other method for checking: command 'htop' on the node we want to check
@@ -88,7 +88,7 @@ Grid5000:
  - Post-processing:
    - trace_gather: gathers the trace files from the nodes to one place
      - some parameters:
-       -f 1: gathers tau traces, not traces that trace_extrace produces (that would be simgrid format)
+       -f 1: gathers tau traces, not traces that trace_extract produces (that would be simgrid format)
        -z 1: compresses traces to tgz file. I don't use it, because it compresses each trace separately, which is inconvenient (maybe I'm doing something wrong? not sure)
        -a <num>: arity of the tree - not sure about this one
          $MPI_ROOT/bin/mpirun -machinefile ~/nodefile_uniq -np 8 <path_to_trace_gather> -f 1 -a 4 -m ~/nodefile_uniq
@@ -97,3 +97,6 @@ Grid5000:
      - optional: can dump STDERR, as it usually produces _a lot_ of "no key available"-type of errors for some reason
          <path-to-akypuera>/bin/tau2paje tau.trc tau.edf 2>/dev/null >lu.A.8.paje
    - now we can visualize the result
+
+useful commands:
+       - connect to a job: oarsub -C <job-id>

@@ -21,14 +21,90 @@ results.\cite{m10} The methodology has to be detailed and precise
 enough so other researchers can repeat the same steps, thus
 reproducing the same results. This is vital in order to provide the
 possibility to verify those results and to fully understand
-them. Reproducing the results also makes for a starting point for
+them. We have to note that in a reproduced experiment, it's not the
+\emph{raw results} that need to be identical: they merely need to fit
+within a statistical margin, compared to the original results, so that
+the \emph{conclusions} derived from them can be the same.\\
+Reproducing the results also makes for a starting point for
 further development, as the described methods used for reproduction
 can be extended to achieve something more or something different in
 the same area of research, or repurposed to gain useful results in a
-completely different area. This subject is relevant to SMPI and one of
-the main goals of the testing and validation framework is to make
-developments in the area.
+completely different area. Reproducibility is a relevant concern in
+the case of SMPI and one of the main goals of the testing and
+validation framework is to make developments in the area.
 \section{Testing framework}
+When specifying the framework, we need to lay down a certain
+set of desired properties that we want our framework to have. The
+following is a brief description of these properties, relying on some
+of the ideas in \cite{bn12}. Some of these attributes will be talked
+about in greater detail later on in this document.
+\paragraph{Scalability}
+We want to create experiments with this framework where if we increase
+the amount of resources (for example, we run the experiment on more
+nodes), then there is no unnecessarily drastic increase in the
+preparation or the execution time, the results remain correct and the
+execution is free of failures. The unavoidable errors need to be
+handled accordingly, providing the user with the necessary details of
+what went wrong.
+\paragraph{Descriptiveness}
+We want to describe our experiments in a top-down approach. This means
+that first, we describe the meaning of the experiment: what its goal
+is. The lower-level details (how the experiment is conducted, what
+tools we use, etc.) are also provided, but they are not necessary to
+understand the purpose of the experiment. Providing the possibility to
+ignore the details helps to quickly understand the different
+experiments, even for newcomers.
+\paragraph{Modularity}
+We want our experiments to be built from independent, interchangeable
+"building blocks". This way, existing experiments can be used as a
+starting point: certain parts can be modified, while others can be
+left in place, creating a workflow that achieves something
+different. Also, modularity helps maintaining the framework: the
+different parts can be modified, improved, or even completely
+rewritten, not affecting the other modules in the tool.
+\paragraph{Reusability}
+This attribute intertwines with \emph{modularity} in the sense that we
+want to be able to reuse certain parts of the experiments when
+creating new ones. This not just eases the work of others in the
+research group, but also provides any researcher the possibility to
+reuse already written code, so they can reproduce our results or
+modify the code to alter the behavior of the workflow.
+\paragraph{Error handling}
+As mentioned in \emph{scalability}, there are unavoidable errors that
+happen from time to time: network issues, unreachable nodes,
+deployment failure, etc. Such errors need to be handled gracefully:
+the program needs to provide information to the user as of why the
+experiment is failing, or why the runtime is prolonged. Whenever
+possible, an attempt to somehow manage the situation has to be made
+before exiting. Such attempt can be multiple retrying, allocation of
+a different set of nodes, etc.
+\paragraph{Minimal human interaction}
+The main goal of this framework is experiment automation. However,
+not all human interaction can be avoided: certain parameters are
+needed to be provided (e.g. the number of nodes, the desired site to
+use, etc.), or manual assessment of the results may be needed to be
+conducted. That said, the goal of the framework is to limit the
+amount of human interaction required to what is absolutely required to
+run the actual experiment.
+\paragraph{Metadata collection}
+The usefulness of the framework can be greatly elevated if it provides
+the possibility of some (even minimal) metadata to be collected about
+the experiment that was run. Such metadata can include the description
+of the goal of the experiment (provided by the researcher), the date
+the experiment was run, the nodes and the operating system images that
+were used. The metadata can be collected and stored in a specific
+location (for example in a database). After a large amount of
+experiments were run, such a collection of data can be queried to
+search for specific results. For example, the results of a specific
+experiments can be collected, compared and maybe visualized, or
+queries about a certain set of nodes can be made in order to find
+faulty ones.\\
+The above list doesn't necessarily include all the technical
+properties of the framework, but it's a list about the most important
+design standpoints taken into consideration. After the bried
+description of these points, we talk about the actual process that we
+are aiming to automate.
+\section{Obtaining traces}
 SMPI is an actively developed project and as such, a lot of tests are
 run and a lot of measurements are taken. Previous papers
 (\cite{csgscq11} \cite{bdglmqssv13}) have shown, amongst other
@@ -54,7 +130,6 @@ traces on the Grid'5000 testbed. Obviously, platform-specific guides
 don't always help with problems arising in an other environment.\\
 Below comes a more detailed description of the process of acquiring
 traces.
-\section{Obtaining traces}
 \subsection{On-line SG traces}
 In order to conduct tests on the simulator, the first step is to
 create the simulated environment. This is done by creating a platform
@@ -118,7 +193,8 @@ environment, thus only related to real-life traces.
 \subsection{Multiple cores on one node}
 Nowadays, it is common for a computer to have multiple processors
 (cores). Because of this, applications have been optimized to increase
-performance by utilizing more than one core. MPI implementations have
+performance by utilizing more than one core if possible. MPI
+implementations have
 also been optimized to migrate threads between cores in certain
 cases. The problem with this is that SMPI is not configured to account
 for the speedup that the utilization of multi-core processors can
@@ -128,18 +204,44 @@ simulation's running time that was done by using SMPI, even if we
 simulated the used platform correctly, we will likely see that SMPI
 overestimated the running time, since it didn't take into account the
 performance increase caused by using multiple cores.\\
-A solution to this problem is to explicitly disable all cores but one
-on every node before running the real-life experiment.\cite{ms11}
-The downsides to doing this are that we need to know the
-platform-specific
+A solution to this problem is to explicitly disable all cores
+but one on every node before running the real-life experiment, as seen
+on figure \ref{fig:disabled_cores}.\cite{ms11} This can be done since
+we only want to run one MPI process on each node, thus the other cores
+won't be utilized by other processes in our experiment. The downsides
+to doing this are that we need to know the platform-specific
 instructions on the nodes which have to be given to disable cores, as
 well as we most likely need root privileges. But if we can use it,
 this method is a simplistic and sure way to solve this problem.\\
 Another possible way to make sure that MPI doesn't make use of having
-multiple cores at its disposal is to specifically bind MPI processes
-to cores. For example for OpenMPI 1.4 and above, this can be done by
+multiple cores at its disposal is to use process binding. For most MPI
+implementations, processes can be bound to nodes (meaning that
+processes can migrate freely among the cores of the node), sockets
+(processes can only migrate between cores in the same processor
+socket) or cores (that is, a process is bound to one core, migration
+is disabled). In our case, we need the latter option: binding
+processes to cores. The difference between disabling the cores and
+this method is that here, none of the cores are disabled - with this
+option, we simply tell MPI to not use migration (figure
+\ref{fig:core_binding}). In OpenMPI 1.4 and above, this can be done by
 using the processor affinity instruction parameter
-\emph{-{}-bind-to-core} when running the application.
+\emph{-{}-bind-to-core} when running the application. In MPICH,
+the option \emph{-binding cores} can be used to enable this feature.
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[scale=0.4]{./Figures/disabled_cores.jpg}
+    \rule{35em}{0.5pt}
+  \caption[Disabled cores]{One core is hosting the MPI process, others are disabled}
+  \label{fig:disabled_cores}
+\end{figure}
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[scale=0.4]{./Figures/bind_to_core.jpg}
+    \rule{35em}{0.5pt}
+  \caption[Core binding]{None of the cores are disabled, but the
+    process is bound to one core, so it doesn't migrate}
+  \label{fig:core_binding}
+\end{figure}
 \subsection{Impact of instrumentation}
 In the context of the collection of traces, "instrumenting" an
 application means specifying what kind of data we need and which
@@ -280,15 +382,15 @@ addresses some other concerns as well. Description details are taken
 from \cite{bccddjjllmmnpqrtt06}.
 \subsubsection{Networking}
 Grid'5000 is a platform currently consisting of 5000 CPUs, distributed
-across 9 different sites in France, connected by high speed
-network. These sites host their own clusters and they are connected
-through the Internet.
+across 9 different sites in France (figure \ref{fig:g5ksites}),
+connected by high speed network. These sites host their own clusters
+and they are connected through the Internet.
 \begin{figure}[htbp]
   \centering
     \includegraphics[scale=2]{./Figures/Renater5-g5k.jpg}
     \rule{35em}{0.5pt}
   \caption[Grid'5000 sites]{The sites of Grid'5000}
-  \label{fig:Electron}
+  \label{fig:g5ksites}
 \end{figure}
 It is very important with regard to the
 experiments that inter-site communication and inter-node communication
