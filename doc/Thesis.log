@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.6.2)  9 JUL 2013 15:59
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.6.2)  10 JUL 2013 17:32
 entering extended mode
  %&-line parsing enabled.
 **Thesis.tex
@@ -918,8 +918,13 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 277.
- [9] [10])
-[11] (./Chapters/Chapter3.tex [12]
+ [9] [10]
+[11]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 412.
+
+[12]) (./Chapters/Chapter3.tex [13]
 3. fejezet.
 ------------------------------------------------------------------------------
  3 Problem Description
@@ -928,7 +933,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 7.
 
-[13
+[14
 
 ]
 
@@ -947,86 +952,90 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 58.
 
-[14] [15]
+[15] [16]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 133.
 
-[16]
+[17]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 193.
+(hyperref)                be the same. Added a new anchor on input line 195.
 
-<./Figures/disabled_cores.jpg, id=462, 456.70625pt x 304.13625pt>
+<./Figures/disabled_cores.jpg, id=510, 456.70625pt x 304.13625pt>
 File: ./Figures/disabled_cores.jpg Graphic file (type jpg)
 
 <use ./Figures/disabled_cores.jpg>
-<./Figures/bind_to_core.jpg, id=463, 456.70625pt x 304.13625pt>
+<./Figures/bind_to_core.jpg, id=511, 456.70625pt x 304.13625pt>
 File: ./Figures/bind_to_core.jpg Graphic file (type jpg)
 
-<use ./Figures/bind_to_core.jpg> [17] [18 <./Figures/disabled_cores.jpg> <./Fig
+<use ./Figures/bind_to_core.jpg> [18] [19 <./Figures/disabled_cores.jpg> <./Fig
 ures/bind_to_core.jpg>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 269.
+(hyperref)                than one, level fixed on input line 271.
 
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 269.
+(hyperref)                be the same. Added a new anchor on input line 271.
 
-[19] [20]
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 348.
-
-[21]
+[20] [21]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 383.
+(hyperref)                be the same. Added a new anchor on input line 350.
 
-<./Figures/Renater5-g5k.jpg, id=503, 153.9351pt x 115.8729pt>
+[22]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 385.
+
+<./Figures/Renater5-g5k.jpg, id=551, 153.9351pt x 115.8729pt>
 File: ./Figures/Renater5-g5k.jpg Graphic file (type jpg)
 
-<use ./Figures/Renater5-g5k.jpg> [22 <./Figures/Renater5-g5k.jpg>]
-Overfull \hbox (1.05954pt too wide) in paragraph at lines 429--454
+<use ./Figures/Renater5-g5k.jpg> [23 <./Figures/Renater5-g5k.jpg>]
+Overfull \hbox (1.05954pt too wide) in paragraph at lines 431--456
 \OT1/cmr/m/n/10.95 A simple grid bro-ker is hand-ling re-source ma-nag-ement at
  grid le-vel, al-lo-wing co-allocation
  []
 
-) [23] (./Chapters/Chapter4.tex [24]
+) [24] (./Chapters/Chapter4.tex [25]
 4. fejezet.
 ------------------------------------------------------------------------------
  4 Implementation
 ------------------------------------------------------------------------------
-) (./Chapters/Chapter5.tex [25
 
-]
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 7.
+
+[26
+
+]) (./Chapters/Chapter5.tex [27]
 5. fejezet.
 ------------------------------------------------------------------------------
  5 Evaluation Plan
 ------------------------------------------------------------------------------
-) (./Chapters/Chapter6.tex [26
+) (./Chapters/Chapter6.tex [28
 
 ]
 6. fejezet.
 ------------------------------------------------------------------------------
  6 Results
 ------------------------------------------------------------------------------
-) (./Chapters/Chapter7.tex [27
+) (./Chapters/Chapter7.tex [29
 
 ]
 7. fejezet.
 ------------------------------------------------------------------------------
  7 Conclusion
 ------------------------------------------------------------------------------
-) (./Appendices/AppendixA.tex [28
+) (./Appendices/AppendixA.tex [30
 
 ]
 A. F\"uggel\'ek.
 ------------------------------------------------------------------------------
  A Appendix Title Here
 ------------------------------------------------------------------------------
-) [29
+) [31
 
 ]
 ------------------------------------------------------------------------------
@@ -1038,39 +1047,39 @@ Underfull \hbox (badness 1062) in paragraph at lines 50--55
 d . ac . uk / teaching / courses / pm / PM-[]lecture1 .
  []
 
-[30
+[32
 
 
-]
-Underfull \hbox (badness 5008) in paragraph at lines 110--116
+] [33]
+Underfull \hbox (badness 5008) in paragraph at lines 164--170
 []\OT1/cmr/m/n/10.95 Mesirov J., P.  Ac-ces-sible re-pro-du-cible re-se-arch.  
 \OT1/cmr/m/it/10.95 Sci-ence Ma-ga-zine\OT1/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 6412) in paragraph at lines 110--116
+Underfull \hbox (badness 6412) in paragraph at lines 164--170
 \OT1/cmr/m/n/10.95 327:415--416, 2010.  URL [][]$\OT1/cmtt/m/n/10.95 http : / /
  statlab . bio5 . org / foswiki / pub / Main /
  []
 
 
-Underfull \hbox (badness 2302) in paragraph at lines 124--131
+Underfull \hbox (badness 2302) in paragraph at lines 178--185
 []\OT1/cmr/m/n/10.95 S. S., Shende and A. D., Ma-lony.  The tau pa-ral-lel per-
 for-mance sys-
  []
 
 
-Underfull \hbox (badness 6641) in paragraph at lines 124--131
+Underfull \hbox (badness 6641) in paragraph at lines 178--185
 \OT1/cmr/m/n/10.95 tem.  \OT1/cmr/m/it/10.95 In-ter-na-ti-o-nal Jour-nal of Hig
 h Per-for-mance Com-pu-t-ing App-li-ca-
  []
 
-[31]) [32] (./Thesis.aux) ) 
+[34]) [35] (./Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 10065 strings out of 495046
- 134163 string characters out of 1181965
- 218571 words of memory out of 3000000
- 12919 multiletter control sequences out of 15000+50000
+ 10088 strings out of 495046
+ 134437 string characters out of 1181965
+ 219981 words of memory out of 3000000
+ 12930 multiletter control sequences out of 15000+50000
  13175 words of font info for 49 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  48i,11n,45p,395b,508s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1087,9 +1096,9 @@ e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-tex
 live/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/
 type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/publi
 c/amsfonts/symbols/msam7.pfb>
-Output written on Thesis.pdf (45 pages, 435765 bytes).
+Output written on Thesis.pdf (48 pages, 455936 bytes).
 PDF statistics:
- 639 PDF objects out of 1000 (max. 8388607)
- 94 named destinations out of 1000 (max. 500000)
- 464 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 700 PDF objects out of 1000 (max. 8388607)
+ 106 named destinations out of 1000 (max. 500000)
+ 512 words of extra memory for PDF output out of 10000 (max. 10000000)
 

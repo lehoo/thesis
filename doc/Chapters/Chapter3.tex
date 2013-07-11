@@ -36,7 +36,7 @@ validation framework is to make developments in the area.
 When specifying the framework, we need to lay down a certain
 set of desired properties that we want our framework to have. The
 following is a brief description of these properties, relying on some
-of the ideas in \cite{bn12}. Some of these attributes will be talked
+of the ideas in \cite{bn12_1}. Some of these attributes will be talked
 about in greater detail later on in this document.
 \paragraph{Scalability}
 We want to create experiments with this framework where if we increase
@@ -166,21 +166,23 @@ file. We now only have the task of converting the TAU trace to a Paje
 trace file. Another MPI tracing library, Akypuera provides this
 possibility, having its own tau-to-paje conversion script. Once done,
 we finally have a trace file that Paje can read and display to us.\\
+This process is made up of multiple steps. It's repetitive and prone
+to errors, which causes frustration and unnecessarily delays testing.
 In the future, it is very likely that more and more tests will have to
 be run in order to verify old and newly implemented features, as well
 as various experiments will be conducted using SMPI to test it against
 various MPI platforms. The main reason of importance of developing an
 automated way for testing and validation is that it could make the
 previously discussed tedious trace-gathering process a lot smoother
-and faster, with less user interaction. If the process could be
-incorporated into a single workflow, that would make it much easier
-for the user to procure test results. This way, proportionally more
-tests could be run, providing more reliable results with less effort
-than before. Apart from making extensive testing and experimentation
-more straightforward, a functioning test and
-validation framework would provide a well-documented method, which
-could be used by other researchers to reproduce the achieved results,
-the importance of which is discussed above.
+and faster, with less user interaction, thus less delay and
+frustration. If the process could be incorporated into a single
+workflow, proportionally more tests could be run, providing more
+reliable results with less effort than before. Apart from making
+extensive testing and experimentation more straightforward, a
+functioning test and validation framework would provide a
+documented method, which could be used by other researchers to
+reproduce the achieved results, the importance of which has already
+been discussed above.
 \section{Tracing-related problems}
 Apart from wanting to simplify the previously described, fairly
 convoluted process of getting results, there are other problems

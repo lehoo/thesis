@@ -1,4 +1,4 @@
-\begin{thebibliography}{28}
+\begin{thebibliography}{35}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -90,6 +90,60 @@ G.~S., Markomanolis and F., Suter.
   en Automatique, 2011.
 \newblock URL \url{http://hal.inria.fr/inria-00593842}.
 
+\bibitem[B. and O.(2008)]{vr08}
+Videau, B. and Richard, O.
+\newblock {Expo} : un moteur de conduite d'expériences pour plates-forme
+  dédiées.
+\newblock In \emph{Conférence Française en Systèmes d'Exploitation (CFSE)},
+  2008.
+
+\bibitem[T. et~al.(2009)T., M., I., and G.]{rosj09}
+Rakotoarivelo, T., Ott, M., Seskar, I., and Jourjon, G.
+\newblock Omf: a control and management framework for networking testbeds.
+\newblock In \emph{SOSP Workshop on Real Overlays and Distributed Systems
+  (ROADS '09)}, page~6, Big Sky, USA, October 2009.
+
+\bibitem[T. and L.(2012{\natexlab{a}})]{bn12_2}
+Buchert, T. and Nussbaum, L.
+\newblock {Using business workflows to improve quality of experiments in
+  distributed systems research}.
+\newblock In \emph{{SC12 - SuperComputing 2012 (poster session)}}, Salt Lake
+  City, United States, August 2012{\natexlab{a}}.
+\newblock URL \url{http://hal.inria.fr/hal-00724312}.
+
+\bibitem[E. et~al.(2005)E., G., M.-H., J., Y., C., G., K., G., J., A., C., and
+  S.]{dssbgkmvbgljk05}
+Deelman, E., Singh, G., Si, M.-H., Blythe, J., Gil, Y., Kesselman, C., Mehta,
+  G., Vahi, K., Berriman~B., G., Good, J., Laity, A., Jacob~J., C., and
+  Katz~D., S.
+\newblock Pegasus: a framework for mapping complex scientific workflows onto
+  distributed systems.
+\newblock \emph{Scientific Programming Journal}, 13:\penalty0 219--237, 2005.
+
+\bibitem[I. et~al.(2004)I., C., E., M., B., and S.]{abjjlm04}
+Altintas, I., Berkley, C., Jaeger, E., Jones, M., Ludascher, B., and Mock, S.
+\newblock Kepler: An extensible system for design and execution of scientific
+  workflows.
+\newblock In \emph{16th International Conference on Scientific and Statistical
+  Database Management}, Santorini Island, Greece, June 2004.
+
+\bibitem[K. et~al.(2013)K., R., D., A., D., S., S., I., A., P., J., K., F., A.,
+  de~la Hidalga~A., B., S., and C.]{whfwwsdnfbbbhnvsg13}
+Wolstencroft, K., Haines, R., Fellows, D., Williams, A., Withers, D., Owen, S.,
+  Soiland-Reyes, S., Dunlop, I., Nenadic, A., Fisher, P., Bhagat, J.,
+  Belhajjame, K., Bacall, F., Hardisty, A., Nieva~de~la, Hidalga~A., Vargas
+  M.~P., B., Sufi, S., and Goble, C.
+\newblock The taverna workflow suite: designing and executing workflows of web
+  services on the desktop, web or in the cloud.
+\newblock \emph{Nucleic Acids Research}, 41:\penalty0 557--561, May 2013.
+
+\bibitem[M. et~al.(2010)M., D., and E.]{skd10}
+Sonntag, M., Karastoyanova, D., and Deelman, E.
+\newblock Bridging the gap between business and scientific workflows: Humans in
+  the loop of scientific workflows.
+\newblock In \emph{e-Science (e-Science), 2010 IEEE Sixth International
+  Conference on}, pages 206--213. IEEE, 2010.
+
 \bibitem[A. et~al.(2006)A., X., and K.]{fyl06}
 Faraj, A., Yuan, X., and Lowenthal~D., K.
 \newblock Star-mpi: Self tuned adaptive routines for mpi collective operations.
@@ -114,11 +168,11 @@ Mesirov~J., P.
   \url{http://statlab.bio5.org/foswiki/pub/Main/PapersForClassCPH685/science-r%
 eproducible-research.pdf}.
 
-\bibitem[T. and L.(2012)]{bn12}
+\bibitem[T. and L.(2012{\natexlab{b}})]{bn12_1}
 Buchert, T. and Nussbaum, L.
 \newblock Leveraging business workflows in distributed systems research for the
   orchestration of reproducible and scalable experiments.
-\newblock In \emph{MajecSTIC 2012}, Lille, France, October 2012.
+\newblock In \emph{MajecSTIC 2012}, Lille, France, October 2012{\natexlab{b}}.
 
 \bibitem[Shende and Malony(2006)]{sm06}
 S.~S., Shende and A.~D., Malony.

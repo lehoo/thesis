@@ -26,38 +26,44 @@
 \contentsline {subsection}{\numberline {2.4.2.}Partial on-line simulation}{8}{section*.11}
 \contentsline {section}{\numberline {2.5.}SimGrid}{9}{section*.11}
 \contentsline {section}{\numberline {2.6.}SMPI}{10}{section*.11}
-\contentsline {section}{\numberline {2.7.}STAR-MPI}{12}{section*.11}
-\contentsline {chapter}{\numberline {3.}Problem Description}{13}{section*.11}
-\contentsline {section}{\numberline {3.1.}Reproducible research}{13}{section*.12}
-\contentsline {section}{\numberline {3.2.}Testing framework}{14}{section*.12}
-\contentsline {paragraph}{Scalability}{14}{section*.13}
-\contentsline {paragraph}{Descriptiveness}{14}{section*.13}
-\contentsline {paragraph}{Modularity}{14}{section*.14}
-\contentsline {paragraph}{Reusability}{14}{section*.14}
-\contentsline {paragraph}{Error handling}{14}{section*.14}
-\contentsline {paragraph}{Minimal human interaction}{15}{section*.14}
-\contentsline {paragraph}{Metadata collection}{15}{section*.14}
-\contentsline {section}{\numberline {3.3.}Obtaining traces}{15}{section*.14}
-\contentsline {subsection}{\numberline {3.3.1.}On-line SG traces}{16}{section*.15}
-\contentsline {subsection}{\numberline {3.3.2.}RL traces}{16}{section*.15}
-\contentsline {section}{\numberline {3.4.}Tracing-related problems}{17}{section*.15}
-\contentsline {subsection}{\numberline {3.4.1.}Multiple cores on one node}{17}{section*.16}
-\contentsline {subsection}{\numberline {3.4.2.}Impact of instrumentation}{19}{section*.16}
-\contentsline {paragraph}{Time overhead}{19}{section*.17}
-\contentsline {paragraph}{Impact on hardware counter values}{19}{section*.17}
-\contentsline {subsection}{\numberline {3.4.3.}Clock synchronization}{20}{section*.17}
-\contentsline {section}{\numberline {3.5.}Environment}{21}{section*.17}
-\contentsline {subsection}{\numberline {3.5.1.}The importance of testbeds}{21}{section*.18}
-\contentsline {subsection}{\numberline {3.5.2.}Architecture of Grid'5000}{21}{section*.18}
-\contentsline {subsubsection}{\numberline {3.5.2.1.}Networking}{22}{section*.19}
-\contentsline {subsubsection}{\numberline {3.5.2.2.}User view and data management}{23}{section*.19}
-\contentsline {subsubsection}{\numberline {3.5.2.3.}Experiment scheduling}{23}{section*.19}
-\contentsline {subsubsection}{\numberline {3.5.2.4.}Node reconfiguration}{24}{section*.19}
-\contentsline {chapter}{\numberline {4.}Implementation}{25}{section*.19}
-\contentsline {chapter}{\numberline {5.}Evaluation Plan}{26}{section*.19}
-\contentsline {chapter}{\numberline {6.}Results}{27}{section*.19}
-\contentsline {chapter}{\numberline {7.}Conclusion}{28}{section*.19}
+\contentsline {section}{\numberline {2.7.}Experimentation tools}{11}{section*.11}
+\contentsline {section}{\numberline {2.8.}Workflows}{12}{section*.11}
+\contentsline {subsection}{\numberline {2.8.1.}Scientific workflows}{12}{section*.12}
+\contentsline {subsection}{\numberline {2.8.2.}Business workflows}{13}{section*.12}
+\contentsline {section}{\numberline {2.9.}STAR-MPI}{13}{section*.12}
+\contentsline {chapter}{\numberline {3.}Problem Description}{14}{section*.12}
+\contentsline {section}{\numberline {3.1.}Reproducible research}{14}{section*.13}
+\contentsline {section}{\numberline {3.2.}Testing framework}{15}{section*.13}
+\contentsline {paragraph}{Scalability}{15}{section*.14}
+\contentsline {paragraph}{Descriptiveness}{15}{section*.14}
+\contentsline {paragraph}{Modularity}{15}{section*.15}
+\contentsline {paragraph}{Reusability}{15}{section*.15}
+\contentsline {paragraph}{Error handling}{15}{section*.15}
+\contentsline {paragraph}{Minimal human interaction}{16}{section*.15}
+\contentsline {paragraph}{Metadata collection}{16}{section*.15}
+\contentsline {section}{\numberline {3.3.}Obtaining traces}{16}{section*.15}
+\contentsline {subsection}{\numberline {3.3.1.}On-line SG traces}{17}{section*.16}
+\contentsline {subsection}{\numberline {3.3.2.}RL traces}{17}{section*.16}
+\contentsline {section}{\numberline {3.4.}Tracing-related problems}{18}{section*.16}
+\contentsline {subsection}{\numberline {3.4.1.}Multiple cores on one node}{18}{section*.17}
+\contentsline {subsection}{\numberline {3.4.2.}Impact of instrumentation}{20}{section*.17}
+\contentsline {paragraph}{Time overhead}{20}{section*.18}
+\contentsline {paragraph}{Impact on hardware counter values}{20}{section*.18}
+\contentsline {subsection}{\numberline {3.4.3.}Clock synchronization}{21}{section*.18}
+\contentsline {section}{\numberline {3.5.}Environment}{22}{section*.18}
+\contentsline {subsection}{\numberline {3.5.1.}The importance of testbeds}{22}{section*.19}
+\contentsline {subsection}{\numberline {3.5.2.}Architecture of Grid'5000}{22}{section*.19}
+\contentsline {subsubsection}{\numberline {3.5.2.1.}Networking}{23}{section*.20}
+\contentsline {subsubsection}{\numberline {3.5.2.2.}User view and data management}{24}{section*.20}
+\contentsline {subsubsection}{\numberline {3.5.2.3.}Experiment scheduling}{24}{section*.20}
+\contentsline {subsubsection}{\numberline {3.5.2.4.}Node reconfiguration}{25}{section*.20}
+\contentsline {chapter}{\numberline {4.}Implementation}{26}{section*.20}
+\contentsline {section}{\numberline {4.1.}An example process}{26}{section*.21}
+\contentsline {section}{\numberline {4.2.}XPflow}{27}{section*.21}
+\contentsline {chapter}{\numberline {5.}Evaluation Plan}{28}{section*.21}
+\contentsline {chapter}{\numberline {6.}Results}{29}{section*.21}
+\contentsline {chapter}{\numberline {7.}Conclusion}{30}{section*.21}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A.}Appendix Title Here}{29}{section*.19}
+\contentsline {chapter}{\numberline {A.}Appendix Title Here}{31}{section*.21}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{30}{section*.19}
+\contentsline {chapter}{Bibliography}{32}{section*.21}

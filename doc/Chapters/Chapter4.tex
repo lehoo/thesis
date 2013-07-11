@@ -2,6 +2,50 @@
 
 \chapter{Implementation}
 \label{Chapter4}
-To reiterate the more detailed description of trace acquisition, an
-example process that we would like to automate is: ...\#
 \lhead{Chapter 4. \emph{Implementation}}
+
+\section{An example process}
+To reiterate the more detailed description of trace acquisition, an
+example process that we would like to automate consists of the
+following steps, assuming that we already have a customized image set
+up for our tests, as well as we already have an executable benchmark
+application we'd like to run:
+\begin{itemize}
+\item allocate the specified number of nodes on a specified site
+\item deploy our custom image on the allocated nodes
+\item create a nodefile containing the names of the allocated nodes
+\item broadcast the runnable across the nodes
+\item disable all cores but one on every allocated node (see 3.4.1 for
+  explanation)
+\item run the mpi experiment from a chosen "head" node (can be any of
+  the allocated nodes)
+\item gather the traces from the allocated nodes to the head node
+\item merge the traces
+\item convert merged trace file to Paje format
+\end{itemize}
+As a side note: in this example, we assume that we are working on the
+Grid'5000 testbed. As previously mentioned, most of the work regarding
+this thesis was conducted there.\\
+As for the example process: parameters that the user can give to it
+are the number of nodes, the chosen Grid'5000 site, the image to
+deploy, the runnable and parameters to mpirun (for example to disable
+Infiniband) and the trace\_gather script. The nodefile created in the
+3rd step is necessary for the operations that are needed to do
+something on all the allocated nodes.\\
+Now let's take a look at the experimentation engine we'd like to use
+for implementing the framework to automate processes like this.
+\section{XPflow}
+In 2.8.2, we already discussed business workflows, foreshadowing the
+fact that XPflow, the tool used to implement our framework, is based
+on that approach, which includes Business Process Modeling and
+Management. There are 2 main concepts in XPflow\cite{bn12_2}:
+\begin{itemize}
+\item Process: It is the high-level description of the experiment,
+  written in a DSL, which is embedded in Ruby. Processes are
+  responsible for orchestrating activities and other processes,
+  creating a workflow.
+\item Activities: The low-level building blocks of the
+  experiments. They are written in Ruby and used for implementing the
+  lower-level details of the experiment, to do the "real work" in it
+  (for example: manage files, start the MPI job).
+\end{itemize}

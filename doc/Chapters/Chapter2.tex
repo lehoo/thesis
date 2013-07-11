@@ -11,7 +11,7 @@ of ideas for this document.\\
 First, we talk about the Message-Passing Interface (MPI), the parallel
 programming API used for the purposes of this thesis. We also talk
 about the different implementations of this API, notably OpenMPI and
-MPICH. We discuss the methods of modeling and simulation in general.
+MPICH. We discuss the methods of modelling and simulation in general.
 Then, we talk about SimGrid, which is a simulation-based
 framework, and SMPI, the implementation of MPI that runs on top of
 SimGrid. While discussing SMPI, we present the idea of a framework
@@ -73,7 +73,7 @@ real system by taking only the aspects of it that are relevant to the
 system's behavior into account. Once constructed, such a model becomes
 a tool with which we can investigate the behavior of the
 system.\cite{h12_1}
-\subsection{Advantages of Modeling}
+\subsection{Advantages of Modelling}
 Modelling and simulation techniques have been used extensively in
 parallel computing and is an ongoing research topic, with new
 challenges continuously arising. There are various reasons for its
@@ -380,10 +380,84 @@ project would be a testing framework that would aim to lessen the
 burdens of testing as much as possible. The goal is to provide a
 unified method to set up experiments across different environments and
 to do it with as little necessary adjustments on user part as
-possible. Another direction is related to the optimization of the
-framework's performance, with the utilisation of ideas from the
-STAR-MPI project.
+possible.
+\section{Experimentation tools}
+Experiment orchestration and process automation is not a new
+idea. There exist multiple tools for doing this. Among others, such
+tools are Expo\cite{vr08}, Plush, OMF\cite{rosj09} or the
+Grid5000-specific g5k-campaign. The problem is that most of these
+tools use a bottom-up design, meaning that in order to understand and
+use the experiments, the user has to understand the lower-level
+building blocks first. A top-down approach would make it possible to
+start the design of the experiment with a high-level description, then
+work our way down to the lower level details while implementing. There
+already exists an approach like this, in Business Process
+Management (BPM).\cite{bn12_2} Before talking about BPM though, let's
+take a glance at workflows in general.
+\section{Workflows}
+When talking about a framework to automate MPI experiments, we are
+essentially talking about creating workflows: we connect multiple
+steps, making it possible to execute them in a chain, with no or
+minimal user interaction during the process. In the application level,
+workflows are abstract in the sense that the workflow only describes
+the goal of the experiment, its components and its dependencies. Lower
+level implementation details are hidden from the user of the
+workflow. This provides the possibility of changing the implementation
+without having to change the high-level workflow description - as long
+as the new implementation still has the properties that are written in
+the description.\cite{dssbgkmvbgljk05}
+In the subject of workflows, there are two main approaches that we
+will discuss: scientific workflows and the previously mentioned
+business workflows.
+\subsection{Scientific workflows}
+Scientific analyses often have to be conducted in several different
+hardware and software environments. Exporting and importing data from
+and to different environments can be a tedious task, slowing down the
+work process, forcing researchers to divide their efforts between
+computation management and their actual research. This is the main
+reason scientific workflows are widely used in various different
+scientific domains: they are a formalization of the ad-hoc
+process that a scientist has to go through in order to get from raw
+data to publishable results. Since the raw data to be analyzed can be
+large, heterogeneous and complex, the process can be computationally
+intensive and produce derived data formats, which is one of the main
+differences between scientific and business
+workflows.\cite{abjjlm04}\\
+There are several tools that help in experiment design, mapping of
+computing resources to the workflow and handling exceptional
+situations. Some of the more well-known tools include
+Kepler\cite{abjjlm04}, Pegasus\cite{dssbgkmvbgljk05} and
+Taverna\cite{whfwwsdnfbbbhnvsg13}.\\
+Scientific workflows are well suited for managing computation on
+\emph{a priori} available data or data queried from public
+databases. However, it's not well suited to cases when data
+acquisition is actually part of the workflow process, or in other
+words, when the source of the data is the computer system
+itself. They are also data flow-driven, which is not true in the case
+of our processes that we want to automate. This makes scientific
+workflows not optimal for research conducted in computer science.
+\subsection{Business workflows}
+Business workflow management systems are usually based on agreed-upon
+standards in order to facilitate communication between different
+software systems and companies. The workflow logic is control
+flow-driven and includes constructs to specify paths and
+conditions.\cite{skd10} The top-down approach it uses is what can make
+it viable in our case: in Business Process Management, the first step
+is to understand the organization. Then we can model its processes as
+workflows and execute and monitor these processes. While monitoring,
+we can spot defects and work out ways to improve the organizational
+activities, as well as we can redesign the processes to make them
+cheaper, faster and less defective.\cite{bn12_2}\\
+This approach can be utilized in the domain of experiment
+orchestration, making business workflows a viable choice when
+approaching our problem. An experimentation engine with the goal of
+implementing this idea is XPflow\cite{bn12_2}. This engine was used to
+implement the test automation framework in this thesis and will be
+discussed in a bit more detail later on in this document.
 \section{STAR-MPI}
+Another research direction in SMPI is related to the optimization of
+the framework's performance, with the utilisation of ideas from the
+STAR-MPI project.
 Self-Tuned Adaptive Routines for MPI Collective Operations (STAR-MPI)
 is a set of MPI collective communication routines that are capable of
 dynamically adapting to system architecture and application
