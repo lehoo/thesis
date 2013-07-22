@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.6.2)  10 JUL 2013 17:32
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.6.2)  15 JUL 2013 15:16
 entering extended mode
  %&-line parsing enabled.
 **Thesis.tex
@@ -678,7 +678,11 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \c@vec@elem=\count138
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 15.
- (./Thesis.aux)
+ (./Thesis.aux
+
+LaTeX Warning: Label `fig:disabled_cores' multiply defined.
+
+)
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
@@ -697,8 +701,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
 LaTeX Font Info:    ... okay on input line 47.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 47.
 LaTeX Font Info:    ... okay on input line 47.
-
-(/usr/share/texmf-texlive/tex/latex/ms/ragged2e.sty
+ (/usr/share/texmf-texlive/tex/latex/ms/ragged2e.sty
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
 
 (/usr/share/texmf-texlive/tex/latex/ms/everysel.sty
@@ -962,11 +965,11 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 195.
 
-<./Figures/disabled_cores.jpg, id=510, 456.70625pt x 304.13625pt>
+<./Figures/disabled_cores.jpg, id=511, 456.70625pt x 304.13625pt>
 File: ./Figures/disabled_cores.jpg Graphic file (type jpg)
 
 <use ./Figures/disabled_cores.jpg>
-<./Figures/bind_to_core.jpg, id=511, 456.70625pt x 304.13625pt>
+<./Figures/bind_to_core.jpg, id=512, 456.70625pt x 304.13625pt>
 File: ./Figures/bind_to_core.jpg Graphic file (type jpg)
 
 <use ./Figures/bind_to_core.jpg> [18] [19 <./Figures/disabled_cores.jpg> <./Fig
@@ -989,7 +992,7 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 385.
 
-<./Figures/Renater5-g5k.jpg, id=551, 153.9351pt x 115.8729pt>
+<./Figures/Renater5-g5k.jpg, id=552, 153.9351pt x 115.8729pt>
 File: ./Figures/Renater5-g5k.jpg Graphic file (type jpg)
 
 <use ./Figures/Renater5-g5k.jpg> [23 <./Figures/Renater5-g5k.jpg>]
@@ -1009,7 +1012,11 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 
 [26
 
-]) (./Chapters/Chapter5.tex [27]
+] <./Figures/xpflow_example1.jpg, id=577, 589.20125pt x 114.4275pt>
+File: ./Figures/xpflow_example1.jpg Graphic file (type jpg)
+
+<use ./Figures/xpflow_example1.jpg>) (./Chapters/Chapter5.tex [27 <./Figures/xp
+flow_example1.jpg>]
 5. fejezet.
 ------------------------------------------------------------------------------
  5 Evaluation Plan
@@ -1074,31 +1081,35 @@ Underfull \hbox (badness 6641) in paragraph at lines 178--185
 h Per-for-mance Com-pu-t-ing App-li-ca-
  []
 
-[34]) [35] (./Thesis.aux) ) 
+[34]) [35] (./Thesis.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 10088 strings out of 495046
- 134437 string characters out of 1181965
- 219981 words of memory out of 3000000
- 12930 multiletter control sequences out of 15000+50000
+ 10094 strings out of 495046
+ 134599 string characters out of 1181965
+ 220020 words of memory out of 3000000
+ 12935 multiletter control sequences out of 15000+50000
  13175 words of font info for 49 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  48i,11n,45p,395b,508s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12
-.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/font
-s/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmsl12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/symbols/msam7.pfb>
-Output written on Thesis.pdf (48 pages, 455936 bytes).
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/
+texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
+cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam7.
+pfb>
+Output written on Thesis.pdf (48 pages, 467156 bytes).
 PDF statistics:
- 700 PDF objects out of 1000 (max. 8388607)
+ 702 PDF objects out of 1000 (max. 8388607)
  106 named destinations out of 1000 (max. 500000)
- 512 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 517 words of extra memory for PDF output out of 10000 (max. 10000000)
 

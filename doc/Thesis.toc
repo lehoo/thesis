@@ -18,7 +18,7 @@
 \contentsline {subsection}{\numberline {2.2.1.}OpenMPI}{4}{section*.9}
 \contentsline {subsection}{\numberline {2.2.2.}MPICH}{4}{section*.9}
 \contentsline {section}{\numberline {2.3.}Modelling and Simulation}{4}{section*.9}
-\contentsline {subsection}{\numberline {2.3.1.}Advantages of Modeling}{5}{section*.10}
+\contentsline {subsection}{\numberline {2.3.1.}Advantages of Modelling}{5}{section*.10}
 \contentsline {subsection}{\numberline {2.3.2.}Analytical and Simulation Models}{5}{section*.10}
 \contentsline {section}{\numberline {2.4.}Off-line and partial on-line simulation}{6}{section*.10}
 \contentsline {subsection}{\numberline {2.4.1.}Off-line simulation}{7}{section*.11}

@@ -5,6 +5,7 @@
 \lhead{Chapter 4. \emph{Implementation}}
 
 \section{An example process}
+\label{sec:example_process}
 To reiterate the more detailed description of trace acquisition, an
 example process that we would like to automate consists of the
 following steps, assuming that we already have a customized image set
@@ -49,3 +50,53 @@ Management. There are 2 main concepts in XPflow\cite{bn12_2}:
   lower-level details of the experiment, to do the "real work" in it
   (for example: manage files, start the MPI job).
 \end{itemize}
+Lets take a look at how these concepts are used through
+examples, while uncovering a few other possibilities of XPflow.
+\subsection{A general example}
+First, we examine an example of transforming general, everyday
+activities transformed into XPflow (\ref{fig:xpflow_example1}).
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[scale=0.7]{./Figures/xpflow_example1.jpg}
+  \caption[dayum]{Morning routine in XPflow}
+  \label{fig:xpflow_example1}
+\end{figure}
+On the diagram, circles represent the starting and end point of the
+process, the rectangles represent activities and the whole diagram
+represents a process.\\
+In XPflow, it is possible to execute activities sequentially or in
+parallel. An example for sequential execution on
+\ref{fig:xpflow_example1} is drinking coffee: the activities preceding
+it must all be finished before that activity can be
+started. On the contrary, setting up the coffeemaker and taking a
+shower can be executed in parallel, since it's not necessary to stand
+by the coffeemaker while it finishes - we can take a shower while it's
+running.
+\subsection{An MPI experiment example}
+After the generic introduction, let's take a look at how we could
+represent the experiment we described in section
+\ref{sec:example_process} in XPflow. The representation can be seen on
+\ref{fig:xpflow_example2}.
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[scale=0.7]{./Figures/xpflow_example2.jpg}
+  \caption[dayum]{An MPI experiment in XPflow}
+  \label{fig:xpflow_example2}
+\end{figure}
+On this representation, there is no parallel execution like in the
+previous example: one activity has to be executed sequentially after
+the other, the activities depend on each other. However, as we can
+see, some of the activities are distinguished by the text
+"forall(nodes)" above them. This means that we iterate through all the
+allocated nodes, executing the activity on all of them. This is done
+in parallel.\\
+As a side note: in the current implementation, this kind of iteration
+is realized not
+specifically by XPflow, but by the parallel launching tool mentioned
+in \ref{sec:experiment_scheduling}, Taktuk\cite{chr09}. This is simply
+because it was simpler to implement it that way, because this is a
+known and stable solution, while XPflow is under heavy development
+currently, thus its internals are subject to change. However, it could
+be done with XPflow-specific funcionalities as well. In the long term,
+using XPflow-specific funcionality would make the framework more
+generic (less Grid'5000-specific).
