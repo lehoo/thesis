@@ -43,15 +43,23 @@ activity :try_map do |map|
   end
 end
 
+activity :try_date do
+  d = Date.today
+  log "date: #{d}"
+  d = DateTime.now
+  log "datetime: #{d}"
+
+  t1 = Time.now
+  log "time1: #{t1}"
+  sleep 10
+  t2 = Time.now
+  log "time2: #{t2}"
+  diff = t2 - t1
+  log "difference: #{diff}"
+end
+
 process :main do
-  map = { }
-  map["tr"] = "haz"
-  begin
-    run :try_map, map
-  rescue ArgumentError => e
-    log "baywatch"
-  end
-  log "kakalin"
+  run :try_date
 end
 
 main :main

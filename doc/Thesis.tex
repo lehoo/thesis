@@ -11,7 +11,9 @@
 \usepackage[english, hungarian]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
-\usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
+\usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for
+                     % "blackboard" style bold vectors in maths
+\usepackage{zref-xr}
 \hypersetup{urlcolor=blue, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
 
 %%Renewing some commands so they don't appear in Hungarian
@@ -41,6 +43,11 @@
 \addto\captionshungarian{%
   \renewcommand{\figurename}%
     {Figure}%
+}
+
+\newcommand{\methodname}[1] {
+\\[0.2cm]
+\ttfamily #1\normalfont
 }
 
 %% ----------------------------------------------------------------
@@ -77,7 +84,8 @@
 
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
-I, AUTHOR NAME, declare that this thesis titled, `THESIS TITLE' and the work presented in it are my own. I confirm that:
+I, Attila Döme Lehóczky, declare that this thesis titled, `Validation
+and improvement of the SMPI simulation framework for MPI applications' and the work presented in it are my own. I confirm that:
 
 \begin{itemize}
 \item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a research degree at this University.
@@ -124,8 +132,35 @@ If the quote is taken from someone, their name goes here
 \abstract{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
-The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
-
+Simulation has become increasingly popular in the scientific community
+lately because of its many advantages over using real systems in
+certain situations. Such an advantage is, for example, that we don't
+need to devote lots of money and other resources on acquiring the -
+possibly large - system we need for our experiments, or that we can
+easily switch between configurations, producing experiment results on
+more than one such system without a large overhead. SimGrid is a
+generic simulation framework, which can be used to simulate multiple
+kinds of distributed systems, such as Clouds, Grids or clusters. MPI
+is an inter-process communication
+protocol, one of the most prominently used in distributed computing
+currently. SMPI is a framework that connects SimGrid and MPI: it's
+part of the SimGrid project with the goal of simulating MPI
+applications in a simulated environment. SMPI is currently under heavy
+development. Creating generic network models is an ongoing effort and
+it is one of the development directions that gets the most focus by
+the development team. This process needs a lot of validation, which is
+done by running real-life MPI benchmarks (using possibly multiple
+different implementations), as well as running the same benchmarks
+with SMPI. The results can be used to check how accurate the
+simulation was. Currently, this testing process consists of multiple
+different steps. It's tedious, repetitive work, but as mentioned
+before, it's necessary. This thesis is about the
+implementation of a framework for automating such tests, introducing
+as much automation into the process as possible, providing the
+possibility to create test workflows that can be run with minimal user
+interaction. The goal is to speed up the testing process, making it
+possible to acquire proportionally more test results, thus helping the
+development team to make progress.
 }
 
 \clearpage  % Abstract ended, start a new page

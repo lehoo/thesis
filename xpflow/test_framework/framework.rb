@@ -7,17 +7,22 @@ require '../test_framework/helper_library'
 
 $engine.import_library(HelperLibrary.new, :lib)
 
-#reserve and deploy process
-process :reserve_and_deploy do |n, t, site, env, nodefile|
+process :init do
+  run :lib.init
+end
+
+process :reserve_and_deploy do |n, t, site, image, nodefile|
+  run :lib.init_ok
   run :lib.set_site, site
   log 'reserving...'
-  r = run g5k.reserve_nodes, :nodes => n, :time => t, :site => site, :type => 'deploy', :keep => true
+  r = run g5k.reserve_nodes, :nodes => n, :time => t,
+    :site => site, :type => 'deploy', :keep => true
   run :lib.set_job, r
 
   log "deploying..."
-  run g5k.deploy, r, :env => env
-
+  run g5k.deploy, r, :env => image
   log "deployment complete"
+  run :lib.set_image, image
 
   nodes = run :g5k.nodes, r
   run :lib.set_nodes, nodes
@@ -101,4 +106,8 @@ activity :disable_cores do
   end
 
   run 'lib.rm', nodefile_working_copy
+end
+
+process :finish do
+  run :lib.finish
 end

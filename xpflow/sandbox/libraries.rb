@@ -51,9 +51,9 @@ $engine.import_library(A.new, :alib)
 #  * this is how almost *all* builtin features are implemented
 
 process :example do
-    run :alib.log_state()
-    run :alib.trigger_state
-    run :alib.log_state()
+    #run :alib.log_state()
+    #run :alib.trigger_state
+    #run :alib.log_state()
 end
 
 main do

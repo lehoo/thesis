@@ -3,6 +3,36 @@
 \chapter{Introduction}
 \label{Chapter1}
 \lhead{Chapter 1. \emph{Introduction}}
+Simulation has become increasingly popular in the scientific community
+lately because of its many advantages over using real systems in
+certain situations. Such an advantage is, for example, that we don't
+need to devote lots of money and other resources on acquiring the -
+possibly large - system we need for our experiments, or that we can
+easily switch between configurations, without having to worry about
+how to modify it or how to obtain a new one. SimGrid is a
+generic simulation framework, which can be used to simulate multiple
+kinds of distributed systems, such as Clouds, Grids or clusters. MPI
+is an inter-process communication protocol, one of the most
+prominently used in distributed computing currently. SMPI is a
+framework that connects SimGrid and MPI: it's part of the SimGrid
+project with the goal of running MPI applications in a simulated
+environment. SMPI is currently under heavy development. Creating
+generic network models is an ongoing effort and it is one of the
+development directions that gets the most focus by the development
+team. The development process needs continuous validation, which is
+done by running real-life MPI benchmarks (using possibly multiple
+different implementations), as well as running the same benchmarks
+with SMPI. The results can be used to check how accurate the
+simulation was. Currently, this testing process consists of multiple
+different, manually performed steps. It's tedious, repetitive work,
+but as mentioned before, it's necessary. This thesis is about the
+implementation of a framework for automating such tests, introducing
+as much automation into the process as possible, providing the
+possibility to create test workflows that can be run with minimal user
+interaction. The goal is to speed up the testing process, making it
+possible to acquire proportionally more test results, thus helping the
+development team to make progress.
+\\
 Distributed computing has become a very important subject in computer
 science. There are multiple types of large-scale distributed
 environments that can be used for either production purposes or for
@@ -32,19 +62,53 @@ of features in this regard: it is a scientific instrument that can be
 used to simulate large-scale distributed systems in order to study
 their behavior by evaluating and analyzing the results of parallel
 experiments run with the simulator. As mentioned before, inter-process
-communication
-is a very important concern for these experiments. SMPI is a framework
-that is part of the SimGrid project. This framework makes it possible
-to simulate the execution of parallel applications that use the MPI
-standard. This simulation can be done on a single node.\\
+communication is a very important concern for these experiments. SMPI
+is a framework that is part of the SimGrid project. This framework
+makes it possible to simulate the execution of parallel applications
+that use the MPI standard. This simulation can be done on a single
+node.\\
+SMPI is a framework that has been validated in the past by experiment
+results. Such results have been documented and published, for example
+in \cite{csgscq11}. Results are needed to be reproducible, by
+providing that the conducted experiments are repeatable. However,
+currently, the testing process to procure such results
+consists of multiple steps, many of them being manual configuration
+steps, such as the allocating of nodes, the creation of a file
+containing the allocated nodes or the distribution of the benchmark's
+runnable between the nodes. These tedious test processes lack a
+universal, user-friendly guide to help other researchers reproduce the
+acquired results in order to do further validation. Such a guide would
+also help in repurposing, extending our experiments by changing
+parameters, switching the underlying configuration, etc. Providing the
+possibility to easily repeat the experiments conducted for our paper
+is very important: our goal when writing a paper is not only to
+announce our results but also to convince our readers that our results
+are correct.\cite{m10} The best way to prove that we are right is if
+we provide a straightforward way for anyone to repeat our experiments
+and to see for themselves that our results stand.\\
 SMPI is a well-documented and working framework, but also an active
-project and as such, under constant development. Extensive testing is
-always needed, as it is very important that the behavior of the
-application is correctly represented by the simulator. This testing
-process is currently very time-consuming. This doesn't only limit the
-number of tests, but also limits the reproducibility of the results
-that are achieved with SMPI. By constructing a framework that
+project and as such, it is under constant development. Currently, a
+lot of resources are spent on developing generic network models for
+the simulator. Extensive testing is needed for the development
+process, since continuous validation is necessary to see whether or
+not we are heading in the right direction, whether or not the
+simulator correctly represents the real-world behavior. This
+testing process, as previously mentioned, is currently very
+time-consuming. This doesn't only limit the number of tests that can
+be run, but also limits the reproducibility of the
+results that are achieved with SMPI, the importance of which has been
+discussed in the previous paragraph. By constructing a framework that
 simplifies the testing process, more reliable and verifiable results
 could be produced, as well as it would make the SMPI project members'
-lives easier. This thesis discusses how such a framework could be
-built and provides an implementation, utilizing \#TODO.
+lives easier. It is important to include as much automation in the
+framework as possible, since other researchers that want to repeat the
+experiments might not be computer experts. Our processes can't be
+fully automated though. For example, certain parameters, such as the
+runnable, or the number of nodes to allocate have to be set - but we
+aim to keep such non-automated steps minimal.\\
+This thesis discusses how such a framework could be built and provides
+an implementation, utilizing the XPflow\cite{bn12_2} experimentation
+engine. XPflow is a fairly new project, constantly under development,
+but it's fairly stable and suitable for our project. It's designed to
+help automating experiments, utilizing a top-down approach taken from
+business workflows.

@@ -4,40 +4,33 @@
 \label{Chapter3}
 \lhead{Chapter 3. \emph{Problem Description}}
 
-\section{Reproducible research}
-New scientific ideas, developments and results are only useful when
-they are documented and published. It is vital that results are
-announced, so others can be aware of the latest developments on their
-field of research. This helps in creating a linked data cloud, used by
-scientists to incorporate various output of other research into their
-own, using previous results as "stepping stones" to achieve something
-new.\cite{babbccrddg10} But simply publishing results is not enough in
-order for others to make use of them. Besides announcing the
-achievements, the other goal of scientific publications is to convince
-the readers that the results it presents are correct. Besides
-theoretical reasoning, papers in experimental science should provide a
-documented methodology describing how the author has gotten to those
-results.\cite{m10} The methodology has to be detailed and precise
-enough so other researchers can repeat the same steps, thus
-reproducing the same results. This is vital in order to provide the
-possibility to verify those results and to fully understand
-them. We have to note that in a reproduced experiment, it's not the
-\emph{raw results} that need to be identical: they merely need to fit
-within a statistical margin, compared to the original results, so that
-the \emph{conclusions} derived from them can be the same.\\
-Reproducing the results also makes for a starting point for
-further development, as the described methods used for reproduction
-can be extended to achieve something more or something different in
-the same area of research, or repurposed to gain useful results in a
-completely different area. Reproducibility is a relevant concern in
-the case of SMPI and one of the main goals of the testing and
-validation framework is to make developments in the area.
+In this chapter, we approach the problem regarding the creation of our
+framework from different aspects. First, we describe the most
+important attributes we'd like the framework to have. After that, we
+talk about how trace collection is done, elaborating on the current
+manual process of obtaining real-life (RL) traces, illustrating why
+it's repetitive error-prone, thus emphasizing the need of
+automation. After that, we shed light on some obstacles regarding
+tracing, such as tracing overhead or clock synchronization
+problems. While discussing these, we also mention some possible ways
+of overcoming these obstacles.
 \section{Testing framework}
+As we previously discussed, there are two main reasons why a test
+automation framework is needed by the SMPI project. It's a fact that
+the current process is undocumented, long, repetitive and
+error-prone. Thus,
+\begin{itemize}
+\item the heavy development that is currently ongoing in the SMPI
+  project is impeded, since development brings with it a constant need
+  for validation, which is done by running test.
+\item The effort required to reproduce research results related to
+  SMPI are needed to be minimized.
+\end{itemize}
 When specifying the framework, we need to lay down a certain
-set of desired properties that we want our framework to have. The
+set of desired properties that we want it to have. The
 following is a brief description of these properties, relying on some
-of the ideas in \cite{bn12_1}. Some of these attributes will be talked
-about in greater detail later on in this document.
+of the ideas in \cite{bn12_1}. Some of these attributes will be
+elaborated on in greater detail later on in this document.
 \paragraph{Scalability}
 We want to create experiments with this framework where if we increase
 the amount of resources (for example, we run the experiment on more
@@ -130,12 +123,7 @@ traces on the Grid'5000 testbed. Obviously, platform-specific guides
 don't always help with problems arising in an other environment.\\
 Below comes a more detailed description of the process of acquiring
 traces.
-\subsection{On-line SG traces}
-In order to conduct tests on the simulator, the first step is to
-create the simulated environment. This is done by creating a platform
-file that can be fine-tuned to model the desired system. \#maybe
-detail how a platform file looks like?\#
-\subsection{RL traces}
+\subsection{Real-life (RL) traces}
 As talked about in detail in \cite{ms11}, conducting RL tests involves
 multiple steps. RL test data collection is done by collecting traces
 of MPI benchmarks. Currently, the favored tool in trace collection in
@@ -193,6 +181,7 @@ the most prominent traps that could potentially compromise our
 results. Note that these are problems that come up in a real
 environment, thus only related to real-life traces.
 \subsection{Multiple cores on one node}
+\label{multiple_cores}
 Nowadays, it is common for a computer to have multiple processors
 (cores). Because of this, applications have been optimized to increase
 performance by utilizing more than one core if possible. MPI
@@ -345,137 +334,12 @@ making such a correction, CLC makes certain precautions, since
 after the modification of individual timestamps, the length of
 intervals between events in the immediate vicinity of the affected
 event might change, as well as new clock violations might be
-introduced.
-\section{Environment}
-\subsection{The importance of testbeds}
-Most Grids that are deployed at a large scale are production platforms
-inappropriate for research: such Grids mostly have an environment
-that's been
-set up specifically for the owner's purposes. Such a system would most
-probably need some amount of reconfiguration in order to make it
-feasible for what we would like to do, which might influence the
-behavior of the system. Another concern is that running experiments on
-the platform might cause delays, or even disruption in the
-service the Grid is originally used for. Obviously, this is most
-probably not acceptable for the owner of the Grid. This is why it is
-important to make a distinction between production Grids and Grids
-that are made for testing purposes, or "testbeds". Because testbeds
-are specifically made for researchers to run experiments on, using up
-resources is not that much of a concern as it would be on a production
-platform. Since other people might be using the same platform, there
-are of course still some limits as to how much resources one user can
-utilize, but these limits are not so strict and are much more prone to
-negotiation. As previously mentioned, another important factor is that
-the nodes we are working on should be reconfigurable: we need to be
-able to make customizations to set
-up our testing environment. We need to be able to install and
-uninstall programs. Root access should not be necessary when doing
-tests, but it can make things easier. Deep control and monitoring
-mechanisms are also needed (not just in one node, but across multiple
-nodes) in order to be able to track our experiments.\\
-Simulation with SMPI can be done on any system, since it only needs
-one node but in order to run RL experiments, such a testbed is
-needed. Most of the work related to this thesis has been done on the
-Grid'5000 platform.\cite{bccddjjllmmnpqrtt06}
-\subsection{Architecture of Grid'5000}
-Below, we discuss some of the architecture aspects of Grid'5000 to
-show how it fulfills our previously mentioned needs, as well as how it
-addresses some other concerns as well. Description details are taken
-from \cite{bccddjjllmmnpqrtt06}.
-\subsubsection{Networking}
-Grid'5000 is a platform currently consisting of 5000 CPUs, distributed
-across 9 different sites in France (figure \ref{fig:g5ksites}),
-connected by high speed network. These sites host their own clusters
-and they are connected through the Internet.
-\begin{figure}[htbp]
-  \centering
-    \includegraphics[scale=2]{./Figures/Renater5-g5k.jpg}
-    \rule{35em}{0.5pt}
-  \caption[Grid'5000 sites]{The sites of Grid'5000}
-  \label{fig:g5ksites}
-\end{figure}
-It is very important with regard to the
-experiments that inter-site communication and inter-node communication
-are unrestricted and don't weigh any overhead on the
-experiments. Thus, all communication can be done without any
-constraints between sites. But
-as for security, we have to take into account the following: if a
-node is fully reconfigurable by the researcher, that means we
-can't make any assumptions about the configuration of the security
-mechanisms on an allocated node, thus, we have to assume that they are
-unprotected. This is the reasoning behind the decision that sites
-themselves (thus, of course, the nodes they are hosting) are not
-directly connected to the Internet, making Grid'5000 an isolated
-domain. This way, the sites are protected against DoS attacks.\\
-It is possible to open restricted routes through the Internet to
-external clusters, which provides the possibility of doing
-multiplatform experiments.
-\subsubsection{User view and data management}
-As previously mentioned, communication is done with minimal
-restrictions between Grid'5000 machines, meaning that authentication
-procedures in such cases is also minimal: a user has a single account
-across the whole platform. An LDAP directory is installed to provide
-this in a reliable way. Every site runs an LDAP server. These servers
-have the same root and there is a branch for every site. On a given
-site, the local administrator has read-write access, as well as is
-able to manage user accounts.\\
-A user has access to all of the Grid'5000 sites and services
-(monitoring tools, wiki, deployment, etc.). The user also has an
-independent home directory at every site as well. Synchronization can
-be done with any of the standard tools, such as \emph{rsync},
-\emph{scp}, or \emph{sftp}. Data transfers to the outside world are
-restricted - it can only be done via secure tools such as \emph{scp}
-in order to prevent identity spoofing. Authentication is done via a
-user-generated public key, in order to prevent brute-force attacks.
-\subsubsection{Experiment scheduling}
-\label{sec:experiment_scheduling}
-At cluster level, the OAR\cite{xdghmmnr05} resource management system is
-used to handle the scheduling of experiments and resource
-allocation. Large-scale operations such as parallel task launching or
-monitoring is handled by a specialized parallel launching tool,
-Taktuk\cite{chr09}. Taktuk is a handy tool which can be used from the
-console to, for example, perform a certain set of tasks on multiple
-nodes.\\
-A simple grid broker is handling resource management at grid
-level, allowing co-allocation of nodes on multiple
-clusters. Co-allocation is a very simple process for the user who,
-after submitting an experiment needing several sets of nodes across
-different clusters, receives an identifier from the broker which can
-be used to retrieve all necessary information about the allocated
-nodes.\\
-Node reconfiguration, talked about in more detail below, co-operates
-with the resource management system at certain points. Such a point is
-that when a user submits an experiment that requires node
-reconfiguration, the job submission is registered in a queue. Also, in
-the prologue script that runs before the actual experiment, deployment
-rights are given to the user which gives him/her the capability to
-deploy system images on the allocated nodes. An epilogue script runs
-after the experiment, revoking these rights. After the experiment is
-finished, all of the allocated nodes are rebooted, deploying a default
-environment, to provide a constant, unified system to run experiments
-on that don't need node reconfiguration.
-\subsubsection{Node reconfiguration}
-Node reconfiguration on Grid'5000 is handled in a very user-friendly
-way, using a tool called Kadeploy3\cite{jsn13}. For every user, a set
-of default environments is available at start. After starting an
-interactive job (that is, a job that requires node reconfiguration),
-the user can deploy any of these environments by providing the chosen
-image's name to Kadeploy3. Deployment usually takes only a few minutes
-to complete - deployment time increases if we do the deployment on
-more nodes. After this, the nodes are rebooted and the user can log
-onto any of the nodes where an image was successfully deployed. When
-logged in, the user can freely customize the environment: he/she can
-install or remove software, modify configuration files, etc. - root
-password is given to Grid'5000 users as well to provide more
-possibilities. After reconfiguring the environment, the user has the
-the possibility of saving the now customized image. This image
-includes all software layers from OS to application levels, just as it
-was for the default environments. The home directory is independent of
-the image. After successfully saving an image, the user can deploy it
-on the allocated nodes the same way he/she did for the default
-images. This way, an environment tailored for the specific needs of
-the user only needs to be created once, then it can be freely reused
-on any other node on the site at a later time. When trying to port an
-image created on one site to another site, there can be compatibility
-issues due to inter-site differences. Modifications to the customized
-image can be done with ease.
+introduced.\\[0.5cm]
+In this chapter, we talked about the reasoning behind why we need a
+trace automation framework. We described certain attributes that we
+want our tool to have, as well as the current trace collection method
+that we'd like to make easier and more straightforward. We also
+depicted some of the obstacles that we need to pay attention to when
+collecting traces, as well as methods to overcome them. In the next
+chapter, we'll discuss more specific details about the implementation
+of the framework.

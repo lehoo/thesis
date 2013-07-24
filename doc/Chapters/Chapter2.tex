@@ -4,7 +4,6 @@
 \label{Chapter2}
 \lhead{Chapter 2. \emph{Literature Review}}
 
-\section{Introduction}
 In the literature review, we discuss the area of research covered by
 the thesis, citing relevant papers and articles that serve as a base
 of ideas for this document.\\
@@ -16,9 +15,11 @@ Then, we talk about SimGrid, which is a simulation-based
 framework, and SMPI, the implementation of MPI that runs on top of
 SimGrid. While discussing SMPI, we present the idea of a framework
 that would make it possible to automate running tests, trace
-collection and post-processing. After that, we also describe StarMPI,
-a set of MPI communication routines, presenting a technique that can
-improve the performance of MPI applications.
+collection and post-processing. In connection to this framework, we
+talk about workflows as a means to automate our experiments and
+whether scientific or business workflows are more suitable for
+us. We also talk about the importance of reproducible research, which
+is another argument for constructing such a framework.
 \section{MPI}
 Distributed computing is a very active and important subject of research
 in computer science, including fields such as cluster computing, grid
@@ -444,32 +445,65 @@ flow-driven and includes constructs to specify paths and
 conditions.\cite{skd10} The top-down approach it uses is what can make
 it viable in our case: in Business Process Management, the first step
 is to understand the organization. Then we can model its processes as
-workflows and execute and monitor these processes. While monitoring,
+workflows and execute and monitor them. While monitoring,
 we can spot defects and work out ways to improve the organizational
 activities, as well as we can redesign the processes to make them
-cheaper, faster and less defective.\cite{bn12_2}\\
+cheaper and faster.\cite{bn12_2}\\
 This approach can be utilized in the domain of experiment
 orchestration, making business workflows a viable choice when
 approaching our problem. An experimentation engine with the goal of
 implementing this idea is XPflow\cite{bn12_2}. This engine was used to
 implement the test automation framework in this thesis and will be
 discussed in a bit more detail later on in this document.
-\section{STAR-MPI}
-Another research direction in SMPI is related to the optimization of
-the framework's performance, with the utilisation of ideas from the
-STAR-MPI project.
-Self-Tuned Adaptive Routines for MPI Collective Operations (STAR-MPI)
-is a set of MPI collective communication routines that are capable of
-dynamically adapting to system architecture and application
-workload. The main idea lays in a technique called "delayed
-finalization of MPI collective communication routines" (DF). For each
-operation, STAR-MPI maintains a set of communication algorithms. The
-aim is to postpone the decision of which algorithm to use until after
-the platform and/or the application are known. This technique bears
-the potential of platform-specific or application-specific
-optimalization of an MPI application.\cite{fyl06}\\
-A development idea for SMPI is to apply the same technique there,
-thus, in a sense, to "implement" STAR-MPI in SMPI. A set of
-potentially choosable algorithms could be implemented alongside a set
-of selector mechanisms. With the right mechanisms, the performance of
-SMPI could greatly improve.
+\section{Reproducible research}
+New scientific ideas, developments and results are only useful when
+they are documented and published. It is vital that results are
+announced, so others can be aware of the latest developments on their
+field of research. This helps in creating a linked data cloud, used by
+scientists to incorporate various output of other research into their
+own, using previous results as "stepping stones" to achieve something
+new.\cite{babbccrddg10} But simply publishing results is not enough in
+order for others to make use of them. Besides announcing the
+achievements, the other goal of scientific publications is to convince
+the readers that the results it presents are correct. Besides
+theoretical reasoning, papers in experimental science should provide a
+documented methodology describing how the author has gotten to those
+results.\cite{m10} The methodology has to be detailed and precise
+enough so other researchers can repeat the same steps, thus
+reproducing the same results. This is vital in order to provide the
+possibility to verify those results and to fully understand
+them. We have to note that in a reproduced experiment, it's not the
+\emph{raw results} that need to be identical: they merely need to fit
+within a statistical margin, compared to the original results, so that
+the \emph{conclusions} derived from them can be the same.\\
+Reproducing the results also makes for a starting point for
+further development, as the described methods used for reproduction
+can be extended to achieve something more or something different in
+the same area of research, or repurposed to gain useful results in a
+completely different area. Reproducibility is a relevant concern in
+the case of SMPI and one of the main goals of the testing and
+validation framework is to make developments in the area.\\[0.5cm]
+In this chapter, we reviewed the background material to the general
+concepts related to this thesis. We talked about the MPI inter-process
+communication API and its two different implementations: OpenMPI and
+MPICH. Then we talked about modeling and simulation in general and how
+simulation is advantageous in certain situations. Relating to
+simulation, we talked about SimGrid, a multi-purpose simulation
+framework. Then we talked about the project that interconnects these
+concepts: SMPI, which is a tool that is able to simulate MPI programs
+on SimGrid. We talked about its features and how it's been previously
+validated with extensive testing. Since testing is currently a tedious
+multi-step process and continuous validation is necessary, the project
+is in need of a test automation framework to help with the development
+process. Also, such a framework would make documented experiments
+repeatable, as well as the results reproducible, which is an important
+concern as well. The subject of this framework is connected to the
+subject of workflows, which we discussed in some detail in the section
+after. We discussed workflows in general, as well as scientific and
+business workflows. We concluded that business workflows are more
+suitable for our current problem because of its top-down, control
+flow-driven approach. We briefly mentioned the XPflow experimentation
+engine, which is based on this approach and is utilized in
+implementing the framework. In the end, we also discussed the
+importance of reproducible research, which is another important aspect
+in our motivation for wanting to create the automation framework.
