@@ -22,11 +22,7 @@ process :main do
   log "result:"
   log mpi
 
-  run :mpirun, :path => '/tmp/lu.A.2', :n => 2,
-    :arguments => '-mca btl ^openib --mca pml ob1 --mca btl_tcp_if_include eth0',
-    :mpirun_path => '/usr/local/openmpi-1.6.4-install/bin/mpirun'
-
-  tg = run :trace_gather, :arguments => '-mca btl ^openib --mca pml ob1 --mca btl_tcp_if_include eth0',
+  run :trace_gather, :arguments => '-mca btl ^openib --mca pml ob1 --mca btl_tcp_if_include eth0',
     :n => 2, :tracegather => '/usr/local/trace_gather/trace_gather'
   log "trace_gather: #{tg}"
   run :finish
