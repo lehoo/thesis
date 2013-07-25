@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.6.2)  24 JUL 2013 16:48
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.6.2)  25 JUL 2013 13:11
 entering extended mode
  %&-line parsing enabled.
 **Thesis.tex
@@ -968,11 +968,11 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 183.
 
-<./Figures/disabled_cores.jpg, id=567, 456.70625pt x 304.13625pt>
+<./Figures/disabled_cores.jpg, id=576, 456.70625pt x 304.13625pt>
 File: ./Figures/disabled_cores.jpg Graphic file (type jpg)
 
 <use ./Figures/disabled_cores.jpg>
-<./Figures/bind_to_core.jpg, id=568, 456.70625pt x 304.13625pt>
+<./Figures/bind_to_core.jpg, id=577, 456.70625pt x 304.13625pt>
 File: ./Figures/bind_to_core.jpg Graphic file (type jpg)
 
 <use ./Figures/bind_to_core.jpg> [20] [21 <./Figures/disabled_cores.jpg> <./Fig
@@ -1001,7 +1001,7 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 59.
 
-<./Figures/Renater5-g5k.jpg, id=607, 153.9351pt x 115.8729pt>
+<./Figures/Renater5-g5k.jpg, id=616, 153.9351pt x 115.8729pt>
 File: ./Figures/Renater5-g5k.jpg Graphic file (type jpg)
 
 <use ./Figures/Renater5-g5k.jpg> [25]
@@ -1015,11 +1015,11 @@ Overfull \hbox (1.05954pt too wide) in paragraph at lines 106--131
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 209.
 
-<./Figures/xpflow_example1.jpg, id=633, 589.20125pt x 114.4275pt>
+<./Figures/xpflow_example1.jpg, id=642, 589.20125pt x 114.4275pt>
 File: ./Figures/xpflow_example1.jpg Graphic file (type jpg)
 
 <use ./Figures/xpflow_example1.jpg>
-<./Figures/xpflow_example2.jpg, id=637, 847.165pt x 286.06876pt>
+<./Figures/xpflow_example2.jpg, id=646, 847.165pt x 286.06876pt>
 File: ./Figures/xpflow_example2.jpg Graphic file (type jpg)
 
 <use ./Figures/xpflow_example2.jpg>
@@ -1033,28 +1033,28 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 268.
 
 [30 <./Figures/xpflow_example2.jpg>]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 286.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 288.
 
 
 (/usr/share/texmf-texlive/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 286.
- [31] [32]
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 288.
+ [31]
 
-LaTeX Warning: Reference `sec:keeping_of_nodes' on page 33 undefined on input l
-ine 390.
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 351.
 
-<./Figures/checkpoint1.jpg, id=661, 542.025pt x 462.72874pt>
+[32] <./Figures/checkpoint1.jpg, id=672, 542.025pt x 462.72874pt>
 File: ./Figures/checkpoint1.jpg Graphic file (type jpg)
 
 <use ./Figures/checkpoint1.jpg>
-<./Figures/checkpoint2.jpg, id=662, 542.025pt x 462.72874pt>
+<./Figures/checkpoint2.jpg, id=673, 542.025pt x 462.72874pt>
 File: ./Figures/checkpoint2.jpg Graphic file (type jpg)
 
-<use ./Figures/checkpoint2.jpg>) [33] (./Chapters/Chapter5.tex [34 <./Figures/c
-heckpoint1.jpg>] [35 <./Figures/checkpoint2.jpg>]
+<use ./Figures/checkpoint2.jpg> [33]) [34 <./Figures/checkpoint1.jpg>]
+(./Chapters/Chapter5.tex [35 <./Figures/checkpoint2.jpg>]
 5. fejezet.
 ------------------------------------------------------------------------------
  5 Evaluation Plan
@@ -1119,35 +1119,31 @@ Underfull \hbox (badness 6641) in paragraph at lines 172--179
 h Per-for-mance Com-pu-t-ing App-li-ca-
  []
 
-[42]) [43] (./Thesis.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[42]) [43] (./Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 10289 strings out of 495046
- 137964 string characters out of 1181965
- 226158 words of memory out of 3000000
- 13108 multiletter control sequences out of 15000+50000
+ 10292 strings out of 495046
+ 138020 string characters out of 1181965
+ 227213 words of memory out of 3000000
+ 13110 multiletter control sequences out of 15000+50000
  13175 words of font info for 49 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  48i,11n,45p,395b,509s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb><
-/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/
-texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/typ
-e1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
-msfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam7.
-pfb>
-Output written on Thesis.pdf (57 pages, 588137 bytes).
+</usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12
+.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/publ
+ic/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmsl12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-tex
+live/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/symbols/msam7.pfb>
+Output written on Thesis.pdf (57 pages, 590089 bytes).
 PDF statistics:
- 798 PDF objects out of 1000 (max. 8388607)
- 113 named destinations out of 1000 (max. 500000)
- 612 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 809 PDF objects out of 1000 (max. 8388607)
+ 114 named destinations out of 1000 (max. 500000)
+ 628 words of extra memory for PDF output out of 10000 (max. 10000000)
 

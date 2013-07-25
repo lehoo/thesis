@@ -82,7 +82,7 @@ Grid5000:
      - it is important to make sure that we use the mpi executable we want by specifying the full path
            $MPI_ROOT/bin/mpirun
      - it is important to disable infiniband and use tcp
-           mpirun -mca btl ^openib --mca pml ob1
+           mpirun -mca btl ^openib --mca pml ob1 --mca btl_tcp_if_include eth0
    full command:
          $MPI_ROOT/bin/mpirun -mca btl ^openib --mca pml ob1 -machinefile ~/nodefile_uniq -np <n> /tmp/<executable>
  - Post-processing:

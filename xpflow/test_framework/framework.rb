@@ -16,7 +16,7 @@ process :reserve_and_deploy do |n, t, site, image, nodefile|
   run :lib.set_site, site
   log 'reserving...'
   r = run g5k.reserve_nodes, :nodes => n, :time => t,
-    :site => site, :type => 'deploy', :keep => true
+    :site => site, :type => :deploy, :keep => true
   run :lib.set_job, r
 
   log "deploying..."

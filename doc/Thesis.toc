@@ -68,12 +68,14 @@
 \contentsline {subsubsection}{\numberline {4.4.1.5.}mpirun}{32}{section*.20}
 \contentsline {subsubsection}{\numberline {4.4.1.6.}trace\_gather}{32}{section*.20}
 \contentsline {subsubsection}{\numberline {4.4.1.7.}merge\_traces}{32}{section*.20}
-\contentsline {subsection}{\numberline {4.4.2.}Backend}{33}{section*.20}
-\contentsline {subsection}{\numberline {4.4.3.}Checkpointing}{33}{section*.20}
-\contentsline {chapter}{\numberline {5.}Evaluation Plan}{36}{section*.20}
-\contentsline {chapter}{\numberline {6.}Results}{37}{section*.20}
-\contentsline {chapter}{\numberline {7.}Conclusion}{38}{section*.20}
+\contentsline {subsection}{\numberline {4.4.2.}Backend}{32}{section*.20}
+\contentsline {subsubsection}{\numberline {4.4.2.1.}Metadata}{33}{section*.21}
+\contentsline {subsection}{\numberline {4.4.3.}Checkpointing}{33}{section*.21}
+\contentsline {subsection}{\numberline {4.4.4.}Proxy variables}{34}{section*.21}
+\contentsline {chapter}{\numberline {5.}Evaluation Plan}{36}{section*.21}
+\contentsline {chapter}{\numberline {6.}Results}{37}{section*.21}
+\contentsline {chapter}{\numberline {7.}Conclusion}{38}{section*.21}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A.}Appendix Title Here}{39}{section*.20}
+\contentsline {chapter}{\numberline {A.}Appendix Title Here}{39}{section*.21}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{40}{section*.20}
+\contentsline {chapter}{Bibliography}{40}{section*.21}

@@ -269,14 +269,16 @@ the frontend and the backend.
 The frontend is an interface between the user and the framework. It
 has the function calls the user can use when orchestrating an
 automated experiment. The example process in \ref{sec:example_process}
-contains most of these processes, which we'll discuss below.
-\subsubsection{init; finish}: These processes need to be called at the
+contains most of the processes that we'll discuss below.
+\subsubsection{init; finish}
+These processes need to be called at the
 beginning and at the end of the experiment respectively. These methods
 have tasks along the lines of variable initialization and metadata
 collection. They will be discussed in greater detail when talking
 about the backend.
-\label{keeping_of_nodes}
-\subsubsection{reserve\_and\_deploy}: The allocation and deployment of
+\label{sec:keeping_of_nodes}
+\subsubsection{reserve\_and\_deploy}
+The allocation and deployment of
 the nodes are in coupled inside one method, since it wouldn't make
 sens to just start a job without deploying an operating system on the
 allocated nodes. The framework currently only works with one specified
@@ -290,7 +292,8 @@ experiment. This is so we can use \emph{checkpointing} (see below) to
 run other experiments on the same nodes without having to do the
 allocation and deployment process again (which can take up several
 minutes).
-\subsubsection{broadcast}: This method can be used to broadcast any file
+\subsubsection{broadcast}
+This method can be used to broadcast any file
 across the nodes to a specified destination path. It can be utilized
 to broadcast the benchmark runnable to every node to the destination
 where the execution will take place. This needs to be done in order
@@ -299,44 +302,34 @@ the place of execution on a given node, MPI won't be able to start its
 processes there. For example, if we want to run the experiment and
 generate the trace files in the /tmp directory, we will broadcast our
 benchmark runnable to /tmp across the nodes.
-\subsubsection{disable\_cores}: Disabling cores on nodes can be necessary
+\subsubsection{disable\_cores}
+Disabling cores on nodes can be necessary
 as a method to overcome simulation inaccuracy caused by SMPI's
 inability to predict the performance of an MPI application when using
 multiple cores, as mentioned before, in the \emph{Problem Description}
 chapter.\\
-An interesting thing about this method is that it is an
-\emph{activity}, unlike the other methods in the frontend, which are
-\emph{processes}. This is a workaround for a shortcoming in XPflow:
-the processes are written in a DSL embedded in Ruby. Ruby is very
-flexible in that regard, but one unsolved problem is that the body of
-the process blocks are executed \emph{before} the execution of the
-process itself. The problem with this is that at the time of the
-execution of the process blocks, some of the variables that the
-process uses contain only some proxy variables, not the content that
-was actually put in there. In this particular method in disabling
-cores, multiple command strings are needed, containing the commands
-that are needed to be executed to reach our goal. In these command
-strings, the variable containing the nodefile is needed to be
-inserted and this variable would contain only a proxy variable at the
-time we want to insert it in the string, even if we would put the
-correct value in it right before. Writing this method as an activity
-instead of a process solves this problem, since activities are written
-in plain Ruby.
-\subsubsection{mpirun}: This method is for actually running the benchmark
+This method, unlike the others in the frontend, is an \emph{activity}
+instead of being a \emph{process}. This is done as a workaround to an
+XPflow pitfall regarding proxy variables, an issue that will be
+discussed in \ref{sec:proxy_variables}.
+\subsubsection{mpirun}
+This method is for actually running the benchmark
 itself. It is important to give the full path to the mpirun runnable
 as an argument to the process call, otherwise we can't be sure that
 the MPI implementation running is the one we want.
-\subsubsection{trace\_gather}: After running our MPI experiment, the
-gathered traces are scattered amongst all the corresponding
-nodes. This process calls a script called trace\_gather (which needs
-to be set up on the system image manually), which copies the traces
-collected on the
+\subsubsection{trace\_gather}
+After running our MPI experiment, the gathered traces are scattered
+amongst all the corresponding nodes. This process calls a script
+called trace\_gather (which needs to be set up on the system image
+manually), which copies the traces collected on the
 different nodes to the one node we run the script on. We need to call
-the script from the path where the execution happened. After running
+the script from the path where the execution happened, since that's
+where the traces were gathered. After running
 this process, we can assume that all the trace files are on the node
 we made the function call from. For example if we have our traces in
 /tmp, we need to call trace\_gather from there.
-\subsubsection{merge\_traces}: This process calls the TAU\cite{sm06}
+\subsubsection{merge\_traces}
+This process calls the TAU\cite{sm06}
 script \emph{tau\_treemerge.pl}, which is responsible for merging the
 traces into one trace file. The script also tries to account for any
 clock skew between the trace files with post-processing methods.\\
@@ -355,7 +348,8 @@ needed.\\
 Libraries can also contain activities. Most of the "real work" is put
 into the library in the form of member activities. The backend
 interfaces with the frontend, which makes calls to these activities
-whenever needed.\\
+whenever needed.
+\subsubsection{Metadata}
 The backend library is also responsible for handling metadata
 collection. Collected metadata includes:
 \begin{itemize}
@@ -383,18 +377,18 @@ then calculating the difference.
 \subsection{Checkpointing}
 XPflow has a very useful feature, called checkpointing. A checkpoint
 can be put anywhere in our experiment, making it possible that in the
-next run, control is \emph{resumed} at the place of the
-checkpoint. An example usage can be seen on \ref{fig:checkpoint1}: we
-put a checkpoint after the allocation of nodes (line 12). As previously
-mentioned, the node allocation is done in such a way that they remain
-available even after the experiment is done.\ref{sec:keeping_of_nodes}
-So with putting a checkpoint there, we don't have to wait through the
-several minute long node acquisition and deployment process each time
-we want to run an MPI experiment: we can re-run it on the same
-allocated nodes, as long as the time limit we set at the node
-allocation allows us. It is also possible to change the code after the
-checkpoint to run some other experiment, as it can be seen on
-\ref{fig:checkpoint2}: there, we modify the code so it runs
+next run, control is \emph{resumed} at the place of the checkpoint. An
+example usage can be seen on \ref{fig:checkpoint1}: we put a
+checkpoint after the allocation of nodes (line 12). As previously
+mentioned in \ref{sec:keeping_of_nodes}, the node allocation is done
+in such a way that they remain available even after the experiment is
+done. So with putting a checkpoint there, we don't have to wait
+through the several minute long node acquisition and deployment
+process each time we want to run an MPI experiment: we can re-run it
+on the same allocated nodes, as long as the time limit we set at the
+node allocation allows us. It is also possible to change the code
+after the checkpoint to run some other experiment, as it can be seen
+on \ref{fig:checkpoint2}: there, we modify the code so it runs
 \emph{dt.A.8} instead of \emph{lu.A.8}. We had to modify the code in
 two places to achieve this: first, we need to broadcast the other
 benchmark across the nodes (line 14) and the path to the runnable
@@ -420,3 +414,25 @@ acquisition process.
   the checkpoint}
   \label{fig:checkpoint2}
 \end{figure}
+\subsection{Proxy variables}
+\label{sec:proxy_variables}
+There is a shortcoming of XPflow that caused a little headache during
+the development of the framework. The problem stems from
+the fact that the XPflow processes are written in a DSL that is
+embedded in Ruby. Ruby is very
+flexible in that regard, but one unsolved problem is that the body of
+the process blocks are executed \emph{before} the execution of the
+process itself. The problem with this is that at the time of the
+execution of the process blocks, some of the variables that the
+process uses contain only some proxy value, not the value that
+was actually put in there. This problem has been briefly mentioned when
+talking about the \emph{disable\_cores} method. In that particular
+method, multiple command strings are needed, containing the commands
+that are needed to be executed to disable the cores on the nodes. In
+these command strings, the variable containing the nodefile is needed
+to be inserted. If \emph{disable\_cores} was a process, this variable
+would contain only a proxy variable at the
+time we want to insert it in the string, even if we would put the
+correct value in it right before. Writing this method as an activity
+instead of a process solves this problem, since activities are written
+in plain Ruby.

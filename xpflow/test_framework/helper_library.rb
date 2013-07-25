@@ -157,15 +157,20 @@ def mpirun(opts)
 
     set_benchmark(opts[:path])
     @head = @nodes.first
-    mpirun_executable = "mpirun"
-    mpirun_executable = opts[:mpirun_path] unless not opts.has_key?(:mpirun_path)
+    @mpirun_executable = "mpirun"
+    @mpirun_executable = opts[:mpirun_path] unless not opts.has_key?(:mpirun_path)
+
+    proxy.run 'g5k.dist_keys', @head, @nodes.tail
 
     nodefile = @nodefile
-    output = ''
+
+    cmd = "#{@mpirun_executable} -machinefile #{nodefile} #{opts[:arguments]} -np #{opts[:n]} #{opts[:path]} 2>mpi.error"
+    proxy.log "Starting MPI: #{cmd}"
+
     output = proxy.run 'g5k.bash', @head do
       #we want the traces to be generated in /tmp
       cd "/tmp"
-      run("#{mpirun_executable} -machinefile #{nodefile} #{opts[:arguments]} -np #{opts[:n]} #{opts[:path]} 2>tz")
+      run(cmd)
     end
     @state = States::EXPERIMENT_RAN
     return output
@@ -180,19 +185,25 @@ def trace_gather(opts)
   begin
     raise StateError.new("Experiments are needed to be run before gathering traces!") unless @state >= States::EXPERIMENT_RAN
 
-    mpirun_executable = "mpirun"
-    mpirun_executable = opts[:mpirun_path] unless not opts.has_key?(:mpirun_path)
+    #mpirun_executable = "mpirun"
+    proxy.log "kakker #{@mpirun_executable}"
+    @mpirun_executable = opts[:mpirun_path] unless not opts.has_key?(:mpirun_path)
+    proxy.log "kakker2 #{@mpirun_executable}"
 
     tracegather_executable = "trace_gather"
     tracegather_executable = opts[:tracegather] unless not opts.has_key?(:tracegather)
 
-    arity = 1
+    proxy.run 'g5k.dist_keys', @head, @nodes.tail
+
+    arity = 4
     arity = opts[:arity] unless not opts.has_key?(:arity)
+    cmd = "#{@mpirun_executable} -machinefile #{@nodefile} #{opts[:arguments]} -np #{opts[:n]} #{tracegather_executable} -a #{arity} -f 1 -m #{@nodefile} 2>tracegather.error"
+    proxy.log "running trace_gather: #{cmd}"
 
     output = ''
     output = proxy.run 'g5k.bash', @head do
       cd "/tmp"
-      run("#{mpirun_executable} -machinefile #{@nodefile} -np #{opts[:n]} #{tracegather_executable} -a #{arity} -f 1 -m #{@nodefile}")
+      run(cmd)
     end
     state = States::TRACES_COLLECTED
     return output
