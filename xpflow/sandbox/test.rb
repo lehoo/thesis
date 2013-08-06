@@ -56,10 +56,16 @@ activity :try_date do
   log "time2: #{t2}"
   diff = t2 - t1
   log "difference: #{diff}"
+  set :g, 'gag'
 end
 
 process :main do
-  run :try_date
+  abcd = 5
+  x = []
+  if (abcd == 5 || x.length > 10 )
+    ab = get :g
+    log "asd #{ab}"
+  end
 end
 
 main :main

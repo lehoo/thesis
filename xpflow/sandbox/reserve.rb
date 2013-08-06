@@ -7,7 +7,9 @@ require '../test_framework/framework'
 
 process :main do
   run :init
-  run :reserve_and_deploy, 2, '30m', 'lille',
+
+#preparation and configuration
+  run :reserve_and_deploy, 2, '120m', 'lille',
     'wheezy-x64-big-lehoo', '/home/dlehoczky/nodefile_uniq'
   checkpoint :deployed
 
@@ -15,16 +17,25 @@ process :main do
 
   run :disable_cores
 
+#the experiment
   log "mpi experiment starting"
-  mpi = run :mpirun, :path => '/tmp/lu.A.2', :n => 2,
-    :arguments => '-mca btl ^openib --mca pml ob1 --mca btl_tcp_if_include eth0',
-    :mpirun_path => '/usr/local/openmpi-1.6.4-install/bin/mpirun'
-  log "result:"
-  log mpi
+  run :mpirun, :path => '/tmp/lu.A.2', :n => 2,
+    :arguments => '-mca btl ^openib --mca pml ob1 --mca btl_tcp_if_include eth1',
+    :mpirun_path => '/usr/local/openmpi-1.6.4-install/bin/mpirun',
+    :outfile => '/tmp/mpi.out'
 
-  run :trace_gather, :arguments => '-mca btl ^openib --mca pml ob1 --mca btl_tcp_if_include eth0',
+#post-processing
+  run :trace_gather,
     :n => 2, :tracegather => '/usr/local/trace_gather/trace_gather'
-  log "trace_gather: #{tg}"
+  run :run_script,
+    :command => 'tau_treemerge.pl'
+  run :run_script,
+    :command => '/usr/local/akypuera-install/bin/tau2paje',
+    :args => 'tau.trc tau.edf',
+    :outfile => 'lu.A.2.paje',
+    :errorfile => '/dev/null'
+
+#metadata
   run :finish
 end
 

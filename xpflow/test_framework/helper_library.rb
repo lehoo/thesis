@@ -2,12 +2,6 @@
 #!/usr/bin/env xpflow
 # encoding: utf-8
 
-#TERV metadata collectionhöz
-#kell INIT, ennek megfelelően BEFORE_INIT state is - exception, ha abban vagyunk és el akarjuk kezdeni a munkát
-#init metódus -> mindig meg kell hívni experiment elején -> beállítja a state-et, elindítja az órát, lementi a dátumot/időt
-#a kísérlet során lementünk cuccokat, amiket meg akarunk jegyezni metadata-ként: image used, binary run, nodes involved (nodefile...)
-#végén finished(): state-et beállítja valami FINISHED-be vagy ilyesmibe; elmenti h mennyi időbe telt az experiment; lementi a metaadatokat egy fájlba
-
 use :g5k
 
 class StateError < StandardError
@@ -25,6 +19,7 @@ class HelperLibrary < XPFlow::ActivityLibrary
   :deployed, :nodefile_created,
   :create_or_replace_file, :append_line,
   :execute_frontend,
+  :execute_head,
   :cp, :rm, :put_content, :is_file_empty,
   :mpirun, :trace_gather,
   :checkpoint, :restore,
@@ -58,7 +53,7 @@ end
   end
 
   def init_ok
-    raise StateError.new("Experiment not initialized! Make sure that function \'init\' is called at the start of the experiment.") unless @state >= States::INIT
+    raise StateError, "Experiment not initialized! Make sure that function \'init\' is called at the start of the experiment." unless @state >= States::INIT
   end
 
   def set_job(value)
@@ -125,6 +120,32 @@ def execute_frontend(cmd)
   proxy.run 'g5k.execute_frontend', @site, cmd
 end
 
+def execute_head(opts)
+  begin
+    raise ArgumentError, "Error: mandatory argument(s) missing!\nmandatory argument:\n - :command (name of the command to run)" unless opts.has_key?(:command)
+
+    dir = "/tmp"
+    dir = opts[:dir] unless not opts.has_key?(:dir)
+
+    outfile = 'out'
+    outfile = opts[:outfile] unless not opts.has_key?(:outfile)
+
+    errorfile = 'err'
+    errorfile = opts[:errorfile] unless not opts.has_key?(:errorfile)
+
+    cmd = "#{opts[:command]} #{opts[:args]} 1>#{outfile} 2>#{errorfile}"
+    proxy.log "executing command on head node: #{cmd}"
+
+    output = proxy.run 'g5k.bash', @head do
+      cd "#{dir}"
+      run(cmd)
+    end
+
+  rescue StateError => e
+    proxy.engine.log e.message
+  end
+end
+
 def cp(src, dst)
   proxy.run 'g5k.bash_frontend', @site do
     run("cp #{src} #{dst}")
@@ -151,58 +172,73 @@ def is_file_empty(path)
 end
 
 def mpirun(opts)
+  output = ""
   begin
-    #raise ArgumentError, "Error: there aren't enough nodes to run the experiment!\nNumber of reserved nodes: #{nodes.length}\nNumber of nodes requested for the experiment: #{opts[:n]}" unless opts[:n] <= nodes.length
-    #raise StateError.new("Reserved nodes are needed for running experiments!") unless @state >= States::DEPLOYED
+    raise ArgumentError, "Error: mandatory argument(s) missing!\nmandatory arguments:\n - :path (path to benchmark)\n - :n (number of nodes to use)" unless (opts.has_key?(:path) && opts.has_key?(:n))
+    raise ArgumentError, "Error: there aren't enough nodes to run the experiment!\nNumber of reserved nodes: #{@nodes.length}\nNumber of nodes requested for the experiment: #{opts[:n]}" unless (opts[:n] <= @nodes.length)
+    raise StateError, "Reserved nodes are needed for running experiments!" unless @state >= States::DEPLOYED
 
     set_benchmark(opts[:path])
     @head = @nodes.first
+    proxy.log "The head node is: #{@head}"
     @mpirun_executable = "mpirun"
     @mpirun_executable = opts[:mpirun_path] unless not opts.has_key?(:mpirun_path)
 
+    dir = "/tmp"
+    dir = opts[:dir] unless not opts.has_key?(:dir)
+
+    outfile = '/tmp/#{opts[:path]}.out'
+    outfile = opts[:outfile] unless not opts.has_key?(:outfile)
+
     proxy.run 'g5k.dist_keys', @head, @nodes.tail
 
-    nodefile = @nodefile
-
-    cmd = "#{@mpirun_executable} -machinefile #{nodefile} #{opts[:arguments]} -np #{opts[:n]} #{opts[:path]} 2>mpi.error"
+    cmd = "#{@mpirun_executable} -machinefile #{@nodefile} #{opts[:args]} -np #{opts[:n]} #{opts[:path]} 1>#{outfile} 2>mpi.error"
     proxy.log "Starting MPI: #{cmd}"
 
     output = proxy.run 'g5k.bash', @head do
       #we want the traces to be generated in /tmp
-      cd "/tmp"
+      cd dir
       run(cmd)
     end
     @state = States::EXPERIMENT_RAN
-    return output
+
     rescue ArgumentError => e
       proxy.engine.log e.message
+
     rescue StateError => e
       proxy.engine.log e.message
   end
+  return output
 end
 
 def trace_gather(opts)
   begin
-    raise StateError.new("Experiments are needed to be run before gathering traces!") unless @state >= States::EXPERIMENT_RAN
+    raise ArgumentError, "Error: mandatory argument(s) missing!\nmandatory argument:\n - :n (number of nodes to gather traces from)" unless opts.has_key?(:n)
+
+    raise StateError, "Experiments are needed to be run before gathering traces!" unless @state >= States::EXPERIMENT_RAN
 
     #mpirun_executable = "mpirun"
-    proxy.log "kakker #{@mpirun_executable}"
     @mpirun_executable = opts[:mpirun_path] unless not opts.has_key?(:mpirun_path)
-    proxy.log "kakker2 #{@mpirun_executable}"
 
     tracegather_executable = "trace_gather"
     tracegather_executable = opts[:tracegather] unless not opts.has_key?(:tracegather)
 
-    proxy.run 'g5k.dist_keys', @head, @nodes.tail
+    dir = "/tmp"
+    dir = opts[:dir] unless not opts.has_key?(:dir)
+
+    #we generate ssh keys on the nodes for trace_gather to work
+    @nodes.each { |node|
+      proxy.run 'g5k.dist_keys', node, [@head]
+    }
 
     arity = 4
     arity = opts[:arity] unless not opts.has_key?(:arity)
-    cmd = "#{@mpirun_executable} -machinefile #{@nodefile} #{opts[:arguments]} -np #{opts[:n]} #{tracegather_executable} -a #{arity} -f 1 -m #{@nodefile} 2>tracegather.error"
+    cmd = "#{@mpirun_executable} -machinefile #{@nodefile} #{opts[:args]} -np #{opts[:n]} #{tracegather_executable} -a #{arity} -f 1 -m #{@nodefile} 2>tracegather.error"
     proxy.log "running trace_gather: #{cmd}"
 
     output = ''
     output = proxy.run 'g5k.bash', @head do
-      cd "/tmp"
+      cd dir
       run(cmd)
     end
     state = States::TRACES_COLLECTED
@@ -212,15 +248,6 @@ def trace_gather(opts)
     proxy.engine.log e.message
   end
 end
-
-def merge_traces
-  begin
-    raise StandardError unless @state >= States::TRACES_COLLECTED
-  rescue
-    proxy.engine.log "Traces are needed to be gatheres before merging them!"
-  end
-end
-
 
 #methods for checkpointing
   def checkpoint
@@ -260,24 +287,24 @@ end
   def finish
     time_after_cp = Time.now - @starttime
     total_time = time_after_cp + @parttime
-    nodes = proxy.run 'g5k.bash_frontend', @site do
-      run("cat #{@nodefile}")
-    end
+    #nodes = proxy.run 'g5k.bash_frontend', @site do
+    #  run("cat #{@nodefile}")
+    #end
 
-    print "-----Experiment metadata-----"
-    print "Date: #{@date}"
-    print "Benchmark run: #{@benchmark}"
-    print "OS image used: #{@image}"
+    print "-----Experiment metadata-----\n"
+    print "Date: #{@date}\n"
+    print "Benchmark run: #{@benchmark}\n"
+    print "OS image used: #{@image}\n"
 
     if @parttime > 0
-      print "Time elapsed before checkpoint: #{@parttime}"
-      print "Time elapsed after checkpoint: #{time_after_cp}"
-      print "Total elapsed time: #{total_time}"
+      print "Time elapsed before checkpoint: #{@parttime}s\n"
+      print "Time elapsed after checkpoint: #{time_after_cp}s\n"
+      print "Total elapsed time: #{total_time}s\n"
     else
-      print "Elapsed time: #{total_time}"
+      print "Elapsed time: #{total_time}s\n"
     end
 
-    print "Nodes used: #{nodes}"
+    print "Nodes used: #{@nodes}\n"
   end
 
 end

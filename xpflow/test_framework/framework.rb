@@ -55,6 +55,10 @@ process :trace_gather do |opts|
   run :lib.trace_gather, opts
 end
 
+process :run_script do |opts|
+  run :lib.execute_head, opts
+end
+
 activity :create_or_replace_nodefile do |path, nodes|
   run 'lib.set_nodefile', path
   run 'lib.create_or_replace_file', path
