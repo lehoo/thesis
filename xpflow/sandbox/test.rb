@@ -14,13 +14,13 @@ activity :frontend do
   log x
 end
 
-activity :bash do |r|
-  n = (run 'g5k.nodes', r).first
-  log n
-  x = run 'g5k.bash', n do
-    cd '/home/dlehoczky/NPB3.3/NPB3.3-MPI'
-    ls
+activity :bash do
+  #n = (run 'g5k.nodes', r).first
+  #log n
+  x = run 'g5k.bash', "chimint-12.lille.grid5000.fr", { :user => "dlehoczky" } do
+    run "id"
   end
+  log 'ehun e'
   log x
 end
 
@@ -60,12 +60,7 @@ activity :try_date do
 end
 
 process :main do
-  abcd = 5
-  x = []
-  if (abcd == 5 || x.length > 10 )
-    ab = get :g
-    log "asd #{ab}"
-  end
+  run :bash
 end
 
 main :main

@@ -98,5 +98,29 @@ Grid5000:
          <path-to-akypuera>/bin/tau2paje tau.trc tau.edf 2>/dev/null >lu.A.8.paje
    - now we can visualize the result
 
+Results chapter:
+        - what is the experiment we conduct?
+          - very similar to the one mentioned before -> do we need a new diagram or not? probably not
+          - specifics: 8 nodes, benchmark is lu.A.8, site is lille (little reasoning? stability, availability, no planned maintenance in the near future)
+          - what is the starting point, what is the result we aim for? (merged trace files + visualizable paje file)
+        - experiment by hand
+          - names of the allocated nodes
+          - the command and elapsed time for each step
+        - experiment with the framework
+          - names of the allocated nodes (should be the same - be sure to allocate for 5-6 hours!)
+          - description of the image we use
+          - how the orchestrated experiment looks like (commands + maybe screenshot of the code?)
+          - metadata at the end: elapsed time, etc.
+        - comparison
+          - any difference in the elapsed time? why?
+          - obvious advantage of framework: automated -> we could just start it again, run it 10 times in a row, add other experiments, modifications ...
+          - shortcomings of the framework
+
+Conclusion chapter:
+        - again, comparison in short, shortcomings of the framework, how they could be eliminated
+        - again, why this is good for us
+        - possible development directions
+
+
 useful commands:
        - connect to a job: oarsub -C <job-id>

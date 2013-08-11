@@ -16,6 +16,7 @@ class HelperLibrary < XPFlow::ActivityLibrary
   :set_nodes,
   :set_image,
   :set_benchmark,
+  :set_user,
   :deployed, :nodefile_created,
   :create_or_replace_file, :append_line,
   :execute_frontend,
@@ -36,14 +37,16 @@ module States
   TRACES_MERGED = 5
 end
 
-  def init
+  def init(opts)
     @job = 0
     @site = ''
-    @nodefile = ''
+    @nodefile = '~/nodefile'
     @nodes = []
     @head = 0
     @executable_dir = ''
     @state = States::INIT
+    @user = "root"
+    @user = opts[:user] unless not opts.has_key?(:user)
 
     #save the date and the start time for the experiment
     @date = DateTime.now
@@ -92,6 +95,10 @@ end
     @benchmark = value
   end
 
+  def set_user(value)
+    @user = value
+  end
+
   def deployed()
     @state = States::DEPLOYED
   end
@@ -136,7 +143,7 @@ def execute_head(opts)
     cmd = "#{opts[:command]} #{opts[:args]} 1>#{outfile} 2>#{errorfile}"
     proxy.log "executing command on head node: #{cmd}"
 
-    output = proxy.run 'g5k.bash', @head do
+    output = proxy.run 'g5k.bash', @head, { :user => @user } do
       cd "#{dir}"
       run(cmd)
     end
@@ -190,12 +197,12 @@ def mpirun(opts)
     outfile = '/tmp/#{opts[:path]}.out'
     outfile = opts[:outfile] unless not opts.has_key?(:outfile)
 
-    proxy.run 'g5k.dist_keys', @head, @nodes.tail
+    #proxy.run 'g5k.dist_keys', @head, @nodes.tail
 
     cmd = "#{@mpirun_executable} -machinefile #{@nodefile} #{opts[:args]} -np #{opts[:n]} #{opts[:path]} 1>#{outfile} 2>mpi.error"
     proxy.log "Starting MPI: #{cmd}"
 
-    output = proxy.run 'g5k.bash', @head do
+    output = proxy.run 'g5k.bash', @head, { :user => @user } do
       #we want the traces to be generated in /tmp
       cd dir
       run(cmd)
@@ -227,17 +234,19 @@ def trace_gather(opts)
     dir = opts[:dir] unless not opts.has_key?(:dir)
 
     #we generate ssh keys on the nodes for trace_gather to work
-    @nodes.each { |node|
-      proxy.run 'g5k.dist_keys', node, [@head]
-    }
+    #nodes.each { |node|
+    #  proxy.run 'g5k.dist_keys', node, [@head]
+    #}
 
-    arity = 4
+#maximum arity by default
+    arity = @nodes.length
     arity = opts[:arity] unless not opts.has_key?(:arity)
+
     cmd = "#{@mpirun_executable} -machinefile #{@nodefile} #{opts[:args]} -np #{opts[:n]} #{tracegather_executable} -a #{arity} -f 1 -m #{@nodefile} 2>tracegather.error"
     proxy.log "running trace_gather: #{cmd}"
 
     output = ''
-    output = proxy.run 'g5k.bash', @head do
+    output = proxy.run 'g5k.bash', @head, { :user => @user } do
       cd dir
       run(cmd)
     end
@@ -264,7 +273,8 @@ end
       :image => @image,
       :benchmark => @benchmark,
       :parttime => @parttime,
-      :state => @state
+      :state => @state,
+      :user => @user
     }
   end
 
@@ -281,6 +291,7 @@ end
     @benchmark = state[:benchmark]
     @parttime = state[:parttime]
     @state = state[:state]
+    @user = state[:user]
   end
 
 #method to be called when finishing the experiment
@@ -304,7 +315,10 @@ end
       print "Elapsed time: #{total_time}s\n"
     end
 
-    print "Nodes used: #{@nodes}\n"
+    print "Nodes used:\n"
+    @nodes.each { |node|
+      print "#{node}\n"
+    }
   end
 
 end

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.6.2)  25 JUL 2013 13:11
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.6.2)  11 AUG 2013 19:24
 entering extended mode
  %&-line parsing enabled.
 **Thesis.tex
@@ -654,6 +654,13 @@ Now handling font encoding PU ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
+(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texmf-texlive/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
 (/usr/share/texmf-texlive/tex/latex/tools/verbatim.sty
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks32
@@ -677,41 +684,65 @@ LaTeX Info: Redefining \addtolength on input line 77.
 )
 \c@vec@elem=\count138
 )
-(/usr/share/texmf-texlive/tex/latex/oberdiek/zref-xr.sty
-Package: zref-xr 2009/08/07 v2.4 Module xr for zref (HO)
+(/usr/share/texmf-texlive/tex/latex/tools/xr.sty
+Package: xr 1994/05/28 v5.02 eXternal References (DPC)
+)
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/usr/share/texmf-texlive/tex/latex/oberdiek/zref-base.sty
-Package: zref-base 2009/08/07 v2.4 Module base for zref (HO)
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(/usr/share/texmf-texlive/tex/latex/oberdiek/auxhook.sty
-Package: auxhook 2007/04/06 v1.1 Hooks for auxiliary files (HO)
+(/usr/share/texmf-texlive/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
+
+(/usr/share/texmf-texlive/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen148
+\extrarowheight=\dimen149
+\NC@list=\toks34
+\extratabsurround=\skip67
+\backup@length=\skip68
 )
-Package zref Info: New property list: main on input line 419.
-Package zref Info: New property: default on input line 420.
-Package zref Info: New property: page on input line 421.
+\everycr=\toks35
+\minrowclearance=\skip69
 )
-Package zref Info: New property: url on input line 41.
+\rownum=\count139
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 17.
+(/usr/share/texmf-texlive/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen150
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 22.
  (./Thesis.aux)
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
 
 (/usr/share/texmf-texlive/tex/latex/ms/ragged2e.sty
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
@@ -720,62 +751,53 @@ Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
 Package: everysel 1999/06/08 v1.03 EverySelectfont Package (MS)
 LaTeX Info: Redefining \selectfont on input line 125.
 )
-\CenteringLeftskip=\skip67
-\RaggedLeftLeftskip=\skip68
-\RaggedRightLeftskip=\skip69
-\CenteringRightskip=\skip70
-\RaggedLeftRightskip=\skip71
-\RaggedRightRightskip=\skip72
-\CenteringParfillskip=\skip73
-\RaggedLeftParfillskip=\skip74
-\RaggedRightParfillskip=\skip75
-\JustifyingParfillskip=\skip76
-\CenteringParindent=\skip77
-\RaggedLeftParindent=\skip78
-\RaggedRightParindent=\skip79
-\JustifyingParindent=\skip80
+\CenteringLeftskip=\skip70
+\RaggedLeftLeftskip=\skip71
+\RaggedRightLeftskip=\skip72
+\CenteringRightskip=\skip73
+\RaggedLeftRightskip=\skip74
+\RaggedRightRightskip=\skip75
+\CenteringParfillskip=\skip76
+\RaggedLeftParfillskip=\skip77
+\RaggedRightParfillskip=\skip78
+\JustifyingParfillskip=\skip79
+\CenteringParindent=\skip80
+\RaggedLeftParindent=\skip81
+\RaggedRightParindent=\skip82
+\JustifyingParindent=\skip83
 )
 Package caption Info: listings package v1.2 (or newer) detected on input line 5
-4.
+9.
 Package caption Info: longtable package v3.15 (or newer) detected on input line
- 54.
+ 59.
 Package caption Info: rotating package v2.0 (or newer) detected on input line 5
-4.
+9.
 
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count139
-\scratchdimen=\dimen148
+\scratchcounter=\count140
+\scratchdimen=\dimen151
 \scratchbox=\box35
-\nofMPsegments=\count140
-\nofMParguments=\count141
-\everyMPshowfont=\toks34
-\MPscratchCnt=\count142
-\MPscratchDim=\dimen149
-\MPnumerator=\count143
-\everyMPtoPDFconversion=\toks35
+\nofMPsegments=\count141
+\nofMParguments=\count142
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count143
+\MPscratchDim=\dimen152
+\MPnumerator=\count144
+\everyMPtoPDFconversion=\toks37
 )
-\c@lstlisting=\count144
- (/usr/share/texmf-texlive/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
-
-(/etc/texmf/tex/latex/config/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package color Info: Driver file: pdftex.def on input line 130.
-)
-Package hyperref Info: Link coloring ON on input line 54.
-
-(/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
+\c@lstlisting=\count145
+Package hyperref Info: Link coloring ON on input line 59.
+ (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count145
+\c@section@level=\count146
 )
-LaTeX Info: Redefining \ref on input line 54.
-LaTeX Info: Redefining \pageref on input line 54.
+LaTeX Info: Redefining \ref on input line 59.
+LaTeX Info: Redefining \pageref on input line 59.
  (./Thesis.out)
 (./Thesis.out)
 \@outlinefile=\write3
@@ -796,18 +818,18 @@ LaTeX Info: Redefining \pageref on input line 54.
 ------------------------------------------------------------------------------
 
 Package hyperref Warning: No destination for bookmark of \addcontentsline,
-(hyperref)                destination is added on input line 111.
+(hyperref)                destination is added on input line 116.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 111.
+LaTeX Font Info:    Try loading font information for U+msa on input line 116.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 111.
+LaTeX Font Info:    Try loading font information for U+msb on input line 116.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 111--111
+Underfull \hbox (badness 10000) in paragraph at lines 116--116
 
  []
 
@@ -958,34 +980,34 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 43.
 
-[17]
+[17] [18]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 126.
+(hyperref)                be the same. Added a new anchor on input line 130.
 
-[18] [19]
+[19]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 183.
+(hyperref)                be the same. Added a new anchor on input line 193.
 
-<./Figures/disabled_cores.jpg, id=576, 456.70625pt x 304.13625pt>
+<./Figures/disabled_cores.jpg, id=679, 456.70625pt x 304.13625pt>
 File: ./Figures/disabled_cores.jpg Graphic file (type jpg)
 
 <use ./Figures/disabled_cores.jpg>
-<./Figures/bind_to_core.jpg, id=577, 456.70625pt x 304.13625pt>
+<./Figures/bind_to_core.jpg, id=680, 456.70625pt x 304.13625pt>
 File: ./Figures/bind_to_core.jpg Graphic file (type jpg)
 
 <use ./Figures/bind_to_core.jpg> [20] [21 <./Figures/disabled_cores.jpg> <./Fig
 ures/bind_to_core.jpg>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 260.
+(hyperref)                than one, level fixed on input line 270.
 
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 260.
+(hyperref)                be the same. Added a new anchor on input line 270.
 
-) [22] (./Chapters/Chapter4.tex [23]
+[22]) [23] (./Chapters/Chapter4.tex [24]
 4. fejezet.
 ------------------------------------------------------------------------------
  4 Implementation
@@ -994,156 +1016,335 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 23.
 
-[24
+[25
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 59.
+(hyperref)                be the same. Added a new anchor on input line 60.
 
-<./Figures/Renater5-g5k.jpg, id=616, 153.9351pt x 115.8729pt>
+<./Figures/Renater5-g5k.jpg, id=723, 153.9351pt x 115.8729pt>
 File: ./Figures/Renater5-g5k.jpg Graphic file (type jpg)
 
-<use ./Figures/Renater5-g5k.jpg> [25]
-Overfull \hbox (1.05954pt too wide) in paragraph at lines 106--131
-\OT1/cmr/m/n/10.95 A simple grid bro-ker is hand-ling re-source ma-nag-ement at
- grid le-vel, al-lo-wing co-allocation
- []
-
-[26 <./Figures/Renater5-g5k.jpg>] [27] [28]
+<use ./Figures/Renater5-g5k.jpg> [26] [27 <./Figures/Renater5-g5k.jpg>]
+[28] [29]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 209.
+(hyperref)                be the same. Added a new anchor on input line 210.
 
-<./Figures/xpflow_example1.jpg, id=642, 589.20125pt x 114.4275pt>
+<./Figures/xpflow_example1.jpg, id=750, 589.20125pt x 114.4275pt>
 File: ./Figures/xpflow_example1.jpg Graphic file (type jpg)
 
 <use ./Figures/xpflow_example1.jpg>
-<./Figures/xpflow_example2.jpg, id=646, 847.165pt x 286.06876pt>
+<./Figures/xpflow_example2.jpg, id=754, 847.165pt x 286.06876pt>
 File: ./Figures/xpflow_example2.jpg Graphic file (type jpg)
 
 <use ./Figures/xpflow_example2.jpg>
-Overfull \hbox (6.10838pt too wide) in paragraph at lines 236--237
+Overfull \hbox (6.10838pt too wide) in paragraph at lines 237--238
  [][] 
  []
 
-[29 <./Figures/xpflow_example1.jpg>]
+[30 <./Figures/xpflow_example1.jpg>]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 268.
+(hyperref)                be the same. Added a new anchor on input line 269.
 
-[30 <./Figures/xpflow_example2.jpg>]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 288.
+[31 <./Figures/xpflow_example2.jpg>] [32]
+<./Figures/tracegather_arity.jpg, id=773, 687.56876pt x 182.6825pt>
+File: ./Figures/tracegather_arity.jpg Graphic file (type jpg)
 
+<use ./Figures/tracegather_arity.jpg>
+Overfull \hbox (63.82178pt too wide) in paragraph at lines 360--363
+ [][] 
+ []
 
-(/usr/share/texmf-texlive/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 288.
- [31]
+[33]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 351.
+(hyperref)                be the same. Added a new anchor on input line 395.
 
-[32] <./Figures/checkpoint1.jpg, id=672, 542.025pt x 462.72874pt>
+[34 <./Figures/tracegather_arity.jpg>]
+<./Figures/checkpoint1.jpg, id=789, 542.025pt x 380.42125pt>
 File: ./Figures/checkpoint1.jpg Graphic file (type jpg)
 
 <use ./Figures/checkpoint1.jpg>
-<./Figures/checkpoint2.jpg, id=673, 542.025pt x 462.72874pt>
+<./Figures/checkpoint2.jpg, id=790, 542.025pt x 380.42125pt>
 File: ./Figures/checkpoint2.jpg Graphic file (type jpg)
 
-<use ./Figures/checkpoint2.jpg> [33]) [34 <./Figures/checkpoint1.jpg>]
-(./Chapters/Chapter5.tex [35 <./Figures/checkpoint2.jpg>]
+<use ./Figures/checkpoint2.jpg> [35]) [36 <./Figures/checkpoint1.jpg>]
+(./Chapters/Chapter5.tex
+
+Package xr Warning: 
+No file Chapter4.aux
+LABELS NOT IMPORTED.
+ on input line 1.
+
+
+Package xr Warning: 
+No file Chapter3.aux
+LABELS NOT IMPORTED.
+ on input line 2.
+
+[37 <./Figures/checkpoint2.jpg>]
 5. fejezet.
 ------------------------------------------------------------------------------
  5 Evaluation Plan
 ------------------------------------------------------------------------------
-) (./Chapters/Chapter6.tex [36
 
-]
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 23.
+
+
+Overfull \hbox (48.73651pt too wide) in paragraph at lines 25--53
+\T1/cmr/m/n/10.95 al-re-ady com-pi-led, in a spe-ci-fied place in the user's ho
+me folder: /home/dlehoczky/NPB3.3/NPB3.3-
+ []
+
+[38
+
+] [39]) [40] (./Chapters/Chapter6.tex
+
+Package xr Warning: 
+No file Chapter5.aux
+LABELS NOT IMPORTED.
+ on input line 1.
+
+
+Package xr Warning: 
+No file Chapter4.aux
+LABELS NOT IMPORTED.
+ on input line 2.
+
+
+Package xr Warning: 
+No file Chapter3.aux
+LABELS NOT IMPORTED.
+ on input line 3.
+
+[41]
 6. fejezet.
 ------------------------------------------------------------------------------
  6 Results
 ------------------------------------------------------------------------------
-) (./Chapters/Chapter7.tex [37
 
-]
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 25.
+
+<./Figures/experiment_code.jpg, id=843, 656.4525pt x 529.98pt>
+File: ./Figures/experiment_code.jpg Graphic file (type jpg)
+
+<use ./Figures/experiment_code.jpg>
+Overfull \hbox (42.04054pt too wide) in paragraph at lines 36--39
+ [][] 
+ []
+
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 44.
+
+[42
+
+] [43 <./Figures/experiment_code.jpg>] [44]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 98.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--139
+
+ []
+
+[45]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 144.
+
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 159.
+
+(/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 159--159
+[]|\T1/cmtt/m/n/10 kadeploy3 -f $OAR_FILE_NODES -e
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--162
+[]|\T1/cmtt/m/n/10 cat $OAR_FILE_NODES | uniq >
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--165
+[]|\T1/cmtt/m/n/10 taktuk -l root -f ~/nodefile_uniq broadcast
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--168
+[]|\T1/cmtt/m/n/10 taktuk -l root -f
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--168
+\T1/cmtt/m/n/10 /home/dlehoczky/nodefile_uniq broadcast
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--168
+\T1/cmtt/m/n/10 exec [ 'for i in /sys/devices/system/cpu/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--168
+\T1/cmtt/m/n/10 cpu[1-9]*/online; do echo 0 > "$i" ; done'
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
+[]|\T1/cmtt/m/n/10 taktuk -f ~/nodefile_uniq broadcast exec [
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
+\T1/cmtt/m/n/10 'cat /proc/cpuinfo' ] | grep process | awk
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
+\T1/cmtt/m/n/10 'if($9>0) print $1' | uniq | awk -F".fr-"
+ []
+
+
+Overfull \hbox (4.5672pt too wide) in paragraph at lines 151--174
+ [] 
+ []
+
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
+[]|\T1/cmtt/m/n/10 /usr/local/openmpi-1.6.4-install
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
+\T1/cmtt/m/n/10 /bin/mpirun -mca btl ^openib --mca pml
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
+\T1/cmtt/m/n/10 ob1 -machinefile ~/nodefile_uniq -np 8
+ []
+
+
+Overfull \hbox (4.5672pt too wide) in paragraph at lines 195--206
+ [] 
+ []
+
+[47]
+Underfull \hbox (badness 10000) in paragraph at lines 225--225
+[]|\T1/cmtt/m/n/10 /usr/local/bin/mpirun -machinefile
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--225
+\T1/cmtt/m/n/10 ~/nodefile_uniq -np 8
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--225
+\T1/cmtt/m/n/10 /usr/local/trace_gather/trace_gather -f
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--229
+[]|\T1/cmtt/m/n/10 /usr/local/akypuera-install/bin/tau2paje
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--229
+\T1/cmtt/m/n/10 tau.trc tau.edf 1>lu.B.8.paje
+ []
+
+
+Overfull \hbox (4.5672pt too wide) in paragraph at lines 217--231
+ [] 
+ []
+
+[48]) (./Chapters/Chapter7.tex [49]
 7. fejezet.
 ------------------------------------------------------------------------------
  7 Conclusion
 ------------------------------------------------------------------------------
-) (./Appendices/AppendixA.tex [38
+) (./Appendices/AppendixA.tex [50
 
 ]
 A. F\"uggel\'ek.
 ------------------------------------------------------------------------------
  A Appendix Title Here
 ------------------------------------------------------------------------------
-) [39
+) [51
 
 ]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
 (./Thesis.bbl
-Underfull \hbox (badness 5008) in paragraph at lines 42--48
-[]\OT1/cmr/m/n/10.95 Mesirov J., P.  Ac-ces-sible re-pro-du-cible re-se-arch.  
-\OT1/cmr/m/it/10.95 Sci-ence Ma-ga-zine\OT1/cmr/m/n/10.95 ,
+Underfull \hbox (badness 1424) in paragraph at lines 43--49
+[]\T1/cmr/m/n/10.95 Mesirov J., P.  Ac-ces-sible re-pro-du-cible re-se-arch.  \
+T1/cmr/m/it/10.95 Sci-ence Ma-ga-zine\T1/cmr/m/n/10.95 , 327:
  []
 
 
-Underfull \hbox (badness 6412) in paragraph at lines 42--48
-\OT1/cmr/m/n/10.95 327:415--416, 2010.  URL [][]$\OT1/cmtt/m/n/10.95 http : / /
- statlab . bio5 . org / foswiki / pub / Main /
+Underfull \hbox (badness 10000) in paragraph at lines 43--49
+\T1/cmr/m/n/10.95 415--416, 2010.  URL [][]$\T1/cmtt/m/n/10.95 http : / / statl
+ab . bio5 . org / foswiki / pub / Main /
  []
 
-[40
+[52
 
 
-]
-Underfull \hbox (badness 1062) in paragraph at lines 73--78
-\OT1/cmr/m/n/10.95 2012.  URL [][]$\OT1/cmtt/m/n/10.95 http : / / www . inf . e
-d . ac . uk / teaching / courses / pm / PM-[]lecture1 .
- []
-
-[41]
-Underfull \hbox (badness 2302) in paragraph at lines 172--179
-[]\OT1/cmr/m/n/10.95 S. S., Shende and A. D., Ma-lony.  The tau pa-ral-lel per-
-for-mance sys-
+] [53]
+Underfull \hbox (badness 2790) in paragraph at lines 172--179
+[]\T1/cmr/m/n/10.95 Shende S., S. and Ma-lony A., D.  The tau pa-ral-lel per-fo
+r-mance sys-
  []
 
 
-Underfull \hbox (badness 6641) in paragraph at lines 172--179
-\OT1/cmr/m/n/10.95 tem.  \OT1/cmr/m/it/10.95 In-ter-na-ti-o-nal Jour-nal of Hig
-h Per-for-mance Com-pu-t-ing App-li-ca-
+Underfull \hbox (badness 7685) in paragraph at lines 172--179
+\T1/cmr/m/n/10.95 tem.  \T1/cmr/m/it/10.95 In-ter-na-ti-o-nal Jour-nal of High 
+Per-for-mance Com-pu-t-ing App-li-ca-
  []
 
-[42]) [43] (./Thesis.aux) ) 
+[54]) [55] (./Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 10292 strings out of 495046
- 138020 string characters out of 1181965
- 227213 words of memory out of 3000000
- 13110 multiletter control sequences out of 15000+50000
- 13175 words of font info for 49 fonts, out of 3000000 for 9000
+ 10765 strings out of 495046
+ 143397 string characters out of 1181965
+ 237118 words of memory out of 3000000
+ 13538 multiletter control sequences out of 15000+50000
+ 22434 words of font info for 54 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 48i,11n,45p,395b,509s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12
-.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/font
-s/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmsl12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/symbols/msam7.pfb>
-Output written on Thesis.pdf (57 pages, 590089 bytes).
+ 48i,12n,45p,395b,508s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec
+/ectt1095.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1095.6
+00pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1440.600pk> </hom
+e/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/lehoo/.te
+xmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/lehoo/.texmf-var/fon
+ts/pk/ljfour/jknappen/ec/ecsl1440.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfou
+r/jknappen/ec/ecbx1095.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/
+ec/ecbx2488.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti2074
+.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </h
+ome/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/lehoo/.
+texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/lehoo/.texmf-var/f
+onts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/lehoo/.texmf-var/fonts/pk/ljf
+our/jknappen/ec/ecrm1728.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ecbx2074.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx12
+00.600pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/
+public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
+nts/symbols/msam7.pfb>
+Output written on Thesis.pdf (69 pages, 780031 bytes).
 PDF statistics:
- 809 PDF objects out of 1000 (max. 8388607)
- 114 named destinations out of 1000 (max. 500000)
- 628 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1638 PDF objects out of 1728 (max. 8388607)
+ 135 named destinations out of 1000 (max. 500000)
+ 814 words of extra memory for PDF output out of 10000 (max. 10000000)
 

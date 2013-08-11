@@ -21,6 +21,7 @@ describes how this is applied to our example experiment by depicting
 the previously mentioned example process in an XPflow model,
 consisting of \emph{processes} and \emph{activities}.
 \section{Environment}
+\label{sec:environment}
 \subsection{The importance of testbeds}
 Most Grids that are deployed at a large scale are production platforms
 inappropriate for research: such Grids mostly have an environment
@@ -226,7 +227,7 @@ started. On the contrary, setting up the coffeemaker and taking a
 shower can be executed in parallel, since it's not necessary to stand
 by the coffeemaker while it finishes - we can take a shower while it's
 running.
-\subsection{An MPI experiment example}
+\subsection{Real-life trace collection example}
 After the generic introduction, let's take a look at how we could
 represent the experiment we described in section
 \ref{sec:example_process} in XPflow. The representation can be seen on
@@ -234,7 +235,7 @@ represent the experiment we described in section
 \begin{figure}[htbp]
   \centering
     \includegraphics[scale=0.5]{./Figures/xpflow_example2.jpg}
-  \caption[dayum]{An MPI experiment in XPflow}
+  \caption[dayum]{A typical MPI experiment in XPflow}
   \label{fig:xpflow_example2}
 \end{figure}
 On this representation, there is no parallel execution like in the
@@ -278,19 +279,17 @@ collection. They will be discussed in greater detail when talking
 about the backend.
 \label{sec:keeping_of_nodes}
 \subsubsection{reserve\_and\_deploy}
-The allocation and deployment of
-the nodes are in coupled inside one method, since it wouldn't make
-sens to just start a job without deploying an operating system on the
-allocated nodes. The framework currently only works with one specified
-site, but the possibility to run experiments on nodes across multiple
+The allocation and deployment of the nodes are coupled inside one
+method. The framework currently is only able to allocate nodes on one
+specified site, but the possibility to run experiments on nodes across
+multiple
 sites could be implemented in the future. It's important to note that
 when using XPflow's \emph{reserve\_nodes}, we set the \emph{keep
-  =\textgreater  true} argument. This is so we actually keep the job
-open until the
-given time limit expires - we don't kill it at the end of the
-experiment. This is so we can use \emph{checkpointing} (see below) to
-run other experiments on the same nodes without having to do the
-allocation and deployment process again (which can take up several
+  => true} argument. This is so we actually keep the job
+open until the given time limit expires - we don't kill it at the end
+of the experiment. This is so we can use \emph{checkpointing} (see
+below) to run other experiments on the same nodes without having to do
+the allocation and deployment process again (which can take up several
 minutes).
 \subsubsection{broadcast}
 This method can be used to broadcast any file
@@ -318,24 +317,68 @@ itself. It is important to give the full path to the mpirun runnable
 as an argument to the process call, otherwise we can't be sure that
 the MPI implementation running is the one we want.
 \subsubsection{trace\_gather}
+\label{sec:trace_gather}
 After running our MPI experiment, the gathered traces are scattered
 amongst all the corresponding nodes. This process calls a script
-called trace\_gather (which needs to be set up on the system image
-manually), which copies the traces collected on the
+called trace\_gather\cite{ms11} (which needs to be set up on the system
+image manually), which copies the traces collected on the
 different nodes to the one node we run the script on. We need to call
 the script from the path where the execution happened, since that's
 where the traces were gathered. After running
 this process, we can assume that all the trace files are on the node
 we made the function call from. For example if we have our traces in
-/tmp, we need to call trace\_gather from there.
-\subsubsection{merge\_traces}
-This process calls the TAU\cite{sm06}
-script \emph{tau\_treemerge.pl}, which is responsible for merging the
-traces into one trace file. The script also tries to account for any
-clock skew between the trace files with post-processing methods.\\
-After we have one single trace file containing all our traces, we can
-manipulate it easier: we can copy or move it, or convert it, for
-example.
+/tmp, we need to call trace\_gather from there.\\
+Trace\_gather has a parameter called arity. This parameter serves the
+purpose of optimization. Trace\_gather
+works by logging in to each node in question and then sending its
+respective trace file(s) to the requested destination. If the arity is
+greater or equal than the number of nodes - 1, then every node sends
+its package to the head node - if we imagine sending the traces with
+the help of a tree, we could say that the root is the head node, and
+all the other nodes are its children. If we specify arity as less than
+the number of nodes, we can add extra levels to the tree: some nodes
+don't directly send their traces directly to the head node, but to an
+intermediate node, which then sends it further up the tree, eventually
+getting to the root, the head node.\\
+See figure \ref{fig:tracegather_arity} for an example: in a system
+with the total of 8 nodes, we can see on the left how trace\_gather
+works if we set the arity to 7 and when we decrease it to 4. In the
+first case, all the other 7 nodes send their traces directly to the
+root of the tree, the head node (H). In the second case, where the
+arity is 4, we split the nodes into 2 groups: the first group of three
+have the head node as their parent - they send the traces there
+directly. The second group can be seen on the right: 3 of the nodes
+form a third level on the tree, with an intermediate parent. These 3
+nodes send their traces to that parent node, after which the parent
+node sends its traces, coupled with the traces received from its
+children, to the root node. With proportionally more nodes, not
+sending everything directly to the root can provide a noticeable
+performance increase for trace\_gather.
+
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[scale=0.7]{./Figures/tracegather_arity.jpg}
+    \rule{35em}{0.5pt}
+  \caption[Arity in trace\_gather]{Examples of the trace\_gather's
+    algorithm with two different arity values.}
+  \label{fig:tracegather_arity}
+\end{figure}
+
+\subsubsection{execute\_head}
+This activity can be used to execute any command on the head node. The
+head node is one of the allocated nodes, arbitrarily chosen by the
+system. This is the node where the \emph{mpirun} command is run
+from.\\
+The \emph{execute\_head} activity is useful for post-processing
+purposes, such as calling the TAU\cite{sm06} script
+\emph{tau\_treemerge.pl}, which is responsible for merging the traces
+into one trace file and the event files into one event file. This is
+useful, as after we have one single trace and event file containing
+all our traces, we can manipulate them easier.\\
+\emph{execute\_head} can also be used to convert our traces. For
+example, Akypuera's\cite{s13} \emph{tau2paje} script can be used to
+convert TAU traces to traces visualizable with the Pajé\cite{cob00}
+visualization tool.
 \subsection{Backend}
 As mentioned before, the backend of the framework is an XPflow
 construct called a \emph{library}. A library has state, so we can have
@@ -389,7 +432,7 @@ on the same allocated nodes, as long as the time limit we set at the
 node allocation allows us. It is also possible to change the code
 after the checkpoint to run some other experiment, as it can be seen
 on \ref{fig:checkpoint2}: there, we modify the code so it runs
-\emph{dt.A.8} instead of \emph{lu.A.8}. We had to modify the code in
+\emph{dt.A.2} instead of \emph{lu.A.2}. We had to modify the code in
 two places to achieve this: first, we need to broadcast the other
 benchmark across the nodes (line 14) and the path to the runnable
 needs to be changed as well when giving the command to run the
@@ -435,4 +478,19 @@ would contain only a proxy variable at the
 time we want to insert it in the string, even if we would put the
 correct value in it right before. Writing this method as an activity
 instead of a process solves this problem, since activities are written
-in plain Ruby.
+in plain Ruby.\\[0.5cm]
+This chapter was about the implementation details of the
+framework. First, we talked about the development and testing
+environment, the Grid'5000 testbed. We went over its architecture and
+its features deemed to be the most important for this project. After
+that, we constructed an example process for real-life trace
+collection, which was used when portraying the features of the
+experimentation engine, which the framework was developed with:
+XPflow. We talked about why XPflow is feasible for our project and its
+main features, through two examples: one basic, general example and
+one that is very relevant to our case, the aforementioned RL trace
+collection example. After that part, we talked about the architecture
+of the implemented framework, and some of its methods. In the end, we
+mentioned metadata collection as an important feature of the
+framework, as well as checkpointing, an XPflow feature that proved to
+be really useful during development.

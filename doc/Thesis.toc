@@ -20,7 +20,7 @@
 \contentsline {subsection}{\numberline {2.2.1.}Advantages of Modelling}{6}{section*.9}
 \contentsline {subsection}{\numberline {2.2.2.}Analytical and Simulation Models}{6}{section*.9}
 \contentsline {section}{\numberline {2.3.}Off-line and partial on-line simulation}{7}{section*.9}
-\contentsline {subsection}{\numberline {2.3.1.}Off-line simulation}{8}{section*.10}
+\contentsline {subsection}{\numberline {2.3.1.}Off-line simulation}{7}{section*.10}
 \contentsline {subsubsection}{\numberline {2.3.1.1.}Time-independent traces}{8}{section*.10}
 \contentsline {subsection}{\numberline {2.3.2.}Partial on-line simulation}{9}{section*.10}
 \contentsline {section}{\numberline {2.4.}SimGrid}{10}{section*.10}
@@ -46,36 +46,58 @@
 \contentsline {subsection}{\numberline {3.3.2.}Impact of instrumentation}{21}{section*.15}
 \contentsline {paragraph}{Time overhead}{22}{section*.16}
 \contentsline {paragraph}{Impact on hardware counter values}{22}{section*.16}
-\contentsline {subsection}{\numberline {3.3.3.}Clock synchronization}{22}{section*.16}
-\contentsline {chapter}{\numberline {4.}Implementation}{24}{section*.16}
-\contentsline {section}{\numberline {4.1.}Environment}{24}{section*.17}
-\contentsline {subsection}{\numberline {4.1.1.}The importance of testbeds}{24}{section*.17}
-\contentsline {subsection}{\numberline {4.1.2.}Architecture of Grid'5000}{25}{section*.17}
-\contentsline {subsubsection}{\numberline {4.1.2.1.}Networking}{25}{section*.18}
-\contentsline {subsubsection}{\numberline {4.1.2.2.}User view and data management}{26}{section*.18}
-\contentsline {subsubsection}{\numberline {4.1.2.3.}Experiment scheduling}{26}{section*.18}
-\contentsline {subsubsection}{\numberline {4.1.2.4.}Node reconfiguration}{27}{section*.18}
-\contentsline {section}{\numberline {4.2.}An example process}{28}{section*.18}
-\contentsline {section}{\numberline {4.3.}XPflow}{28}{section*.18}
-\contentsline {subsection}{\numberline {4.3.1.}A general example}{29}{section*.19}
-\contentsline {subsection}{\numberline {4.3.2.}An MPI experiment example}{29}{section*.19}
-\contentsline {section}{\numberline {4.4.}The framework}{30}{section*.19}
-\contentsline {subsection}{\numberline {4.4.1.}Frontend}{30}{section*.20}
-\contentsline {subsubsection}{\numberline {4.4.1.1.}init; finish}{31}{section*.20}
-\contentsline {subsubsection}{\numberline {4.4.1.2.}reserve\_and\_deploy}{31}{section*.20}
-\contentsline {subsubsection}{\numberline {4.4.1.3.}broadcast}{31}{section*.20}
-\contentsline {subsubsection}{\numberline {4.4.1.4.}disable\_cores}{31}{section*.20}
-\contentsline {subsubsection}{\numberline {4.4.1.5.}mpirun}{32}{section*.20}
-\contentsline {subsubsection}{\numberline {4.4.1.6.}trace\_gather}{32}{section*.20}
-\contentsline {subsubsection}{\numberline {4.4.1.7.}merge\_traces}{32}{section*.20}
-\contentsline {subsection}{\numberline {4.4.2.}Backend}{32}{section*.20}
-\contentsline {subsubsection}{\numberline {4.4.2.1.}Metadata}{33}{section*.21}
-\contentsline {subsection}{\numberline {4.4.3.}Checkpointing}{33}{section*.21}
-\contentsline {subsection}{\numberline {4.4.4.}Proxy variables}{34}{section*.21}
-\contentsline {chapter}{\numberline {5.}Evaluation Plan}{36}{section*.21}
-\contentsline {chapter}{\numberline {6.}Results}{37}{section*.21}
-\contentsline {chapter}{\numberline {7.}Conclusion}{38}{section*.21}
+\contentsline {subsection}{\numberline {3.3.3.}Clock synchronization}{23}{section*.16}
+\contentsline {chapter}{\numberline {4.}Implementation}{25}{section*.16}
+\contentsline {section}{\numberline {4.1.}Environment}{25}{section*.17}
+\contentsline {subsection}{\numberline {4.1.1.}The importance of testbeds}{25}{section*.17}
+\contentsline {subsection}{\numberline {4.1.2.}Architecture of Grid'5000}{26}{section*.17}
+\contentsline {subsubsection}{\numberline {4.1.2.1.}Networking}{26}{section*.18}
+\contentsline {subsubsection}{\numberline {4.1.2.2.}User view and data management}{27}{section*.18}
+\contentsline {subsubsection}{\numberline {4.1.2.3.}Experiment scheduling}{27}{section*.18}
+\contentsline {subsubsection}{\numberline {4.1.2.4.}Node reconfiguration}{28}{section*.18}
+\contentsline {section}{\numberline {4.2.}An example process}{29}{section*.18}
+\contentsline {section}{\numberline {4.3.}XPflow}{29}{section*.18}
+\contentsline {subsection}{\numberline {4.3.1.}A general example}{30}{section*.19}
+\contentsline {subsection}{\numberline {4.3.2.}Real-life trace collection example}{30}{section*.19}
+\contentsline {section}{\numberline {4.4.}The framework}{31}{section*.19}
+\contentsline {subsection}{\numberline {4.4.1.}Frontend}{31}{section*.20}
+\contentsline {subsubsection}{\numberline {4.4.1.1.}init; finish}{32}{section*.20}
+\contentsline {subsubsection}{\numberline {4.4.1.2.}reserve\_and\_deploy}{32}{section*.20}
+\contentsline {subsubsection}{\numberline {4.4.1.3.}broadcast}{32}{section*.20}
+\contentsline {subsubsection}{\numberline {4.4.1.4.}disable\_cores}{32}{section*.20}
+\contentsline {subsubsection}{\numberline {4.4.1.5.}mpirun}{33}{section*.20}
+\contentsline {subsubsection}{\numberline {4.4.1.6.}trace\_gather}{33}{section*.20}
+\contentsline {subsubsection}{\numberline {4.4.1.7.}execute\_head}{34}{section*.20}
+\contentsline {subsection}{\numberline {4.4.2.}Backend}{34}{section*.20}
+\contentsline {subsubsection}{\numberline {4.4.2.1.}Metadata}{35}{section*.21}
+\contentsline {subsection}{\numberline {4.4.3.}Checkpointing}{35}{section*.21}
+\contentsline {subsection}{\numberline {4.4.4.}Proxy variables}{36}{section*.21}
+\contentsline {chapter}{\numberline {5.}Evaluation Plan}{38}{section*.21}
+\contentsline {section}{\numberline {5.1.}Experiment specification}{38}{section*.22}
+\contentsline {subsection}{\numberline {5.1.1.}The benchmark}{38}{section*.22}
+\contentsline {subsection}{\numberline {5.1.2.}The environment}{39}{section*.22}
+\contentsline {subsection}{\numberline {5.1.3.}The OS image}{39}{section*.22}
+\contentsline {subsection}{\numberline {5.1.4.}The experiment process}{40}{section*.22}
+\contentsline {chapter}{\numberline {6.}Results}{42}{section*.22}
+\contentsline {section}{\numberline {6.1.}Experiment using the framework}{42}{section*.23}
+\contentsline {subsection}{\numberline {6.1.1.}Preparation}{43}{section*.23}
+\contentsline {subsubsection}{\numberline {6.1.1.1.}Experiment initialization}{43}{section*.24}
+\contentsline {subsubsection}{\numberline {6.1.1.2.}Reserve and deploy}{43}{section*.24}
+\contentsline {subsubsection}{\numberline {6.1.1.3.}Broadcasting the runnable}{44}{section*.24}
+\contentsline {subsubsection}{\numberline {6.1.1.4.}Disabling cores}{44}{section*.24}
+\contentsline {subsection}{\numberline {6.1.2.}Running the benchmark}{44}{section*.24}
+\contentsline {subsection}{\numberline {6.1.3.}Post-processing}{45}{section*.24}
+\contentsline {subsubsection}{\numberline {6.1.3.1.}Gathering the traces}{45}{section*.25}
+\contentsline {subsubsection}{\numberline {6.1.3.2.}Merging the traces}{45}{section*.25}
+\contentsline {subsubsection}{\numberline {6.1.3.3.}Converting the traces}{45}{section*.25}
+\contentsline {subsection}{\numberline {6.1.4.}Metadata}{46}{section*.25}
+\contentsline {section}{\numberline {6.2.}Experiment by hand}{46}{section*.25}
+\contentsline {subsection}{\numberline {6.2.1.}Preparation}{46}{section*.26}
+\contentsline {subsection}{\numberline {6.2.2.}Running the benchmark}{47}{section*.26}
+\contentsline {subsection}{\numberline {6.2.3.}Post-processing}{48}{section*.26}
+\contentsline {section}{\numberline {6.3.}Comparison}{48}{section*.26}
+\contentsline {chapter}{\numberline {7.}Conclusion}{50}{section*.26}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A.}Appendix Title Here}{39}{section*.21}
+\contentsline {chapter}{\numberline {A.}Appendix Title Here}{51}{section*.26}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{40}{section*.21}
+\contentsline {chapter}{Bibliography}{52}{section*.26}

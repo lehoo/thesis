@@ -122,8 +122,13 @@ work. Documentation only exists for specific systems, for example in
 traces on the Grid'5000 testbed. Obviously, platform-specific guides
 don't always help with problems arising in an other environment.\\
 Below comes a more detailed description of the process of acquiring
-traces.
+traces. We're only talking about collecting traces of real MPI
+experiment runs, so-called real-life (or RL) traces, since this is our
+current main concern with the thesis. Collecting traces of simulation
+runs is a different process, which could also be integrated into the
+developed framework in the future.
 \subsection{Real-life (RL) traces}
+\label{sec:rl_traces}
 As talked about in detail in \cite{ms11}, conducting RL tests involves
 multiple steps. RL test data collection is done by collecting traces
 of MPI benchmarks. Currently, the favored tool in trace collection in
@@ -136,26 +141,31 @@ PAPI\cite{mbdh99}\cite{lmmsl01},
 an interface which provides us with the possibility to
 get access to low-level hardware counters (to trace the number of
 instructions at processor level). We also need the Program Database
-Toolkit (PDT)\cite{lcmsmrr00}, which provides the ability of automatic performance
+Toolkit (PDT)\cite{lcmsmrr00}, which provides the ability of automatic
+performance
 instrumentation. In order for TAU to collect the traces we need, these
 toolkits have to be deployed and correctly linked with TAU. TAU has
 its own compiler scripts for MPI programs for both Fortran, C and
 C++. After compiling a benchmark using one of these scripts, they will
 generate TAU trace files upon execution. One trace file (.trc)
-and one event file (.edf) is generated for each MPI process.\\
+and one event file (.edf) is generated for each MPI process. The
+traces are generated on the node of execution, that's why we need the
+trace\_gather program\cite{ms11}, which is an MPI program that gathers
+all the trace files on one node.\\
 It is possible to visualize the traces, in order to compare the RL and SG
 results more easily. Paje is a visualization tool that can be used for
 this purpose. It has its own trace format that it can comprehend, thus
 the TAU traces have to be converted to that. Also, we need to merge
 the traces into one file that we can give to Paje after the
-conversion. There is a
-TAU script that is able to do this, creating one trace and one event
-file. We now only have the task of converting the TAU trace to a Paje
-trace file. Another MPI tracing library, Akypuera provides this
-possibility, having its own tau-to-paje conversion script. Once done,
-we finally have a trace file that Paje can read and display to us.\\
-This process is made up of multiple steps. It's repetitive and prone
-to errors, which causes frustration and unnecessarily delays testing.
+conversion. There is a TAU script that is able to do this, creating
+one trace and one event file. We now only have the task of converting
+the TAU trace to a Paje trace file. Another MPI tracing library,
+Akypuera\cite{s13} provides this possibility, having its own
+tau-to-paje conversion script. Once done, we finally have a trace file
+that Paje can read and display to us.\\
+As we can see, this process is made up of multiple steps. It's
+repetitive and prone to errors when done manually, which causes
+frustration and unnecessarily delays when testing.
 In the future, it is very likely that more and more tests will have to
 be run in order to verify old and newly implemented features, as well
 as various experiments will be conducted using SMPI to test it against
@@ -181,7 +191,7 @@ the most prominent traps that could potentially compromise our
 results. Note that these are problems that come up in a real
 environment, thus only related to real-life traces.
 \subsection{Multiple cores on one node}
-\label{multiple_cores}
+\label{sec:multiple_cores}
 Nowadays, it is common for a computer to have multiple processors
 (cores). Because of this, applications have been optimized to increase
 performance by utilizing more than one core if possible. MPI
@@ -289,6 +299,7 @@ function and its parameters are traced. All this while both the time
 overhead and the hardware counter value discrepancies are considerably
 reduced, as shown in \cite{dms12}.
 \subsection{Clock synchronization}
+\label{sec:clock_synch}
 Another obstacle that comes up when wanting to analyze trace data
 generated in a distributed system is related to clock
 synchronization. When running a parallel experiment on a distributed

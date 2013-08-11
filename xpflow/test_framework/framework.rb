@@ -7,8 +7,8 @@ require '../test_framework/helper_library'
 
 $engine.import_library(HelperLibrary.new, :lib)
 
-process :init do
-  run :lib.init
+process :init do |opts|
+  run :lib.init, opts
 end
 
 process :reserve_and_deploy do |n, t, site, image, nodefile|

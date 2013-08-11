@@ -1,4 +1,4 @@
-\begin{thebibliography}{34}
+\begin{thebibliography}{38}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -24,6 +24,7 @@ Gabriel, E., Fagg~G., E., Bosilca, G., Angskun, T., Dongarra~J., J.,
 , MPICH.
 \newblock Mpich overview, 2012.
 \newblock URL \url{http://www.mpich.org/about/overview/}.
+\newblock Last visited on 07/08/2013.
 
 \bibitem[H. et~al.(2008)H., A., and M.]{clq08}
 Casanova, H., Legrand, A., and Quinson, M.
@@ -83,9 +84,8 @@ Hillston, J.
 \newblock URL
   \url{http://www.inf.ed.ac.uk/teaching/courses/pm/PM-lecture1.pdf}.
 
-\bibitem[P. et~al.(2013)P., Degomme, S., A., S., M., M., F., and
-  B.]{bdglmqssv13}
-Bédaride, P., A., Degomme, Genaud, S., Legrand, A., Markomanolis~G., S.,
+\bibitem[P. et~al.(2013)P., A., S., A., S., M., M., F., and B.]{bdglmqssv13}
+Bédaride, P., Degomme, A., Genaud, S., Legrand, A., Markomanolis~G., S.,
   Quinson, M., Stillwell, M., Suter, F., and Videau, B.
 \newblock Improving simulations of mpi applications using a hybrid network
   model with topology and contention support.
@@ -99,8 +99,8 @@ Desprez, F., Markomanolis~G., S., Suter, F., and Quinson, M.
   Software Tools and Tool Infrastructures (PSTI)}, pages 467--476, Taipei,
   Taiwan, September 2011.
 
-\bibitem[Markomanolis and Suter(2011)]{ms11}
-G.~S., Markomanolis and F., Suter.
+\bibitem[S. and F.(2011)]{ms11}
+Markomanolis~G., S. and Suter, F.
 \newblock Time-independent trace acquisition framework – a grid'5000 how-to.
 \newblock Technical report, Institut National de Recherche en Informatique et
   en Automatique, 2011.
@@ -168,8 +168,8 @@ Buchert, T. and Nussbaum, L.
   orchestration of reproducible and scalable experiments.
 \newblock In \emph{MajecSTIC 2012}, Lille, France, October 2012{\natexlab{b}}.
 
-\bibitem[Shende and Malony(2006)]{sm06}
-S.~S., Shende and A.~D., Malony.
+\bibitem[S. and D.(2006)]{sm06}
+Shende~S., S. and Malony~A., D.
 \newblock The tau parallel performance system.
 \newblock \emph{International Journal of High Performance Computing
   Applications}, 20:\penalty0 287--311, 2006.
@@ -251,5 +251,33 @@ Claudel, B., Huard, G., and Richard, O.
 Jeanvoine, E., Sarzyniec, L., and Nussbaum, L.
 \newblock Kadeploy3: Efficient and scalable operating system provisioning.
 \newblock \emph{Usenix}, 38:\penalty0 38--44, February 2013.
+
+\bibitem[L.(2013)]{s13}
+Schnorr, L.
+\newblock Akypuera, a library to trace mpi applications and generate paje trace
+  files, 2013.
+\newblock URL \url{https://github.com/schnorr/akypuera}.
+\newblock Last visited on 08/08/2013.
+
+\bibitem[de~Kergommeaux~D. et~al.(2000)de~Kergommeaux~D., de~Oliveira Stein~B.,
+  and E.]{cob00}
+Chassin~de, Kergommeaux~D., ~de, Oliveira Stein~B., and Bernard~P., E.
+\newblock Performance characteristics of the multi-zone nas parallel
+  benchmarks.
+\newblock \emph{Parallel Computing}, 26:\penalty0 1253--1274, August 2000.
+
+\bibitem[H. et~al.(1999)H., M., and J.]{jfy99}
+Jin, H., Frumkin, M., and Yan, J.
+\newblock The openmp implementation of nas parallel benchmarks and its
+  performance.
+\newblock Technical report, Technical Report NAS-99-011, NASA Ames Research
+  Center, October 1999.
+
+\bibitem[J.(2013)]{d13}
+Dunbar, J.
+\newblock Problem sizes and parameters in nas parallel benchmarks, 2013.
+\newblock URL
+  \url{http://www.nas.nasa.gov/publications/npb_problem_sizes.html}.
+\newblock Last visited on 07/08/2013.
 
 \end{thebibliography}

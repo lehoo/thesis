@@ -1,5 +1,141 @@
+\externaldocument{Chapter4}
+\externaldocument{Chapter3}
+
 % Chapter 5
 
 \chapter{Evaluation Plan}
 \label{Chapter5}
 \lhead{Chapter 5. \emph{Evaluation Plan}}
+
+\label{sec:evaluation_plan}
+In this chapter, we go over the process of the evaluation of the
+implemented framework, the goal of which is to make
+conclusions about whether or not we succeeded in achieving the
+requirements we specified earlier. The evaluation will be done by
+running a multi-step, fairly typical experiment both manually and with
+the framework, so we can easily observe the differences.\\
+The experiment process used in the evaluation will consist of the same
+steps as mentioned before in the Implementation chapter as an example
+MPI experiment process (see \ref{fig:xpflow_example2}), used to collect
+RL traces, which can be used for example for the development of
+SMPI. The steps in the process are very generic though: we need to be
+more precise about certain details of the experiment.
+\section{Experiment specification}
+\subsection{The benchmark}
+The benchmark used for evaluation is taken from the NAS Parallel
+Benchmarks suite\cite{jfy99}, which is a small set of benchmarks
+designed for performance testing of parallel systems. The benchmark
+chosen for our current purpose is called \emph{lu.B.8}. The name
+consists of 3 parts. The first part, \emph{lu} indicates what the
+experiment is about: as its name suggests, the LU benchmark solves a
+system of equations represented with a matrix, with the LU
+factorization method.\\
+The second part of the name, \emph{B} is an
+indication about the complexity of the problem that the benchmark
+solves. The NPB suite defines so-called "problem classes" for its
+benchmarks. B is in the middle "standard" complexity category, being
+more complex than the Small (S), the Workstation-size (W) and A, the
+least complex "standard" problem size, but less complex than C and the
+larger test problem sizes.\cite{d13}\\
+Finally, the number \emph{8} at the end of the benchmark's name
+indicates how many parallel processes it is intended for to be solved:
+for our purposes, we choose it to be 8, thus, we will allocate 8 nodes
+for our experiment, each of them running 1 MPI process to solve the
+problem.\\
+It's important to note that when doing the experiment, we assume that
+the benchmark is already compiled, in a specified place in the user's
+home folder: /home/dlehoczky/NPB3.3/NPB3.3-MPI/bin/lu.B.8. For the
+user \emph{dlehoczky}, the environment variable \emph{\$NPB\_DIR} is
+set to /home/dlehoczky/NPB3.3/NPB3.3-MPI, thus it can be used as a
+shortcut when accessing the benchmark. Also, it is assumed that
+ssh-keys are set up correctly so the user can reach the specified
+Grid'5000 site without any password.
+\subsection{The environment}
+For our experiment, we use the Grid'5000 testbed, discussed in greater
+detail before, in \ref{sec:environment}. As we said before, there are
+many different sites to choose from. During development,
+many tests were needed to be done. Sometimes one or two sites were
+undergoing maintenance or became unstable for various reasons. Towards
+the end of the development process, the Lille site proved to be
+reliable in terms of availability, this is why it was chosen as the
+site to run our final tests on.
+\subsection{The OS image}
+\label{sec:image}
+We use a customized image called
+\emph{wheezy-x64-big-lehoo}. This image contains all the necessary
+tools required to run the described process. These tools were
+mentioned before, at \ref{sec:rl_traces}, when we talked about how to
+collect RL traces, which this experiment is about. To reiterate, let's
+sum up what our customized image contains in order to execute our
+experiment process:
+\begin{itemize}
+\item OpenMPI 1.6.4;
+\item the \emph{TAU}\cite{sm06} profiling tool;
+\item the PAPI\cite{mbdh99}\cite{lmmsl01} interface to low-level
+hardware counters (configured so it's linked to TAU, which uses it for
+tracing);
+\item the \emph{Program Database Toolkit (PDT)}\cite{lcmsmrr00} (also
+configured to be linked to TAU);
+\item the \emph{trace\_gather}\cite{ms11} MPI program;
+\item \emph{Akypuera}\cite{s13}, a library to trace mpi applications
+and generate paje trace files. (In our experiment, we only use
+its \emph{tau2paje} trace converting script.)
+\end{itemize}
+\subsection{The experiment process}
+\label{sec:experiment_process}
+As mentioned before, the experiment process will consist of the same
+steps as in the example discussed before
+(see \ref{fig:xpflow_example2}).\\
+To prepare our experiment process, we start by
+logging in to the frontend with our user. Then, we start an
+interactive job, allocating the desired number (in our case, 8) of
+nodes for a specified amount of time. We won't specify what nodes we
+want, the system will decide which ones we get. Since there might be
+performance disparities between two different sets of nodes, we make
+sure to use the exact same set of nodes in the two experiments (the
+one done manually and the one done with the framework). We do this by
+running the experiment with the framework first, then connecting to
+the job started by the framework and repeating the experiment
+manually, starting from the deployment part. The node allocation is
+not really an important part of the experiment, thus, it's not a
+problem that it's omitted from the manual execution.\\
+As part of the process that we conduct in both experiments, first, we
+deploy the previously mentioned (\ref{sec:image}) customized image on the
+nodes. Then we broadcast the runnable (\emph{lu.A.8}) to every node's
+/tmp directory. After that comes the step where we disable all but one
+core on every node. The reasoning for this step has been discussed
+previously (see \ref{sec:multiple_cores}). This concludes the
+preparation stage.\\
+After that comes the execution of the benchmark. We use OpenMPI 1.6.4,
+installed on our image.\\
+After the running of the benchmark, comes the post-processing. If we
+compiled our benchmark correctly with TAU, one trace file (.trc)
+and one event file (.edf) is generated for each MPI process. The
+traces are generated on the node of execution. This is why first,
+we run the \emph{trace\_gather}\cite{ms11} script to collect the traces
+and event files scattered across all the allocated nodes to the head
+node. When we have all the files on our head node, we use
+TAU's \emph{tau\_treemerge.pl}, which is a script that merges all our
+trace files and event files into one trace and event file
+respectively, also trying to account for any clock skew
+(see \ref{sec:clock_synch}) between the trace files with
+post-processing methods. Finally, when we have one merged trace and
+one event file, we can convert our TAU trace to a format that is
+compatible with the Pajé\cite{cob00} visualization tool. Visualizing
+the traces makes it easier to analyze and compare. For the conversion,
+we use Akypuera's\cite{s13} \emph{tau2paje} script.\\[0.5cm]
+In this chapter, we went over the specifics of the evaluation of our
+implementation. First, we talked about the chosen benchmark to gather
+traces from, which is called \emph{lu.B.8}. We alse explained there
+what the name stands for: LU indicates the problem the benchmark
+solves, B is the problem class and 8 indicates how many nodes the
+benchmark is compiled for. We also discussed what the chosen
+environment is going to be (Grid'5000) and what operating system image
+we are going to deploy on our nodes before running the benchmarks on
+them. Finally, we went over the experiment process: the RL trace
+collection for a given benchmark. We mentioned that our experiment
+process will be done both with and without the framework to
+demonstrate how the two methods differ from each other. We discussed
+the preparation steps, the running of the benchmark and the
+post-processing part. Now, in the next chapter, we'll take a look at
+the results of our experiments.
