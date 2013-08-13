@@ -3,36 +3,7 @@
 \chapter{Introduction}
 \label{Chapter1}
 \lhead{Chapter 1. \emph{Introduction}}
-Simulation has become increasingly popular in the scientific community
-lately because of its many advantages over using real systems in
-certain situations. Such an advantage is, for example, that we don't
-need to devote lots of money and other resources on acquiring the -
-possibly large - system we need for our experiments, or that we can
-easily switch between configurations, without having to worry about
-how to modify it or how to obtain a new one. SimGrid is a
-generic simulation framework, which can be used to simulate multiple
-kinds of distributed systems, such as Clouds, Grids or clusters. MPI
-is an inter-process communication protocol, one of the most
-prominently used in distributed computing currently. SMPI is a
-framework that connects SimGrid and MPI: it's part of the SimGrid
-project with the goal of running MPI applications in a simulated
-environment. SMPI is currently under heavy development. Creating
-generic network models is an ongoing effort and it is one of the
-development directions that gets the most focus by the development
-team. The development process needs continuous validation, which is
-done by running real-life MPI benchmarks (using possibly multiple
-different implementations), as well as running the same benchmarks
-with SMPI. The results can be used to check how accurate the
-simulation was. Currently, this testing process consists of multiple
-different, manually performed steps. It's tedious, repetitive work,
-but as mentioned before, it's necessary. This thesis is about the
-implementation of a framework for automating such tests, introducing
-as much automation into the process as possible, providing the
-possibility to create test workflows that can be run with minimal user
-interaction. The goal is to speed up the testing process, making it
-possible to acquire proportionally more test results, thus helping the
-development team to make progress.
-\\
+
 Distributed computing is a very important concept in computer
 science. There are multiple types of large-scale distributed
 environments that can be used for either production purposes or for
@@ -41,24 +12,33 @@ graphics processing, where we can have multiple graphics chips in one
 computer to do the task.\\
 When doing distributed computing, communication between the processes
 becomes a very important concern, since it can pose a relatively large
-overhead compared to sequential problem-solving - to make parallelism
+overhead compared to sequential problem-solving. To make parallelism
 worthwhile, we have to make sure that the speedup provided by the
-distribution of tasks makes up for the communication overhead. To
-achieve this, task distribution needs to be carefully planned and the
-communication protocols are needed to be optimized. A widely utilized
+distribution of tasks makes up for the communication overhead. There
+are two important factors to take into account when trying to
+achieve this: task distribution needs to be carefully planned and the
+communication protocols are needed to be optimized. Focusing on the
+latter, a widely utilized
 communication protocol that has been under development for many years
 is provided by the MPI\cite{mpif12} inter-process, language-independent
 communication API. MPI itself is just a specification, which has
 multiple existing implementations. The most widely used
 ones include OpenMPI\cite{ompi04} and MPICH\cite{mpich12}.\\
-Setting up a distributed environment is a complicated endeavour: it
-needs both human and monetary resources. When doing research on
-distributed computing, our needs possibly exceed the use of just one
-single platform: we would like to test how our experiments fare on
-multiple different environments. Such environments are not always at
-our disposal. This is why simulation has become a very important field
-of research. SimGrid\cite{clq08} is a project providing a wide range
-of features in this regard: it is a scientific instrument that can be
+There are various reasons to why simulation has become a very
+important field of research and a favored direction to go in for
+scientists. Setting up a distributed environment is a complicated
+endeavour: it needs both human and monetary resources. Such an
+investment and commitment to one system might not be feasible - we may
+only need it to run a few experiments. There is the option of renting
+resources, but that also comes with extra expenses. Also, when doing
+research in distributed computing, our needs possibly exceed the use
+of just one single platform: we would like to test how our experiments
+fare on multiple different environments. Another reason is that
+sometimes we would like to predict what a given system would be
+capable of, so we are fully aware of its capabilities before acquiring
+it, making sure it has the attributes we need.\\
+SimGrid\cite{clq08} is a project providing a wide range of features
+regarding simulation: it is a scientific instrument that can be
 used to simulate large-scale distributed systems in order to study
 their behavior by evaluating and analyzing the results of parallel
 experiments run with the simulator. As mentioned before, inter-process
@@ -91,8 +71,11 @@ are unable to profit from them: to incorporate our results in their
 research, which may or may not be related to our field, which is the
 main point of scientific collaboration.\\
 SMPI is a well-documented and working framework, but also an active
-project and as such, it is under constant development. Currently, a
-lot of resources are spent on developing generic network models for
+project. It is also a project with the goal of applying simulation to
+study large scale computing systems, which is a relatively new
+concept. As such, the project is under constant
+development. Currently, a lot of resources are spent on developing
+generic network models for
 the simulator. Extensive testing is needed for the development
 process, since continuous validation is necessary to see whether or
 not we are heading in the right direction, whether or not the
@@ -115,4 +98,4 @@ an implementation, utilizing the XPflow\cite{bn12_2} experimentation
 engine. XPflow is a fairly new project, constantly under development,
 but it's fairly stable and suitable for our project. It's designed to
 help automating experiments, utilizing a top-down approach taken from
-business workflows.
+business workflows.\\

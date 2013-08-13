@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.6.2)  11 AUG 2013 19:24
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.6.2)  13 AUG 2013 21:17
 entering extended mode
  %&-line parsing enabled.
 **Thesis.tex
@@ -6,7 +6,73 @@ entering extended mode
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, hungarian, loaded.
-(./Thesis.cls
+(./Thesis.cls (/usr/share/texmf-texlive/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(/usr/share/texmf-texlive/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 311.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 312.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 313.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 314.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 315.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 316.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 317.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 318.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 319.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 320.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 321.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 322.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
+)
 Document Class: Thesis 2007/22/02 v1.0 LaTeX document class
 (/usr/share/texmf-texlive/tex/latex/base/book.cls
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
@@ -639,6 +705,81 @@ Now handling font encoding OMX ...
 ... no UTF-8 mapping file for font encoding OMX
 Now handling font encoding U ...
 ... no UTF-8 mapping file for font encoding U
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/usr/share/texmf-texlive/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 Now handling font encoding PU ...
@@ -727,22 +868,29 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 22.
  (./Thesis.aux)
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 64.
+
+(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
 
 (/usr/share/texmf-texlive/tex/latex/ms/ragged2e.sty
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
@@ -766,12 +914,12 @@ LaTeX Info: Redefining \selectfont on input line 125.
 \RaggedRightParindent=\skip82
 \JustifyingParindent=\skip83
 )
-Package caption Info: listings package v1.2 (or newer) detected on input line 5
-9.
+Package caption Info: listings package v1.2 (or newer) detected on input line 6
+4.
 Package caption Info: longtable package v3.15 (or newer) detected on input line
- 59.
-Package caption Info: rotating package v2.0 (or newer) detected on input line 5
-9.
+ 64.
+Package caption Info: rotating package v2.0 (or newer) detected on input line 6
+4.
 
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -787,7 +935,7 @@ Package caption Info: rotating package v2.0 (or newer) detected on input line 5
 \everyMPtoPDFconversion=\toks37
 )
 \c@lstlisting=\count145
-Package hyperref Info: Link coloring ON on input line 59.
+Package hyperref Info: Link coloring ON on input line 64.
  (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
@@ -796,8 +944,8 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 \c@section@level=\count146
 )
-LaTeX Info: Redefining \ref on input line 59.
-LaTeX Info: Redefining \pageref on input line 59.
+LaTeX Info: Redefining \ref on input line 64.
+LaTeX Info: Redefining \pageref on input line 64.
  (./Thesis.out)
 (./Thesis.out)
 \@outlinefile=\write3
@@ -818,18 +966,18 @@ LaTeX Info: Redefining \pageref on input line 59.
 ------------------------------------------------------------------------------
 
 Package hyperref Warning: No destination for bookmark of \addcontentsline,
-(hyperref)                destination is added on input line 116.
+(hyperref)                destination is added on input line 121.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 116.
+LaTeX Font Info:    Try loading font information for U+msa on input line 121.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 116.
+LaTeX Font Info:    Try loading font information for U+msb on input line 121.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 121--121
 
  []
 
@@ -884,45 +1032,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--116
 
 ]
 ------------------------------------------------------------------------------
- Abbreviations
+ Dedicatory
 ------------------------------------------------------------------------------
 [10
 
 
-
-]
-------------------------------------------------------------------------------
- Physical Constants
-------------------------------------------------------------------------------
-[11
-
-
-
-]
-------------------------------------------------------------------------------
- Symbols
-------------------------------------------------------------------------------
-[12
-
-
-
-]
-------------------------------------------------------------------------------
- Dedicatory
-------------------------------------------------------------------------------
-[13
-
 ] (./Chapters/Chapter1.tex
-1. fejezet.
+Chapter 1
 ------------------------------------------------------------------------------
  1 Introduction
 ------------------------------------------------------------------------------
-) [1
+)
+Underfull \hbox (badness 10000) in paragraph at lines 7--222
+
+ []
+
+[1
 
 
 
 ] [2] (./Chapters/Chapter2.tex [3]
-2. fejezet.
+Chapter 2
 ------------------------------------------------------------------------------
  2 Literature Review
 ------------------------------------------------------------------------------
@@ -942,22 +1072,13 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 160.
 
-[7] [8] [9]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 278.
-
- (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 278.
- [10] [11]
-[12]
+[7] [8] [9] [10] [11] [12]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 413.
 
 [13]) [14] (./Chapters/Chapter3.tex [15]
-3. fejezet.
+Chapter 3
 ------------------------------------------------------------------------------
  3 Problem Description
 ------------------------------------------------------------------------------
@@ -990,11 +1111,11 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 193.
 
-<./Figures/disabled_cores.jpg, id=679, 456.70625pt x 304.13625pt>
+<./Figures/disabled_cores.jpg, id=706, 456.70625pt x 304.13625pt>
 File: ./Figures/disabled_cores.jpg Graphic file (type jpg)
 
 <use ./Figures/disabled_cores.jpg>
-<./Figures/bind_to_core.jpg, id=680, 456.70625pt x 304.13625pt>
+<./Figures/bind_to_core.jpg, id=707, 456.70625pt x 304.13625pt>
 File: ./Figures/bind_to_core.jpg Graphic file (type jpg)
 
 <use ./Figures/bind_to_core.jpg> [20] [21 <./Figures/disabled_cores.jpg> <./Fig
@@ -1007,68 +1128,68 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 270.
 
-[22]) [23] (./Chapters/Chapter4.tex [24]
-4. fejezet.
+[22]) [23] (./Chapters/Chapter4.tex
+
+Package xr Warning: 
+No file Chapter3.aux
+LABELS NOT IMPORTED.
+ on input line 1.
+
+[24]
+Chapter 4
 ------------------------------------------------------------------------------
  4 Implementation
 ------------------------------------------------------------------------------
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 23.
+(hyperref)                be the same. Added a new anchor on input line 25.
 
 [25
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 60.
+(hyperref)                be the same. Added a new anchor on input line 63.
 
-<./Figures/Renater5-g5k.jpg, id=723, 153.9351pt x 115.8729pt>
+<./Figures/Renater5-g5k.jpg, id=750, 153.9351pt x 115.8729pt>
 File: ./Figures/Renater5-g5k.jpg Graphic file (type jpg)
 
 <use ./Figures/Renater5-g5k.jpg> [26] [27 <./Figures/Renater5-g5k.jpg>]
 [28] [29]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 210.
+(hyperref)                be the same. Added a new anchor on input line 226.
 
-<./Figures/xpflow_example1.jpg, id=750, 589.20125pt x 114.4275pt>
+<./Figures/xpflow_example1.jpg, id=779, 589.20125pt x 114.4275pt>
 File: ./Figures/xpflow_example1.jpg Graphic file (type jpg)
 
-<use ./Figures/xpflow_example1.jpg>
-<./Figures/xpflow_example2.jpg, id=754, 847.165pt x 286.06876pt>
+<use ./Figures/xpflow_example1.jpg> [30 <./Figures/xpflow_example1.jpg>]
+<./Figures/xpflow_example2.jpg, id=787, 847.165pt x 286.06876pt>
 File: ./Figures/xpflow_example2.jpg Graphic file (type jpg)
 
 <use ./Figures/xpflow_example2.jpg>
-Overfull \hbox (6.10838pt too wide) in paragraph at lines 237--238
+Overfull \hbox (6.10838pt too wide) in paragraph at lines 253--254
  [][] 
  []
 
-[30 <./Figures/xpflow_example1.jpg>]
+[31 <./Figures/xpflow_example2.jpg>]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 269.
+(hyperref)                be the same. Added a new anchor on input line 285.
 
-[31 <./Figures/xpflow_example2.jpg>] [32]
-<./Figures/tracegather_arity.jpg, id=773, 687.56876pt x 182.6825pt>
+[32] [33] <./Figures/tracegather_arity.jpg, id=807, 687.56876pt x 182.6825pt>
 File: ./Figures/tracegather_arity.jpg Graphic file (type jpg)
 
-<use ./Figures/tracegather_arity.jpg>
-Overfull \hbox (63.82178pt too wide) in paragraph at lines 360--363
- [][] 
- []
-
-[33]
+<use ./Figures/tracegather_arity.jpg> [34 <./Figures/tracegather_arity.jpg>]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 395.
+(hyperref)                be the same. Added a new anchor on input line 412.
 
-[34 <./Figures/tracegather_arity.jpg>]
-<./Figures/checkpoint1.jpg, id=789, 542.025pt x 380.42125pt>
+<./Figures/checkpoint1.jpg, id=818, 542.025pt x 380.42125pt>
 File: ./Figures/checkpoint1.jpg Graphic file (type jpg)
 
 <use ./Figures/checkpoint1.jpg>
-<./Figures/checkpoint2.jpg, id=790, 542.025pt x 380.42125pt>
+<./Figures/checkpoint2.jpg, id=819, 542.025pt x 380.42125pt>
 File: ./Figures/checkpoint2.jpg Graphic file (type jpg)
 
 <use ./Figures/checkpoint2.jpg> [35]) [36 <./Figures/checkpoint1.jpg>]
@@ -1085,24 +1206,224 @@ No file Chapter3.aux
 LABELS NOT IMPORTED.
  on input line 2.
 
-[37 <./Figures/checkpoint2.jpg>]
-5. fejezet.
+[37 <./Figures/checkpoint2.jpg>] [38]
+Chapter 5
 ------------------------------------------------------------------------------
- 5 Evaluation Plan
+ 5 Evaluation
 ------------------------------------------------------------------------------
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 23.
+(hyperref)                be the same. Added a new anchor on input line 38.
 
+[39
 
-Overfull \hbox (48.73651pt too wide) in paragraph at lines 25--53
-\T1/cmr/m/n/10.95 al-re-ady com-pi-led, in a spe-ci-fied place in the user's ho
-me folder: /home/dlehoczky/NPB3.3/NPB3.3-
+]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 46.
+
+[40] [41]
+Underfull \hbox (badness 10000) in paragraph at lines 127--176
+
  []
 
-[38
+[42]
 
-] [39]) [40] (./Chapters/Chapter6.tex
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 182.
+
+<./Figures/experiment_code.jpg, id=876, 656.4525pt x 529.98pt>
+File: ./Figures/experiment_code.jpg Graphic file (type jpg)
+
+<use ./Figures/experiment_code.jpg>
+Overfull \hbox (42.04054pt too wide) in paragraph at lines 193--196
+ [][] 
+ []
+
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 202.
+
+[43] <./Figures/fex_deployment.jpg, id=882, 758.835pt x 202.7575pt>
+File: ./Figures/fex_deployment.jpg Graphic file (type jpg)
+
+<use ./Figures/fex_deployment.jpg>
+Overfull \hbox (37.83145pt too wide) in paragraph at lines 237--240
+ [][] 
+ []
+
+[44 <./Figures/experiment_code.jpg>] [45 <./Figures/fex_deployment.jpg>]
+<./Figures/fex_mpirun.jpg, id=894, 722.7pt x 62.2325pt>
+File: ./Figures/fex_mpirun.jpg Graphic file (type jpg)
+
+<use ./Figures/fex_mpirun.jpg>
+Overfull \hbox (16.15027pt too wide) in paragraph at lines 294--297
+ [][] 
+ []
+
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 303.
+
+[46 <./Figures/fex_mpirun.jpg>]
+<./Figures/fex_postprocessing.jpg, id=904, 722.7pt x 170.6375pt>
+File: ./Figures/fex_postprocessing.jpg Graphic file (type jpg)
+
+<use ./Figures/fex_postprocessing.jpg>
+Overfull \hbox (16.15027pt too wide) in paragraph at lines 347--350
+ [][] 
+ []
+
+<./Figures/fex_metadata.jpg, id=906, 326.21875pt x 243.91125pt>
+File: ./Figures/fex_metadata.jpg Graphic file (type jpg)
+
+<use ./Figures/fex_metadata.jpg>
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 382.
+
+[47 <./Figures/fex_postprocessing.jpg>]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 397.
+
+
+(/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 397--397
+[]|\T1/cmtt/m/n/10 kadeploy3 -f $OAR_FILE_NODES -e
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--400
+[]|\T1/cmtt/m/n/10 cat $OAR_FILE_NODES | uniq >
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--403
+[]|\T1/cmtt/m/n/10 taktuk -l dlehoczky -f ~/nodefile_uniq
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--406
+[]|\T1/cmtt/m/n/10 taktuk -l root -f
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--406
+\T1/cmtt/m/n/10 /home/dlehoczky/nodefile_uniq broadcast
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--406
+\T1/cmtt/m/n/10 exec [ 'for i in /sys/devices/system/cpu/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--406
+\T1/cmtt/m/n/10 cpu[1-9]*/online; do echo 0 > "$i" ; done'
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 410--410
+[]|\T1/cmtt/m/n/10 taktuk -f ~/nodefile_uniq broadcast exec [
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 410--410
+\T1/cmtt/m/n/10 'cat /proc/cpuinfo' ] | grep process | awk
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 410--410
+\T1/cmtt/m/n/10 'if($9>0) print $1' | uniq | awk -F".fr-"
+ []
+
+
+Overfull \hbox (4.5672pt too wide) in paragraph at lines 389--413
+ [] 
+ []
+
+[48 <./Figures/fex_metadata.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
+[]|\T1/cmtt/m/n/10 /usr/local/openmpi-1.6.4-install
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
+\T1/cmtt/m/n/10 /bin/mpirun -mca btl ^openib --mca pml
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
+\T1/cmtt/m/n/10 ob1 -machinefile ~/nodefile_uniq -np 8
+ []
+
+
+Overfull \hbox (4.5672pt too wide) in paragraph at lines 434--446
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 465--465
+[]|\T1/cmtt/m/n/10 /usr/local/bin/mpirun -machinefile
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 465--465
+\T1/cmtt/m/n/10 ~/nodefile_uniq -np 8
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 465--465
+\T1/cmtt/m/n/10 /usr/local/trace_gather/trace_gather -f
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--469
+[]|\T1/cmtt/m/n/10 /usr/local/akypuera-install/bin/tau2paje
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--469
+\T1/cmtt/m/n/10 tau.trc tau.edf 1>lu.B.8.paje
+ []
+
+
+Overfull \hbox (4.5672pt too wide) in paragraph at lines 457--471
+ [] 
+ []
+
+[49]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 480.
+
+[50] <./Figures/lu_B_8_framework.jpg, id=929, 654.94687pt x 319.1925pt>
+File: ./Figures/lu_B_8_framework.jpg Graphic file (type jpg)
+
+<use ./Figures/lu_B_8_framework.jpg>
+Overfull \hbox (40.98662pt too wide) in paragraph at lines 519--522
+ [][] 
+ []
+
+<./Figures/lu_B_8_manual1.jpg, id=930, 654.19406pt x 320.69812pt>
+File: ./Figures/lu_B_8_manual1.jpg Graphic file (type jpg)
+
+<use ./Figures/lu_B_8_manual1.jpg>
+Overfull \hbox (40.45966pt too wide) in paragraph at lines 528--531
+ [][] 
+ []
+
+[51 <./Figures/lu_B_8_framework.jpg> <./Figures/lu_B_8_manual1.jpg>]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 562.
+
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 562.
+
+[52]) [53] (./Chapters/Chapter6.tex
 
 Package xr Warning: 
 No file Chapter5.aux
@@ -1121,166 +1442,28 @@ No file Chapter3.aux
 LABELS NOT IMPORTED.
  on input line 3.
 
-[41]
-6. fejezet.
+[54]
+Chapter 6
 ------------------------------------------------------------------------------
- 6 Results
+ 6 Conclusion
 ------------------------------------------------------------------------------
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 25.
+(hyperref)                be the same. Added a new anchor on input line 11.
 
-<./Figures/experiment_code.jpg, id=843, 656.4525pt x 529.98pt>
-File: ./Figures/experiment_code.jpg Graphic file (type jpg)
-
-<use ./Figures/experiment_code.jpg>
-Overfull \hbox (42.04054pt too wide) in paragraph at lines 36--39
- [][] 
- []
-
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 44.
-
-[42
-
-] [43 <./Figures/experiment_code.jpg>] [44]
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 98.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--139
-
- []
-
-[45]
-
-Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 144.
-
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 159.
-
-(/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-Underfull \hbox (badness 10000) in paragraph at lines 159--159
-[]|\T1/cmtt/m/n/10 kadeploy3 -f $OAR_FILE_NODES -e
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 162--162
-[]|\T1/cmtt/m/n/10 cat $OAR_FILE_NODES | uniq >
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 165--165
-[]|\T1/cmtt/m/n/10 taktuk -l root -f ~/nodefile_uniq broadcast
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 168--168
-[]|\T1/cmtt/m/n/10 taktuk -l root -f
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 168--168
-\T1/cmtt/m/n/10 /home/dlehoczky/nodefile_uniq broadcast
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 168--168
-\T1/cmtt/m/n/10 exec [ 'for i in /sys/devices/system/cpu/
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 168--168
-\T1/cmtt/m/n/10 cpu[1-9]*/online; do echo 0 > "$i" ; done'
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--172
-[]|\T1/cmtt/m/n/10 taktuk -f ~/nodefile_uniq broadcast exec [
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--172
-\T1/cmtt/m/n/10 'cat /proc/cpuinfo' ] | grep process | awk
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--172
-\T1/cmtt/m/n/10 'if($9>0) print $1' | uniq | awk -F".fr-"
- []
-
-
-Overfull \hbox (4.5672pt too wide) in paragraph at lines 151--174
- [] 
- []
-
-[46]
-Underfull \hbox (badness 10000) in paragraph at lines 204--204
-[]|\T1/cmtt/m/n/10 /usr/local/openmpi-1.6.4-install
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 204--204
-\T1/cmtt/m/n/10 /bin/mpirun -mca btl ^openib --mca pml
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 204--204
-\T1/cmtt/m/n/10 ob1 -machinefile ~/nodefile_uniq -np 8
- []
-
-
-Overfull \hbox (4.5672pt too wide) in paragraph at lines 195--206
- [] 
- []
-
-[47]
-Underfull \hbox (badness 10000) in paragraph at lines 225--225
-[]|\T1/cmtt/m/n/10 /usr/local/bin/mpirun -machinefile
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 225--225
-\T1/cmtt/m/n/10 ~/nodefile_uniq -np 8
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 225--225
-\T1/cmtt/m/n/10 /usr/local/trace_gather/trace_gather -f
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 229--229
-[]|\T1/cmtt/m/n/10 /usr/local/akypuera-install/bin/tau2paje
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 229--229
-\T1/cmtt/m/n/10 tau.trc tau.edf 1>lu.B.8.paje
- []
-
-
-Overfull \hbox (4.5672pt too wide) in paragraph at lines 217--231
- [] 
- []
-
-[48]) (./Chapters/Chapter7.tex [49]
-7. fejezet.
-------------------------------------------------------------------------------
- 7 Conclusion
-------------------------------------------------------------------------------
-) (./Appendices/AppendixA.tex [50
+[55
 
 ]
-A. F\"uggel\'ek.
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 76.
+
+[56]) (./Appendices/AppendixA.tex [57]
+F\"uggel\'ek A
 ------------------------------------------------------------------------------
  A Appendix Title Here
 ------------------------------------------------------------------------------
-) [51
+) [58
 
 ]
 ------------------------------------------------------------------------------
@@ -1298,10 +1481,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--49
 ab . bio5 . org / foswiki / pub / Main /
  []
 
-[52
+[59
 
 
-] [53]
+] [60]
 Underfull \hbox (badness 2790) in paragraph at lines 172--179
 []\T1/cmr/m/n/10.95 Shende S., S. and Ma-lony A., D.  The tau pa-ral-lel per-fo
 r-mance sys-
@@ -1313,38 +1496,34 @@ Underfull \hbox (badness 7685) in paragraph at lines 172--179
 Per-for-mance Com-pu-t-ing App-li-ca-
  []
 
-[54]) [55] (./Thesis.aux) ) 
+[61] [62]) [63] (./Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 10765 strings out of 495046
- 143397 string characters out of 1181965
- 237118 words of memory out of 3000000
- 13538 multiletter control sequences out of 15000+50000
- 22434 words of font info for 54 fonts, out of 3000000 for 9000
+ 11227 strings out of 495046
+ 150784 string characters out of 1181965
+ 239174 words of memory out of 3000000
+ 13980 multiletter control sequences out of 15000+50000
+ 22775 words of font info for 55 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  48i,12n,45p,395b,508s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec
-/ectt1095.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1095.6
-00pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1440.600pk> </hom
-e/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/lehoo/.te
-xmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/lehoo/.texmf-var/fon
-ts/pk/ljfour/jknappen/ec/ecsl1440.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfou
-r/jknappen/ec/ecbx1095.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/
-ec/ecbx2488.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti2074
-.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </h
-ome/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/lehoo/.
-texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/lehoo/.texmf-var/f
-onts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/lehoo/.texmf-var/fonts/pk/ljf
-our/jknappen/ec/ecrm1728.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappe
-n/ec/ecbx2074.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx12
-00.600pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/te
-xmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/
-public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
-nts/symbols/msam7.pfb>
-Output written on Thesis.pdf (69 pages, 780031 bytes).
+ </home/lehoo/.texmf-var/fonts/pk/ljfour/jknapp
+en/ec/ectt1095.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1
+095.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1440.600pk> 
+</home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/leho
+o/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk> </home/lehoo/.texmf-va
+r/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/lehoo/.texmf-var/fonts/pk/
+ljfour/jknappen/ec/ecsl1440.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ecbx2488.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecb
+x1095.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti2074.600pk
+> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/le
+hoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/lehoo/.texmf-
+var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/lehoo/.texmf-var/fonts/p
+k/ljfour/jknappen/ec/ecrm1200.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jk
+nappen/ec/ecbx2074.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/e
+crm1728.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600
+pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam7.pfb>
+Output written on Thesis.pdf (74 pages, 1135528 bytes).
 PDF statistics:
- 1638 PDF objects out of 1728 (max. 8388607)
- 135 named destinations out of 1000 (max. 500000)
- 814 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1716 PDF objects out of 1728 (max. 8388607)
+ 143 named destinations out of 1000 (max. 500000)
+ 924 words of extra memory for PDF output out of 10000 (max. 10000000)
 

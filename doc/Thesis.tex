@@ -50,6 +50,11 @@
     {Figure}%
 }
 
+\addto\captionshungarian{%
+  \renewcommand{\chaptername}%
+    {Chapter}%
+}
+
 \newcommand{\methodname}[1] {
 \\[0.2cm]
 \ttfamily #1\normalfont
@@ -139,35 +144,28 @@ If the quote is taken from someone, their name goes here
 
 Simulation has become increasingly popular in the scientific community
 lately because of its many advantages over using real systems in
-certain situations. Such an advantage is, for example, that we don't
-need to devote lots of money and other resources on acquiring the -
-possibly large - system we need for our experiments, or that we can
-easily switch between configurations, producing experiment results on
-more than one such system without a large overhead. SimGrid is a
-generic simulation framework, which can be used to simulate multiple
-kinds of distributed systems, such as Clouds, Grids or clusters. MPI
-is an inter-process communication
-protocol, one of the most prominently used in distributed computing
-currently. SMPI is a framework that connects SimGrid and MPI: it's
-part of the SimGrid project with the goal of simulating MPI
-applications in a simulated environment. SMPI is currently under heavy
-development. Creating generic network models is an ongoing effort and
-it is one of the development directions that gets the most focus by
-the development team. This process needs a lot of validation, which is
-done by running real-life MPI benchmarks (using possibly multiple
-different implementations), as well as running the same benchmarks
-with SMPI. The results can be used to check how accurate the
-simulation was. Currently, this testing process consists of multiple
-different steps. It's tedious, repetitive work, but as mentioned
-before, it's necessary. This thesis is about the
-implementation of a framework for automating such tests, introducing
-as much automation into the process as possible, providing the
-possibility to create test workflows that can be run with minimal user
-interaction. The goal is to speed up the testing process, making it
-possible to acquire proportionally more test results, thus helping the
-development team to make progress.
+certain situations.  SimGrid is a generic simulation framework, which
+can be used to simulate multiple kinds of distributed systems, such as
+Clouds, Grids or clusters. SMPI is a framework that connects SimGrid
+with the MPI inter-process communication protocol: it's part of the
+SimGrid project with the goal of running MPI applications in a
+simulated environment. SMPI is currently under heavy development, thus
+in need of constant validation. This thesis is about the
+implementation of a framework that could help in orchestrating and
+automatizing tests. SMPI validation is done by
+running real-life MPI benchmarks (using possibly multiple different
+implementations), as well as running the same benchmarks with
+SMPI. The results can be used to check how accurate the simulation
+was. Currently, this testing process consists of multiple different,
+manually performed steps. It's tedious, repetitive work, but as
+mentioned before, it's necessary. The main goal of the framework is to
+provide a means to orchestrate such tests, introducing as much
+automation into the process as possible, providing the possibility to
+create test workflows that could be run with minimal user
+interaction. With that, we could provide the possibility to speed up
+the testing process, making it possible to acquire proportionally more
+test results, thus helping the development team to make progress.
 }
-
 \clearpage  % Abstract ended, start a new page
 %% ----------------------------------------------------------------
 
@@ -200,37 +198,8 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 
 %% ----------------------------------------------------------------
 \setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
-\clearpage  % Start a new page
-\lhead{\emph{Abbreviations}}  % Set the left side page header to "Abbreviations"
-\listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
-{
-% \textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
-\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
-
-}
-
-%% ----------------------------------------------------------------
-\clearpage  % Start a new page
-\lhead{\emph{Physical Constants}}  % Set the left side page header to "Physical Constants"
-\listofconstants{lrcl}  % Include a list of Physical Constants (a four column table)
-{
-% Constant Name & Symbol & = & Constant Value (with units) \\
-Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
-
-}
-
 %% ----------------------------------------------------------------
 \clearpage  %Start a new page
-\lhead{\emph{Symbols}}  % Set the left side page header to "Symbols"
-\listofnomenclature{lll}  % Include a list of Symbols (a three column table)
-{
-% symbol & name & unit \\
-$a$ & distance & m \\
-$P$ & power & W (Js$^{-1}$) \\
-& & \\ % Gap to separate the Roman symbols from the Greek
-$\omega$ & angular frequency & rads$^{-1}$ \\
-}
-%% ----------------------------------------------------------------
 % End of the pre-able, contents and lists of things
 % Begin the Dedication page
 
@@ -257,11 +226,9 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 
 \input{./Chapters/Chapter4} % Implementation
 
-\input{./Chapters/Chapter5} % Evaluation Plan
+\input{./Chapters/Chapter5} % Evaluation
 
-\input{./Chapters/Chapter6} % Results
-
-\input{./Chapters/Chapter7} % Conclusion
+\input{./Chapters/Chapter6} % Conclusion
 
 %% ----------------------------------------------------------------
 % Now begin the Appendices, including them as separate files

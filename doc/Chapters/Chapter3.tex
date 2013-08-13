@@ -153,16 +153,16 @@ traces are generated on the node of execution, that's why we need the
 trace\_gather program\cite{ms11}, which is an MPI program that gathers
 all the trace files on one node.\\
 It is possible to visualize the traces, in order to compare the RL and SG
-results more easily. Paje is a visualization tool that can be used for
-this purpose. It has its own trace format that it can comprehend, thus
-the TAU traces have to be converted to that. Also, we need to merge
-the traces into one file that we can give to Paje after the
-conversion. There is a TAU script that is able to do this, creating
-one trace and one event file. We now only have the task of converting
-the TAU trace to a Paje trace file. Another MPI tracing library,
-Akypuera\cite{s13} provides this possibility, having its own
+results more easily. Pajé\cite{cob00} is a visualization tool that can
+be used for this purpose. It has its own trace format that it can
+comprehend, thus the TAU traces have to be converted to that. Also, we
+need to merge the traces into one file that we can give to Pajé after
+the conversion. There is a TAU script that is able to do this,
+creating one trace and one event file. We now only have the task of
+converting the TAU trace to a Pajé trace file. Another MPI tracing
+library, Akypuera\cite{s13} provides this possibility, having its own
 tau-to-paje conversion script. Once done, we finally have a trace file
-that Paje can read and display to us.\\
+that Pajé can read and display to us.\\
 As we can see, this process is made up of multiple steps. It's
 repetitive and prone to errors when done manually, which causes
 frustration and unnecessarily delays when testing.
@@ -195,9 +195,9 @@ environment, thus only related to real-life traces.
 Nowadays, it is common for a computer to have multiple processors
 (cores). Because of this, applications have been optimized to increase
 performance by utilizing more than one core if possible. MPI
-implementations have
-also been optimized to migrate threads between cores in certain
-cases. The problem with this is that SMPI is not configured to account
+implementations have also been optimized to migrate threads between
+cores in certain cases, speeding up the execution. The problem with
+this is that SMPI is not configured to account
 for the speedup that the utilization of multi-core processors can
 cause. So if we compare the running time of an MPI application that
 was run on multi-core nodes and compare the running time to our
@@ -283,7 +283,7 @@ without the traces. If the difference is too big, this can make our
 simulations look inaccurate. The impact it can have when using
 off-line simulation, where the simulator replays the traces corrupted
 with this overhead is shown in \cite{dms12}.\\[0.5cm]
-In \cite{dms12}, the authors propose an instrumentation as a
+In \cite{dms12}, the authors propose an instrumentation method as a
 correction to their previous work in \cite{dmsq11}. The problem was
 that there was a sizeable overhead caused mainly by TAU building the
 whole call path of the instrumented application. While it can be
@@ -351,6 +351,9 @@ trace automation framework. We described certain attributes that we
 want our tool to have, as well as the current trace collection method
 that we'd like to make easier and more straightforward. We also
 depicted some of the obstacles that we need to pay attention to when
-collecting traces, as well as methods to overcome them. In the next
+collecting traces, such as the problem with multiple cores, the impact
+of instrumentation on the performance, or clock synchronization
+problems. When discussing these, we also mentioned certain methods to
+overcome these problems. In the next
 chapter, we'll discuss more specific details about the implementation
 of the framework.

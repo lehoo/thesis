@@ -1,3 +1,5 @@
+\externaldocument{Chapter3}
+
 % Chapter 4
 
 \chapter{Implementation}
@@ -42,10 +44,11 @@ are of course still some limits as to how much resources one user can
 utilize, but these limits are not so strict and are much more prone to
 negotiation. As previously mentioned, another important factor is that
 the nodes we are working on should be reconfigurable: we need to be
-able to make customizations to set
-up our testing environment. We need to be able to install and
-uninstall programs. Root access should not be necessary when doing
-tests, but it can make things easier. Deep control and monitoring
+able to make customizations to set up our testing environment. We need
+to be able to install and uninstall programs. Root access should not
+be necessary when doing tests, but it can make things easier,
+especially when configuring the environment. Deep control and
+monitoring
 mechanisms are also needed (not just in one node, but across multiple
 nodes) in order to be able to track our experiments.\\
 Simulation with SMPI can be done on any system, since it only needs
@@ -61,7 +64,10 @@ from \cite{bccddjjllmmnpqrtt06}.
 Grid'5000 is a platform currently consisting of 5000 CPUs, distributed
 across 9 different sites in France (figure \ref{fig:g5ksites}),
 connected by high speed network. These sites host their own clusters
-and they are connected through the Internet.
+and they are connected through the internet. It is worth noting that
+there are multiple clusters on each site. For example, the
+\emph{lille} site hosts the \emph{chimint}, \emph{chirloute} and
+\emph{chinqchint} clusters.
 \begin{figure}[htbp]
   \centering
     \includegraphics[scale=2]{./Figures/Renater5-g5k.jpg}
@@ -80,15 +86,15 @@ can't make any assumptions about the configuration of the security
 mechanisms on an allocated node, thus, we have to assume that they are
 unprotected. This is the reasoning behind the decision that sites
 themselves (thus, of course, the nodes they are hosting) are not
-directly connected to the Internet, making Grid'5000 an isolated
+directly connected to the internet, making Grid'5000 an isolated
 domain. This way, the sites are protected against DoS attacks.\\
-It is possible to open restricted routes through the Internet to
+It is possible to open restricted routes through the internet to
 external clusters, which provides the possibility of doing
 multiplatform experiments.
 \subsubsection{User view and data management}
 As previously mentioned, communication is done with minimal
 restrictions between Grid'5000 machines, meaning that authentication
-procedures in such cases is also minimal: a user has a single account
+procedures in such cases are also minimal: a user has a single account
 across the whole platform. An LDAP directory is installed to provide
 this in a reliable way. Every site runs an LDAP server. These servers
 have the same root and there is a branch for every site. On a given
@@ -96,12 +102,14 @@ site, the local administrator has read-write access, as well as is
 able to manage user accounts.\\
 A user has access to all of the Grid'5000 sites and services
 (monitoring tools, wiki, deployment, etc.). The user also has an
-independent home directory at every site as well. Synchronization can
+independent home directory at every site. Synchronization of home
+directories across different sites can
 be done with any of the standard tools, such as \emph{rsync},
 \emph{scp}, or \emph{sftp}. Data transfers to the outside world are
 restricted - it can only be done via secure tools such as \emph{scp}
 in order to prevent identity spoofing. Authentication is done via a
-user-generated public key, in order to prevent brute-force attacks.
+user-generated public ssh key, in order to prevent brute-force
+attacks.
 \subsubsection{Experiment scheduling}
 \label{sec:experiment_scheduling}
 At cluster level, the OAR\cite{xdghmmnr05} resource management system is
@@ -110,7 +118,7 @@ allocation. Large-scale operations such as parallel task launching or
 monitoring is handled by a specialized parallel launching tool,
 Taktuk\cite{chr09}. Taktuk is a handy tool which can be used from the
 console to, for example, perform a certain set of tasks on multiple
-nodes.\\
+nodes, or to broadcast files across them.\\
 A simple grid broker is handling resource management at grid
 level, allowing co-allocation of nodes on multiple
 clusters. Co-allocation is a very simple process for the user who,
@@ -136,28 +144,36 @@ of default environments is available at start. After starting an
 interactive job (that is, a job that requires node reconfiguration),
 the user can deploy any of these environments by providing the chosen
 image's name to Kadeploy3. Deployment usually takes only a few minutes
-to complete - deployment time increases if we do the deployment on
-more nodes. After this, the nodes are rebooted and the user can log
-onto any of the nodes where an image was successfully deployed. When
-logged in, the user can freely customize the environment: he/she can
-install or remove software, modify configuration files, etc. - root
-password is given to Grid'5000 users as well to provide more
-possibilities. After reconfiguring the environment, the user has the
+to complete - deployment time obviously increases as we do the
+deployment on more nodes. After this, the nodes are rebooted and the
+user can log onto any of the nodes where an image was successfully
+deployed. When logged in, the user can freely customize the
+environment: he/she can
+install or remove software, modify configuration files, etc. Root
+password is given to all Grid'5000 users as well to provide more
+possibilities. After reconfiguring the environment, the user has
 the possibility of saving the now customized image. This image
 includes all software layers from OS to application levels, just as it
 was for the default environments. The home directory is independent of
 the image. After successfully saving an image, the user can deploy it
-on the allocated nodes the same way he/she did for the default
+on the allocated nodes the same way he/she did with the default
 images. This way, an environment tailored for the specific needs of
 the user only needs to be created once, then it can be freely reused
 on any other node on the site at a later time. When trying to port an
 image created on one site to another site, there can be compatibility
 issues due to inter-site differences. Modifications to the customized
-image can be done with ease.
+image can be done with ease - after modifying the environment, the
+user can save it again, with an increased version number. When
+deploying the image, the deployment software chooses the highest
+version number of the given image by default, but the user is provided
+with the possibility of choosing any of the earlier versions.
 \section{An example process}
 \label{sec:example_process}
-To reiterate the more detailed description of trace acquisition, an
-example process that we would like to automate consists of the
+A typical example process that we'd like to automate with the
+framework is, of course, the acquisition process of real-life (RL)
+traces. To reiterate the more detailed description of trace
+acquisition (see \ref{sec:rl_traces}), this example process consists
+of the
 following steps, assuming that we already have a customized image set
 up for our tests, as well as we already have an executable benchmark
 application we'd like to run:
@@ -165,9 +181,9 @@ application we'd like to run:
 \item allocate the specified number of nodes on a specified site
 \item deploy our custom image on the allocated nodes
 \item create a nodefile containing the names of the allocated nodes
-\item broadcast the runnable across the nodes
-\item disable all cores but one on every allocated node (see 3.4.1 for
-  explanation)
+\item broadcast the runnable benchmark across the nodes
+\item disable all cores but one on every allocated node (see
+  \ref{sec:multiple_cores} for explanation)
 \item run the mpi experiment from a chosen "head" node (can be any of
   the allocated nodes)
 \item gather the traces from the allocated nodes to the head node
@@ -177,12 +193,12 @@ application we'd like to run:
 As a side note: in this example, we assume that we are working on the
 Grid'5000 testbed. As previously mentioned, most of the work regarding
 this thesis was conducted there.\\
-As for the example process: parameters that the user can give to it
+As for the example process: parameters that the user can specify
 are the number of nodes, the chosen Grid'5000 site, the image to
-deploy, the runnable and parameters to mpirun (for example to disable
-Infiniband) and the trace\_gather script. The nodefile created in the
-3rd step is necessary for the operations that are needed to do
-something on all the allocated nodes.\\
+deploy, the runnable and the parameters to mpirun (for example to
+disable Infiniband) and to the trace\_gather script. The nodefile
+created in the 3rd step is necessary for the operations that are
+needed to do something on all the allocated nodes.\\
 Now let's take a look at the experimentation engine we'd like to use
 for implementing the framework to automate processes like this.
 \section{XPflow}
@@ -357,10 +373,11 @@ performance increase for trace\_gather.
 
 \begin{figure}[htbp]
   \centering
-    \includegraphics[scale=0.7]{./Figures/tracegather_arity.jpg}
+    \includegraphics[scale=0.6]{./Figures/tracegather_arity.jpg}
     \rule{35em}{0.5pt}
   \caption[Arity in trace\_gather]{Examples of the trace\_gather's
-    algorithm with two different arity values.}
+    algorithm with two different arity values. Every child node is
+    sending its traces to its parent.}
   \label{fig:tracegather_arity}
 \end{figure}
 
@@ -418,6 +435,7 @@ method, while the runtime is calculated by saving the starting time in
 the \emph{init} method, the ending time in the \emph{finish} method,
 then calculating the difference.
 \subsection{Checkpointing}
+\label{sec:checkpointing}
 XPflow has a very useful feature, called checkpointing. A checkpoint
 can be put anywhere in our experiment, making it possible that in the
 next run, control is \emph{resumed} at the place of the checkpoint. An

@@ -1,4 +1,4 @@
-\begin{thebibliography}{38}
+\begin{thebibliography}{39}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -197,6 +197,20 @@ Lindlan~K., A., Cuny, J., Malony~A., D., Shende, S., Mohr, B., Rivenburgh, R.,
 \newblock In \emph{Supercomputing, ACM/IEEE 2000 Conference}, Dallas, Texas,
   USA, 2000.
 
+\bibitem[de~Kergommeaux~D. et~al.(2000)de~Kergommeaux~D., de~Oliveira Stein~B.,
+  and E.]{cob00}
+Chassin~de, Kergommeaux~D., ~de, Oliveira Stein~B., and Bernard~P., E.
+\newblock Performance characteristics of the multi-zone nas parallel
+  benchmarks.
+\newblock \emph{Parallel Computing}, 26:\penalty0 1253--1274, August 2000.
+
+\bibitem[L.(2013)]{s13}
+Schnorr, L.
+\newblock Akypuera - a library to trace mpi applications and generate pajé
+  trace files, 2013.
+\newblock URL \url{https://github.com/schnorr/akypuera}.
+\newblock Last visited on 13/08/2013.
+
 \bibitem[F. et~al.(2012)F., S., and F.]{dms12}
 Desprez, F., Markomanolis~G., S., and Suter, F.
 \newblock Improving the accuracy and efficiency of time-independent trace
@@ -252,20 +266,6 @@ Jeanvoine, E., Sarzyniec, L., and Nussbaum, L.
 \newblock Kadeploy3: Efficient and scalable operating system provisioning.
 \newblock \emph{Usenix}, 38:\penalty0 38--44, February 2013.
 
-\bibitem[L.(2013)]{s13}
-Schnorr, L.
-\newblock Akypuera, a library to trace mpi applications and generate paje trace
-  files, 2013.
-\newblock URL \url{https://github.com/schnorr/akypuera}.
-\newblock Last visited on 08/08/2013.
-
-\bibitem[de~Kergommeaux~D. et~al.(2000)de~Kergommeaux~D., de~Oliveira Stein~B.,
-  and E.]{cob00}
-Chassin~de, Kergommeaux~D., ~de, Oliveira Stein~B., and Bernard~P., E.
-\newblock Performance characteristics of the multi-zone nas parallel
-  benchmarks.
-\newblock \emph{Parallel Computing}, 26:\penalty0 1253--1274, August 2000.
-
 \bibitem[H. et~al.(1999)H., M., and J.]{jfy99}
 Jin, H., Frumkin, M., and Yan, J.
 \newblock The openmp implementation of nas parallel benchmarks and its
@@ -279,5 +279,11 @@ Dunbar, J.
 \newblock URL
   \url{http://www.nas.nasa.gov/publications/npb_problem_sizes.html}.
 \newblock Last visited on 07/08/2013.
+
+\bibitem[O. et~al.(2009)O., C., and döt Net~I.]{ben09}
+Ben-Kiki, O., Evans, C., and ~döt, Net~I.
+\newblock Yaml ain't markup language, 2009.
+\newblock URL \url{http://yaml.org/spec/1.2/spec.html}.
+\newblock Last visited on 13/08/2013.
 
 \end{thebibliography}

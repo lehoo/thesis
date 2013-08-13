@@ -2,17 +2,22 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1.}{\ignorespaces Disabled cores}}{21}{section*.15}
-\contentsline {figure}{\numberline {3.2.}{\ignorespaces Core binding}}{21}{section*.15}
+\contentsline {figure}{\numberline {3.1.}{\ignorespaces Disabled cores}}{21}{section*.12}
+\contentsline {figure}{\numberline {3.2.}{\ignorespaces Core binding}}{21}{section*.12}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1.}{\ignorespaces Grid'5000 sites}}{27}{section*.18}
-\contentsline {figure}{\numberline {4.2.}{\ignorespaces dayum}}{30}{section*.19}
-\contentsline {figure}{\numberline {4.3.}{\ignorespaces dayum}}{31}{section*.19}
-\contentsline {figure}{\numberline {4.4.}{\ignorespaces Arity in trace\_gather}}{34}{section*.20}
-\contentsline {figure}{\numberline {4.5.}{\ignorespaces Checkpoint example}}{36}{section*.21}
-\contentsline {figure}{\numberline {4.6.}{\ignorespaces Checkpoint example}}{37}{section*.21}
+\contentsline {figure}{\numberline {4.1.}{\ignorespaces Grid'5000 sites}}{27}{section*.15}
+\contentsline {figure}{\numberline {4.2.}{\ignorespaces dayum}}{30}{section*.16}
+\contentsline {figure}{\numberline {4.3.}{\ignorespaces dayum}}{31}{section*.16}
+\contentsline {figure}{\numberline {4.4.}{\ignorespaces Arity in trace\_gather}}{34}{section*.17}
+\contentsline {figure}{\numberline {4.5.}{\ignorespaces Checkpoint example}}{36}{section*.18}
+\contentsline {figure}{\numberline {4.6.}{\ignorespaces Checkpoint example}}{37}{section*.18}
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1.}{\ignorespaces Experiment code}}{43}{section*.23}
+\contentsline {figure}{\numberline {5.1.}{\ignorespaces Experiment code}}{44}{section*.21}
+\contentsline {figure}{\numberline {5.2.}{\ignorespaces Allocation and deployment}}{45}{section*.22}
+\contentsline {figure}{\numberline {5.3.}{\ignorespaces Benchmark execution}}{46}{section*.22}
+\contentsline {figure}{\numberline {5.4.}{\ignorespaces Post-processing}}{47}{section*.23}
+\contentsline {figure}{\numberline {5.5.}{\ignorespaces Metadata}}{48}{section*.23}
+\contentsline {figure}{\numberline {5.6.}{\ignorespaces Traces from the experiment run with the framework}}{51}{section*.25}
+\contentsline {figure}{\numberline {5.7.}{\ignorespaces Traces from the experiment run manually}}{51}{section*.25}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

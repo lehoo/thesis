@@ -63,22 +63,22 @@ Grid5000:
    - akypuera (for tau2paje - George's tau2paje_handlers.c is good to have)
    - some kind of benchmark: I used NPB
  - How testing is done:
-   - reserve nodes & deploy the used image on them
+   - reserve nodes & deploy the used image on them   time: 453.343
    - compile benchmark
-   - create a file that contains the nodes (only once each)
+   - create a file that contains the nodes (only once each)   time: 0.004
          cat $OAR_FILE_NODES > ~/nodefile (contains one node as many times as many cores it has)
          uniq ~/nodefile > nodefile_uniq
    ___On the frontend:
-   - broadcast the runnable (for example, to /tmp)
+   - broadcast the runnable (for example, to /tmp)   time: 0.389
          taktuk -l root -f ~/nodefile_uniq broadcast put { $NPB_DIR/bin/<executable> } { /tmp }
-   - disable all the cores but one, on each node (other solutions? this is so each machine runs only one MPI process)
+   - disable all the cores but one, on each node   time: 1.974
          taktuk -l root -f /home/dlehoczky/nodefile_uniq broadcast exec [ 'for i in /sys/devices/system/cpu/cpu[1-9]*/online; do echo 0 > "${i}" ; done' ]
-     - to check if every node's appropriate cores have been disabled:
+     - to check if every node's appropriate cores have been disabled:   time: 1.319
            taktuk -f ~/nodefile_uniq broadcast exec [ 'cat /proc/cpuinfo' ] | grep process | awk '{if($9>0) print $1}' | uniq | awk -F".fr-" '{print $1".fr"}'
      #TODO: I already have a script that does all this, but it should be modified to loop until it's sure that every node has only 1 core enabled
        - other method for checking: command 'htop' on the node we want to check
    ___From one of the nodes (ssh `head -n 1 $OAR_FILE_NODES`):
-   - run the tests (for example in /tmp if we put the executable there)
+   - run the tests (for example in /tmp if we put the executable there)   time: 46.883
      - it is important to make sure that we use the mpi executable we want by specifying the full path
            $MPI_ROOT/bin/mpirun
      - it is important to disable infiniband and use tcp
@@ -86,14 +86,14 @@ Grid5000:
    full command:
          $MPI_ROOT/bin/mpirun -mca btl ^openib --mca pml ob1 -machinefile ~/nodefile_uniq -np <n> /tmp/<executable>
  - Post-processing:
-   - trace_gather: gathers the trace files from the nodes to one place
+   - trace_gather: gathers the trace files from the nodes to one place   time: 8.152
      - some parameters:
        -f 1: gathers tau traces, not traces that trace_extract produces (that would be simgrid format)
        -z 1: compresses traces to tgz file. I don't use it, because it compresses each trace separately, which is inconvenient (maybe I'm doing something wrong? not sure)
        -a <num>: arity of the tree - not sure about this one
          $MPI_ROOT/bin/mpirun -machinefile ~/nodefile_uniq -np 8 <path_to_trace_gather> -f 1 -a 4 -m ~/nodefile_uniq
-   - tau_treemerge.pl in the directory where all the traces are
-   - convert to paje format:
+   - tau_treemerge.pl in the directory where all the traces are   time: 3.967
+   - convert to paje format:   time: 10.532
      - optional: can dump STDERR, as it usually produces _a lot_ of "no key available"-type of errors for some reason
          <path-to-akypuera>/bin/tau2paje tau.trc tau.edf 2>/dev/null >lu.A.8.paje
    - now we can visualize the result

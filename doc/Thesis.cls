@@ -3,7 +3,9 @@
 %% generated with the docstrip utility.
 %%
 %% Created by Steve R. Gunn, modified by Sunil Patel: www.sunilpatel.co.uk
+%% Modified by Felipe Schmitt: www.felipeschmitt.pt.vu (Cranfield University Style)
 
+\usepackage{textcomp}
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
 \ProvidesClass{Thesis}
               [2007/22/02 v1.0
@@ -125,7 +127,7 @@
         stringstyle=\color[rgb]{0.7,0,0} }
 \usepackage[pdfpagemode={UseOutlines},bookmarks=true,bookmarksopen=true,
    bookmarksopenlevel=0,bookmarksnumbered=true,hypertexnames=false,
-   colorlinks,linkcolor={blue},citecolor={blue},urlcolor={red},
+   colorlinks,linkcolor={black},citecolor={blue},urlcolor={red},
    pdfstartview={FitV},unicode,breaklinks=true]{hyperref}
 \pdfstringdefDisableCommands{
    \let\\\space
@@ -141,38 +143,44 @@
 \newcommand*{\DEPARTMENT}[1]{\def\DEPTNAME{#1}}
 \newcommand*{\group}[1]{\def\groupname{#1}}
 \newcommand*{\GROUP}[1]{\def\GROUPNAME{#1}}
-\newcommand*{\faculty}[1]{\def\facname{#1}}
-\newcommand*{\FACULTY}[1]{\def\FACNAME{#1}}
+\newcommand*{\course}[1]{\def\coursename{#1}}
+\newcommand*{\COURSE}[1]{\def\COURSENAME{#1}}
+\newcommand*{\award}[1]{\def\awardname{#1}}
+\newcommand*{\AWARD}[1]{\def\AWARDNAME{#1}}
+\newcommand*{\academicyear}[1]{\def\acadyear{#1}}
 \newcommand*{\subject}[1]{\def\subjectname{#1}}
 \newcommand*{\keywords}[1]{\def\keywordnames{#1}}
-\supervisor  {}
+
+\supervisor  {(Supervisor Name)}
+
 \examiner    {}
-\degree      {}
+
+\degree      {(Master of Science or Doctor of Philosophy)}
+
 \authors     {}
-\university  {\texorpdfstring{\href{University Web Site URL Here (include http://)}
-                {University Name}}
-                {University Name}}
-\UNIVERSITY  {\texorpdfstring{\href{University Web Site URL Here (include http://)}
-                {UNIVERSITY NAME (IN BLOCK CAPITALS)}}
-                {UNIVERSITY NAME (IN BLOCK CAPITALS)}}
-\department  {\texorpdfstring{\href{Department or School Web Site URL Here (include http://)}
-                {Department or School Name}}
-                {Department or School Name}}
-\DEPARTMENT  {\texorpdfstring{\href{Department or School Web Site URL Here (include http://)}
-                {DEPARTMENT OR SCHOOL NAME (IN BLOCK CAPITALS)}}
-                {DEPARTMENT OR SCHOOL NAME (IN BLOCK CAPITALS)}}
-\group       {\texorpdfstring{\href{Research Group Web Site URL Here (include http://)}
-                {Research Group Name}}
-                {Research Group Name}}
-\GROUP       {\texorpdfstring{\href{Research Group Web Site URL Here (include http://)}
-                {RESEARCH GROUP NAME (IN BLOCK CAPITALS)}}
-                {RESEARCH GROUP NAME (IN BLOCK CAPITALS)}}
-\faculty     {\texorpdfstring{\href{Faculty Web Site URL Here (include http://)}
-                {Faculty Name}}
-                {Faculty Name}}
-\FACULTY     {\texorpdfstring{\href{Faculty Web Site URL Here (include http://)}
-                {FACULTY NAME (IN BLOCK CAPITALS)}}
-                {FACULTY NAME (IN BLOCK CAPITALS)}}
+
+\university  {Cranfield University}
+
+\UNIVERSITY  {CRANFIELD UNIVERSITY}
+
+\department  {School Name}
+
+\DEPARTMENT {SCHOOL NAME}
+
+\group        {group name}
+
+\GROUP    {GROUP NAME}
+
+\course        {Course Name}
+
+\COURSE    {COURSE NAME}
+
+\award {(MSc, PhD, etc.)}
+
+\AWARD {(MSc, PhD, etc.)}
+
+\academicyear {from - to}
+
 \addresses   {}
 \subject     {}
 \keywords    {}
@@ -194,23 +202,74 @@
       \setlength{\parskip}{0pt}
       {\large\textbf{\UNIVNAME}\par}
       \vfill
-      {\huge \bf \@title \par}
-      \vfill
-      {\LARGE by \par}
-      \smallskip
       {\LARGE \authornames \par}
       \vfill
-      {\large A thesis submitted in partial fulfillment for the \par}
-      {\large degree of Doctor of Philosophy \par}
+      {\huge \bf \@title \par}
+      \vfill
+      {\LARGE \DEPTNAME \par}
+      \smallskip
+      {\large \coursename \par}
+      \vfill
+      {\large \awardname \par}
+      {\large Academic Year: \acadyear \par}
       \bigskip
       \bigskip
-      {\large in the \par}
-      {\large \facname \par}
-      {\large \deptname \par}
       \bigskip
       \bigskip
       \bigskip
+      {\large Supervisor: \supname \par}
       {\Large \@date \par}
+      \bigskip
+    \end{center}
+    \par
+    \@thanks
+    \vfil\null
+  \end{titlepage}
+  \setcounter{footnote}{0}%
+  \cleardoublepage
+}
+
+\newcommand\makesecondtitle{
+  \btypeout{Second Title Page}
+  \hypersetup{pdftitle={\@title}}
+  \hypersetup{pdfsubject=\subjectname}
+  \hypersetup{pdfauthor=\authornames}
+  \hypersetup{pdfkeywords=\keywordnames}
+  \thispagestyle{empty}
+  \begin{titlepage}
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \let \footnote \thanks
+    \setcounter{footnote}{0}
+    \null\vfil
+    \vskip 60\p@
+    \begin{center}
+      \setlength{\parskip}{0pt}
+      {\large\textbf{\UNIVNAME}\par}
+      \vfill
+      {\LARGE \DEPTNAME \par}
+      \smallskip
+      {\large \coursename \par}
+      \bigskip
+      {\LARGE \awardname \par}
+      {\large Academic Year: \acadyear \par}
+      \bigskip
+      {\LARGE \authornames \par}
+      \bigskip
+      {\LARGE \bf \@title \par}
+      \bigskip
+      {\large Supervisor: \supname \par}
+      {\Large \@date \par}
+      \bigskip
+      \bigskip
+      {\large This thesis is submitted in partial fulfilment of the requirements for \par}
+      {\large the degree of \degreename \par}
+      \bigskip
+      \bigskip
+      \bigskip
+      \bigskip
+      \bigskip
+      {\large \textcopyright \hspace{2 mm} Cranfield University, \the\year. All rights reserved. No part of this publication may be reproduced without the written permission of the copyright owner.}
       \bigskip
     \end{center}
     \par
@@ -230,6 +289,7 @@
   \global\let\and\relax
   \cleardoublepage
 }
+
 \newenvironment{abstract}
 {
   \btypeout{Abstract Page}
@@ -241,7 +301,6 @@
     \bigskip
     {\huge{\textit{Abstract}} \par}
     \bigskip
-    {\normalsize \facname \par}
     {\normalsize \deptname \par}
     \bigskip
     {\normalsize Doctor of Philosophy\par}
