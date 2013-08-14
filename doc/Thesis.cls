@@ -151,11 +151,11 @@
 \newcommand*{\subject}[1]{\def\subjectname{#1}}
 \newcommand*{\keywords}[1]{\def\keywordnames{#1}}
 
-\supervisor  {(Supervisor Name)}
+\supervisor  {Mark Stillwell}
 
 \examiner    {}
 
-\degree      {(Master of Science or Doctor of Philosophy)}
+\degree      {Master of Science}
 
 \authors     {}
 
@@ -163,23 +163,23 @@
 
 \UNIVERSITY  {CRANFIELD UNIVERSITY}
 
-\department  {School Name}
+\department  {School of Engineering}
 
-\DEPARTMENT {SCHOOL NAME}
+\DEPARTMENT {SCHOOL OF ENGINEERING}
 
-\group        {group name}
+\group        {Distributed Computing and e-Science}
 
-\GROUP    {GROUP NAME}
+\GROUP    {DISTRIBUTED COMPUTING AND E-SCIENCE}
 
-\course        {Course Name}
+\course        {Computational Software Techniques in Engineering}
 
-\COURSE    {COURSE NAME}
+\COURSE    {Computational Software Techniques in Engineering}
 
-\award {(MSc, PhD, etc.)}
+\award {MSc}
 
-\AWARD {(MSc, PhD, etc.)}
+\AWARD {MSc}
 
-\academicyear {from - to}
+\academicyear {2012-2013}
 
 \addresses   {}
 \subject     {}
@@ -303,7 +303,7 @@
     \bigskip
     {\normalsize \deptname \par}
     \bigskip
-    {\normalsize Doctor of Philosophy\par}
+    {\normalsize MSc\par}
     \bigskip
     {\normalsize\bf \@title \par}
     \medskip

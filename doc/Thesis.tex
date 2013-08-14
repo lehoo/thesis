@@ -55,6 +55,11 @@
     {Chapter}%
 }
 
+\addto\captionshungarian{%
+  \renewcommand{\tablename}%
+    {Table}%
+}
+
 \newcommand{\methodname}[1] {
 \\[0.2cm]
 \ttfamily #1\normalfont
@@ -65,8 +70,8 @@
 \frontmatter      % Begin Roman style (i, ii, iii, iv...) page numbering
 
 % Set up the Title Page
-\title  {Validation and improvement of the SMPI simulation framework
-  for MPI applications}
+\title  {A testing framework and workflow for validation and
+  improvement of the SMPI simulation framework for MPI applications}
 \authors  {\texorpdfstring
             {\href{your web site or email address}{Attila Döme Lehóczky}}
             {Attila Döme Lehóczky}
@@ -86,51 +91,16 @@
 \rhead{\thepage}  % Sets the right side header to show the page number
 \lhead{}  % Clears the left side page header
 
-\pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
-
-%% ----------------------------------------------------------------
-% Declaration Page required for the Thesis, your institution may give you a different text to place here
-\Declaration{
-
-\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-
-I, Attila Döme Lehóczky, declare that this thesis titled, `Validation
-and improvement of the SMPI simulation framework for MPI applications' and the work presented in it are my own. I confirm that:
-
-\begin{itemize}
-\item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a research degree at this University.
-
-\item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
-
-\item[\tiny{$\blacksquare$}] Where I have consulted the published work of others, this is always clearly attributed.
-
-\item[\tiny{$\blacksquare$}] Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
-
-\item[\tiny{$\blacksquare$}] I have acknowledged all main sources of help.
-
-\item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.
-\\
-\end{itemize}
-
-
-Signed:\\
-\rule[1em]{25em}{0.5pt}  % This prints a line for the signature
-
-Date:\\
-\rule[1em]{25em}{0.5pt}  % This prints a line to write the date
-}
-\clearpage  % Declaration ended, now start a new page
-
 %% ----------------------------------------------------------------
 % The "Funny Quote Page"
 \pagestyle{empty}  % No headers or footers for the following pages
 
 \null\vfill
 % Now comes the "Funny Quote", written in italics
-\textit{``Write a funny quote here.''}
+\textit{``Groovy!''}
 
 \begin{flushright}
-If the quote is taken from someone, their name goes here
+%If the quote is taken from someone, their name goes here
 \end{flushright}
 
 \vfill\vfill\vfill\vfill\vfill\vfill\null
@@ -142,21 +112,20 @@ If the quote is taken from someone, their name goes here
 \abstract{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
-Simulation has become increasingly popular in the scientific community
-lately because of its many advantages over using real systems in
-certain situations.  SimGrid is a generic simulation framework, which
-can be used to simulate multiple kinds of distributed systems, such as
+SimGrid is a generic simulation framework, which can be used to
+simulate multiple kinds of distributed systems, such as
 Clouds, Grids or clusters. SMPI is a framework that connects SimGrid
 with the MPI inter-process communication protocol: it's part of the
 SimGrid project with the goal of running MPI applications in a
 simulated environment. SMPI is currently under heavy development, thus
 in need of constant validation. This thesis is about the
 implementation of a framework that could help in orchestrating and
-automatizing tests. SMPI validation is done by
+automatizing tests with the goal of aiding the development of the
+project. SMPI validation is done by
 running real-life MPI benchmarks (using possibly multiple different
 implementations), as well as running the same benchmarks with
 SMPI. The results can be used to check how accurate the simulation
-was. Currently, this testing process consists of multiple different,
+was. Currently, this testing process consists of multiple
 manually performed steps. It's tedious, repetitive work, but as
 mentioned before, it's necessary. The main goal of the framework is to
 provide a means to orchestrate such tests, introducing as much
@@ -175,7 +144,16 @@ test results, thus helping the development team to make progress.
 \acknowledgements{
 \addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 
-The acknowledgements and the people to thank go here, don't forget to include your project advisor\ldots
+The author would like to thank his supervisor, Mark Stillwell for
+the opportunity to write this thesis, as well as for his counsel and
+guidance throughout the project. The author would also like to
+extend his thanks to George Markomanolis and Tomasz Buchert for
+providing invaluable advice and selfless support when it was needed
+the most.\\[0.5cm]
+Last but not least, the author wants to give a very special thanks
+to his family and his fiancée for their never-ending love and
+support. Without them, this thesis wouldn't have been possible to
+make.
 
 }
 \clearpage  % End of the Acknowledgements
@@ -197,19 +175,7 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 \listoftables  % Write out the List of Tables
 
 %% ----------------------------------------------------------------
-\setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
-%% ----------------------------------------------------------------
-\clearpage  %Start a new page
-% End of the pre-able, contents and lists of things
-% Begin the Dedication page
-
 \setstretch{1.3}  % Return the line spacing back to 1.3
-
-\pagestyle{empty}  % Page style needs to be empty for this page
-\dedicatory{For/Dedicated to/To my\ldots}
-
-\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
-
 
 %% ----------------------------------------------------------------
 \mainmatter   % Begin normal, numeric (1,2,3...) page numbering
@@ -229,22 +195,6 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 \input{./Chapters/Chapter5} % Evaluation
 
 \input{./Chapters/Chapter6} % Conclusion
-
-%% ----------------------------------------------------------------
-% Now begin the Appendices, including them as separate files
-
-\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
-
-\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
-
-\input{./Appendices/AppendixA}  % Appendix Title
-
-%\input{./Appendices/AppendixB} % Appendix Title
-
-%\input{./Appendices/AppendixC} % Appendix Title
-
-\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
-\backmatter
 
 %% ----------------------------------------------------------------
 \label{Bibliography}

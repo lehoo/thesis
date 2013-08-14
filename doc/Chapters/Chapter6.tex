@@ -12,33 +12,34 @@
 SMPI is a framework for single-node simulation of parallel
 applications using the MPI standard. It is a relatively new project
 that is under heavy
-development currently - a generic network model is under development by
+development currently - a generic network model is being developed by
 the project team, thus needing continuous validation with test
-results. The main goal of this thesis was to create a framework, which
+results. The main goal of this thesis was to create a framework which
 could be used to automate MPI experiments, in order to alleviate the
 burden of doing the current manual testing process from the
 developers. The other main benefit of the framework would be that
 proportionally more tests could be run, satisfying the constant need
 for validation more easily, thus facilitating a speedup in the testing
-process.\\
+process.\\[0.3cm]
 An implementation of such a framework has been developed through the
-course of making this thesis. For implementation, the XPflow
+course of making this thesis. For the implementation, the XPflow
 experimentation engine was used. XPflow takes its idea of top-down
 approach from business process management: the main point is that
-first, we start out with a high-level description of the experiment,
-working our way down to the low-level details. It is a fairly new
+first, we start out with a high-level description of the process in
+question, working our way down from there to the low-level details. It
+is a fairly new
 project, so much so that it hasn't officially been released
 yet. Nevertheless, it has proven to be reliable enough to serve as a
-base for the implementation.\\
-The author of this thesis mainly used the Grid'5000 testbed for
+base for the implementation.\\[0.3cm]
+the Grid'5000 testbed was the environment mainly used for
 development and testing purposes. Grid'5000 is a multi-site platform,
-with its sites residing different places across France, each site
+with its sites residing in different places across France, each site
 hosting multiple different clusters. The platform has a user-friendly
-API which can be used to allocate nodes for a given time, deploy
-operating system images on them, which can then be customized and
-saved for later use. XPflow also provides its own plugin to use
-Grid'5000. The testbed proved to be suitable for the purposes of this
-thesis.\\
+API which can be used to allocate nodes to a user for a given time,
+who can then deploy operating system images on them. Such images
+can be customized and saved for later use. XPflow also provides its
+own plugin for Grid'5000. The testbed proved to be suitable for the
+purposes of this thesis.\\[0.3cm]
 The evaluation of the implementation has been done by running an MPI
 trace collection experiment both manually and with the framework. The
 chosen benchmark was the LU benchmark from the NAS parallel
@@ -51,44 +52,49 @@ the benchmarks were running for almost exactly the same time; and as
 for the traces, the differences lied in the timings and the order of
 the MPI operations, the cause of which is most probably simply the
 arbitrary nature of distributed experiments - but the runtime, as well
-as the workloads of the appropriate processes were the same.\\
+as the workloads of the corresponding processes were the
+same.\\[0.3cm]
 After comparing the results, we compared the two methodologies using
-other aspects, in order to make a conclusion whether or not the goal
-that was set at the beginning was reached. And although there is much
-room for development (see next section), we can conclude this thesis
-on a positive note: most of the set goals have been reached. The
-tedious, repetitive, error-prone manual testing process has been
-largely automatized, with minimal user interaction. We are now able to
-create reusable experiment code, providing the possibility to run
-certain tests regularly, or more than once in a row, possibly with
-certain modifications. Checkpointing also makes for a very handy
+other aspects, in order to make a conclusion whether or not the goals
+that were set at the beginning were reached. And although there is
+much room for development (see next section), we can conclude this
+thesis on a positive note: most of the set goals have been
+reached. The tedious, repetitive, error-prone manual testing process
+has been largely automatized, now requiring only minimal user
+interaction. We are now able to create reusable experiment code,
+providing the possibility to run certain tests regularly, or more than
+once in a row, possibly with certain modifications between
+runs. Checkpointing also makes for a very handy
 feature, since we can reuse existing jobs to save ourselves even more
 time. There is also the possibility of creating higher-level
-workflows by conducting more tests in a row, thus achieving a
+workflows, conducting more tests in a row, thus achieving a
 considerable speedup in producing test results.
-
 \section{Development directions}
 During the writing of this thesis, the framework has been developed to
-a version where running MPI tests and collecting its traces, such as
+a version where running MPI tests and collecting its traces, much like
 it was done for the evaluation can be reliably done. However, there
-are a lot of work that could possibly be done to develop it to be
+is a lot of work that could possibly be done to develop it to be
 more generic and more comfortable when orchestrating experiments.
 \subsection{Configuration file}
-Currently, the framework saves certain variables after it was given as
-a parameter to a method call. This can sometimes lead to confusion as
-to whether or not it was already given, or if it is set correctly. It
-would be more straightforward method to provide the user with
-the possibility of creating a configuration file with some of the most
-important parameters, preferably ones that are relevant throughout the
-whole experiment, such as deployment information (site used,
-number of nodes to reserve, image used, etc.) or paths to certain
-runnables. Parameters such as paths to the benchmarks are more prone
-to change between separate runs when checkpointing, thus, it's
-probably better that they remain method parameters.\\
-It would be a good idea that the configuration file is in
+Currently, the framework saves certain variables after they were given
+as a parameter to a method call. This can sometimes lead to confusion
+as to whether or not a certain parameter was already saved, or if it
+is set
+correctly. It would be more straightforward method to provide the user
+with the possibility of creating a configuration file with some of the
+most important parameters, preferably ones that are relevant
+throughout the whole experiment, such as deployment information (site
+used, number of nodes to reserve, image used, etc.) or paths to
+certain runnables (such as mpirun, trace\_gather, etc.). Parameters
+such as paths to the benchmarks are more prone to change, either
+during runtime (when executing more than one MPI programs, for
+example) or between separate runs (when checkpointing and changing the
+code), thus, it's probably better that they remain method
+parameters.\\[0.3cm]
+It would be a good idea for the configuration file to be in
 YAML\cite{ben09} format, since it's an easy-to-use data serialization
-standard with one of the goals as to be human readable, easily
-parsable with Ruby.
+standard with one of the goals as to be human readable. Also, it is
+easily parseable with Ruby.
 \subsection{Grid'5000}
 As mentioned before, the current framework implementation is fairly
 Grid'5000 specific: it uses its API through XPflow to perform tasks
@@ -97,11 +103,23 @@ sufficient, in the long run, it would surely be better if the
 framework was transformed into a more generic piece of software,
 making it possible to use it on other systems.
 \subsection{Metadata collection}
+The currently collected experiment information is just a small subset
+of what could be relevant for later use. Thus, metadata collection is
+a feature that could be broadened to take into account other pieces of
+data, such as
+\begin{itemize}
+\item more information about the used nodes, such as hardware
+information or maintenance information;
+\item data regarding the binding of each MPI process to its host node,
+with MPI processes being identified by their rank;
+\item the workflow script used to do the deployment and/or the
+execution (they may be different).
+\end{itemize}
 Currently, metadata is only written on the standard output. It would
 be a useful feature if the framework would save its produced metadata
 in a JSON format file and then send it to a permanent location, a
 "trace archive". Another possibility would be to use SQL: we could
-upload the metadata in a database, created specifically for that
-purpose. Then, that database could be queried, for example for
+insert the metadata to a database, created specifically for that
+purpose. Then that database could be queried, for example for
 experiments run on specific node(s). A RESTful web service could be
 created, providing a user-friendly interface to post queries.

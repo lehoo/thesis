@@ -6,7 +6,7 @@
 
 In the literature review, we discuss the area of research covered by
 the thesis, citing relevant papers and articles that serve as a base
-of ideas for this document.\\
+of ideas for this document.\\[0.3cm]
 First, we talk about the Message-Passing Interface (MPI), the parallel
 programming API used for the purposes of this thesis. We also talk
 about the different implementations of this API, notably OpenMPI and
@@ -51,13 +51,13 @@ runtime.\cite{ompi04} On the Grid'5000 cluster, which is used to most
 of the research conducted for this thesis, OpenMPI is the default MPI
 implementation used by the default images.
 \subsection{MPICH}
-MPICH was originally developed during the MPI standards process
-starting in 1992 to provide feedback to the MPI Forum on
-implementation and usability issues. This original implementation was
-based on the Chameleon portability system to provide a light-weight
-implementation layer (hence the name MPICH from MPI over
-CHameleon). Around August 2001, development begun on a new
-implementation called MPICH2.\cite{mpich12} This implementation
+MPICH\cite{glds96}\cite{gl96} was originally developed during the MPI
+standards process starting in 1992 to provide feedback to the MPI
+Forum on implementation and usability issues. This original
+implementation was based on the Chameleon portability system to
+provide a light-weight implementation layer (hence the name MPICH from
+MPI over CHameleon). Around August 2001, development begun on a new
+implementation called MPICH2.\cite{g02} This implementation
 introduced improvements on collective communication operations by
 using multiple algorithms, choosing between them depending on certain
 variables - for example the message size.\cite{trg05} Another
@@ -65,9 +65,7 @@ important result during the development of MPICH2 was the design of
 the Nemesis communication subsystem and the porting of MPICH2 on that
 system. The efficient implementation of shared-memory communication
 helped Nemesis MPICH2 achieve low latency and high
-bandwidth.\cite{bmg07}\\
-Starting with November 2012, the project is renamed to MPICH, with
-version number 3.0.\cite{mpich12}
+bandwidth.\cite{bmg07}
 \section{Modelling and Simulation}
 In distributed computing, modelling means creating an abstraction of a
 real system by taking only the aspects of it that are relevant to the
@@ -75,11 +73,9 @@ system's behavior into account. Once constructed, such a model becomes
 a tool with which we can investigate the behavior of the
 system.\cite{h12_1}
 \subsection{Advantages of Modelling}
-Modelling and simulation techniques have been used extensively in
-parallel computing and is an ongoing research topic, with new
-challenges continuously arising. There are various reasons for its
-importance.\\
-Conducting experiments on real-world systems can be
+There are a number of reasons to use modelling and simulation based
+approaches to study large-scale computing systems. Conducting
+experiments on real-world systems can be
 infeasible because experimenting would disrupt the service that is
 provided by the system. For example, in the case of a mail server,
 experiments or monitoring could cause delay, or maybe even data
@@ -126,7 +122,7 @@ behavior. This model is also called a quantitative model, as we can
 get estimates of the modeled system's quantitative attributes, such as
 response time or throughput. In other words, we can use a simulation
 model to conduct performance analysis on a system, without actually
-having the actual system at our disposal.\cite{h12_1}\cite{h12_13}\\
+having the actual system at our disposal.\cite{h12_1}\cite{h12_13}\\[0.3cm]
 When wanting to get a prediction about how a specific system would
 perform, a theoretical model, in most cases, produces unreliable and
 unrealistic results - it's not feasible for such accurate
@@ -180,7 +176,7 @@ application's computational signature and the platform's hardware
 signature relate.\cite{csgscq11} Communication operations, of course,
 also need to be simulated. This is done based on the events recorded
 on the trace, and on the network model of the simulated
-platform.\cite{csgscq11}\\
+platform.\cite{csgscq11}\\[0.3cm]
 As mentioned in \cite{csgscq11}, there are multiple downsides and
 challenges to the off-line approach. On such downside is that when
 wanting to simulate a relatively larger-scale application, the size of
@@ -212,7 +208,7 @@ calculate this correction factor. Another difficulty regarding that
 comes up regarding this problem is that actually calculating the
 correction factor is a tedious process. It can take a considerable
 amount of time, depending on how similar the host and the target
-platforms are.\cite{dmsq11}\\
+platforms are.\cite{dmsq11}\\[0.3cm]
 In \cite{dmsq11}, a solution to this problem is proposed:
 time-independent traces. Acquiring time-independent traces means that
 the traces won't contain any timestamps, breaking this link between
@@ -222,7 +218,7 @@ the operation (in number of floating point operations or bytes)
 instead of the time the execution took. This type of information, in
 most cases, does not vary depending on the platform the experiment is
 run on. The exceptions are the adaptive MPI applications that modify
-their execution path according to the execution platform.\\
+their execution path according to the execution platform.\\[0.3cm]
 \cite{ms11} contains a guide describing how to acquire such traces on
 the Grid5000 platform. The guide was used to serve as a base for the
 process on how to acquire traces. Since the work in this thesis is
@@ -239,7 +235,7 @@ platform.\cite{csgscq11} Computational tasks are executed on the
 hardware, but the timing and the delivery of the messages is
 calculated by the simulation environment. Thus, the simulator is
 responsible for mainaining the correct order of the events, both
-computational and communicational.\cite{bdglmqssv13}\\
+computational and communicational.\cite{bdglmqssv13}\\[0.3cm]
 A downside of the on-line approach is that since we actually execute
 the code, the resource needs for running the simulation is about as
 high or even higher (in case of needing an extra node to run the
@@ -253,7 +249,7 @@ the target platform. This is why methods can be employed which trade
 off accuracy for performance. This idea might not be feasible for
 experiments where data-dependent application behavior is
 vital, but a large portion of benchmarks can be indeed simulated
-this way, providing a reasonably accurate execution profile.\\
+this way, providing a reasonably accurate execution profile.\\[0.3cm]
 Although slower, on-line simulation is more general than the off-line
 approach, as it does not, in any way depend on some other platform -
 whereas in the case of off-line simulation, as we mentioned before,
@@ -272,7 +268,7 @@ there has only been a number of in-house developed, highly specialized
 tools to satisfy the need of the community. SimGrid is a more generic
 simulation framework that is being developed to be one of the
 acknowledged and widespread tools for simulation in large-scale
-distributed computing.\cite{clq08}\\
+distributed computing.\cite{clq08}\\[0.3cm]
 SimGrid's key features include:\cite{clq08}
 \begin{itemize}
 \item A scalable and extensible simulation engine that implements
@@ -314,7 +310,7 @@ the network model of SimGrid.\cite{csgscq11} A current limitation in
 SMPI is that it is unable to simulate high-performance networking
 hardware such as Infiniband. Thus, when wanting to compare simulation
 to real-life results, we have to make sure those results were gatheres
-using Gigabit ethernet.\\
+using Gigabit ethernet.\\[0.3cm]
 Three of the main challenges for simulating an MPI application are:
 \begin{itemize}
 \item Accuracy: The prediction of the real-world execution time (the
@@ -356,7 +352,7 @@ to simulate applications that would use such an amount of memory that
 just wouldn't be physically possible to provide in our testing
 environment, while still providing a reliable estimate of the
 performance.\cite{bdglmqssv13} These features are disabled by default,
-they have to be explicitly enabled by the user.\\
+they have to be explicitly enabled by the user.\\[0.3cm]
 Extensive testing was conducted in \cite{csgscq11} to verify the
 previously mentioned qualities of the framework. In these tests, the
 OpenMPI and MPICH implementations were used to serve as verification
@@ -374,7 +370,7 @@ than in previous experiments without these techniques. We have to note
 here, though, that
 certain tests weren't successful without the RAM-folding techniques,
 due to an out-of-memory error. This shows, that although it poses
-difficulties, reducing the memory usage is vital in SMPI.\\
+difficulties, reducing the memory usage is vital in SMPI.\\[0.3cm]
 As SMPI is an actively developed project alongside SimGrid, there are
 a number of research directions. One major development to the
 project would be a testing framework that would aim to lessen the
@@ -423,12 +419,12 @@ data to publishable results. Since the raw data to be analyzed can be
 large, heterogeneous and complex, the process can be computationally
 intensive and produce derived data formats, which is one of the main
 differences between scientific and business
-workflows.\cite{abjjlm04}\\
+workflows.\cite{abjjlm04}\\[0.3cm]
 There are several tools that help in experiment design, mapping of
 computing resources to the workflow and handling exceptional
 situations. Some of the more well-known tools include
 Kepler\cite{abjjlm04}, Pegasus\cite{dssbgkmvbgljk05} and
-Taverna\cite{whfwwsdnfbbbhnvsg13}.\\
+Taverna\cite{whfwwsdnfbbbhnvsg13}.\\[0.3cm]
 Scientific workflows are well suited for managing computation on
 \emph{a priori} available data or data queried from public
 databases. However, it's not well suited to cases when data
@@ -448,7 +444,7 @@ is to understand the organization. Then we can model its processes as
 workflows and execute and monitor them. While monitoring,
 we can spot defects and work out ways to improve the organizational
 activities, as well as we can redesign the processes to make them
-cheaper and faster.\cite{bn12_2}\\
+cheaper and faster.\cite{bn12_2}\\[0.3cm]
 This approach can be utilized in the domain of experiment
 orchestration, making business workflows a viable choice when
 approaching our problem. An experimentation engine with the goal of
@@ -475,7 +471,7 @@ possibility to verify those results and to fully understand
 them. We have to note that in a reproduced experiment, it's not the
 \emph{raw results} that need to be identical: they merely need to fit
 within a statistical margin, compared to the original results, so that
-the \emph{conclusions} derived from them can be the same.\\
+the \emph{conclusions} derived from them can be the same.\\[0.3cm]
 Reproducing the results also makes for a starting point for
 further development, as the described methods used for reproduction
 can be extended to achieve something more or something different in

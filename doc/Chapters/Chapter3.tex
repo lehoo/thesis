@@ -91,7 +91,7 @@ experiments were run, such a collection of data can be queried to
 search for specific results. For example, the results of a specific
 experiments can be collected, compared and maybe visualized, or
 queries about a certain set of nodes can be made in order to find
-faulty ones.\\
+faulty ones.\\[0.3cm]
 The above list doesn't necessarily include all the technical
 properties of the framework, but it's a list about the most important
 design standpoints taken into consideration. After the bried
@@ -120,7 +120,7 @@ MPI implementations - one has to find his/her own way to make it
 work. Documentation only exists for specific systems, for example in
 \cite{ms11}, there is a guide about how to produce time-independent RL
 traces on the Grid'5000 testbed. Obviously, platform-specific guides
-don't always help with problems arising in an other environment.\\
+don't always help with problems arising in an other environment.\\[0.3cm]
 Below comes a more detailed description of the process of acquiring
 traces. We're only talking about collecting traces of real MPI
 experiment runs, so-called real-life (or RL) traces, since this is our
@@ -151,7 +151,7 @@ generate TAU trace files upon execution. One trace file (.trc)
 and one event file (.edf) is generated for each MPI process. The
 traces are generated on the node of execution, that's why we need the
 trace\_gather program\cite{ms11}, which is an MPI program that gathers
-all the trace files on one node.\\
+all the trace files on one node.\\[0.3cm]
 It is possible to visualize the traces, in order to compare the RL and SG
 results more easily. Pajé\cite{cob00} is a visualization tool that can
 be used for this purpose. It has its own trace format that it can
@@ -162,7 +162,7 @@ creating one trace and one event file. We now only have the task of
 converting the TAU trace to a Pajé trace file. Another MPI tracing
 library, Akypuera\cite{s13} provides this possibility, having its own
 tau-to-paje conversion script. Once done, we finally have a trace file
-that Pajé can read and display to us.\\
+that Pajé can read and display to us.\\[0.3cm]
 As we can see, this process is made up of multiple steps. It's
 repetitive and prone to errors when done manually, which causes
 frustration and unnecessarily delays when testing.
@@ -204,7 +204,7 @@ was run on multi-core nodes and compare the running time to our
 simulation's running time that was done by using SMPI, even if we
 simulated the used platform correctly, we will likely see that SMPI
 overestimated the running time, since it didn't take into account the
-performance increase caused by using multiple cores.\\
+performance increase caused by using multiple cores.\\[0.3cm]
 A solution to this problem is to explicitly disable all cores
 but one on every node before running the real-life experiment, as seen
 on figure \ref{fig:disabled_cores}.\cite{ms11} This can be done since
@@ -213,7 +213,7 @@ won't be utilized by other processes in our experiment. The downsides
 to doing this are that we need to know the platform-specific
 instructions on the nodes which have to be given to disable cores, as
 well as we most likely need root privileges. But if we can use it,
-this method is a simplistic and sure way to solve this problem.\\
+this method is a simplistic and sure way to solve this problem.\\[0.3cm]
 Another possible way to make sure that MPI doesn't make use of having
 multiple cores at its disposal is to use process binding. For most MPI
 implementations, processes can be bound to nodes (meaning that
@@ -251,7 +251,7 @@ part of the program we need it from. This can be done either directly
 or by using an overlay library for this purpose. For example, in the
 case of TAU, there is a feature called selective instrumentation,
 which provides us with the possibility to specify which functions we
-want to be traced.\\
+want to be traced.\\[0.3cm]
 When instrumenting the application, it is important to know at what
 degree we want to do it. We want to collect the data we need, but the
 greater the degree of performance instrumentation in the program, the
@@ -282,7 +282,7 @@ experiment, while we want information from just the experiment,
 without the traces. If the difference is too big, this can make our
 simulations look inaccurate. The impact it can have when using
 off-line simulation, where the simulator replays the traces corrupted
-with this overhead is shown in \cite{dms12}.\\[0.5cm]
+with this overhead is shown in \cite{dms12}.\\[0.3cm][0.5cm]
 In \cite{dms12}, the authors propose an instrumentation method as a
 correction to their previous work in \cite{dmsq11}. The problem was
 that there was a sizeable overhead caused mainly by TAU building the
@@ -315,7 +315,7 @@ condition}.\cite{wbswpclg00}\cite{brwl09} Such inaccuracy in the traces
 can lead to false conclusions when doing the performance
 analysis. Even though in our work we want to use time-independent
 traces, violations of the clock condition is still a problem we have
-to be able to handle.\\
+to be able to handle.\\[0.3cm]
 The problem could be easily avoided if every process would use a
 global clock instead of the local clock of the node it's running
 on. The problem with this approach is that accessing the global clock
@@ -324,7 +324,7 @@ causing performance issues, as well as it's not available on every
 platform. In \cite{wbswpclg00}, the authors use an IBM switch
 adapter's globally synchronized clock's register to periodically
 collect global clock records for each node, thus being able to correct
-the local clock discrepancies after the experiment finished.\\
+the local clock discrepancies after the experiment finished.\\[0.3cm]
 The main problem with this is, as already mentioned, that although
 some systems do offer a relatively
 accurate global clock, many other systems are only equipped with

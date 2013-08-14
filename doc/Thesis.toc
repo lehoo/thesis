@@ -1,13 +1,10 @@
 \select@language {hungarian}
-\contentsline {chapter}{Declaration of Authorship}{i}{section*.1}
+\contentsline {chapter}{Abstract}{ii}{section*.1}
 \vspace {1em}
-\contentsline {chapter}{Abstract}{iii}{section*.1}
+\contentsline {chapter}{Acknowledgements}{iii}{section*.1}
 \vspace {1em}
-\contentsline {chapter}{Acknowledgements}{iv}{section*.1}
-\vspace {1em}
-\contentsline {chapter}{List of Figures}{viii}{chapter*.2}
-\contentsline {chapter}{List of Tables}{ix}{chapter*.3}
-\vspace {2em}
+\contentsline {chapter}{List of Figures}{vii}{chapter*.2}
+\contentsline {chapter}{List of Tables}{viii}{chapter*.3}
 \contentsline {chapter}{\numberline {1.}Introduction}{1}{chapter*.4}
 \contentsline {chapter}{\numberline {2.}Literature Review}{4}{chapter*.4}
 \contentsline {section}{\numberline {2.1.}MPI}{4}{section*.5}
@@ -56,18 +53,18 @@
 \contentsline {section}{\numberline {4.3.}XPflow}{30}{section*.15}
 \contentsline {subsection}{\numberline {4.3.1.}A general example}{30}{section*.16}
 \contentsline {subsection}{\numberline {4.3.2.}Real-life trace collection example}{31}{section*.16}
-\contentsline {section}{\numberline {4.4.}The framework}{31}{section*.16}
+\contentsline {section}{\numberline {4.4.}The framework}{32}{section*.16}
 \contentsline {subsection}{\numberline {4.4.1.}Frontend}{32}{section*.17}
 \contentsline {subsubsection}{\numberline {4.4.1.1.}init; finish}{32}{section*.17}
 \contentsline {subsubsection}{\numberline {4.4.1.2.}reserve\_and\_deploy}{32}{section*.17}
-\contentsline {subsubsection}{\numberline {4.4.1.3.}broadcast}{32}{section*.17}
+\contentsline {subsubsection}{\numberline {4.4.1.3.}broadcast}{33}{section*.17}
 \contentsline {subsubsection}{\numberline {4.4.1.4.}disable\_cores}{33}{section*.17}
 \contentsline {subsubsection}{\numberline {4.4.1.5.}mpirun}{33}{section*.17}
 \contentsline {subsubsection}{\numberline {4.4.1.6.}trace\_gather}{33}{section*.17}
 \contentsline {subsubsection}{\numberline {4.4.1.7.}execute\_head}{34}{section*.17}
-\contentsline {subsection}{\numberline {4.4.2.}Backend}{34}{section*.17}
+\contentsline {subsection}{\numberline {4.4.2.}Backend}{35}{section*.17}
 \contentsline {subsubsection}{\numberline {4.4.2.1.}Metadata}{35}{section*.18}
-\contentsline {subsection}{\numberline {4.4.3.}Checkpointing}{35}{section*.18}
+\contentsline {subsection}{\numberline {4.4.3.}Checkpointing}{36}{section*.18}
 \contentsline {subsection}{\numberline {4.4.4.}Proxy variables}{36}{section*.18}
 \contentsline {chapter}{\numberline {5.}Evaluation}{39}{section*.18}
 \contentsline {section}{\numberline {5.1.}Methodology}{40}{section*.19}
@@ -81,24 +78,24 @@
 \contentsline {subsection}{\numberline {5.2.1.}Experiment using the framework}{43}{section*.21}
 \contentsline {subsubsection}{\numberline {5.2.1.1.}Preparation}{43}{section*.21}
 \contentsline {paragraph}{Experiment initialization}{43}{section*.22}
-\contentsline {paragraph}{Reserve and deploy}{43}{section*.22}
+\contentsline {paragraph}{Reserve and deploy}{44}{section*.22}
 \contentsline {paragraph}{Broadcasting the runnable}{45}{section*.22}
 \contentsline {paragraph}{Disabling cores}{45}{section*.22}
-\contentsline {subsubsection}{\numberline {5.2.1.2.}Running the benchmark}{45}{section*.22}
+\contentsline {subsubsection}{\numberline {5.2.1.2.}Running the benchmark}{46}{section*.22}
 \contentsline {subsubsection}{\numberline {5.2.1.3.}Post-processing}{46}{section*.22}
 \contentsline {paragraph}{Gathering the traces}{46}{section*.23}
-\contentsline {paragraph}{Merging the traces}{46}{section*.23}
-\contentsline {paragraph}{Converting the traces}{46}{section*.23}
+\contentsline {paragraph}{Merging the traces}{47}{section*.23}
+\contentsline {paragraph}{Converting the traces}{47}{section*.23}
 \contentsline {subsubsection}{\numberline {5.2.1.4.}Metadata}{47}{section*.23}
-\contentsline {subsection}{\numberline {5.2.2.}Experiment by hand}{47}{section*.23}
+\contentsline {subsection}{\numberline {5.2.2.}Experiment by hand}{48}{section*.23}
 \contentsline {subsubsection}{\numberline {5.2.2.1.}Preparation}{48}{section*.24}
 \contentsline {subsubsection}{\numberline {5.2.2.2.}Running the benchmark}{49}{section*.24}
 \contentsline {subsubsection}{\numberline {5.2.2.3.}Post-processing}{49}{section*.24}
 \contentsline {section}{\numberline {5.3.}Comparison}{50}{section*.24}
 \contentsline {subsection}{\numberline {5.3.1.}Comparison of results}{50}{section*.25}
 \contentsline {subsection}{\numberline {5.3.2.}Comparison of methodology}{52}{section*.25}
-\contentsline {paragraph}{Reliability}{52}{section*.26}
-\contentsline {paragraph}{Reusability}{52}{section*.26}
+\contentsline {paragraph}{Reliability}{53}{section*.26}
+\contentsline {paragraph}{Reusability}{53}{section*.26}
 \contentsline {paragraph}{User interaction}{53}{section*.26}
 \contentsline {paragraph}{Testing speed}{53}{section*.26}
 \contentsline {chapter}{\numberline {6.}Conclusion}{55}{section*.26}
@@ -107,7 +104,3 @@
 \contentsline {subsection}{\numberline {6.2.1.}Configuration file}{56}{section*.28}
 \contentsline {subsection}{\numberline {6.2.2.}Grid'5000}{57}{section*.28}
 \contentsline {subsection}{\numberline {6.2.3.}Metadata collection}{57}{section*.28}
-\vspace {2em}
-\contentsline {chapter}{\numberline {A.}Appendix Title Here}{58}{section*.28}
-\vspace {2em}
-\contentsline {chapter}{Bibliography}{59}{section*.28}

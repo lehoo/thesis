@@ -1,4 +1,4 @@
-\begin{thebibliography}{39}
+\begin{thebibliography}{41}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -7,7 +7,7 @@
 
 \bibitem[Forum(2012)]{mpif12}
 Message Passing~Interface, Forum.
-\newblock \emph{MPI: A Message-Passing Interface Standard Version 3.0},
+\newblock \emph{{MPI: A Message-Passing Interface Standard Version 3.0}},
   September 2012.
 
 \bibitem[E. et~al.(2004)E., E., G., T., J., M., V., P., B., A., H., J., L., and
@@ -15,27 +15,37 @@ Message Passing~Interface, Forum.
 Gabriel, E., Fagg~G., E., Bosilca, G., Angskun, T., Dongarra~J., J.,
   Squyres~J., M., Sahay, V., Kambadur, P., Barrett, B., Lumsdaine, A.,
   Castain~R., H., Daniel~D., J., Graham~R., L., and Woodall~T., S.
-\newblock Open mpi: Goals and concept, and design of a next generation mpi
-  implementation.
+\newblock {Open MPI: Goals and Concept, and Design of a Next Generation MPI
+  Implementation}.
 \newblock In \emph{Proceedings, 11th European PVM/MPI Users' Group Meeting},
   pages 97--104, Budapest, Hungary, September 2004.
 
-\bibitem[MPICH(2012)]{mpich12}
-, MPICH.
-\newblock Mpich overview, 2012.
-\newblock URL \url{http://www.mpich.org/about/overview/}.
-\newblock Last visited on 07/08/2013.
+\bibitem[D. et~al.(1996)D., E., N., and A.]{glds96}
+Gropp~W., D., Lusk, E., Doss, N., and Skjellum, A.
+\newblock A high-performance, portable implementation of the {MPI} message
+  passing interface standard.
+\newblock \emph{Parallel Computing}, 22\penalty0 (6):\penalty0 789--828,
+  September 1996.
+
+\bibitem[D. and E.(1996)]{gl96}
+Gropp~W., D. and Lusk, E.
+\newblock \emph{{Users' Guide for {\tt mpich}, a Portable Implementation of
+  MPI}}.
+\newblock Mathematics and Computer Science Division, Argonne National
+  Laboratory, 1996.
+\newblock ANL-96/6.
 
 \bibitem[H. et~al.(2008)H., A., and M.]{clq08}
 Casanova, H., Legrand, A., and Quinson, M.
-\newblock Simgrid: a generic framework for large-scale distributed experiments.
+\newblock {SimGrid: a Generic Framework for Large-Scale Distributed
+  Experiments}.
 \newblock In \emph{Proceedings of the Tenth International Event on Computer
   Modeling and Simulation}, pages 126--131, 2008.
 
 \bibitem[P.-N. et~al.(2011)P.-N., M., S., F., H., and M.]{csgscq11}
 Clauss, P.-N., Stillwell, M., Genaud, S., Suter, F., Casanova, H., and Quinson,
   M.
-\newblock Single node on-line simulation of mpi applications with smpi.
+\newblock {Single Node On-Line Simulation of MPI Applications with SMPI}.
 \newblock In \emph{International Parallel \& Distributed Processing Symposium},
   pages 664--675, May 2011.
 
@@ -55,53 +65,61 @@ Buchert, T. and Nussbaum, L.
   City, United States, August 2012{\natexlab{a}}.
 \newblock URL \url{http://hal.inria.fr/hal-00724312}.
 
+\bibitem[W.(2002)]{g02}
+Gropp, W.
+\newblock {MPICH2}: A new start for {MPI} implementations.
+\newblock In \emph{Proceedings of the 9th European PVM/MPI Users’ Group
+  Meeting on Recent Advances in Parallel Virtual Machine and Message Passing
+  Interface}, pages 97--104, 2002.
+
 \bibitem[R. et~al.(2005)R., R., and W.]{trg05}
 Thakur, R., Rabenseifner, R., and Gropp, W.
-\newblock Optimization of collective communication operations in mpich.
+\newblock {Optimization of Collective Communication Operations in MPICH}.
 \newblock \emph{Int’l Journal of High Performance Computing Applications},
   pages 49--66, 2005.
 
 \bibitem[D. and W.(2007)]{bmg07}
 Buntinas D.~Mercier, D. and Gropp, W.
-\newblock Implementation and evaluation of shared-memory communication and
-  synchronization operations in mpich2 using the nemesis communication
-  subsystem.
+\newblock {Implementation and Evaluation of Shared-Memory Communication and
+  Synchronization Operations in MPICH2 using the Nemesis Communication
+  Subsystem}.
 \newblock \emph{Parallel Computing}, 33:\penalty0 634--644, September 2007.
 \newblock URL
   \url{http://linkinghub.elsevier.com/retrieve/pii/S0167819107000786}.
 
 \bibitem[J.(2012{\natexlab{a}})]{h12_1}
 Hillston, J.
-\newblock Performance modelling and lecture 1 ("modelling and simulation"),
+\newblock {Performance Modelling and Lecture 1 ("Modelling and Simulation")},
   2012{\natexlab{a}}.
 \newblock URL
   \url{http://www.inf.ed.ac.uk/teaching/courses/pm/PM-lecture1.pdf}.
 
 \bibitem[J.(2012{\natexlab{b}})]{h12_13}
 Hillston, J.
-\newblock Performance modelling and lecture 13 ("simulation models:
-  Introduction and motivation"), 2012{\natexlab{b}}.
+\newblock {Performance Modelling and Lecture 13 ("Simulation Models:
+  Introduction and Motivation")}, 2012{\natexlab{b}}.
 \newblock URL
   \url{http://www.inf.ed.ac.uk/teaching/courses/pm/PM-lecture1.pdf}.
 
 \bibitem[P. et~al.(2013)P., A., S., A., S., M., M., F., and B.]{bdglmqssv13}
 Bédaride, P., Degomme, A., Genaud, S., Legrand, A., Markomanolis~G., S.,
   Quinson, M., Stillwell, M., Suter, F., and Videau, B.
-\newblock Improving simulations of mpi applications using a hybrid network
-  model with topology and contention support.
-\newblock 2013.
+\newblock {Improving Simulations of MPI Applications Using A Hybrid Network
+  Model with Topology and Contention Support}.
+\newblock Not yet published, 2013.
 
 \bibitem[F. et~al.(2011)F., S., F., and M.]{dmsq11}
 Desprez, F., Markomanolis~G., S., Suter, F., and Quinson, M.
-\newblock Assessing the performance of mpi applications through
-  time-independent trace replay.
+\newblock {Assessing the Performance of MPI Applications Through
+  Time-Independent Trace Replay}.
 \newblock In \emph{Proceedings of the 2nd International Workshop of Parallel
   Software Tools and Tool Infrastructures (PSTI)}, pages 467--476, Taipei,
   Taiwan, September 2011.
 
 \bibitem[S. and F.(2011)]{ms11}
 Markomanolis~G., S. and Suter, F.
-\newblock Time-independent trace acquisition framework – a grid'5000 how-to.
+\newblock {Time-Independent Trace Acquisition Framework – A Grid'5000
+  How-to}.
 \newblock Technical report, Institut National de Recherche en Informatique et
   en Automatique, 2011.
 \newblock URL \url{http://hal.inria.fr/inria-00593842}.
@@ -109,13 +127,13 @@ Markomanolis~G., S. and Suter, F.
 \bibitem[B. and O.(2008)]{vr08}
 Videau, B. and Richard, O.
 \newblock {Expo} : un moteur de conduite d'expériences pour plates-forme
-  dédiées.
+  {Dédiées}.
 \newblock In \emph{Conférence Française en Systèmes d'Exploitation (CFSE)},
   2008.
 
 \bibitem[T. et~al.(2009)T., M., I., and G.]{rosj09}
 Rakotoarivelo, T., Ott, M., Seskar, I., and Jourjon, G.
-\newblock Omf: a control and management framework for networking testbeds.
+\newblock {OMF: a Control and Management Framework for Networking Testbeds}.
 \newblock In \emph{SOSP Workshop on Real Overlays and Distributed Systems
   (ROADS '09)}, page~6, Big Sky, USA, October 2009.
 
@@ -124,14 +142,14 @@ Rakotoarivelo, T., Ott, M., Seskar, I., and Jourjon, G.
 Deelman, E., Singh, G., Si, M.-H., Blythe, J., Gil, Y., Kesselman, C., Mehta,
   G., Vahi, K., Berriman~B., G., Good, J., Laity, A., Jacob~J., C., and
   Katz~D., S.
-\newblock Pegasus: a framework for mapping complex scientific workflows onto
-  distributed systems.
+\newblock {Pegasus: a Framework for Mapping Complex Scientific Workflows onto
+  Distributed Systems}.
 \newblock \emph{Scientific Programming Journal}, 13:\penalty0 219--237, 2005.
 
 \bibitem[I. et~al.(2004)I., C., E., M., B., and S.]{abjjlm04}
 Altintas, I., Berkley, C., Jaeger, E., Jones, M., Ludascher, B., and Mock, S.
-\newblock Kepler: An extensible system for design and execution of scientific
-  workflows.
+\newblock {Kepler: An Extensible System for Design and Execution of Scientific
+  Workflows}.
 \newblock In \emph{16th International Conference on Scientific and Statistical
   Database Management}, Santorini Island, Greece, June 2004.
 
@@ -147,8 +165,8 @@ Wolstencroft, K., Haines, R., Fellows, D., Williams, A., Withers, D., Owen, S.,
 
 \bibitem[M. et~al.(2010)M., D., and E.]{skd10}
 Sonntag, M., Karastoyanova, D., and Deelman, E.
-\newblock Bridging the gap between business and scientific workflows: Humans in
-  the loop of scientific workflows.
+\newblock {Bridging the Gap between Business and Scientific Workflows: Humans
+  in the Loop of Scientific Workflows}.
 \newblock In \emph{e-Science (e-Science), 2010 IEEE Sixth International
   Conference on}, pages 206--213. IEEE, 2010.
 
@@ -170,7 +188,7 @@ Buchert, T. and Nussbaum, L.
 
 \bibitem[S. and D.(2006)]{sm06}
 Shende~S., S. and Malony~A., D.
-\newblock The tau parallel performance system.
+\newblock {The TAU parallel performance system}.
 \newblock \emph{International Journal of High Performance Computing
   Applications}, 20:\penalty0 287--311, 2006.
 \newblock URL
@@ -179,50 +197,50 @@ eproducible-research.pdf}.
 
 \bibitem[J. et~al.(1999)J., S., C., and G.]{mbdh99}
 Mucci~P., J., Browne, S., Deane, C., and Ho, G.
-\newblock Papi: A portable interface to hardware performance counters.
+\newblock {PAPI: A Portable Interface to Hardware Performance Counters}.
 \newblock In \emph{Proceedings of Department of Defense HPCMP Users Group
   Conference}, California, USA, June 1999.
 
 \bibitem[K. et~al.(2001)K., S., J., K., and R.]{lmmsl01}
 London, K., Moore, S., Mucci~P., J., Seymour, K., and Luczak, R.
-\newblock The papi cross-plaftorm interface to hardware performance counters.
+\newblock {The PAPI Cross-Plaftorm Interface to Hardware Performance Counters}.
 \newblock In \emph{Department of Defense Users' Group Conference Proceedings},
   Biloxi, Mississippi, USA, June 2001.
 
 \bibitem[A. et~al.(2000)A., J., D., S., B., R., and C.]{lcmsmrr00}
 Lindlan~K., A., Cuny, J., Malony~A., D., Shende, S., Mohr, B., Rivenburgh, R.,
   and Rasmussen, C.
-\newblock A tool framework for static and dynamic analysis of object-oriented
-  software with templates.
+\newblock {A Tool Framework for Static and Dynamic Analysis of Object-Oriented
+  Software with Templates}.
 \newblock In \emph{Supercomputing, ACM/IEEE 2000 Conference}, Dallas, Texas,
   USA, 2000.
 
 \bibitem[de~Kergommeaux~D. et~al.(2000)de~Kergommeaux~D., de~Oliveira Stein~B.,
   and E.]{cob00}
 Chassin~de, Kergommeaux~D., ~de, Oliveira Stein~B., and Bernard~P., E.
-\newblock Performance characteristics of the multi-zone nas parallel
-  benchmarks.
+\newblock Pajé, an interactive visualization tool for tuning multi-threaded
+  parallel applications.
 \newblock \emph{Parallel Computing}, 26:\penalty0 1253--1274, August 2000.
 
 \bibitem[L.(2013)]{s13}
 Schnorr, L.
-\newblock Akypuera - a library to trace mpi applications and generate pajé
+\newblock Akypuera - a library to trace {MPI} applications and generate {Pajé}
   trace files, 2013.
 \newblock URL \url{https://github.com/schnorr/akypuera}.
 \newblock Last visited on 13/08/2013.
 
 \bibitem[F. et~al.(2012)F., S., and F.]{dms12}
 Desprez, F., Markomanolis~G., S., and Suter, F.
-\newblock Improving the accuracy and efficiency of time-independent trace
-  replay.
+\newblock {Improving the Accuracy and Efficiency of Time-Independent Trace
+  Replay}.
 \newblock Technical report, Institut National de Recherche en Informatique et
   en Automatique, October 2012.
 
 \bibitem[E. et~al.(2000)E., A., M., D., F., A., E., and W.]{wbswpclg00}
 Wu.~C., E., Bolmarcich, A., Snir, M., Wootton, D., Parpia, F., Chan, A., Lusk,
   E., and Gropp, W.
-\newblock From trace generation to visualization: A performance framework for
-  distributed parallel systems.
+\newblock {From Trace Generation to Visualization: A Performance Framework for
+  Distributed Parallel Systems}.
 \newblock In \emph{Supercomputing, ACM/IEEE 2000 Conference}, pages 50--67,
   Dallas, Texas, USA, 2000.
 
@@ -234,7 +252,7 @@ Becker, D., Rabenseifner, R., Wolf, F., and Linford~J., C.
 
 \bibitem[L.(1992)]{m92}
 Mills~D., L.
-\newblock Network time protocol (version 3).
+\newblock {Network Time Protocol (Version 3)}.
 \newblock Technical report, The Internet Engineering Task Force - Network
   Working Group, March 1992.
 
@@ -243,8 +261,8 @@ Mills~D., L.
 Bolze, R., Cappello, F., Caron, E., Daydé, M., Desprez, F., Jeannot, E.,
   Jégou, Y., Lanteri, S., Leduc, J., Melab, N., Mornet, G., Namyst, R.,
   Primet, P., Quetier, B., Richard, O., Talbi, E., and Touche, I.
-\newblock Grid'5000: A large scale and highly reconfigurable experimental grid
-  testbed.
+\newblock {Grid'5000: A Large Scale And Highly Reconfigurable Experimental Grid
+  Testbed}.
 \newblock \emph{International Journal of High Performance Computing
   Applications}, 20:\penalty0 481--494, November 2006.
 
@@ -257,32 +275,32 @@ Capit, N., Da~Costa, G., Georgiou, Y., Huard, G., Martin, C., Mounié, G.,
 
 \bibitem[B. et~al.(2009)B., G., and O.]{chr09}
 Claudel, B., Huard, G., and Richard, O.
-\newblock Taktuk, adaptive deployment of remote executions.
+\newblock {TakTuk, Adaptive Deployment of Remote Executions}.
 \newblock In \emph{Proceedings of the International Symposium of High
   Performance Distributed Computing (HPDC)}, Munich, Germany, June 2009.
 
 \bibitem[E. et~al.(2013)E., L., and L.]{jsn13}
 Jeanvoine, E., Sarzyniec, L., and Nussbaum, L.
-\newblock Kadeploy3: Efficient and scalable operating system provisioning.
+\newblock {Kadeploy3: Efficient and Scalable Operating System Provisioning}.
 \newblock \emph{Usenix}, 38:\penalty0 38--44, February 2013.
 
 \bibitem[H. et~al.(1999)H., M., and J.]{jfy99}
 Jin, H., Frumkin, M., and Yan, J.
-\newblock The openmp implementation of nas parallel benchmarks and its
-  performance.
+\newblock {The OpenMP Implementation of NAS Parallel Benchmarks and Its
+  Performance}.
 \newblock Technical report, Technical Report NAS-99-011, NASA Ames Research
   Center, October 1999.
 
 \bibitem[J.(2013)]{d13}
 Dunbar, J.
-\newblock Problem sizes and parameters in nas parallel benchmarks, 2013.
+\newblock {Problem Sizes and Parameters in NAS Parallel Benchmarks}, 2013.
 \newblock URL
   \url{http://www.nas.nasa.gov/publications/npb_problem_sizes.html}.
 \newblock Last visited on 07/08/2013.
 
 \bibitem[O. et~al.(2009)O., C., and döt Net~I.]{ben09}
 Ben-Kiki, O., Evans, C., and ~döt, Net~I.
-\newblock Yaml ain't markup language, 2009.
+\newblock {YAML Ain't Markup Language}, 2009.
 \newblock URL \url{http://yaml.org/spec/1.2/spec.html}.
 \newblock Last visited on 13/08/2013.
 

@@ -8,13 +8,13 @@
 \lhead{Chapter 5. \emph{Evaluation}}
 
 \label{sec:evaluation_plan}
-In the first part of this chapter, declare the most important
+In the first part of this chapter, we declare the most important
 specifics about the process of the evaluation of the
 implemented framework, the goal of which is to make
 conclusions about whether or not we succeeded in achieving the
 requirements we specified earlier. The evaluation will be done by
 running a multi-step, fairly typical experiment both manually and with
-the framework, so we can easily observe the differences.\\
+the framework, so we can easily observe the differences.\\[0.3cm]
 After specifying the process, we will go over the results of the
 evaluation. First comes the part where we discuss the
 results we got when running the experiment using the framework. Here,
@@ -64,26 +64,33 @@ password, ssh-keys are needed to be configured correctly
 If all these requirements are fulfilled, the experiment should run
 without a problem.
 \subsubsection{The benchmark}
-The benchmark used for evaluation is taken from the NAS Parallel
-Benchmarks suite\cite{jfy99}, which is a small set of benchmarks
-designed for performance testing of parallel systems. The benchmark
-chosen for our current purpose is called \emph{lu.B.8}. The name
-consists of 3 parts. The first part, \emph{lu} indicates what the
-experiment is about: as its name suggests, the LU benchmark solves a
-system of equations represented with a matrix, with the LU
-factorization method.\\
+There are a number of scalable benchmark suites developed for parallel
+execution. For the purposes of evaluation, the NAS Parallel Benchmarks
+suite\cite{jfy99} was chosen. Although it's been around for some time
+and there are newer ones, the NAS suite consists of relatively simple
+applications, with easy-to-understand behaviors. Since our goal right
+now is not to solve complex problems but only to test our framework by
+doing trace collection, the NAS benchmarks are perfect for our
+purpose. We have to note though, that the framework is not
+NAS-specific: any other MPI benchmark could be run with the
+implementation.\\[0.3cm]
+The benchmark chosen for doing the evaluation is
+called \emph{lu.B.8}. The name consists of 3 parts. The first
+part, \emph{lu} indicates what the experiment is about: as its name
+suggests, the LU benchmark solves a system of equations represented
+with a matrix, with the LU factorization method.\\[0.3cm]
 The second part of the name, \emph{B} is an
 indication about the complexity of the problem that the benchmark
 solves. The NPB suite defines so-called "problem classes" for its
 benchmarks. B is in the middle "standard" complexity category, being
 more complex than the Small (S), the Workstation-size (W) and A, the
 least complex "standard" problem size, but less complex than C and the
-larger test problem sizes.\cite{d13}\\
+larger test problem sizes.\cite{d13}\\[0.3cm]
 Finally, the number \emph{8} at the end of the benchmark's name
 indicates how many parallel processes it is intended for to be solved:
 for our purposes, we choose it to be 8, thus, we will allocate 8 nodes
 for our experiment, each of them running 1 MPI process to solve the
-problem.\\
+problem.\\[0.3cm]
 It's important to note that when doing the experiment, we assume that
 the benchmark is already compiled, in a specified place in the user's
 home folder, provided as a parameter to the broadcast method:
@@ -126,7 +133,7 @@ its \emph{tau2paje} trace converting script.)
 \label{sec:experiment_process}
 As mentioned before, the experiment process will consist of the same
 steps as in the example discussed before
-(see \ref{fig:xpflow_example2}).\\
+(see \ref{fig:xpflow_example2}).\\[0.3cm]
 To prepare our experiment process, we start by
 logging in to the frontend with our user. Then, we start an
 interactive job, allocating the desired number (in our case, 8) of
@@ -139,14 +146,14 @@ running the experiment with the framework first, then connecting to
 the job started by the framework and repeating the experiment
 manually, starting from the deployment part. The node allocation is
 not really an important part of the experiment, thus, it's not a
-problem that it's omitted from the manual execution.\\
+problem that it's omitted from the manual execution.\\[0.3cm]
 As part of the process that we conduct in both experiments, first, we
 deploy the previously mentioned (\ref{sec:image}) customized image on the
 nodes. Then we broadcast the runnable (\emph{lu.A.8}) to every node's
 /tmp directory. After that comes the step where we disable all but one
 core on every node. The reasoning for this step has been discussed
 previously (see \ref{sec:multiple_cores}). This concludes the
-preparation stage.\\
+preparation stage.\\[0.3cm]
 It is worth noting that, just like we did before at the
 checkpointing example (see \ref{sec:checkpointing}), we put a
 checkpoint right after deployment. This way, if we want to do another
@@ -154,9 +161,9 @@ experiment, we can reuse our already allocated and deployed
 nodes. Since deployment is the longest process in the experiment, such
 a checkpoint can come in really handy. As already discussed before, we
 can modify anything in the experiment that comes after the checkpoint
-- the execution will resume and execute the modified code.\\
+- the execution will resume and execute the modified code.\\[0.3cm]
 After the preparation stage comes the execution of the benchmark. We
-use OpenMPI 1.6.4, installed on our image.\\
+use OpenMPI 1.6.4, installed on our image.\\[0.3cm]
 After the running of the benchmark, comes the post-processing. If we
 compiled our benchmark correctly with TAU, one trace file (.trc)
 and one event file (.edf) is generated for each MPI process. The
@@ -172,7 +179,7 @@ post-processing methods. Finally, when we have one merged trace and
 one event file, we can convert our TAU trace to a format that is
 compatible with the Pajé\cite{cob00} visualization tool. Visualizing
 the traces makes it easier to analyze and compare. For the conversion,
-we use Akypuera's\cite{s13} \emph{tau2paje} script.\\[0.5cm]
+we use Akypuera's\cite{s13} \emph{tau2paje} script.\\[0.3cm][0.5cm]
 
 \section{Results}
 In this part of the chapter, we go over how the experiments went by
@@ -183,7 +190,7 @@ framework.
 First, we discuss the experiment orchestrated with the test
 framework. The test written with the framework consists of one single
 file, containing 1 method (the main) and 11 function calls. We can
-look at the code on figure \ref{fig:experiment_code}.\\
+look at the code on figure \ref{fig:experiment_code}.\\[0.3cm]
 The experiment itself can be divided into three main stages: the
 preparation/configuration stage, the benchmark stage and the
 post-processing stage.
@@ -210,7 +217,7 @@ This is the part where the program starts a job by allocating 8 nodes
 on the \emph{lille} site and deploying the image (given as a parameter
 to the method) on them. We set the allocation time to 120 minutes (2
 hours), which should give us plenty of time to execute the experiment
-with both the framework and manually on the nodes.\\
+with both the framework and manually on the nodes.\\[0.3cm]
 As part of the process, a so-called 'nodefile' is created, which
 contains the names of all the nodes that we allocated. Originally, the
 environment variable \emph{\$OAR\_FILE\_NODES} is set on the frontend
@@ -220,7 +227,7 @@ have. During the experiment, we create a nodefile that only contains
 each node once, so it can be used as a machinefile for certain
 commands later. We specify a custom path to the nodefile with an
 argument. If that argument is not set, our nodefile would be created
-in the home folder anyway.\\
+in the home folder anyway.\\[0.3cm]
 Logs of the deployment process can be seen on
 figure \ref{fig:fex_deployment}. As we can see, we allocate 8 nodes
 for 2 hours of time. This means that after 2 hours, the job terminates
@@ -248,7 +255,7 @@ its processes on every node. The parameters here are pretty
 straightforward - we give the method the path to the compiled
 benchmark and the path to copy it to. The nodefile is not needed to be
 given, since it's already been created and stored by the library
-before.\\
+before.\\[0.3cm]
 As it's a relatively fast and simple process, the framework doesn't
 display any extra log messages to notify us of their success. Since
 the benchmark was able to run, we can be sure that it succeded.
@@ -256,7 +263,7 @@ the benchmark was able to run, we can be sure that it succeded.
 This is the method call that is responsible for disabling all but one
 core on every node that takes part in the execution. We talked about
 why this is necessary earlier, see \ref{sec:multiple_cores}. No
-parameters are needed to be given here.\\
+parameters are needed to be given here.\\[0.3cm]
 This, like the broadcasting process, is a fast and relatively simple
 process. Also, as previously mentioned, the fact whether or not the
 cores were successfully disabled is checked in a loop, repeating the
@@ -272,19 +279,19 @@ also specify the MPI runnable with its full path: this is to avoid
 confusion about which version of MPI is actually running on the nodes,
 ensuring that it's the version we deployed on the image (OpenMPI
 1.6.4). If not given, it would be defaulted to simply 'mpirun'. We
-specify the file to put the output of the benchmark to as well.\\
+specify the file to put the output of the benchmark to as well.\\[0.3cm]
 We can put any extra arguments that we want to give to mpirun in the
 "arguments" parameter. In this case, we use this parameter to specify
 that our benchmark must not use Infiniband. This is needed because
 SMPI is unable to simulate Infiniband connection, thus, a trace
 acquired using it would show significantly better performance than the
-simulated version.\\
+simulated version.\\[0.3cm]
 We can see logs produced when running the MPI benchmark, on
 figure \ref{fig:fex_mpirun}. At the beginning of the method, the
 framework logs the name of the designated head node, which is the node
 the benchmark execution commands will be given and where the traces
 will be gathered, merged and converted. This node, in our case, is the
-node called \emph{chimint-6}.\\
+node called \emph{chimint-6}.\\[0.3cm]
 The execution time of the benchmark was 46.769 seconds. This result is
 taken from the traces themselves, as we can see see below, at the
 visualization of the traces.
@@ -329,12 +336,12 @@ synchronization problems (clock skew). As we described before
 overcome. Although the merging script before tried to take care of the
 problem, it can't eliminate it completely, but it does a well enough
 job so this problem doesn't interfere with the conversion results in
-any noticeable way.\\
+any noticeable way.\\[0.3cm]
 After the conversion is done, the visualizable trace file called
 \emph{lu.B.8.paje} is available on the /tmp folder of the head
 node. We can now copy it to our local machine and visualize the
 result. (The results will be discussed below, after discussing the
-manual experiment.)\\
+manual experiment.)\\[0.3cm]
 We can see logs about the post-processing part on
 figure \ref{fig:fex_postprocessing}. We can see by the lines starting
 with "Looking for the node chimint-6...", that the head node is the
@@ -354,13 +361,13 @@ seconds to complete.
 \subsubsection{Metadata}
 In the end, we get some amount of metadata generated by the
 experiment, summarizing some of its most important specifics, as it
-can be seen on figure \ref{fig:fex_metadata}.\\
+can be seen on figure \ref{fig:fex_metadata}.\\[0.3cm]
 It's worth pointing out that the framework keeps track of the time
 before and after the checkpoint, which was placed at the
 deployment. This way, we can easily distinguish between the time the
 deployment took and the time the other parts of the experiment
 took. It is obvious by looking at the times that the deployment
-process is the longest part of the experiment.\\
+process is the longest part of the experiment.\\[0.3cm]
 If we take a look at the nodes used, we can see that we used nodes
 from 2 different clusters on the lille site: the
 clusters \emph{chirloute} and \emph{chimint}.
@@ -380,12 +387,16 @@ before, the two experiments consist of the same exact steps. As
 before, we divide the experiment into three main sections:
 preparation stage, benchmark stage and post-processing stage.
 \subsubsection{Preparation}
-Below is a table summarizing the results for the preparation and
+Table 5.1 is summarizing the results for the preparation and
 configuration stage. The whole preparation stage took place on the
 frontend of the site "lille", with the user "dlehoczky".
+
 \renewcommand{\arraystretch}{1.5}
+\begin{table}
 \begin{center}
 \begin{spacing}{1}
+\caption{Preparation and configuration stage for the manual
+experiment}
 \begin{tabular}{| p{4cm} | p{8cm} | l |} \toprule
   \multicolumn{3}{ |c| }{\textbf{Preparation}} \\ \midrule
   \multicolumn{1}{ |c| }{\emph{Task}} & \multicolumn{1}{ |c|
@@ -412,6 +423,7 @@ frontend of the site "lille", with the user "dlehoczky".
 \end{tabular}
 \end{spacing}
 \end{center}
+\end{table}
 
 As a side note: when doing the core disabling with the framework, the
 program repeats the disabling step until it confirms it to be
@@ -422,15 +434,17 @@ until we don't see any node names when running that command. When
 running the test, the disabling step was successful the first time,
 thus there was no need to repeat that step.
 \subsubsection{Running the benchmark}
-Below is the table about the command that was given to run the
+Table 5.2 is about the command that was given to run the
 benchmark (which is exactly the same as it was for the framework), as
 well as its runtime. The benchmark had to be run from the directory
 the benchmark was broadcasted to (/tmp in our case), on the designated
-head node (which was, in our case, \#{TODO: head node}, the same as it
+head node (which was, in our case, \emph{chimint-6}, the same as it
 was for the framework.
 
+\begin{table}
 \begin{center}
 \begin{spacing}{1}
+\caption{Benchmark execution stage for the manual experiment}
 \begin{tabular}{| p{4cm} | p{8cm} | l |} \toprule
   \multicolumn{3}{ |c| }{\textbf{Running the benchmark}} \\ \midrule
   \multicolumn{1}{ |c| }{\emph{Task}} & \multicolumn{1}{ |c|
@@ -445,15 +459,18 @@ was for the framework.
 \end{tabular}
 \end{spacing}
 \end{center}
+\end{table}
 
 \subsubsection{Post-processing}
 After executing the benchmark, the produced traces are sitting on
-their respective nodes. Below, we summarize how the post-processing of
+their respective nodes. In table 5.3, we summarize how the post-processing of
 the files went. This stage of the experiment, as it was for the
 benchmark, was executed on the head node, from the /tmp directory.
 
+\begin{table}
 \begin{center}
 \begin{spacing}{1}
+\caption{Post-processing stage for the manual experiment}
 \begin{tabular}{| p{4cm} | p{8cm} | l |} \toprule
   \multicolumn{3}{ |c| }{\textbf{Post-processing}} \\ \midrule
   \multicolumn{1}{ |c| }{\emph{Task}} & \multicolumn{1}{ |c|
@@ -470,6 +487,7 @@ benchmark, was executed on the head node, from the /tmp directory.
 \end{tabular}
 \end{spacing}
 \end{center}
+\end{table}
 
 As mentioned previously at the end of the experiment with the
 framework: after the conversion process, the file \emph{lu.B.8.paje}
@@ -484,6 +502,8 @@ is a table summarizing the elapsed time for both experiments.
 \definecolor{light-gray}{gray}{0.90}
 \begin{center}
 \begin{spacing}{1}
+\begin{table}
+\caption{Experiments - elapsed time}
 \begin{tabular}{| c | c | c |} \toprule
   \multicolumn{1}{ |c|
   }{\multirow{2}{*}{\Large \textbf{\emph{Stage}}}} & \multicolumn{2}{
@@ -496,6 +516,7 @@ is a table summarizing the elapsed time for both experiments.
   Post-processing & 30.118 & 22.651 \\ \midrule
   The whole experiment & 635.327 & 526.24 \\ \midrule
 \end{tabular}
+\end{table}
 \end{spacing}
 \end{center}
 
@@ -542,7 +563,7 @@ rank forms a horizontal "stripe" of its own, with the MPI operations
 belonging to it inside that stripe. As for the MPI operations
 themselves: the send operations (MPI\_Send()) are blue, the receive
 operations (MPI\_recv()) are green, and the wait operations
-(MPI\_Wait()) are white in color.\\
+(MPI\_Wait()) are white in color.\\[0.3cm]
 If we observe the two trace visualizations, it is apparent that there
 are obvious differences between them - the MPI operations didn't
 happen at the same time. Sometimes, one of the experiments executed
@@ -617,7 +638,7 @@ framework to demonstrate how the two methods differ from each
 other, in order to make a conclusion about whether or not it's worth
 to use our implementation. Then we went on to discuss the process
 itself: the preparation steps, the running of the benchmark and the
-post-processing part.\\
+post-processing part.\\[0.3cm]
 The section after that was about the results of running the
 experiment with the two methods. We first went over the experiment
 orchestrated with the framework in detail: we observed how the code

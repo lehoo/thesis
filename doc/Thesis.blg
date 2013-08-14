@@ -2,46 +2,44 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: Thesis.aux
 The style file: unsrtnat.bst
 Database file #1: Bibliography.bib
-Warning--empty note in bdglmqssv13
-You've used 39 entries,
+You've used 41 entries,
             2481 wiz_defined-function locations,
-            756 strings with 12408 characters,
-and the built_in function-call counts, 16766 in all, are:
-= -- 1238
-> -- 1205
-< -- 24
-+ -- 448
-- -- 368
-* -- 1382
-:= -- 2782
-add.period$ -- 127
-call.type$ -- 39
-change.case$ -- 81
-chr.to.int$ -- 37
-cite$ -- 40
-duplicate$ -- 801
-empty$ -- 1388
-format.name$ -- 419
-if$ -- 3540
+            769 strings with 12976 characters,
+and the built_in function-call counts, 17655 in all, are:
+= -- 1317
+> -- 1247
+< -- 26
++ -- 464
+- -- 380
+* -- 1450
+:= -- 2917
+add.period$ -- 133
+call.type$ -- 41
+change.case$ -- 84
+chr.to.int$ -- 39
+cite$ -- 41
+duplicate$ -- 851
+empty$ -- 1468
+format.name$ -- 435
+if$ -- 3736
 int.to.chr$ -- 3
-int.to.str$ -- 40
-missing$ -- 27
-newline$ -- 212
-num.names$ -- 117
-pop$ -- 388
+int.to.str$ -- 42
+missing$ -- 29
+newline$ -- 222
+num.names$ -- 123
+pop$ -- 401
 preamble$ -- 1
-purify$ -- 39
+purify$ -- 41
 quote$ -- 0
-skip$ -- 449
+skip$ -- 478
 stack$ -- 0
-substring$ -- 480
-swap$ -- 173
-text.length$ -- 10
+substring$ -- 532
+swap$ -- 187
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 273
-warning$ -- 1
-while$ -- 106
+type$ -- 287
+warning$ -- 0
+while$ -- 114
 width$ -- 0
-write$ -- 528
-(There was 1 warning)
+write$ -- 555

@@ -50,7 +50,7 @@ be necessary when doing tests, but it can make things easier,
 especially when configuring the environment. Deep control and
 monitoring
 mechanisms are also needed (not just in one node, but across multiple
-nodes) in order to be able to track our experiments.\\
+nodes) in order to be able to track our experiments.\\[0.3cm]
 Simulation with SMPI can be done on any system, since it only needs
 one node but in order to run RL experiments, such a testbed is
 needed. Most of the work related to this thesis has been done on the
@@ -87,7 +87,7 @@ mechanisms on an allocated node, thus, we have to assume that they are
 unprotected. This is the reasoning behind the decision that sites
 themselves (thus, of course, the nodes they are hosting) are not
 directly connected to the internet, making Grid'5000 an isolated
-domain. This way, the sites are protected against DoS attacks.\\
+domain. This way, the sites are protected against DoS attacks.\\[0.3cm]
 It is possible to open restricted routes through the internet to
 external clusters, which provides the possibility of doing
 multiplatform experiments.
@@ -99,7 +99,7 @@ across the whole platform. An LDAP directory is installed to provide
 this in a reliable way. Every site runs an LDAP server. These servers
 have the same root and there is a branch for every site. On a given
 site, the local administrator has read-write access, as well as is
-able to manage user accounts.\\
+able to manage user accounts.\\[0.3cm]
 A user has access to all of the Grid'5000 sites and services
 (monitoring tools, wiki, deployment, etc.). The user also has an
 independent home directory at every site. Synchronization of home
@@ -118,14 +118,14 @@ allocation. Large-scale operations such as parallel task launching or
 monitoring is handled by a specialized parallel launching tool,
 Taktuk\cite{chr09}. Taktuk is a handy tool which can be used from the
 console to, for example, perform a certain set of tasks on multiple
-nodes, or to broadcast files across them.\\
+nodes, or to broadcast files across them.\\[0.3cm]
 A simple grid broker is handling resource management at grid
 level, allowing co-allocation of nodes on multiple
 clusters. Co-allocation is a very simple process for the user who,
 after submitting an experiment needing several sets of nodes across
 different clusters, receives an identifier from the broker which can
 be used to retrieve all necessary information about the allocated
-nodes.\\
+nodes.\\[0.3cm]
 Node reconfiguration, talked about in more detail below, co-operates
 with the resource management system at certain points. Such a point is
 that when a user submits an experiment that requires node
@@ -192,13 +192,13 @@ application we'd like to run:
 \end{itemize}
 As a side note: in this example, we assume that we are working on the
 Grid'5000 testbed. As previously mentioned, most of the work regarding
-this thesis was conducted there.\\
+this thesis was conducted there.\\[0.3cm]
 As for the example process: parameters that the user can specify
 are the number of nodes, the chosen Grid'5000 site, the image to
 deploy, the runnable and the parameters to mpirun (for example to
 disable Infiniband) and to the trace\_gather script. The nodefile
 created in the 3rd step is necessary for the operations that are
-needed to do something on all the allocated nodes.\\
+needed to do something on all the allocated nodes.\\[0.3cm]
 Now let's take a look at the experimentation engine we'd like to use
 for implementing the framework to automate processes like this.
 \section{XPflow}
@@ -229,12 +229,12 @@ activities transformed into XPflow (\ref{fig:xpflow_example1}).
 \begin{figure}[htbp]
   \centering
     \includegraphics[scale=0.7]{./Figures/xpflow_example1.jpg}
-  \caption[dayum]{Morning routine in XPflow}
+  \caption[Morning routine in XPflow]{Morning routine in XPflow}
   \label{fig:xpflow_example1}
 \end{figure}
 On the diagram, circles represent the starting and end point of the
 process, the rectangles represent activities and the whole diagram
-represents a process.\\
+represents a process.\\[0.3cm]
 In XPflow, it is possible to execute activities sequentially or in
 parallel. An example for sequential execution on
 \ref{fig:xpflow_example1} is drinking coffee: the activities preceding
@@ -251,7 +251,8 @@ represent the experiment we described in section
 \begin{figure}[htbp]
   \centering
     \includegraphics[scale=0.5]{./Figures/xpflow_example2.jpg}
-  \caption[dayum]{A typical MPI experiment in XPflow}
+  \caption[MPI experiment example in XPflow]{A typical MPI experiment
+    in XPflow}
   \label{fig:xpflow_example2}
 \end{figure}
 On this representation, there is no parallel execution like in the
@@ -260,7 +261,7 @@ the other, the activities depend on each other. However, as we can
 see, some of the activities are distinguished by the text
 "forall(nodes)" above them. This means that we iterate through all the
 allocated nodes, executing the activity on all of them. This is done
-in parallel.\\
+in parallel.\\[0.3cm]
 As a side note: in the current implementation, this kind of iteration
 is realized not
 specifically by XPflow, but by the parallel launching tool mentioned
@@ -279,7 +280,7 @@ there is an XPflow structure called a "library" as a backend. While
 the expression "library" may sound strange in this context, this is
 what comes the closest to a class in XPflow: we are able to store
 variables and have member functions, features which the framework
-makes much use of.\\
+makes much use of.\\[0.3cm]
 Below is a more detailed discussion of the most important traits of
 the frontend and the backend.
 \subsection{Frontend}
@@ -322,7 +323,7 @@ Disabling cores on nodes can be necessary
 as a method to overcome simulation inaccuracy caused by SMPI's
 inability to predict the performance of an MPI application when using
 multiple cores, as mentioned before, in the \emph{Problem Description}
-chapter.\\
+chapter.\\[0.3cm]
 This method, unlike the others in the frontend, is an \emph{activity}
 instead of being a \emph{process}. This is done as a workaround to an
 XPflow pitfall regarding proxy variables, an issue that will be
@@ -343,7 +344,7 @@ the script from the path where the execution happened, since that's
 where the traces were gathered. After running
 this process, we can assume that all the trace files are on the node
 we made the function call from. For example if we have our traces in
-/tmp, we need to call trace\_gather from there.\\
+/tmp, we need to call trace\_gather from there.\\[0.3cm]
 Trace\_gather has a parameter called arity. This parameter serves the
 purpose of optimization. Trace\_gather
 works by logging in to each node in question and then sending its
@@ -355,7 +356,7 @@ all the other nodes are its children. If we specify arity as less than
 the number of nodes, we can add extra levels to the tree: some nodes
 don't directly send their traces directly to the head node, but to an
 intermediate node, which then sends it further up the tree, eventually
-getting to the root, the head node.\\
+getting to the root, the head node.\\[0.3cm]
 See figure \ref{fig:tracegather_arity} for an example: in a system
 with the total of 8 nodes, we can see on the left how trace\_gather
 works if we set the arity to 7 and when we decrease it to 4. In the
@@ -385,13 +386,13 @@ performance increase for trace\_gather.
 This activity can be used to execute any command on the head node. The
 head node is one of the allocated nodes, arbitrarily chosen by the
 system. This is the node where the \emph{mpirun} command is run
-from.\\
+from.\\[0.3cm]
 The \emph{execute\_head} activity is useful for post-processing
 purposes, such as calling the TAU\cite{sm06} script
 \emph{tau\_treemerge.pl}, which is responsible for merging the traces
 into one trace file and the event files into one event file. This is
 useful, as after we have one single trace and event file containing
-all our traces, we can manipulate them easier.\\
+all our traces, we can manipulate them easier.\\[0.3cm]
 \emph{execute\_head} can also be used to convert our traces. For
 example, Akypuera's\cite{s13} \emph{tau2paje} script can be used to
 convert TAU traces to traces visualizable with the Pajé\cite{cob00}
@@ -404,7 +405,7 @@ if we couldn't save our state between individual function calls,
 certain parameters, such as the number of nodes or the name of the
 site we are working on would need to be given every time. Instead, we
 can just put those values in variables and use them later when
-needed.\\
+needed.\\[0.3cm]
 Libraries can also contain activities. Most of the "real work" is put
 into the library in the form of member activities. The backend
 interfaces with the frontend, which makes calls to these activities
@@ -471,8 +472,8 @@ acquisition process.
   \centering
     \includegraphics[scale=0.7]{./Figures/checkpoint2.jpg}
     \rule{35em}{0.5pt}
-  \caption[Checkpoint example]{We can modify the code that comes after
-  the checkpoint}
+  \caption[Checkpoint example - code modification after checkpoint]{We
+    can modify the code that comes after the checkpoint}
   \label{fig:checkpoint2}
 \end{figure}
 \subsection{Proxy variables}
