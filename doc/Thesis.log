@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.6.2)  14 AUG 2013 22:26
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.6.2)  15 AUG 2013 10:17
 entering extended mode
  %&-line parsing enabled.
 **Thesis.tex
@@ -960,23 +960,28 @@ LaTeX Info: Redefining \pageref on input line 69.
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+------------------------------------------------------------------------------
+ Second Title Page
+------------------------------------------------------------------------------
+[1
+
 
 ]
 
 Package hyperref Warning: No destination for bookmark of \addcontentsline,
-(hyperref)                destination is added on input line 111.
+(hyperref)                destination is added on input line 97.
 
 ------------------------------------------------------------------------------
  Abstract Page
 ------------------------------------------------------------------------------
-[2
+[1
 
 ]
 ------------------------------------------------------------------------------
  Acknowledgements
 ------------------------------------------------------------------------------
-[3
+[2
 
 ]
 ------------------------------------------------------------------------------
@@ -991,14 +996,14 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 10.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [4
+) [3
 
 
-] [5])
+] [4])
 \tf@toc=\write4
 \openout4 = `Thesis.toc'.
 
- [6]
+ [5]
 ------------------------------------------------------------------------------
  List of Figures
 ------------------------------------------------------------------------------
@@ -1006,7 +1011,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 \tf@lof=\write5
 \openout5 = `Thesis.lof'.
 
- [7
+ [6
 
 
 ]
@@ -1017,7 +1022,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 \tf@lot=\write6
 \openout6 = `Thesis.lot'.
 
- [8
+ [7
 
 
 ] (./Chapters/Chapter1.tex
@@ -1082,29 +1087,29 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 [17] [18]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 130.
+(hyperref)                be the same. Added a new anchor on input line 131.
 
 [19]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 193.
+(hyperref)                be the same. Added a new anchor on input line 194.
 
-<./Figures/disabled_cores.jpg, id=692, 456.70625pt x 304.13625pt>
+<./Figures/disabled_cores.jpg, id=699, 456.70625pt x 304.13625pt>
 File: ./Figures/disabled_cores.jpg Graphic file (type jpg)
 
 <use ./Figures/disabled_cores.jpg>
-<./Figures/bind_to_core.jpg, id=693, 456.70625pt x 304.13625pt>
+<./Figures/bind_to_core.jpg, id=700, 456.70625pt x 304.13625pt>
 File: ./Figures/bind_to_core.jpg Graphic file (type jpg)
 
 <use ./Figures/bind_to_core.jpg> [20] [21 <./Figures/disabled_cores.jpg> <./Fig
 ures/bind_to_core.jpg>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 270.
+(hyperref)                than one, level fixed on input line 271.
 
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 270.
+(hyperref)                be the same. Added a new anchor on input line 271.
 
 [22]) [23] (./Chapters/Chapter4.tex
 
@@ -1120,54 +1125,54 @@ Chapter 4
 ------------------------------------------------------------------------------
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 25.
+(hyperref)                be the same. Added a new anchor on input line 26.
 
 [25
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 63.
+(hyperref)                be the same. Added a new anchor on input line 64.
 
-<./Figures/Renater5-g5k.jpg, id=736, 153.9351pt x 115.8729pt>
+<./Figures/Renater5-g5k.jpg, id=743, 153.9351pt x 115.8729pt>
 File: ./Figures/Renater5-g5k.jpg Graphic file (type jpg)
 
 <use ./Figures/Renater5-g5k.jpg> [26] [27 <./Figures/Renater5-g5k.jpg>]
 [28] [29]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 226.
+(hyperref)                be the same. Added a new anchor on input line 227.
 
-<./Figures/xpflow_example1.jpg, id=765, 589.20125pt x 114.4275pt>
+<./Figures/xpflow_example1.jpg, id=772, 589.20125pt x 114.4275pt>
 File: ./Figures/xpflow_example1.jpg Graphic file (type jpg)
 
 <use ./Figures/xpflow_example1.jpg> [30 <./Figures/xpflow_example1.jpg>]
-<./Figures/xpflow_example2.jpg, id=773, 847.165pt x 286.06876pt>
+<./Figures/xpflow_example2.jpg, id=780, 847.165pt x 286.06876pt>
 File: ./Figures/xpflow_example2.jpg Graphic file (type jpg)
 
 <use ./Figures/xpflow_example2.jpg>
-Overfull \hbox (6.10838pt too wide) in paragraph at lines 253--255
+Overfull \hbox (6.10838pt too wide) in paragraph at lines 254--256
  [][] 
  []
 
 [31 <./Figures/xpflow_example2.jpg>]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 286.
+(hyperref)                be the same. Added a new anchor on input line 287.
 
-[32] [33] <./Figures/tracegather_arity.jpg, id=792, 687.56876pt x 182.6825pt>
+[32] [33] <./Figures/tracegather_arity.jpg, id=799, 687.56876pt x 182.6825pt>
 File: ./Figures/tracegather_arity.jpg Graphic file (type jpg)
 
 <use ./Figures/tracegather_arity.jpg> [34 <./Figures/tracegather_arity.jpg>]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 413.
+(hyperref)                be the same. Added a new anchor on input line 414.
 
-[35] <./Figures/checkpoint1.jpg, id=808, 542.025pt x 380.42125pt>
+[35] <./Figures/checkpoint1.jpg, id=815, 542.025pt x 380.42125pt>
 File: ./Figures/checkpoint1.jpg Graphic file (type jpg)
 
 <use ./Figures/checkpoint1.jpg>
-<./Figures/checkpoint2.jpg, id=809, 542.025pt x 380.42125pt>
+<./Figures/checkpoint2.jpg, id=816, 542.025pt x 380.42125pt>
 File: ./Figures/checkpoint2.jpg Graphic file (type jpg)
 
 <use ./Figures/checkpoint2.jpg>) [36] [37 <./Figures/checkpoint1.jpg> <./Figure
@@ -1191,212 +1196,216 @@ Chapter 5
 ------------------------------------------------------------------------------
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 38.
+(hyperref)                be the same. Added a new anchor on input line 36.
 
 [39
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 46.
+(hyperref)                be the same. Added a new anchor on input line 44.
 
-[40] [41] [42]
+[40] [41]
+Underfull \hbox (badness 10000) in paragraph at lines 132--185
+
+ []
+
+[42]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 189.
+(hyperref)                be the same. Added a new anchor on input line 192.
 
-<./Figures/experiment_code.jpg, id=862, 656.4525pt x 529.98pt>
+<./Figures/experiment_code.jpg, id=869, 656.4525pt x 529.98pt>
 File: ./Figures/experiment_code.jpg Graphic file (type jpg)
 
 <use ./Figures/experiment_code.jpg>
-Overfull \hbox (42.04054pt too wide) in paragraph at lines 200--203
+Overfull \hbox (42.04054pt too wide) in paragraph at lines 203--206
  [][] 
  []
 
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 209.
+(hyperref)                be the same. Added a new anchor on input line 212.
 
 [43] [44 <./Figures/experiment_code.jpg>]
-<./Figures/fex_deployment.jpg, id=872, 758.835pt x 202.7575pt>
+<./Figures/fex_deployment.jpg, id=879, 758.835pt x 202.7575pt>
 File: ./Figures/fex_deployment.jpg Graphic file (type jpg)
 
 <use ./Figures/fex_deployment.jpg>
-Overfull \hbox (37.83145pt too wide) in paragraph at lines 244--247
+Overfull \hbox (37.83145pt too wide) in paragraph at lines 247--250
  [][] 
  []
 
 [45 <./Figures/fex_deployment.jpg>]
-<./Figures/fex_mpirun.jpg, id=879, 722.7pt x 62.2325pt>
+<./Figures/fex_mpirun.jpg, id=886, 722.7pt x 62.2325pt>
 File: ./Figures/fex_mpirun.jpg Graphic file (type jpg)
 
 <use ./Figures/fex_mpirun.jpg>
-Overfull \hbox (16.15027pt too wide) in paragraph at lines 301--304
+Overfull \hbox (16.15027pt too wide) in paragraph at lines 305--308
  [][] 
  []
 
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 310.
+(hyperref)                be the same. Added a new anchor on input line 314.
 
 [46 <./Figures/fex_mpirun.jpg>]
-<./Figures/fex_postprocessing.jpg, id=890, 722.7pt x 170.6375pt>
+<./Figures/fex_postprocessing.jpg, id=897, 722.7pt x 170.6375pt>
 File: ./Figures/fex_postprocessing.jpg Graphic file (type jpg)
 
 <use ./Figures/fex_postprocessing.jpg>
-Overfull \hbox (16.15027pt too wide) in paragraph at lines 354--357
+Overfull \hbox (16.15027pt too wide) in paragraph at lines 358--361
  [][] 
  []
 
 [47 <./Figures/fex_postprocessing.jpg>]
-<./Figures/fex_metadata.jpg, id=896, 326.21875pt x 243.91125pt>
+<./Figures/fex_metadata.jpg, id=903, 326.21875pt x 243.91125pt>
 File: ./Figures/fex_metadata.jpg Graphic file (type jpg)
 
 <use ./Figures/fex_metadata.jpg>
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 389.
+(hyperref)                be the same. Added a new anchor on input line 393.
 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 408.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 412.
 
 (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 408--408
+Underfull \hbox (badness 10000) in paragraph at lines 412--412
 []|\T1/cmtt/m/n/10 kadeploy3 -f $OAR_FILE_NODES -e
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 411--411
+Underfull \hbox (badness 10000) in paragraph at lines 415--415
 []|\T1/cmtt/m/n/10 cat $OAR_FILE_NODES | uniq >
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--414
+Underfull \hbox (badness 10000) in paragraph at lines 418--418
 []|\T1/cmtt/m/n/10 taktuk -l dlehoczky -f ~/nodefile_uniq
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 417--417
+Underfull \hbox (badness 10000) in paragraph at lines 421--421
 []|\T1/cmtt/m/n/10 taktuk -l root -f
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 417--417
+Underfull \hbox (badness 10000) in paragraph at lines 421--421
 \T1/cmtt/m/n/10 /home/dlehoczky/nodefile_uniq broadcast
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 417--417
+Underfull \hbox (badness 10000) in paragraph at lines 421--421
 \T1/cmtt/m/n/10 exec [ 'for i in /sys/devices/system/cpu/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 417--417
+Underfull \hbox (badness 10000) in paragraph at lines 421--421
 \T1/cmtt/m/n/10 cpu[1-9]*/online; do echo 0 > "$i" ; done'
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--421
+Underfull \hbox (badness 10000) in paragraph at lines 425--425
 []|\T1/cmtt/m/n/10 taktuk -f ~/nodefile_uniq broadcast exec [
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--421
+Underfull \hbox (badness 10000) in paragraph at lines 425--425
 \T1/cmtt/m/n/10 'cat /proc/cpuinfo' ] | grep process | awk
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--421
+Underfull \hbox (badness 10000) in paragraph at lines 425--425
 \T1/cmtt/m/n/10 'if($9>0) print $1' | uniq | awk -F".fr-"
  []
 
 
-Overfull \hbox (4.5672pt too wide) in paragraph at lines 400--424
+Overfull \hbox (4.5672pt too wide) in paragraph at lines 404--428
  [] 
  []
 
 [48 <./Figures/fex_metadata.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
+Underfull \hbox (badness 10000) in paragraph at lines 465--466
 []|\T1/cmtt/m/n/10 /usr/local/openmpi-1.6.4-install
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
+Underfull \hbox (badness 10000) in paragraph at lines 465--466
 \T1/cmtt/m/n/10 /bin/mpirun -mca btl ^openib --mca pml
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
+Underfull \hbox (badness 10000) in paragraph at lines 465--466
 \T1/cmtt/m/n/10 ob1 -machinefile ~/nodefile_uniq -np 8
  []
 
 
-Overfull \hbox (4.5672pt too wide) in paragraph at lines 448--460
- [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 482--482
-[]|\T1/cmtt/m/n/10 /usr/local/bin/mpirun -machinefile
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 482--482
-\T1/cmtt/m/n/10 ~/nodefile_uniq -np 8
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 482--482
-\T1/cmtt/m/n/10 /usr/local/trace_gather/trace_gather -f
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 486--486
-[]|\T1/cmtt/m/n/10 /usr/local/akypuera-install/bin/tau2paje
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 486--486
-\T1/cmtt/m/n/10 tau.trc tau.edf 1>lu.B.8.paje
- []
-
-
-Overfull \hbox (4.5672pt too wide) in paragraph at lines 474--488
+Overfull \hbox (4.5672pt too wide) in paragraph at lines 456--468
  [] 
  []
 
 [49]
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+[]|\T1/cmtt/m/n/10 /usr/local/bin/mpirun -machinefile
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+\T1/cmtt/m/n/10 ~/nodefile_uniq -np 8
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--490
+\T1/cmtt/m/n/10 /usr/local/trace_gather/trace_gather -f
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--494
+[]|\T1/cmtt/m/n/10 /usr/local/akypuera-install/bin/tau2paje
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--494
+\T1/cmtt/m/n/10 tau.trc tau.edf 1>lu.B.8.paje
+ []
+
+
+Overfull \hbox (4.5672pt too wide) in paragraph at lines 482--496
+ [] 
+ []
+
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 498.
+(hyperref)                be the same. Added a new anchor on input line 506.
 
-[50] <./Figures/lu_B_8_framework.jpg, id=912, 654.94687pt x 319.1925pt>
+[50] <./Figures/lu_B_8_framework.jpg, id=919, 654.94687pt x 319.1925pt>
 File: ./Figures/lu_B_8_framework.jpg Graphic file (type jpg)
 
 <use ./Figures/lu_B_8_framework.jpg>
-Overfull \hbox (40.98662pt too wide) in paragraph at lines 540--543
+Overfull \hbox (40.98662pt too wide) in paragraph at lines 548--551
  [][] 
  []
 
-<./Figures/lu_B_8_manual1.jpg, id=913, 654.19406pt x 320.69812pt>
+<./Figures/lu_B_8_manual1.jpg, id=920, 654.19406pt x 320.69812pt>
 File: ./Figures/lu_B_8_manual1.jpg Graphic file (type jpg)
 
 <use ./Figures/lu_B_8_manual1.jpg>
-Overfull \hbox (40.45966pt too wide) in paragraph at lines 549--552
+Overfull \hbox (40.45966pt too wide) in paragraph at lines 557--560
  [][] 
  []
 
-[51 <./Figures/lu_B_8_framework.jpg>] [52 <./Figures/lu_B_8_manual1.jpg>]
+[51] [52 <./Figures/lu_B_8_framework.jpg> <./Figures/lu_B_8_manual1.jpg>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 583.
+(hyperref)                than one, level fixed on input line 591.
 
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 583.
+(hyperref)                be the same. Added a new anchor on input line 591.
 
-) [53] (./Chapters/Chapter6.tex
+[53]) [54] (./Chapters/Chapter6.tex
 
 Package xr Warning: 
 No file Chapter5.aux
@@ -1415,7 +1424,7 @@ No file Chapter3.aux
 LABELS NOT IMPORTED.
  on input line 3.
 
-[54]
+[55]
 Chapter 6
 ------------------------------------------------------------------------------
  6 Conclusion
@@ -1424,14 +1433,14 @@ Chapter 6
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 11.
 
-[55
+[56
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 78.
 
-[56]) (./Thesis.bbl [57]
+[57]) (./Thesis.bbl [58]
 Underfull \hbox (badness 1424) in paragraph at lines 53--59
 []\T1/cmr/m/n/10.95 Mesirov J., P.  Ac-ces-sible re-pro-du-cible re-se-arch.  \
 T1/cmr/m/it/10.95 Sci-ence Ma-ga-zine\T1/cmr/m/n/10.95 , 327:
@@ -1443,9 +1452,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--59
 ab . bio5 . org / foswiki / pub / Main /
  []
 
-[58
+[59
 
-] [59]
+] [60]
 Underfull \hbox (badness 5970) in paragraph at lines 190--197
 []\T1/cmr/m/n/10.95 Shende S., S. and Ma-lony A., D.  The TAU pa-ral-lel per-fo
 r-mance
@@ -1457,13 +1466,13 @@ Underfull \hbox (badness 3668) in paragraph at lines 190--197
 igh Per-for-mance Com-pu-t-ing App-li-ca-
  []
 
-[60] [61]) [62] (./Thesis.aux) ) 
+[61] [62]) [63] (./Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 11211 strings out of 495046
- 150569 string characters out of 1181965
- 239223 words of memory out of 3000000
+ 11214 strings out of 495046
+ 150604 string characters out of 1181965
+ 239211 words of memory out of 3000000
  13973 multiletter control sequences out of 15000+50000
- 20539 words of font info for 50 fonts, out of 3000000 for 9000
+ 21653 words of font info for 52 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  48i,12n,45p,395b,508s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/lehoo/.texmf-var/fonts/pk/ljfour/jknapp
@@ -1472,18 +1481,19 @@ en/ec/ectt1095.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1
 </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/leho
 o/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk> </home/lehoo/.texmf-va
 r/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/lehoo/.texmf-var/fonts/pk/
-ljfour/jknappen/ec/ecbx2488.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jkna
-ppen/ec/ecbx1095.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ect
-i2074.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk
-> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/le
-hoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/lehoo/.texmf-
-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/lehoo/.texmf-var/fonts/p
-k/ljfour/jknappen/ec/ecbx2074.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jk
-nappen/ec/ecrm1728.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/e
-cbx1200.600pk>
-Output written on Thesis.pdf (71 pages, 1120140 bytes).
+ljfour/jknappen/ec/ecti1095.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ecbx1095.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecb
+x2488.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti2074.600pk
+> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/le
+hoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> </home/lehoo/.texmf-
+var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/lehoo/.texmf-var/fonts/p
+k/ljfour/jknappen/ec/ecrm1440.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jk
+nappen/ec/ecrm1200.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/e
+cbx2074.600pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600
+pk> </home/lehoo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk>
+Output written on Thesis.pdf (72 pages, 1135794 bytes).
 PDF statistics:
- 1671 PDF objects out of 1728 (max. 8388607)
- 142 named destinations out of 1000 (max. 500000)
- 900 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1717 PDF objects out of 1728 (max. 8388607)
+ 143 named destinations out of 1000 (max. 500000)
+ 908 words of extra memory for PDF output out of 10000 (max. 10000000)
 

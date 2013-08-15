@@ -32,9 +32,7 @@ compare the two different methodologies used: the "old", manual method
 with the usage of the newly implemented framework. By comparing the
 methodologies, we try to draw a conclusion whether or not the usage of
 the framework is more feasible in the long term than the manual
-method. In the end, we take a look at the most important shortcomings
-of the current version of the implementation, as well as ideas about
-how we could overcome them.
+method.
 \section{Methodology}
 The experiment process used in the evaluation will consist of the same
 steps as mentioned before in the Implementation chapter as an example
@@ -47,8 +45,8 @@ more precise about certain details of the experiment.
 There are certain prerequisites that are assumed about the user's
 environment when running the experiment.
 \begin{itemize}
-\item XPflow is needed to be present at the place of the execution of
-the test. This can be the user's workstation or any feasible
+\item XPflow is needed to be present wherever the command to execute
+the test is given. This can be the user's workstation or any feasible
 environment.
 \item In order to provide authentication without prompting for a
 password, ssh-keys are needed to be configured correctly
@@ -57,9 +55,9 @@ password, ssh-keys are needed to be configured correctly
   \item between the site and the nodes,
   \item and between the nodes (required by mpirun and trace\_gather).
   \end{itemize}
-\item An image providing the feature described in \ref{sec:image}.
-\item The benchmark to run is needed to be compiled and available in
-  the path that we give the broadcast method of the benchmark.
+\item An image providing the features described in \ref{sec:image}.
+\item The benchmark to run is needed to be compiled and available at
+  the path that is given to the broadcast method as a parameter.
 \end{itemize}
 If all these requirements are fulfilled, the experiment should run
 without a problem.
@@ -72,20 +70,20 @@ applications, with easy-to-understand behaviors. Since our goal right
 now is not to solve complex problems but only to test our framework by
 doing trace collection, the NAS benchmarks are perfect for our
 purpose. We have to note though, that the framework is not
-NAS-specific: any other MPI benchmark could be run with the
+NAS-specific: any other MPI benchmark can be run with the
 implementation.\\[0.3cm]
 The benchmark chosen for doing the evaluation is
 called \emph{lu.B.8}. The name consists of 3 parts. The first
-part, \emph{lu} indicates what the experiment is about: as its name
+part, \emph{lu}, indicates what the experiment is about: as its name
 suggests, the LU benchmark solves a system of equations represented
-with a matrix, with the LU factorization method.\\[0.3cm]
-The second part of the name, \emph{B} is an
+with a matrix, using the LU factorization method.\\[0.3cm]
+The second part of the name, \emph{B}, is an
 indication about the complexity of the problem that the benchmark
 solves. The NPB suite defines so-called "problem classes" for its
-benchmarks. B is in the middle "standard" complexity category, being
-more complex than the Small (S), the Workstation-size (W) and A, the
-least complex "standard" problem size, but less complex than C and the
-larger test problem sizes.\cite{d13}\\[0.3cm]
+benchmarks. B is in the middle of the "standard" complexity category,
+being more complex than the Small (S), the Workstation-size (W) and A,
+the least complex "standard" problem size, but less complex than C and
+the larger test problem sizes.\cite{d13}\\[0.3cm]
 Finally, the number \emph{8} at the end of the benchmark's name
 indicates how many parallel processes it is intended for to be solved:
 for our purposes, we choose it to be 8, thus, we will allocate 8 nodes
@@ -132,7 +130,7 @@ its \emph{tau2paje} trace converting script.)
 \subsubsection{The experiment process}
 \label{sec:experiment_process}
 As mentioned before, the experiment process will consist of the same
-steps as in the example discussed before
+steps as in the example discussed earlier
 (see \ref{fig:xpflow_example2}).\\[0.3cm]
 To prepare our experiment process, we start by
 logging in to the frontend with our user. Then, we start an
@@ -159,12 +157,15 @@ checkpointing example (see \ref{sec:checkpointing}), we put a
 checkpoint right after deployment. This way, if we want to do another
 experiment, we can reuse our already allocated and deployed
 nodes. Since deployment is the longest process in the experiment, such
-a checkpoint can come in really handy. As already discussed before, we
+a checkpoint can come in really handy. In fact, it has been used
+during the evaluation: the MPI benchmark had to be executed twice,
+since the first run failed due to Grid'5000 problems. As already
+discussed before, we
 can modify anything in the experiment that comes after the checkpoint
 - the execution will resume and execute the modified code.\\[0.3cm]
 After the preparation stage comes the execution of the benchmark. We
 use OpenMPI 1.6.4, installed on our image.\\[0.3cm]
-After the running of the benchmark, comes the post-processing. If we
+After the running of the benchmark comes the post-processing. If we
 compiled our benchmark correctly with TAU, one trace file (.trc)
 and one event file (.edf) is generated for each MPI process. The
 traces are generated on the node of execution. This is why first,
@@ -178,14 +179,16 @@ respectively, also trying to account for any clock skew
 post-processing methods. Finally, when we have one merged trace and
 one event file, we can convert our TAU trace to a format that is
 compatible with the Pajé\cite{cob00} visualization tool. Visualizing
-the traces makes it easier to analyze and compare. For the conversion,
-we use Akypuera's\cite{s13} \emph{tau2paje} script.\\[0.3cm][0.5cm]
+the traces makes it easier to analyze and compare them. For the
+conversion, we use Akypuera's\cite{s13} \emph{tau2paje}
+script.\\[0.3cm]
 
 \section{Results}
 In this part of the chapter, we go over how the experiments went by
-observing their different stages. Then compare the results, the
-two different methodologies and we discuss the shortcomings of the
-framework.
+observing their different stages. Then we compare the results, then
+the two different methodologies to try and draw a conclusion about
+whether or not the framework possesses the capabilities we discussed
+in the previous chapters.
 \subsection{Experiment using the framework}
 First, we discuss the experiment orchestrated with the test
 framework. The test written with the framework consists of one single
@@ -226,10 +229,10 @@ containing the node names, each as many times as many cores they
 have. During the experiment, we create a nodefile that only contains
 each node once, so it can be used as a machinefile for certain
 commands later. We specify a custom path to the nodefile with an
-argument. If that argument is not set, our nodefile would be created
-in the home folder anyway.\\[0.3cm]
+argument. If we wouldn't, our nodefile would be created in the home
+folder anyway.\\[0.3cm]
 Logs of the deployment process can be seen on
-figure \ref{fig:fex_deployment}. As we can see, we allocate 8 nodes
+figure \ref{fig:fex_deployment}. As we can see, we allocated 8 nodes
 for 2 hours of time. This means that after 2 hours, the job terminates
 and we are disconnected from the nodes. In our case, the 2 hours
 proved to be more than enough to conclude our tests. We can also
@@ -257,8 +260,9 @@ benchmark and the path to copy it to. The nodefile is not needed to be
 given, since it's already been created and stored by the library
 before.\\[0.3cm]
 As it's a relatively fast and simple process, the framework doesn't
-display any extra log messages to notify us of their success. Since
-the benchmark was able to run, we can be sure that it succeded.
+display any extra log messages to notify us of its success. Since
+the benchmark was able to run, we can be sure that the broadcast
+succeded.
 \paragraph{Disabling cores}
 This is the method call that is responsible for disabling all but one
 core on every node that takes part in the execution. We talked about
@@ -425,6 +429,10 @@ experiment}
 \end{center}
 \end{table}
 
+When doing the deployment, the data that was previously stored on the
+nodes (such as the runnable or the traces) are erased, thus, there is
+no way to "cheat" by using anything that was a result to the previous
+experiment.
 As a side note: when doing the core disabling with the framework, the
 program repeats the disabling step until it confirms it to be
 successful, with the step marked as "Optional" here. In the step where
@@ -548,15 +556,15 @@ on figures \ref{fig:fex_traces} and \ref{fig:mex_traces}.
   \centering
     \includegraphics[scale=0.7]{./Figures/lu_B_8_manual1.jpg}
     \rule{35em}{0.5pt}
-  \caption[Traces from the experiment run manually]{Traces from the
-    run manually, visualized with Vite.}
+  \caption[Traces from the manually run experiment]{Traces from the
+    manually run experiment, visualized with Vite.}
   \label{fig:mex_traces}
 \end{figure}
 
 At first glance, it is apparent that the visualizations are made up of
 differently colored lines. These lines represent the different MPI
 operations. The X axis is the time. We can see that it starts from
-zero, and ends at the time period equal to the benchmark's
+zero, and ends at the point of time equal to the benchmark's
 runtime. The Y axis represents the different MPI processes, identified
 by their rank - we can see the different ranks on the left side. Each
 rank forms a horizontal "stripe" of its own, with the MPI operations
@@ -625,7 +633,26 @@ that we have the possibility to run as many benchmarks in a single
 workflow as we want, we can potentially run proportionally more
 benchmarks, thus producing proportionally more traces and results in
 other forms, which, as mentioned before, is much needed in our case
-for validating SMPI.\\[0.5cm]
+for validating SMPI.
+\paragraph{Descriptiveness}
+If a newcomer, who has never done such experiments before gets the
+task to do the testing process manually, he/she will inevitably get
+confused, since some of the process steps are by no means
+self-explanatory, as well as a typo or a missing step can cause
+confusing problems that can be really hard to be traced back to its
+root cause. For example, if the core disabling step fails or is left
+out, the problem may be overlooked and found out much later, when the
+traces show much better performance than what we expected. When
+looking at a test compiled with the framework though, the steps are
+much more easily understandable: the function names and parameters are
+more-or-less self-explanatory. With the help of an orchestrated
+experiment, a newcomer doesn't have to see or understand the low-level
+details of each command - he/she can start by understanding the
+experiment process itself, without paying attention to the
+details. Comments can further ease human readability - the
+orchestrated experiments can serve not just as an
+automation, but as a guide to running and understanding the
+experiments.\\[0.5cm]
 In this chapter, we first went over the specifics of the evaluation of
 our implementation. We talked about the chosen benchmark to
 gather traces from. We also discussed what the chosen

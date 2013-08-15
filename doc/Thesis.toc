@@ -1,10 +1,10 @@
 \select@language {hungarian}
-\contentsline {chapter}{Abstract}{ii}{section*.1}
+\contentsline {chapter}{Abstract}{i}{section*.1}
 \vspace {1em}
-\contentsline {chapter}{Acknowledgements}{iii}{section*.1}
+\contentsline {chapter}{Acknowledgements}{ii}{section*.1}
 \vspace {1em}
-\contentsline {chapter}{List of Figures}{vii}{chapter*.2}
-\contentsline {chapter}{List of Tables}{viii}{chapter*.3}
+\contentsline {chapter}{List of Figures}{vi}{chapter*.2}
+\contentsline {chapter}{List of Tables}{vii}{chapter*.3}
 \contentsline {chapter}{\numberline {1.}Introduction}{1}{chapter*.4}
 \contentsline {chapter}{\numberline {2.}Literature Review}{4}{chapter*.4}
 \contentsline {section}{\numberline {2.1.}MPI}{4}{section*.5}
@@ -67,7 +67,7 @@
 \contentsline {subsection}{\numberline {4.4.3.}Checkpointing}{36}{section*.18}
 \contentsline {subsection}{\numberline {4.4.4.}Proxy variables}{36}{section*.18}
 \contentsline {chapter}{\numberline {5.}Evaluation}{39}{section*.18}
-\contentsline {section}{\numberline {5.1.}Methodology}{40}{section*.19}
+\contentsline {section}{\numberline {5.1.}Methodology}{39}{section*.19}
 \contentsline {subsection}{\numberline {5.1.1.}Experiment specification}{40}{section*.19}
 \contentsline {subsubsection}{\numberline {5.1.1.1.}Prerequisites}{40}{section*.20}
 \contentsline {subsubsection}{\numberline {5.1.1.2.}The benchmark}{40}{section*.20}
@@ -90,17 +90,18 @@
 \contentsline {subsection}{\numberline {5.2.2.}Experiment by hand}{48}{section*.23}
 \contentsline {subsubsection}{\numberline {5.2.2.1.}Preparation}{48}{section*.24}
 \contentsline {subsubsection}{\numberline {5.2.2.2.}Running the benchmark}{49}{section*.24}
-\contentsline {subsubsection}{\numberline {5.2.2.3.}Post-processing}{49}{section*.24}
-\contentsline {section}{\numberline {5.3.}Comparison}{50}{section*.24}
-\contentsline {subsection}{\numberline {5.3.1.}Comparison of results}{50}{section*.25}
-\contentsline {subsection}{\numberline {5.3.2.}Comparison of methodology}{52}{section*.25}
+\contentsline {subsubsection}{\numberline {5.2.2.3.}Post-processing}{50}{section*.24}
+\contentsline {section}{\numberline {5.3.}Comparison}{51}{section*.24}
+\contentsline {subsection}{\numberline {5.3.1.}Comparison of results}{51}{section*.25}
+\contentsline {subsection}{\numberline {5.3.2.}Comparison of methodology}{53}{section*.25}
 \contentsline {paragraph}{Reliability}{53}{section*.26}
 \contentsline {paragraph}{Reusability}{53}{section*.26}
 \contentsline {paragraph}{User interaction}{53}{section*.26}
-\contentsline {paragraph}{Testing speed}{53}{section*.26}
-\contentsline {chapter}{\numberline {6.}Conclusion}{55}{section*.26}
-\contentsline {section}{\numberline {6.1.}Summary of work}{55}{section*.27}
-\contentsline {section}{\numberline {6.2.}Development directions}{56}{section*.27}
-\contentsline {subsection}{\numberline {6.2.1.}Configuration file}{56}{section*.28}
-\contentsline {subsection}{\numberline {6.2.2.}Grid'5000}{57}{section*.28}
-\contentsline {subsection}{\numberline {6.2.3.}Metadata collection}{57}{section*.28}
+\contentsline {paragraph}{Testing speed}{54}{section*.26}
+\contentsline {paragraph}{Descriptiveness}{54}{section*.26}
+\contentsline {chapter}{\numberline {6.}Conclusion}{56}{section*.26}
+\contentsline {section}{\numberline {6.1.}Summary of work}{56}{section*.27}
+\contentsline {section}{\numberline {6.2.}Development directions}{57}{section*.27}
+\contentsline {subsection}{\numberline {6.2.1.}Configuration file}{57}{section*.28}
+\contentsline {subsection}{\numberline {6.2.2.}Grid'5000}{58}{section*.28}
+\contentsline {subsection}{\numberline {6.2.3.}Metadata collection}{58}{section*.28}

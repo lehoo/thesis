@@ -9,7 +9,7 @@ framework from different aspects. First, we describe the most
 important attributes we'd like the framework to have. After that, we
 talk about how trace collection is done, elaborating on the current
 manual process of obtaining real-life (RL) traces, illustrating why
-it's repetitive error-prone, thus emphasizing the need of
+it's repetitive and error-prone, thus emphasizing the need for
 automation. After that, we shed light on some obstacles regarding
 tracing, such as tracing overhead or clock synchronization
 problems. While discussing these, we also mention some possible ways
@@ -22,7 +22,7 @@ error-prone. Thus,
 \begin{itemize}
 \item the heavy development that is currently ongoing in the SMPI
   project is impeded, since development brings with it a constant need
-  for validation, which is done by running test.
+  for validation, which is done by running tests.
 \item The effort required to reproduce research results related to
   SMPI are needed to be minimized.
 \end{itemize}
@@ -81,7 +81,8 @@ amount of human interaction required to what is absolutely required to
 run the actual experiment.
 \paragraph{Metadata collection}
 The usefulness of the framework can be greatly elevated if it provides
-the possibility of some (even minimal) metadata to be collected about
+the possibility of some (even a minimal amount of) metadata to be
+collected about
 the experiment that was run. Such metadata can include the description
 of the goal of the experiment (provided by the researcher), the date
 the experiment was run, the nodes and the operating system images that
@@ -94,9 +95,9 @@ queries about a certain set of nodes can be made in order to find
 faulty ones.\\[0.3cm]
 The above list doesn't necessarily include all the technical
 properties of the framework, but it's a list about the most important
-design standpoints taken into consideration. After the bried
-description of these points, we talk about the actual process that we
-are aiming to automate.
+design standpoints taken into consideration. After the brief
+description of these points, let's talk about the actual process that
+we are aiming to automate.
 \section{Obtaining traces}
 SMPI is an actively developed project and as such, a lot of tests are
 run and a lot of measurements are taken. Previous papers
@@ -165,7 +166,7 @@ tau-to-paje conversion script. Once done, we finally have a trace file
 that Pajé can read and display to us.\\[0.3cm]
 As we can see, this process is made up of multiple steps. It's
 repetitive and prone to errors when done manually, which causes
-frustration and unnecessarily delays when testing.
+frustration and unnecessary delays when testing.
 In the future, it is very likely that more and more tests will have to
 be run in order to verify old and newly implemented features, as well
 as various experiments will be conducted using SMPI to test it against
@@ -282,7 +283,7 @@ experiment, while we want information from just the experiment,
 without the traces. If the difference is too big, this can make our
 simulations look inaccurate. The impact it can have when using
 off-line simulation, where the simulator replays the traces corrupted
-with this overhead is shown in \cite{dms12}.\\[0.3cm][0.5cm]
+with this overhead is shown in \cite{dms12}.\\[0.3cm]
 In \cite{dms12}, the authors propose an instrumentation method as a
 correction to their previous work in \cite{dmsq11}. The problem was
 that there was a sizeable overhead caused mainly by TAU building the
@@ -354,6 +355,4 @@ depicted some of the obstacles that we need to pay attention to when
 collecting traces, such as the problem with multiple cores, the impact
 of instrumentation on the performance, or clock synchronization
 problems. When discussing these, we also mentioned certain methods to
-overcome these problems. In the next
-chapter, we'll discuss more specific details about the implementation
-of the framework.
+overcome these problems.

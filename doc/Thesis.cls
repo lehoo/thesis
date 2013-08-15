@@ -155,7 +155,7 @@
 
 \examiner    {}
 
-\degree      {Master of Science}
+\degree      {MSc}
 
 \authors     {}
 
@@ -179,7 +179,7 @@
 
 \AWARD {MSc}
 
-\academicyear {2012-2013}
+\academicyear {2012 - 2013}
 
 \addresses   {}
 \subject     {}
